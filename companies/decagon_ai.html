@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Decagon AI · 深度研究</title><style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1a1f36;--ink2:#475569;--ink3:#94a3b8;--line:#e5e8ee;--accent:#2563eb;--accent2:#1e40af;--accent-bg:#eff4ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:13px;font-family:"SF Mono",Menlo,monospace}
+
+/* 顶部栏(返回按钮) */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:11px 28px;display:flex;align-items:center;gap:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:7px 15px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:var(--accent2);text-decoration:none}
+.topbar .crumb{color:var(--ink3);font-size:13px}
+
+/* 共用 section/表格 */
+.section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 28px;margin-bottom:12px;scroll-margin-top:64px}
+.section-title{margin:0 0 15px;font-size:18px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:2px solid var(--accent-bg)}
+.sec-num{background:var(--accent);color:#fff;font-size:12px;font-weight:700;width:23px;height:23px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.subsection{margin:18px 0 8px;font-size:15px;font-weight:700;color:var(--accent2);padding-left:9px;border-left:3px solid var(--accent)}
+.sub4{margin:14px 0 6px;font-size:13.5px;font-weight:600;color:var(--ink2)}
+.section p{margin:9px 0;color:var(--ink)}
+.section ul,.section ol{margin:9px 0;padding-left:21px}.section li{margin:5px 0;color:var(--ink)}.section li::marker{color:var(--accent)}
+blockquote{margin:12px 0;padding:11px 15px;background:#fffbeb;border-left:4px solid #d97706;border-radius:0 8px 8px 0;color:#78350f;font-size:13.5px}
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:#f8fafc;font-weight:700;text-align:left;padding:9px 13px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
+.kv-table .kv-key{background:#f8fafc;font-weight:600;color:var(--ink2);width:155px;white-space:nowrap}
+
+.dc-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin:24px auto 16px;max-width:980px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.dc-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.dc-badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:14px}
+.dc-layer{font-size:11px;font-weight:600;color:var(--ink2);background:#eef2f7;padding:3px 10px;border-radius:14px}
+.dc-region{font-size:11px;color:var(--ink3)}
+.dc-title{font-size:26px;font-weight:800;letter-spacing:-.4px;color:var(--ink);margin-bottom:8px}
+.dc-oneliner{font-size:14.5px;line-height:1.7;color:var(--ink);background:var(--accent-bg);border-left:4px solid var(--accent);padding:14px 18px;border-radius:0 10px 10px 0}
+.content{max-width:980px;margin:0 auto;padding:0 0 60px}
+.siblings{max-width:980px;margin:24px auto 60px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.siblings .st{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.sib-chip{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 11px;font-size:12.5px;color:var(--ink2);margin:3px 4px 3px 0}
+.sib-chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+</style></head><body>
+<div class="topbar">
+  <a class="back-btn" href="../matrix.html">← 返回首页</a>
+  <span class="crumb">AI 一级市场投资 · 企业 Agent/客服</span>
+</div>
+<div class="content">
+  <div class="dc-card">
+    <div class="dc-badges">
+      <span class="dc-badge" style="background:#f1f5f9;color:#475569">企业 Agent/客服</span>
+      <span class="dc-layer">应用</span>
+      <span class="dc-region">美国 San Francisco</span>
+    </div>
+    <h1 class="dc-title">Decagon AI</h1>
+    <div class="dc-oneliner">Decagon 是客服 agent 赛道中从“ticket deflection bot”向“AI concierge / customer relationship layer”升级最快的公司之一：2026 年 1 月完成 $250M Series D、估值 $4.</div>
+  </div>
+  <section class="section" id="sec-1">
+<h2 class="section-title"><span class="sec-num">1</span>一句话结论</h2>
+<p><strong>Decagon 是客服 agent 赛道中从“ticket deflection bot”向“AI concierge / customer relationship layer”升级最快的公司之一：2026 年 1 月完成 $250M Series D、估值 $4.</strong></p>
+<p>5B,官方披露 fiscal year 新增 100+ global enterprise customers,客户案例给出 70% chat/voice resolution、80% deflection、95% cost reduction、$1M AI-handled revenue 等运营指标；它的核心差异在 Agent Operating Procedures、chat/voice/email omnichannel、testing/QA/Watchtower、Duet/Autopilot 自改进 agent 以及自训练模型，但投资上要警惕 Sierra 的创始人/大客户势能、Intercom Fin 的 $0.</p>
+<p>99 per outcome 透明定价、Ada/Zendesk/Salesforce/Five9 的渠道和平台嵌入：以及语音/客服场景中 hallucination、handoff、合规、身份验证和 COGS 的长期压力。</p>
+</section>
+<section class="section" id="sec-2">
+<h2 class="section-title"><span class="sec-num">2</span>公司概览</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">公司名称</td><td class="kv-val">Decagon AI, Inc.</td></tr><tr><td class="kv-key">成立时间</td><td class="kv-val">2023 年 8 月</td></tr><tr><td class="kv-key">总部</td><td class="kv-val">San Francisco, California;公开资料显示另有 New York、London、Toronto/Australia expansion 线索</td></tr><tr><td class="kv-key">创始人</td><td class="kv-val">Jesse Zhang、Ashwin Sreenivas</td></tr><tr><td class="kv-key">CEO / CTO</td><td class="kv-val">Jesse Zhang / Ashwin Sreenivas</td></tr><tr><td class="kv-key">核心定位</td><td class="kv-val">AI concierge for every customer; enterprise customer experience AI agents</td></tr><tr><td class="kv-key">主要产品</td><td class="kv-val">Chat、Voice、Email、Duet、Duet Autopilot、Agent Operating Procedures(AOPs)、Integrations、Experiments、Testing & QA、Insights & Reporting、Watchtower、Suggestions、Templates、Agent Versioning、Trace View、User Memory、Outbound Voice、Proactive Agents</td></tr><tr><td class="kv-key">目标客户</td><td class="kv-val">Retail、travel & hospitality、technology、financial services、health & wellness、media、telecom 等有高量客服/会员/交易场景的企业</td></tr><tr><td class="kv-key">公开客户/案例</td><td class="kv-val">Chime、Oura、Eventbrite、ClassPass、Avis Budget Group、Block、Deutsche Telekom、Affirm 等;BI 还提到 Bilt、Duolingo、Notion、Rippling</td></tr><tr><td class="kv-key">最新融资</td><td class="kv-val">2026-01 $250M Series D</td></tr><tr><td class="kv-key">最新估值</td><td class="kv-val">$4.5B;官方称 6 个月内估值 tripled;2026-03 员工 tender 也按 $4.5B</td></tr><tr><td class="kv-key">主要投资方</td><td class="kv-val">Coatue Management、Index Ventures 领投;ChemistryVC、Definition Capital、Starwood Capital 新进;existing investors 包括 a16z、A*、Accel、Avra、Bain Capital Ventures、Elad Gil、Forerunner、Ribbit Capital、T.Capital</td></tr><tr><td class="kv-key">IPO/资本化</td><td class="kv-val">私有公司;截至 2026 年 7 月 6 日 没有看到 IPO filing</td></tr></tbody></table></div>
+<p>Decagon 的赛道不是传统 helpdesk,而是客户关系的自动化执行层。传统客服软件关注 inbox、ticket、routing、macro、knowledge base;第一代 chatbot 关注 deflection;Decagon/Sierra 这一代公司把重点放在“AI agent 直接解决问题”:改会员权益、延长租车、重新预约、订单处理、账户问题、退款、推荐、retention、upsell 等。它对客户讲的不是“少雇客服”,而是“把每一次客户互动变成 personalized, proactive, revenue-aware experience”。</p>
+</section>
+<section class="section" id="sec-3">
+<h2 class="section-title"><span class="sec-num">3</span>业务模式与收费方式</h2>
+<h3 class="subsection">3.1 公开 pricing 状态</h3>
+<p>Decagon 官网没有公开标准 price card,所有入口为 Get a demo / enterprise sales。这说明其商业模式更接近 Sierra/Ada 的 enterprise contract,而不是 Intercom Fin 的 self-serve/outcome-based public pricing。</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>收费模块</th><th>可能口径</th><th>公开依据</th><th>投资含义</th></tr></thead><tbody><tr><td>Enterprise platform fee</td><td>按客户规模、渠道、工单量、复杂度打包</td><td>只提供 demo,面向 F100/enterprise customers</td><td>高 ACV,长销售周期</td></tr><tr><td>Resolution / deflection / conversation volume</td><td>按 resolved conversation、automated interaction、message/voice minute 或 outcome 计费</td><td>客户案例强调 resolution、deflection、cost reduction、AI-handled revenue</td><td>与 ROI 对齐,但需定义 outcome</td></tr><tr><td>Channel add-ons</td><td>Chat、Voice、Email、SMS/other channel expansion</td><td>官网主打 chat/voice/email omnichannel</td><td>Voice COGS 较高,可形成 higher ARPU</td></tr><tr><td>Build/optimize modules</td><td>AOPs、Duet、Autopilot、Experiments、Testing & QA、Watchtower、Insights</td><td>官网 product nav 独立展示</td><td>不只是 bot,可卖 agent lifecycle platform</td></tr><tr><td>Integrations</td><td>CRM/helpdesk/order/account/billing/tool connectors</td><td>Integrations 与 AOPs 是核心</td><td>集成深度提升切换成本</td></tr><tr><td>Support/agent development</td><td>forward deployment / Agent Development</td><td>2026-06 blog 称 redefining forward deployment</td><td>可能提升落地率,但服务占比需核验</td></tr></tbody></table></div>
+<h3 class="subsection">3.2 与 Intercom Fin 的透明 outcome pricing 对比</h3>
+<p>Intercom 2026 pricing 页面给出明确价格:Fin AI Agent 从 $0.99 per outcome 起,可以在 Intercom 套件内使用,也可以接入现有 helpdesk;Essential/Advanced/Expert seats 分别显示 $29/$85/$132 per seat/month,并说明 Fin outcome 只在客户确认解决、客户不再追问或 Fin 完成 workflow/hand off 时计一次。</p>
+<p>这对 Decagon 有两层压力:</p>
+<ol><li><strong>价格锚:</strong> 客户采购时会拿 $0.99/outcome 作为参照,要求 Decagon 证明更高 resolution、voice quality、复杂 action、brand control 或 enterprise governance。</li><li><strong>定义压力:</strong> 如果 Decagon 也按 outcome/deflection 收费,必须清楚界定什么是 resolved、partial handoff、reopen、refund/order action、voice containment、escalation。</li></ol>
+<p>Decagon 的机会在于高复杂度 enterprise workflow。Intercom 更容易服务 SMB/mid-market 和已在 Intercom 的客户;Decagon 若能深入金融、旅行、telecom、health、membership、commerce 的系统动作,可获得更高 ACV。</p>
+<h3 class="subsection">3.3 与 Sierra/Ada 的商业化对比</h3>
+<p>Sierra 与 Decagon 都是 AI customer service agent 叙事,但 Sierra 由 Bret Taylor/Clay Bavor 创立,董事会和客户获取能力极强,公开报道显示 2024 年 $4.5B 估值,2025 年接近/达到 $10B 级估值。Decagon 的防守点不是 founder celebrity,而是产品迭代密度和 customer-facing ROI。Ada 则是更早的 automated customer experience 平台,通过 enterprise demo 销售,长期服务 automation/AI support,渠道和存量客户更成熟。</p>
+</section>
+<section class="section" id="sec-4">
+<h2 class="section-title"><span class="sec-num">4</span>产品与技术</h2>
+<h3 class="subsection">4.1 产品矩阵</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>层级</th><th>产品</th><th>功能</th></tr></thead><tbody><tr><td>Channel</td><td>Chat</td><td>on-brand replies、complex workflows、safe handoff</td></tr><tr><td>Channel</td><td>Voice</td><td>low-latency conversation、turn detection、authentication、brand voice</td></tr><tr><td>Channel</td><td>Email</td><td>contextual resolutions、asynchronous support</td></tr><tr><td>Agent design</td><td>Agent Operating Procedures(AOPs)</td><td>用自然语言定义 agent workflow,替代复杂 configuration language</td></tr><tr><td>Builder partner</td><td>Duet / Duet Autopilot</td><td>AI partner 帮团队构建、自改进 conversational agent</td></tr><tr><td>Integrations</td><td>Tool connectors</td><td>连接 CRM、helpdesk、order/account/billing systems</td></tr><tr><td>Evaluation</td><td>Testing & QA、Simulations、QA Hub</td><td>大规模模拟、回归测试、多人 QA</td></tr><tr><td>Governance</td><td>Watchtower、Trace View、Agent Versioning</td><td>always-on QA、可追踪 agent 决策、CI/CD 式版本治理</td></tr><tr><td>Optimization</td><td>Experiments、Root Cause Analysis、automatic optimization</td><td>A/B testing、性能诊断和迭代</td></tr><tr><td>Insights</td><td>Insights & Reporting、intent tags</td><td>将每次对话转化为 customer intelligence</td></tr><tr><td>Proactive</td><td>User Memory、Outbound Voice、Proactive Agents、Guided Discovery</td><td>从被动支持扩到推荐、留存、扩张和 proactive engagement</td></tr></tbody></table></div>
+<h3 class="subsection">4.2 Agent Operating Procedures(AOPs)</h3>
+<p>Decagon 将 AOPs 放在核心位置。传统 chatbot/IVR/FAQ bot 往往需要复杂配置语言、decision tree 或 vendor ticket;AOPs 试图让业务团队用自然语言定义步骤、例外、工具调用、升级策略、语气和约束。其投资意义:</p>
+<ul><li><strong>降低维护成本:</strong> 客户不必每次政策变化都开工程 sprint。</li><li><strong>提升可解释性:</strong> AOP 比纯 prompt 更像 SOP,便于审计和团队协作。</li><li><strong>形成 switching cost:</strong> 客户把大量 customer policy、refund logic、membership rules、order logic 写进 AOPs 后,迁移难度提升。</li><li><strong>支持自改进:</strong> Duet/Autopilot 可基于 conversation evidence 推荐修改 AOP。</li></ul>
+<p>风险是 AOP 不等于正确执行。客服 agent 的难点在工具权限、实时库存/账户/支付/身份、异常路径、合规话术和人类 handoff。尽调要看 AOP change 后的 regression testing、approval workflow、rollback、production incident rate。</p>
+<h3 class="subsection">4.3 Voice agent 技术</h3>
+<p>Decagon 2025–2026 blog 多次讨论 voice:low latency、turn detection、voice authentication、speech-to-speech 模型尚未足够 enterprise-ready、Bayesian VAD、reranker optimization、Modal 上 real-time voice 等。Voice 是高价值也是高风险渠道:</p>
+<ul><li><strong>高价值:</strong> 电话成本高,客户痛感明显,voice containment 可以直接节省 contact center 人力。</li><li><strong>高 COGS:</strong> ASR、TTS、LLM、streaming、latency infra 和电话网络成本叠加。</li><li><strong>高错误成本:</strong> 身份验证、金融账户、医疗、旅行变更、退款等场景风险高。</li><li><strong>高 UX 门槛:</strong> 用户对停顿、打断、情绪、语速、方言、噪声、口音非常敏感。</li></ul>
+<p>Decagon 的技术博客显示它没有把 voice 简化为“接一个语音 API”,而是在 turn-taking、authentication、latency、fine-tuning、testing 上做系统工程。这是它与一般 chatbot vendor 的关键差异。</p>
+<h3 class="subsection">4.4 自训练模型与 Decagon Labs</h3>
+<p>2026-03 Decagon Labs 文章标题称“over 80% of all model traffic at Decagon runs on models we trained ourselves. They outperform the best foundation models on our real-world use cases.” 这是非常重要的单位经济性与性能信号:</p>
+<ul><li>客服场景高度重复,大量任务不需要 frontier model 泛化,而需要 domain/task-specific reliability。</li><li>自训练/微调模型可以降低推理成本和 latency。</li><li>如果真实 outperform foundation models,Decagon 可形成数据 flywheel。</li><li>但这也要求公司有足够 conversation data、labeling/eval infra、privacy controls 和模型运维能力。</li></ul>
+<p>尽调应要求看到:不同模型的 traffic share、cost per resolved conversation、latency、CSAT、escalation rate、policy violation rate、human correction rate、voice vs chat margin。</p>
+</section>
+<section class="section" id="sec-5">
+<h2 class="section-title"><span class="sec-num">5</span>商业化与运营指标</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>数据</th><th>来源/说明</th></tr></thead><tbody><tr><td>Series D</td><td>$250M</td><td>Decagon official, 2026-01</td></tr><tr><td>最新估值</td><td>$4.5B</td><td>Decagon official;Bloomberg/TechCrunch 报道同口径</td></tr><tr><td>估值变化</td><td>6 个月内 tripled</td><td>Decagon official</td></tr><tr><td>新增客户</td><td>fiscal year 新增 100+ global enterprise customers</td><td>Decagon official Series D blog</td></tr><tr><td>客户类型</td><td>F100 airlines、banks、telecom、retail;Oura、Affirm、Chime 等 advanced tech companies</td><td>Decagon official</td></tr><tr><td>Chime case</td><td>70% chat and voice resolution</td><td>Decagon homepage</td></tr><tr><td>Oura / customer story</td><td>80% deflection rate</td><td>Decagon homepage</td></tr><tr><td>另一客户案例</td><td>95% cost reduction</td><td>Decagon homepage</td></tr><tr><td>Global CX case</td><td>$1M revenue from fully AI-handled conversations</td><td>Decagon homepage</td></tr><tr><td>General ROI metrics</td><td>70% chat/voice resolution、3x CSAT、80% deflection、65% cost reduction、50%+ voice deflection、32% increase in deflection</td><td>Decagon homepage</td></tr><tr><td>模型 traffic</td><td>over 80% model traffic on Decagon-trained models</td><td>Decagon Labs blog</td></tr><tr><td>公开融资累计线索</td><td>2025 BI 称 total funding $100M before Series D;Series D 后至少 $350M+</td><td>BI + official Series D</td></tr><tr><td>员工数线索</td><td>2025 BI Palantir Mafia 报道称 60 employees</td><td>BI,可能已经过时</td></tr></tbody></table></div>
+<h3 class="subsection">5.1 运营指标解读</h3>
+<p>Decagon 的指标比许多 agent 公司更接近业务结果:resolution、deflection、cost reduction、revenue from AI-handled conversations。这比“messages processed”或“users signed up”更有投资价值。但仍需拆解:</p>
+<ul><li><strong>Resolution:</strong> 是否经客户确认? 是否包含 reopened cases? 是否只统计 chat?</li><li><strong>Deflection:</strong> 是 ticket avoided、agent avoided、还是 bot containment?</li><li><strong>Cost reduction:</strong> 是否包括 software cost、voice minutes、supervisor QA、implementation cost?</li><li><strong>Revenue:</strong> AI-handled conversations 是否直接带来 incremental revenue,还是原本也会成交?</li><li><strong>CSAT:</strong> 是否相对于 human agent 或 legacy bot?</li></ul>
+<h3 class="subsection">5.2 增长质量</h3>
+<p>100+ new global enterprise customers in a fiscal year 是强信号,特别是 Decagon 成立时间很短。但客服 agent 的采购常有试点、并行 vendor 和 channel-by-channel rollout。需要核验:</p>
+<ul><li>100+ 中多少是 production paid,多少是 pilot/design partner;</li><li>median ACV、top 10 customer ARR、平均合同期限;</li><li>chat/email/voice 渠道 attach;</li><li>客户从 first channel 到 full omnichannel 的扩张周期;</li><li>gross retention 和 expansion。</li></ul>
+</section>
+<section class="section" id="sec-6">
+<h2 class="section-title"><span class="sec-num">6</span>融资历程完整时间线</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>日期</th><th>轮次/事件</th><th>金额</th><th>估值</th><th>投资方</th><th>事件意义</th><th>来源</th></tr></thead><tbody><tr><td>2023-08</td><td>公司成立</td><td>需核验</td><td>需核验</td><td>Jesse Zhang、Ashwin Sreenivas 创立</td><td>进入客服 agent 市场</td><td>Wikipedia/公司资料</td></tr><tr><td>2024-06</td><td>Stealth/早期融资与产品发布</td><td>$35M total raised 线索</td><td>需核验</td><td>Accel、a16z 等</td><td>从 stealth 出来,主打 human-like AI agents</td><td>TechCrunch/VentureBeat</td></tr><tr><td>2024-10</td><td>Series B</td><td>$65M</td><td>官方/BI 称 valuation quadrupled,具体基数需核验</td><td>Bain Capital Ventures led;Elad Gil、A*、Accel、Bond、Acme 等参与</td><td>从早期 agent startup 升级为高关注客服 AI 公司</td><td>Forbes/BI/公司博客</td></tr><tr><td>2025-02</td><td>公开累计融资线索</td><td>$100M total raised</td><td>需核验</td><td>a16z、Accel、Bain、Elad Gil、A*、Bond、Acme</td><td>BI startups list/Palanter Mafia 报道</td><td>BI</td></tr><tr><td>2026-01</td><td>Series D</td><td>$250M</td><td>$4.5B</td><td>Coatue、Index led;ChemistryVC、Definition、Starwood;existing a16z、A*、Accel、Avra、Bain、Elad Gil、Forerunner、Ribbit、T.Capital</td><td>6 个月估值 tripled,新增 100+ enterprise customers</td><td>Decagon official/Bloomberg</td></tr><tr><td>2026-03</td><td>Employee tender</td><td>金额需核验</td><td>$4.5B</td><td>Series D investors including Coatue、Index、a16z、Definition、Forerunner、Ribbit 等</td><td>提供员工流动性,加强 retention</td><td>Decagon official/TechCrunch</td></tr></tbody></table></div>
+<p>融资节奏非常快。若 2024 年 $65M Series B 后 2026 年 1 月 $250M Series D,中间应存在一轮 Series C 或内部扩展融资,公开资料对轮次命名与金额可能不完整。正式尽调应要求 cap table、所有轮次 closing docs、二级/员工 tender 结构、liquidation preference 和 option pool。</p>
+</section>
+  <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="clay.html">Clay</a><a class="sib-chip" href="glean_technologies.html">Glean Technologies</a><a class="sib-chip" href="manus_butterfly_effect.html">Manus</a><a class="sib-chip" href="sierra.html">Sierra</a><a class="sib-chip" href="writer.html">Writer</a></div>
+</div>
+</body></html>

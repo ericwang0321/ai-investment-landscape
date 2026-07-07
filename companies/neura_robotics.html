@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neura Robotics · 深度研究</title><style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1a1f36;--ink2:#475569;--ink3:#94a3b8;--line:#e5e8ee;--accent:#2563eb;--accent2:#1e40af;--accent-bg:#eff4ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:13px;font-family:"SF Mono",Menlo,monospace}
+
+/* 顶部栏(返回按钮) */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:11px 28px;display:flex;align-items:center;gap:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:7px 15px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:var(--accent2);text-decoration:none}
+.topbar .crumb{color:var(--ink3);font-size:13px}
+
+/* 共用 section/表格 */
+.section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 28px;margin-bottom:12px;scroll-margin-top:64px}
+.section-title{margin:0 0 15px;font-size:18px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:2px solid var(--accent-bg)}
+.sec-num{background:var(--accent);color:#fff;font-size:12px;font-weight:700;width:23px;height:23px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.subsection{margin:18px 0 8px;font-size:15px;font-weight:700;color:var(--accent2);padding-left:9px;border-left:3px solid var(--accent)}
+.sub4{margin:14px 0 6px;font-size:13.5px;font-weight:600;color:var(--ink2)}
+.section p{margin:9px 0;color:var(--ink)}
+.section ul,.section ol{margin:9px 0;padding-left:21px}.section li{margin:5px 0;color:var(--ink)}.section li::marker{color:var(--accent)}
+blockquote{margin:12px 0;padding:11px 15px;background:#fffbeb;border-left:4px solid #d97706;border-radius:0 8px 8px 0;color:#78350f;font-size:13.5px}
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:#f8fafc;font-weight:700;text-align:left;padding:9px 13px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
+.kv-table .kv-key{background:#f8fafc;font-weight:600;color:var(--ink2);width:155px;white-space:nowrap}
+
+.dc-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin:24px auto 16px;max-width:980px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.dc-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.dc-badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:14px}
+.dc-layer{font-size:11px;font-weight:600;color:var(--ink2);background:#eef2f7;padding:3px 10px;border-radius:14px}
+.dc-region{font-size:11px;color:var(--ink3)}
+.dc-title{font-size:26px;font-weight:800;letter-spacing:-.4px;color:var(--ink);margin-bottom:8px}
+.dc-oneliner{font-size:14.5px;line-height:1.7;color:var(--ink);background:var(--accent-bg);border-left:4px solid var(--accent);padding:14px 18px;border-radius:0 10px 10px 0}
+.content{max-width:980px;margin:0 auto;padding:0 0 60px}
+.siblings{max-width:980px;margin:24px auto 60px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.siblings .st{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.sib-chip{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 11px;font-size:12.5px;color:var(--ink2);margin:3px 4px 3px 0}
+.sib-chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+</style></head><body>
+<div class="topbar">
+  <a class="back-btn" href="../matrix.html">← 返回首页</a>
+  <span class="crumb">AI 一级市场投资 · 机器人/具身智能</span>
+</div>
+<div class="content">
+  <div class="dc-card">
+    <div class="dc-badges">
+      <span class="dc-badge" style="background:#f0f9ff;color:#0369a1">机器人/具身智能</span>
+      <span class="dc-layer">应用</span>
+      <span class="dc-region">德国</span>
+    </div>
+    <h1 class="dc-title">Neura Robotics</h1>
+    <div class="dc-oneliner">NEURA Robotics 是欧洲机器人赛道里最接近“硬件产品线 + cognitive robot OS + 人形机器人平台”组合的公司。</div>
+  </div>
+  <section class="section" id="sec-1">
+<h2 class="section-title"><span class="sec-num">1</span>一句话结论</h2>
+<p><strong>NEURA Robotics 是欧洲机器人赛道里最接近“硬件产品线 + cognitive robot OS + 人形机器人平台”组合的公司。</strong></p>
+<p>它不像 Figure 那样从人形机器人单点爆发，也不像 Skild/Physical Intelligence 那样纯做 robot brain，而是从工业协作机器人、移动机器人、智能机械臂 MAiRA、服务机器人 MiPA 到人形机器人 4NE-1，构建 Neuraverse 生态。公司 2025 年完成约 €120M Series B，投资方包括 Lingotto、BlueCrest、Volvo Cars Tech Fund、InterAlpen、Vsquared、Primepulse 等，公开报道还提到订单/需求储备和向认知机器人平台扩张。</p>
+<p>投资上，NEURA 的上行来自德国/欧洲制造业客户、可销售硬件产品、垂直集成传感和 AI 能力、以及 humanoid/Neuraverse 的平台化想象；下行来自硬件毛利、量产良率、售后服务、Figure/Apptronik/Agility/1X/Unitree/智元/Tesla 等竞争、欧洲高成本制造、以及 4NE-1 从展示走向真实部署的时间。</p>
+</section>
+<section class="section" id="sec-2">
+<h2 class="section-title"><span class="sec-num">2</span>公司概览</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">公司名称</td><td class="kv-val">NEURA Robotics GmbH</td></tr><tr><td class="kv-key">成立时间</td><td class="kv-val">2019 年</td></tr><tr><td class="kv-key">总部</td><td class="kv-val">Metzingen, Germany</td></tr><tr><td class="kv-key">创始人/CEO</td><td class="kv-val">David Reger</td></tr><tr><td class="kv-key">核心定位</td><td class="kv-val">Cognitive robots for industrial, service and humanoid applications</td></tr><tr><td class="kv-key">主要产品</td><td class="kv-val">MAiRA、LARA、MAV、MiPA、4NE-1、Neuraverse</td></tr><tr><td class="kv-key">目标客户</td><td class="kv-val">工业制造、物流、医疗/服务、教育/研究、未来家庭和企业服务场景</td></tr><tr><td class="kv-key">商业模式</td><td class="kv-val">机器人硬件销售、租赁/RaaS、软件/技能平台、集成服务、开发者生态</td></tr><tr><td class="kv-key">最新融资</td><td class="kv-val">2025 年约 €120M Series B</td></tr><tr><td class="kv-key">主要投资方</td><td class="kv-val">Lingotto Investment Management、BlueCrest Capital Management、Volvo Cars Tech Fund、InterAlpen Partners、Vsquared Ventures、Primepulse、HV Capital 等公开线索</td></tr><tr><td class="kv-key">资本化状态</td><td class="kv-val">私营公司，截至 2026 年 7 月 6 日 无公开 IPO filing</td></tr></tbody></table></div>
+<p>NEURA 的核心关键词是 <strong>cognitive robotics</strong>。传统工业机器人强调高精度、重复任务和围栏内作业；协作机器人强调人机协同；NEURA 希望把传感、AI、感知、语音/语言、触觉和安全能力内置到机器人本体，让机器人理解环境、与人协作并通过软件技能扩展任务。这让公司既有工业机器人收入路径，也有 humanoid/physical AI 估值叙事。</p>
+<p>与美国人形机器人公司相比，NEURA 的不同点是产品矩阵更宽。MAiRA 是 cognitive robot arm，MiPA 面向服务/家庭助手，4NE-1 是人形机器人，Neuraverse 是机器人生态/应用平台。宽产品线带来更多客户入口，但也带来资源分散、供应链复杂和产品管理压力。投资分析要问:NEURA 是一家能卖多款机器人硬件的工业公司，还是一家能把多款机器人连接成平台的软件公司？两者估值逻辑完全不同。</p>
+</section>
+<section class="section" id="sec-3">
+<h2 class="section-title"><span class="sec-num">3</span>业务模式与收费方式</h2>
+<h3 class="subsection">3.1 机器人硬件销售</h3>
+<p>NEURA 已有可面向工业客户销售的协作机器人和移动机器人产品，因此最直接收入来自硬件销售。客户采购 MAiRA/LARA/MAV 等设备，用于装配、上下料、搬运、质检、实验室、教育或服务场景。收费包括:</p>
+<ul><li>机器人本体售价；</li><li>末端执行器、传感器、底座、移动平台和安全配件；</li><li>系统集成、安装调试和培训；</li><li>备件、保修、维护和服务合同；</li><li>后续软件升级。</li></ul>
+<p>硬件销售现金回收快，但毛利受 BOM、制造良率、渠道折扣和售后影响。欧洲制造成本高，NEURA 必须通过智能化溢价或规模化供应链保持毛利。</p>
+<h3 class="subsection">3.2 RaaS / leasing</h3>
+<p>工业和服务机器人客户可能不愿一次性购买设备，尤其对新型 cognitive robots 和 humanoids。NEURA 可以通过 leasing 或 RaaS 收费:</p>
+<ul><li>按机器人/月收费；</li><li>按工作小时收费；</li><li>按任务量或产线节拍收费；</li><li>把维护、软件、备件和升级打包；</li><li>对高价值客户提供试点转长期租赁。</li></ul>
+<p>RaaS 有利于降低客户初始门槛，也让 NEURA 保留数据和设备控制权；但它会增加资产负债表压力、维修责任和利用率风险。</p>
+<h3 class="subsection">3.3 Neuraverse / 软件技能平台</h3>
+<p>Neuraverse 是 NEURA 的平台化核心。长期看，公司希望机器人可以像智能手机一样安装技能、接入开发者生态、共享任务能力。潜在收费方式包括:</p>
+<ul><li>机器人操作系统或平台订阅；</li><li>技能/应用商店分成；</li><li>开发者工具和仿真环境收费；</li><li>企业 fleet management；</li><li>AI 模型、语音、视觉和安全模块授权；</li><li>数据闭环和远程监控。</li></ul>
+<p>Neuraverse 如果成功，NEURA 将从硬件公司升级为 robot platform company；如果不成功，它只是硬件附属软件。</p>
+<h3 class="subsection">3.4 Humanoid / 4NE-1 商业化</h3>
+<p>4NE-1 是 NEURA 的人形机器人产品线。人形机器人短期更可能面向企业/研究/工业服务，而不是大众家庭。可能收费包括:</p>
+<ul><li>高价本体销售；</li><li>企业试点部署费；</li><li>RaaS；</li><li>开发者套件；</li><li>技能订阅；</li><li>与特定行业客户联合开发。</li></ul>
+<p>4NE-1 的价值更多是平台和未来 TAM。短期财务模型仍应以 MAiRA/LARA/MAV 等更接近工业客户的产品为主。</p>
+</section>
+<section class="section" id="sec-4">
+<h2 class="section-title"><span class="sec-num">4</span>产品与技术</h2>
+<h3 class="subsection">4.1 MAiRA</h3>
+<p>MAiRA 是 NEURA 的 cognitive robot arm。它与普通协作机械臂的差异在于更强调传感、认知、人机交互和 AI 能力。工业客户希望机器人不仅重复路径，还能识别对象、理解任务、与人协作并适应变化。MAiRA 可用于装配、检测、搬运、实验室自动化和教育研究等场景。</p>
+<p>MAiRA 的投资意义在于它是 NEURA 比 humanoid 更现实的收入入口。机械臂市场已有 Universal Robots、ABB、KUKA、FANUC、Yaskawa、Franka、Techman、Doosan 等强竞争者，NEURA 必须用 cognitive capabilities 和平台生态做差异。</p>
+<h3 class="subsection">4.2 LARA / MAV / industrial robots</h3>
+<p>LARA、MAV 等产品使 NEURA 不只依赖单一机器人。移动机器人和协作臂的组合可以覆盖物流、产线移动、物料搬运和柔性制造。对客户而言，单点机器人价值有限，真正 ROI 来自机器人与产线、仓库、MES/WMS/ERP 和安全系统集成。</p>
+<h3 class="subsection">4.3 MiPA</h3>
+<p>MiPA 是 NEURA 面向服务/个人助手方向的机器人概念，强调 cognitive assistant。服务机器人比工业机器人场景更开放，需要语音、视觉、导航、安全、隐私和人机交互。MiPA 的短期收入可来自展示、教育、研究或特定服务场景，家庭大规模普及仍需等待成本、可靠性和安全成熟。</p>
+<h3 class="subsection">4.4 4NE-1</h3>
+<p>4NE-1 是 NEURA 的人形机器人。它与 Figure 03、Tesla Optimus、1X NEO、Apptronik Apollo、Agility Digit、Unitree H1/G1、AgiBot 等构成同一大赛道。人形机器人的核心挑战是全身运动、双手操作、长时续航、可靠跌倒保护、任务泛化、制造成本和安全认证。</p>
+<p>4NE-1 对 NEURA 的战略意义:</p>
+<ul><li>展示公司从协作机器人走向通用 physical AI；</li><li>为 Neuraverse 提供高想象空间硬件入口；</li><li>吸引开发者、资本和客户关注；</li><li>将工业传感、安全和认知能力扩展到人形本体。</li></ul>
+<p>短期风险是 humanoid 很容易停留在演示阶段。投资研究必须追踪真实客户、部署场景、价格、出货和运行小时。</p>
+<h3 class="subsection">4.5 Neuraverse</h3>
+<p>Neuraverse 是 NEURA 尝试把机器人能力平台化的关键。它可以被理解为机器人生态系统:连接机器人、开发者、技能、数据、仿真和客户。平台要成立，需要:</p>
+<ul><li>足够多的机器人安装基数；</li><li>开发者愿意为 NEURA 生态开发技能；</li><li>技能可以在不同机器人上复用；</li><li>企业客户愿意通过平台管理 fleet；</li><li>数据和安全机制能被客户接受。</li></ul>
+<p>NEURA 的挑战是先有硬件规模还是先有开发者生态。没有足够机器人，开发者不会投入；没有足够技能，客户购买意愿也有限。</p>
+<h3 class="subsection">4.6 传感、安全和 AI</h3>
+<p>NEURA 强调 cognitive robots，需要把力矩传感、视觉、语音、触觉、环境感知和安全控制结合。协作机器人要在人旁边工作，必须限制速度、力、碰撞和危险动作；服务机器人还要处理隐私和社会接受度。NEURA 的技术护城河如果成立，应体现在:</p>
+<ul><li>内置传感器和安全系统；</li><li>AI 任务理解和环境适应；</li><li>易用编程和自然交互；</li><li>跨产品线软件复用；</li><li>量产硬件和售后能力。</li></ul>
+</section>
+<section class="section" id="sec-5">
+<h2 class="section-title"><span class="sec-num">5</span>商业化与运营指标</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>投资解读</th></tr></thead><tbody><tr><td>2025 Series B</td><td>约 €120M</td><td>欧洲机器人公司大额融资，用于产品、AI 和国际扩张</td></tr><tr><td>投资方</td><td>Lingotto、BlueCrest、Volvo Cars Tech Fund、InterAlpen、Vsquared、Primepulse 等</td><td>覆盖金融资本、产业资本和欧洲 deep tech 资本</td></tr><tr><td>产品矩阵</td><td>MAiRA、LARA、MAV、MiPA、4NE-1、Neuraverse</td><td>比单一 humanoid 公司收入入口更多</td></tr><tr><td>客户/订单</td><td>媒体报道提到需求和订单储备，但具体收入、交付和毛利需继续核验</td><td>订单口径可能包括 LOI、框架协议或非绑定需求</td></tr><tr><td>收入/毛利</td><td>公开资料没有给出经审计收入、产品毛利和出货量</td><td>IPO/后续融资前最大数据缺口</td></tr><tr><td>量产能力</td><td>德国制造和供应链扩张是重点</td><td>硬件公司必须证明良率、成本和售后</td></tr></tbody></table></div>
+<p>NEURA 的商业成熟度比 Skild 更硬，因为它有具体机器人产品；但它的平台成熟度还需验证。硬件销售可以带来收入，但估值溢价来自 Neuraverse 和 4NE-1。如果收入主要来自低毛利硬件和项目集成，估值应接近机器人制造商；如果软件技能、RaaS 和平台订阅占比提升，估值可向 physical AI 平台靠近。</p>
+</section>
+<section class="section" id="sec-6">
+<h2 class="section-title"><span class="sec-num">6</span>融资历程完整时间线</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>日期</th><th>轮次/事件</th><th>金额</th><th>估值</th><th>投资方</th><th>说明</th></tr></thead><tbody><tr><td>2019</td><td>公司成立</td><td></td><td></td><td>David Reger</td><td>从德国 cognitive robotics 切入</td></tr><tr><td>2021–2023</td><td>早期融资/扩张</td><td>公开口径分散</td><td></td><td>HV Capital、Vsquared、Primepulse 等线索</td><td>支持 MAiRA、工业机器人和研发</td></tr><tr><td>2023</td><td>Series A / 大额融资阶段</td><td>约 €50M 级别报道线索</td><td></td><td>Lingotto/其他投资者线索</td><td>扩大产品和商业化</td></tr><tr><td>2025-01</td><td>Series B</td><td>约 €120M</td><td>公开报道口径不同，需以公司/投资方正式材料为准</td><td>Lingotto Investment Management、BlueCrest、Volvo Cars Tech Fund、InterAlpen Partners、Vsquared、Primepulse、HV Capital 等</td><td>用于 cognitive robotics、国际扩张和产品线推进</td></tr><tr><td>2025–2026</td><td>产品与平台推进</td><td></td><td></td><td>客户/合作伙伴扩展</td><td>跟踪 MAiRA/4NE-1 出货、Neuraverse 开发者和订单转收入</td></tr></tbody></table></div>
+<p>融资解读:</p>
+<ul><li>NEURA 是欧洲 deep tech 资本愿意押注的机器人平台公司；</li><li>Volvo Cars Tech Fund 等产业资本说明汽车/制造生态关注其机器人能力；</li><li>€120M 对硬件公司只是扩张起点，量产、库存、售后和研发会继续消耗资本；</li><li>若订单储备真实且可转为收入，后续融资议价能力会增强；若订单只是意向，估值会受压。</li></ul>
+</section>
+  <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="1x_technologies.html">1X Technologies</a><a class="sib-chip" href="agibot_智元机器人.html">AgiBot</a><a class="sib-chip" href="agility_robotics.html">Agility Robotics</a><a class="sib-chip" href="apptronik.html">Apptronik</a><a class="sib-chip" href="figure_ai.html">Figure AI</a><a class="sib-chip" href="noetix_robotics_破壳机器人.html">Noetix Robotics</a><a class="sib-chip" href="robot_era_星动纪元.html">Robot Era</a><a class="sib-chip" href="x_square_robot_星海图.html">X Square Robot</a></div>
+</div>
+</body></html>

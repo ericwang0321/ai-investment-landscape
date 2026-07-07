@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1X Technologies · 深度研究</title><style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1a1f36;--ink2:#475569;--ink3:#94a3b8;--line:#e5e8ee;--accent:#2563eb;--accent2:#1e40af;--accent-bg:#eff4ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:13px;font-family:"SF Mono",Menlo,monospace}
+
+/* 顶部栏(返回按钮) */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:11px 28px;display:flex;align-items:center;gap:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:7px 15px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:var(--accent2);text-decoration:none}
+.topbar .crumb{color:var(--ink3);font-size:13px}
+
+/* 共用 section/表格 */
+.section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 28px;margin-bottom:12px;scroll-margin-top:64px}
+.section-title{margin:0 0 15px;font-size:18px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:2px solid var(--accent-bg)}
+.sec-num{background:var(--accent);color:#fff;font-size:12px;font-weight:700;width:23px;height:23px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.subsection{margin:18px 0 8px;font-size:15px;font-weight:700;color:var(--accent2);padding-left:9px;border-left:3px solid var(--accent)}
+.sub4{margin:14px 0 6px;font-size:13.5px;font-weight:600;color:var(--ink2)}
+.section p{margin:9px 0;color:var(--ink)}
+.section ul,.section ol{margin:9px 0;padding-left:21px}.section li{margin:5px 0;color:var(--ink)}.section li::marker{color:var(--accent)}
+blockquote{margin:12px 0;padding:11px 15px;background:#fffbeb;border-left:4px solid #d97706;border-radius:0 8px 8px 0;color:#78350f;font-size:13.5px}
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:#f8fafc;font-weight:700;text-align:left;padding:9px 13px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
+.kv-table .kv-key{background:#f8fafc;font-weight:600;color:var(--ink2);width:155px;white-space:nowrap}
+
+.dc-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin:24px auto 16px;max-width:980px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.dc-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.dc-badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:14px}
+.dc-layer{font-size:11px;font-weight:600;color:var(--ink2);background:#eef2f7;padding:3px 10px;border-radius:14px}
+.dc-region{font-size:11px;color:var(--ink3)}
+.dc-title{font-size:26px;font-weight:800;letter-spacing:-.4px;color:var(--ink);margin-bottom:8px}
+.dc-oneliner{font-size:14.5px;line-height:1.7;color:var(--ink);background:var(--accent-bg);border-left:4px solid var(--accent);padding:14px 18px;border-radius:0 10px 10px 0}
+.content{max-width:980px;margin:0 auto;padding:0 0 60px}
+.siblings{max-width:980px;margin:24px auto 60px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.siblings .st{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.sib-chip{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 11px;font-size:12.5px;color:var(--ink2);margin:3px 4px 3px 0}
+.sib-chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+</style></head><body>
+<div class="topbar">
+  <a class="back-btn" href="../matrix.html">← 返回首页</a>
+  <span class="crumb">AI 一级市场投资 · 机器人/具身智能</span>
+</div>
+<div class="content">
+  <div class="dc-card">
+    <div class="dc-badges">
+      <span class="dc-badge" style="background:#f0f9ff;color:#0369a1">机器人/具身智能</span>
+      <span class="dc-layer">应用</span>
+      <span class="dc-region">挪威/美国 Palo Alto</span>
+    </div>
+    <h1 class="dc-title">1X Technologies</h1>
+    <div class="dc-oneliner">1X Technologies 是欧美人形机器人赛道里最明确押注“家庭场景”的公司。</div>
+  </div>
+  <section class="section" id="sec-1">
+<h2 class="section-title"><span class="sec-num">1</span>一句话结论</h2>
+<p><strong>1X Technologies 是欧美人形机器人赛道里最明确押注“家庭场景”的公司。</strong></p>
+<p>它用 EVE 积累机构/工业经验，再用 NEO/NEO Gamma/NEO Home Robot 切入消费者家庭，并已经公开 $200 deposit、$20,000 购买价和 $499/月订阅口径。核心判断是，1X 的稀缺性在于“家用 humanoid + 软体安全设计 + Expert Mode 遥操作 + Redwood AI/1X World Model + Hayward 年产 10,000 台工厂”的组合；但它也是本组里最暴露于家庭隐私、安全、遥操作接受度和真实自主性不足的公司。投资上不能只看预订和视频演示，必须持续核验交付数量、退订/退款、Expert 人工成本、家庭任务成功率和数据授权。</p>
+</section>
+<section class="section" id="sec-2">
+<h2 class="section-title"><span class="sec-num">2</span>公司概览</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">公司名称</td><td class="kv-val">1X Technologies AS / 1X Technologies</td></tr><tr><td class="kv-key">前身</td><td class="kv-val">Halodi Robotics</td></tr><tr><td class="kv-key">成立时间</td><td class="kv-val">2014 年</td></tr><tr><td class="kv-key">总部/运营</td><td class="kv-val">Palo Alto / San Carlos / Hayward, California；Moss, Norway</td></tr><tr><td class="kv-key">创始人/CEO</td><td class="kv-val">Bernt Børnich</td></tr><tr><td class="kv-key">主要产品</td><td class="kv-val">EVE、NEO Beta、NEO Gamma、NEO Home Robot</td></tr><tr><td class="kv-key">核心 AI</td><td class="kv-val">Redwood AI、1X World Model、World Model Lab</td></tr><tr><td class="kv-key">主要场景</td><td class="kv-val">家庭 chores、陪伴、远程 assist；历史上 EVE 面向 security、logistics、healthcare 等机构场景</td></tr><tr><td class="kv-key">商业模式</td><td class="kv-val">NEO 预订、购买、订阅、Expert Mode、家庭数据驱动的软件能力升级；EVE/企业场景可能采用部署或服务合同</td></tr><tr><td class="kv-key">公开价格</td><td class="kv-val">NEO Home Robot $200 deposit；媒体和公开页面口径显示早期用户 $20,000 或 $499/月订阅</td></tr><tr><td class="kv-key">最新公开融资</td><td class="kv-val">2024-01 Series B $100M</td></tr><tr><td class="kv-key">主要投资方</td><td class="kv-val">EQT Ventures、Samsung NEXT、Nistad Group、OpenAI Startup Fund、Tiger Global、Sandwater、Alliance Ventures、Skagerak 等</td></tr><tr><td class="kv-key">资本化状态</td><td class="kv-val">私营公司，暂无公开 IPO filing；2025 年曾有寻求 $1B 新融资的媒体线索</td></tr></tbody></table></div>
+<p>1X 与 Figure、Agility、Apptronik 的差异很鲜明。Figure 和 Apptronik 先把 humanoid 带进汽车/物流/制造，Agility 则从仓储 tote handling 切入；1X 直接把 NEO 做成 household product。这个选择如果成功，TAM 和品牌心智极大，因为家庭机器人可以进入消费者日常；如果失败，风险也最大，因为家庭环境没有标准工位、没有安全围栏、隐私敏感、任务碎片化，而且早期自主性很可能不足。</p>
+<p>1X 的产品语言也更像消费电子:柔软外观、针织外衣、低噪音、轻量、安全、陪伴、可对话、会自己充电、手机 App 管理。它不是在卖“更强的工业机械臂”，而是在卖“家里多一个可以干活的 humanoid”。这使它更接近 Tesla Optimus 的长期家庭叙事，但比 Tesla 更早公开消费者价格和订阅路径。</p>
+</section>
+<section class="section" id="sec-3">
+<h2 class="section-title"><span class="sec-num">3</span>业务模式与收费方式</h2>
+<h3 class="subsection">3.1 NEO 购买 + 订阅</h3>
+<p>1X 官网截至 2026 年 7 月 6 日 显示 NEO Home Robot 可 Order，deposit 为 $200。公开媒体报道和维基整理口径显示，NEO 早期用户购买价为 $20,000，也计划提供 $499/month 订阅。这个价格结构非常关键，因为它给了家庭 humanoid 第一个可分析的单位经济锚。</p>
+<p>按 $20,000 购买价看，NEO 不是大众家电，而是 early adopter / affluent household / research user 产品。按 $499/月订阅看，年化价格约 $5,988，如果含硬件、服务、维护、软件、远程 Expert 和保修，1X 需要控制硬件折旧、人工遥操作和现场服务成本。订阅模式理论上扩大可负担性，也让 1X 保留资产控制、持续更新能力和数据权限，但会让现金回收更慢。</p>
+<h3 class="subsection">3.2 Expert Mode / remote operation</h3>
+<p>NEO 官网明确写到，NEO 默认自主工作；对于它不会的复杂 chores，用户可以 schedule a 1X Expert 来远程指导，帮助 NEO 学习并完成任务。官网 FAQ 还把“1X Expert 是否能随时进入 NEO”“是否需要分享数据”“NEO 如何操作”等列为关键问题。New Yorker 2026 年文章也强调，NEO 仍大量依赖人类 tele-operators，用户需要接受有人通过 NEO 眼部摄像头进入家庭视角。</p>
+<p>Expert Mode 是商业模式的双刃剑:</p>
+<ul><li>正面:提升早期可用性，让 NEO 即使自主性不足也能完成任务；同时产生高质量 demonstration data。</li><li>负面:人工成本可能吞噬订阅毛利；家庭隐私和远程访问会影响消费者接受度；若用户发现“机器人本质上是远程人类”，品牌信任会受损。</li></ul>
+<p>1X 的策略不是隐藏遥操作，而是把 Expert Mode 产品化、可预约、可提示状态。NEO 的 Emotive Ear Rings 用于显示状态，用户理论上知道何时由专家接入。真正需要核验的是用户是否愿意、数据是否可用于训练、专家人效如何、任务完成率是否提升到可规模化。</p>
+<h3 class="subsection">3.3 数据与软件升级</h3>
+<p>1X 的官网和 AI blog 反复强调 NEO “grows with you”。Redwood AI、1X World Model 和 World Model Lab 的商业意义是把家庭部署变成数据飞轮。早期用户不仅是客户，也是在不同家庭中为 NEO 提供真实长尾场景:厨房、衣物、宠物、儿童、家具、照明、杂物、玻璃、湿滑地面、声音和人的指令。</p>
+<p>潜在收费方式包括:</p>
+<ul><li>NEO 本体购买价或月租；</li><li>Expert Mode 使用时长或包含在订阅中；</li><li>软件能力升级包，例如 laundry、tidying、kitchen、eldercare；</li><li>延保、维修、替换件、软体外衣和电池服务；</li><li>企业/机构版 EVE 或 NEO deployment；</li><li>数据授权和模型合作，但家庭数据必须有清晰 opt-in。</li></ul>
+<h3 class="subsection">3.4 EVE / 企业场景</h3>
+<p>EVE 是 1X 早期 wheeled humanoid，面向 security、logistics、healthcare、industrial testing 等机构环境。EVE 的意义不只在收入，而在训练安全执行器、全身控制、远程操作流程和真实部署运维。相比 NEO 家庭业务，EVE/企业业务更可能采用客户合同、租赁或 RaaS，但公开材料没有给出标准价格和客户合同金额。</p>
+</section>
+<section class="section" id="sec-4">
+<h2 class="section-title"><span class="sec-num">4</span>产品与技术</h2>
+<h3 class="subsection">4.1 NEO Home Robot</h3>
+<p>NEO 官网披露了较完整的硬件参数:</p>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">身高</td><td class="kv-val">5'6"</td></tr><tr><td class="kv-key">重量</td><td class="kv-val">66 lbs</td></tr><tr><td class="kv-key">Lift</td><td class="kv-val">154 lbs</td></tr><tr><td class="kv-key">Carry</td><td class="kv-val">55 lbs</td></tr><tr><td class="kv-key">Arm payload</td><td class="kv-val">18 lbs</td></tr><tr><td class="kv-key">手部自由度</td><td class="kv-val">22 x 2</td></tr><tr><td class="kv-key">行走速度</td><td class="kv-val">1.4 m/s</td></tr><tr><td class="kv-key">Max run speed</td><td class="kv-val">6.2 m/s</td></tr><tr><td class="kv-key">电池</td><td class="kv-val">842 Wh</td></tr><tr><td class="kv-key">Run-time</td><td class="kv-val">4h</td></tr><tr><td class="kv-key">快充</td><td class="kv-val">6 min per hour runtime</td></tr><tr><td class="kv-key">噪音</td><td class="kv-val">22 dB</td></tr><tr><td class="kv-key">计算</td><td class="kv-val">1X NEO Cortex，Nvidia Jetson Thor；up to 2070 FP4 TFLOPS</td></tr><tr><td class="kv-key">摄像头</td><td class="kv-val">Dual 8.85MP 90Hz Stereo Fisheye</td></tr><tr><td class="kv-key">通信</td><td class="kv-val">Wi-Fi、Bluetooth、5G</td></tr><tr><td class="kv-key">安全</td><td class="kv-val">Soft body、no pinchpoints、HIC <250、low inertia tendon drives</td></tr></tbody></table></div>
+<p>这些参数体现 1X 的设计哲学:NEO 不追求最大负载，而追求家庭安全、轻量、柔顺、低噪和人类空间适配。66 lbs 明显低于很多工业 humanoid，软体和 tendon-driven actuation 用于降低碰撞风险。IP68 hands、IP44 body、machine washable suit 等细节也更像家庭产品。</p>
+<h3 class="subsection">4.2 Redwood AI</h3>
+<p>Redwood AI 是 1X 面向 NEO 的 generalist AI model。官网称 Redwood 使 NEO 能移动、感知、交互并自主完成家庭任务。2025-06 的 Redwood mobility 更新称其 RL controller 支持自然行走、坐下、站立、跪下和爬楼梯，并可结合 stereo vision；同页还强调 Redwood 能训练成功和失败样本、处理 never-before-seen objects、结合 off-board language model 理解用户意图。</p>
+<p>Redwood 的核心挑战是家庭任务长尾。工业机器人可以固定“搬一个 tote 到 conveyor”，家庭机器人要处理“把这个地方收拾一下”“把衣服叠好”“把杯子放回柜子”“厨房台面擦干净”这类目标模糊、环境变化大的任务。1X 因此把世界模型作为 AI 路线重点。</p>
+<h3 class="subsection">4.3 1X World Model</h3>
+<p>1X 2025-06 和 2026-01 的 World Model 文章解释了其技术路径。1XWM 是 video model grounded in physics，用于预测 NEO 动作后世界如何变化。2026-01 文章更进一步，把 world model 集成到 NEO policy:</p>
+<ul><li>使用 text-conditioned video generation 生成未来视频；</li><li>World Model backbone 建在 14B generative video model 上；</li><li>先用 900 小时 egocentric human video 做 mid-training；</li><li>再用 70 小时 robot data 做 embodiment fine-tuning；</li><li>IDM 用 400 小时 unfiltered robot data 训练，从生成帧反推出动作；</li><li>文中展示抓取、双手、人机互动、新任务泛化等实验；</li><li>部分任务依然存在深度理解、物体一致性和成功率不足问题，例如 pull tissue 任务多次 rollouts 后成功率从 30% 提高到 45%。</li></ul>
+<p>这份技术披露很有价值，因为它没有只讲“机器人很聪明”，也承认生成 rollout 可能视觉上合理但物理上失败。1X 的路线是用互联网视频 + egocentric human video + NEO 真实数据降低对大规模 teleoperation 的依赖。如果成立，家庭数据收集成本会下降；如果不成立，NEO 仍要大量依赖 Expert/遥操作，单位经济性会很差。</p>
+<h3 class="subsection">4.4 NEO Factory / 制造</h3>
+<p>1X 官网称 Hayward NEO Factory 有年产 10,000 台 NEO 的 capacity。2026 年文章和媒体报道提到 58,000 平方英尺级别设施、约 200 名员工、NEO 机器人参与轻量搬运/分拣/取料等生产辅助。与 Figure BotQ 一样，“机器人建造机器人”是叙事重点，但当前更现实的理解是人类工人仍承担主要组装、测试和质量控制，NEO 辅助部分物料流。</p>
+<p>NEO 工厂能力的关键核验点是实际出货。年产能是设计能力，不代表 2026 会交付 10,000 台。家庭机器人还需要包装、安装、远程支持、维修、更换软体、电池服务和客户教育，这些都比工厂内 RaaS 更复杂。</p>
+</section>
+<section class="section" id="sec-5">
+<h2 class="section-title"><span class="sec-num">5</span>商业化与运营指标</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>投资解读</th></tr></thead><tbody><tr><td>NEO deposit</td><td>官网显示 $200 deposit</td><td>已从概念进入消费者预订阶段</td></tr><tr><td>NEO price</td><td>媒体口径 $20,000 or $499/month</td><td>家用 humanoid 首个明确价格锚之一</td></tr><tr><td>交付时间</td><td>公开报道称美国 early customers 2026，全球 2027 线索</td><td>需核验实际交付和退款</td></tr><tr><td>工厂产能</td><td>Hayward NEO Factory capacity 10,000 NEO/year</td><td>产能不等于出货，需看良率与供应链</td></tr><tr><td>AI 团队招聘</td><td>官网 65 open roles；World Model Lab 2026 成立</td><td>公司在扩大 AI/制造/安全团队</td></tr><tr><td>近期高管</td><td>2026-07 欢迎 Bill Nash 任 CFO；2026-06 Tom Sanocki 任 VP Engineering</td><td>为规模化、资本化和产品工程补管理层</td></tr><tr><td>公开融资</td><td>2023 Series A2 $23.5M；2024 Series B $100M</td><td>资金量低于 Figure/Apptronik/Agility，但战略投资方强</td></tr><tr><td>自主性争议</td><td>New Yorker 2026 文章称现场看到大量 teleoperation，1X 没展示 AI demo</td><td>早期能力与消费承诺之间存在张力</td></tr></tbody></table></div>
+<p>1X 的商业化判断要同时看“订单/预订”和“可用性”。家庭用户愿意支付 $200 deposit 不等于愿意承担 $20,000 购买、长期订阅、家庭数据分享和 Expert 远程进入。真正强的指标应该是已交付 NEO 数量、活跃家庭数、每周完成任务数、每任务人工介入比例、订阅留存、退款率、事故率和 NPS。</p>
+</section>
+<section class="section" id="sec-6">
+<h2 class="section-title"><span class="sec-num">6</span>融资历程完整时间线</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>日期</th><th>轮次/事件</th><th>金额</th><th>估值</th><th>投资方</th><th>说明</th></tr></thead><tbody><tr><td>2014</td><td>Halodi Robotics 成立</td><td>非融资</td><td>非融资</td><td>Bernt Børnich 创立</td><td>早期聚焦安全执行器、EVE 和机构场景</td></tr><tr><td>2022</td><td>更名为 1X Technologies</td><td>非融资</td><td>非融资</td><td>非融资</td><td>战略转向 humanoid / household robotics</td></tr><tr><td>2023-03</td><td>Series A2</td><td>$23.5M</td><td>公开材料没有给出</td><td>OpenAI Startup Fund 领投；Tiger Global、Sandwater、Alliance Ventures、Skagerak 等参与</td><td>为 humanoid robots 和 AI 能力扩张融资</td></tr><tr><td>2024-01</td><td>Series B</td><td>$100M</td><td>公开材料没有给出</td><td>EQT Ventures 领投；Samsung NEXT、Nistad Group、现有投资方参与</td><td>加速 NEO 推向家庭市场</td></tr><tr><td>2025-01</td><td>收购 Kind Humanoid</td><td>金额未公开</td><td>非融资</td><td>1X + Kind Humanoid</td><td>扩充家庭 humanoid 团队与技术</td></tr><tr><td>2025-09</td><td>寻求新融资媒体线索</td><td>据称目标 $1B</td><td>媒体线索</td><td>公开材料未形成官方完成公告</td><td>用于 NEO 家庭部署与开发</td></tr></tbody></table></div>
+<p>融资解读:</p>
+<ul><li>OpenAI Startup Fund 的早期背书让 1X 在 AI 机器人叙事中占位很早；</li><li>EQT/Samsung/Nistad 说明欧洲和亚洲战略资本也在关注家庭机器人；</li><li>与 Figure/Apptronik 近 $1B 级融资相比，1X 公开融资额更低，可能更依赖预订、效率和后续大轮融资；</li><li>CFO 在 2026-07 加入值得跟踪，可能与规模化交付、融资或更规范的资本化准备有关。</li></ul>
+</section>
+  <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="agibot_智元机器人.html">AgiBot</a><a class="sib-chip" href="agility_robotics.html">Agility Robotics</a><a class="sib-chip" href="apptronik.html">Apptronik</a><a class="sib-chip" href="figure_ai.html">Figure AI</a><a class="sib-chip" href="neura_robotics.html">Neura Robotics</a><a class="sib-chip" href="noetix_robotics_破壳机器人.html">Noetix Robotics</a><a class="sib-chip" href="robot_era_星动纪元.html">Robot Era</a><a class="sib-chip" href="x_square_robot_星海图.html">X Square Robot</a></div>
+</div>
+</body></html>

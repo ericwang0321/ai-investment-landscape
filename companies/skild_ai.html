@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skild AI · 深度研究</title><style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1a1f36;--ink2:#475569;--ink3:#94a3b8;--line:#e5e8ee;--accent:#2563eb;--accent2:#1e40af;--accent-bg:#eff4ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:13px;font-family:"SF Mono",Menlo,monospace}
+
+/* 顶部栏(返回按钮) */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:11px 28px;display:flex;align-items:center;gap:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:7px 15px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:var(--accent2);text-decoration:none}
+.topbar .crumb{color:var(--ink3);font-size:13px}
+
+/* 共用 section/表格 */
+.section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 28px;margin-bottom:12px;scroll-margin-top:64px}
+.section-title{margin:0 0 15px;font-size:18px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:2px solid var(--accent-bg)}
+.sec-num{background:var(--accent);color:#fff;font-size:12px;font-weight:700;width:23px;height:23px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.subsection{margin:18px 0 8px;font-size:15px;font-weight:700;color:var(--accent2);padding-left:9px;border-left:3px solid var(--accent)}
+.sub4{margin:14px 0 6px;font-size:13.5px;font-weight:600;color:var(--ink2)}
+.section p{margin:9px 0;color:var(--ink)}
+.section ul,.section ol{margin:9px 0;padding-left:21px}.section li{margin:5px 0;color:var(--ink)}.section li::marker{color:var(--accent)}
+blockquote{margin:12px 0;padding:11px 15px;background:#fffbeb;border-left:4px solid #d97706;border-radius:0 8px 8px 0;color:#78350f;font-size:13.5px}
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:#f8fafc;font-weight:700;text-align:left;padding:9px 13px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
+.kv-table .kv-key{background:#f8fafc;font-weight:600;color:var(--ink2);width:155px;white-space:nowrap}
+
+.dc-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin:24px auto 16px;max-width:980px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.dc-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.dc-badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:14px}
+.dc-layer{font-size:11px;font-weight:600;color:var(--ink2);background:#eef2f7;padding:3px 10px;border-radius:14px}
+.dc-region{font-size:11px;color:var(--ink3)}
+.dc-title{font-size:26px;font-weight:800;letter-spacing:-.4px;color:var(--ink);margin-bottom:8px}
+.dc-oneliner{font-size:14.5px;line-height:1.7;color:var(--ink);background:var(--accent-bg);border-left:4px solid var(--accent);padding:14px 18px;border-radius:0 10px 10px 0}
+.content{max-width:980px;margin:0 auto;padding:0 0 60px}
+.siblings{max-width:980px;margin:24px auto 60px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.siblings .st{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.sib-chip{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 11px;font-size:12.5px;color:var(--ink2);margin:3px 4px 3px 0}
+.sib-chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+</style></head><body>
+<div class="topbar">
+  <a class="back-btn" href="../matrix.html">← 返回首页</a>
+  <span class="crumb">AI 一级市场投资 · 机器人/具身智能</span>
+</div>
+<div class="content">
+  <div class="dc-card">
+    <div class="dc-badges">
+      <span class="dc-badge" style="background:#f0f9ff;color:#0369a1">机器人/具身智能</span>
+      <span class="dc-layer">模型</span>
+      <span class="dc-region">美国，Pittsburgh / San Mateo</span>
+    </div>
+    <h1 class="dc-title">Skild AI</h1>
+    <div class="dc-oneliner">Skild AI 是 physical AI 赛道里最接近“通用机器人大脑供应商”的公司之一。</div>
+  </div>
+  <section class="section" id="sec-1">
+<h2 class="section-title"><span class="sec-num">1</span>一句话结论</h2>
+<p><strong>Skild AI 是 physical AI 赛道里最接近“通用机器人大脑供应商”的公司之一。</strong></p>
+<p>它不把价值押在单一 humanoid 本体，而是要训练可跨机器人形态、任务和环境迁移的 Skild Brain，让安防巡检、仓储、制造、建筑、数据中心、家庭服务等机器人获得通用感知、运动和操作能力。公司由 CMU 机器人/AI 学者 Deepak Pathak、Abhinav Gupta 创立，2024 年完成 $300M Series A、估值约 $1.5B，投资方包括 Lightspeed、Coatue、SoftBank、Jeff Bezos 等；后续市场有更大额融资和更高估值报道，但具体条款需以后续官方/监管材料继续核验。</p>
+<p>投资上，Skild 的上行来自成为多硬件平台的 robot foundation model 层；下行来自 Physical Intelligence、Figure Helix、Google DeepMind Gemini Robotics、NVIDIA GR00T/Cosmos、Tesla Optimus、Apptronik、Agility、Unitree/智元等硬件闭环玩家，以及真实世界机器人数据、客户部署和安全责任的商业化难度。</p>
+</section>
+<section class="section" id="sec-2">
+<h2 class="section-title"><span class="sec-num">2</span>公司概览</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">公司名称</td><td class="kv-val">Skild AI</td></tr><tr><td class="kv-key">成立时间</td><td class="kv-val">2023 年前后</td></tr><tr><td class="kv-key">总部</td><td class="kv-val">Pittsburgh / San Mateo / Bay Area 相关布局</td></tr><tr><td class="kv-key">创始人</td><td class="kv-val">Deepak Pathak、Abhinav Gupta，均为 CMU 机器人和 AI 领域学者</td></tr><tr><td class="kv-key">核心定位</td><td class="kv-val">General-purpose robot brain / foundation model for robotics</td></tr><tr><td class="kv-key">主要产品</td><td class="kv-val">Skild Brain，跨本体机器人控制模型与软件平台</td></tr><tr><td class="kv-key">目标客户</td><td class="kv-val">机器人硬件厂商、企业 automation customers、安防、仓储、制造、建筑、数据中心、未来家庭机器人</td></tr><tr><td class="kv-key">商业模式</td><td class="kv-val">软件授权、按机器人/fleet 收费、企业部署、联合研发、数据/模型服务</td></tr><tr><td class="kv-key">最新可靠融资锚点</td><td class="kv-val">2024 年 $300M Series A，估值约 $1.5B</td></tr><tr><td class="kv-key">主要投资方</td><td class="kv-val">Lightspeed Venture Partners、Coatue、SoftBank Group、Jeff Bezos、Felicis、Sequoia、Menlo Ventures、General Catalyst 等公开报道线索</td></tr><tr><td class="kv-key">资本化状态</td><td class="kv-val">私营公司，截至 2026 年 7 月 6 日 无公开 IPO registration</td></tr></tbody></table></div>
+<p>Skild 的战略定位与 Physical Intelligence 接近:如果未来机器人硬件逐渐标准化，价值可能上移到控制模型、数据、任务泛化和安全层。不同于 Figure、Apptronik、1X、Agility 这类自有机器人公司，Skild 更像要做“robot OS / robot brain”。它希望模型能接入不同机器人，包括四足、双足、人形、移动操作臂、轮式平台和工业设备。</p>
+<p>这个定位的想象空间很大，但商业验证也更难。语言模型可以通过 API 服务无数软件场景，机器人模型必须落到具体硬件、真实物理环境、低延迟控制和安全责任。Skild 要证明自己不仅有研究能力，还能把模型部署到客户现场，处理跌倒、碰撞、抓取失败、传感器漂移、电池、维修和责任边界。</p>
+</section>
+<section class="section" id="sec-3">
+<h2 class="section-title"><span class="sec-num">3</span>业务模式与收费方式</h2>
+<h3 class="subsection">3.1 Robot brain licensing</h3>
+<p>Skild 最自然的商业模式是把 Skild Brain 授权给硬件厂商或企业客户。收费可能包括:</p>
+<ul><li><strong>per-robot license</strong>:按每台机器人每月/每年收取软件授权。</li><li><strong>fleet license</strong>:按客户机器人 fleet 规模或站点数收费。</li><li><strong>runtime usage</strong>:按机器人运行小时、任务次数或推理调用收费。</li><li><strong>fine-tuning / deployment fee</strong>:针对客户场景采集数据、微调模型、验证安全和上线。</li><li><strong>support / SLA</strong>:为生产环境提供 uptime、远程监控、版本回滚和事故支持。</li></ul>
+<p>如果这一模式成立，Skild 的毛利潜力高于硬件公司。但前提是模型可跨本体复用，部署边际成本下降，而不是每个客户都变成定制工程项目。</p>
+<h3 class="subsection">3.2 企业 automation deployment</h3>
+<p>Skild 也可能直接与企业客户合作，把第三方机器人本体、Skild Brain 和现场服务打包。早期场景更可能是高 ROI、半结构化、对人员短缺敏感的任务，例如:</p>
+<ul><li>安防巡检、危险区域检查；</li><li>仓储搬运、分拣、补货；</li><li>制造工厂线边配送、简单装配、质检；</li><li>建筑工地巡检和物料移动；</li><li>数据中心巡检、设备检查和物理运维；</li><li>未来家庭机器人和服务机器人技能。</li></ul>
+<p>企业部署收入更容易早期落地，但毛利低于纯软件授权。Skild 需要在“自己做解决方案”与“成为平台供应商”之间取舍。</p>
+<h3 class="subsection">3.3 数据合作与模型飞轮</h3>
+<p>机器人基础模型最缺的是真实世界交互数据。Skild 如果与多家硬件厂商和企业客户合作，理论上能获得比单一本体公司更广的多样数据。但数据权利复杂:</p>
+<ul><li>硬件厂商是否允许 Skild 用机器人数据训练通用模型；</li><li>企业客户是否允许现场视频、工艺、人员和设备数据回流；</li><li>数据是否涉及隐私、安全、商业机密或国防场景；</li><li>不同本体的数据如何统一成可训练表示；</li><li>模型改进后收益如何在客户之间分配。</li></ul>
+<p>Skild 的长期护城河不只是算法，而是高质量、多本体、多任务数据网络。</p>
+</section>
+<section class="section" id="sec-4">
+<h2 class="section-title"><span class="sec-num">4</span>产品与技术</h2>
+<h3 class="subsection">4.1 Skild Brain</h3>
+<p>Skild Brain 是公司的核心产品概念，可理解为通用机器人控制模型。它需要把视觉、语言、机器人状态、触觉/力觉、深度、地图、历史记忆和任务目标转化成动作。与传统机器人控制不同，Skild Brain 的目标不是为每个任务写固定程序，而是让机器人像大模型一样通过数据获得泛化能力。</p>
+<p>Skild Brain 的关键技术挑战包括:</p>
+<ul><li><strong>跨本体迁移</strong>:不同机器人有不同关节、传感器、动力学和运动约束。</li><li><strong>长时任务</strong>:真实任务往往需要多步规划、记忆、失败恢复和重新尝试。</li><li><strong>低层控制</strong>:机器人动作需要高频、稳定、可安全约束。</li><li><strong>语义理解</strong>:模型必须理解自然语言指令和环境中的物体/目标。</li><li><strong>安全约束</strong>:输出动作不能伤人、撞坏设备或造成连锁事故。</li><li><strong>sim-to-real</strong>:仿真训练必须能迁移到真实硬件。</li></ul>
+<p>从产品化角度看，Skild Brain 还需要把“模型能力”包装成企业能采购的模块。客户不会直接购买一个抽象 foundation model，而会购买巡检、搬运、开门、按按钮、识别异常、补货、操作工具等可验收任务。Skild 的产品团队需要把通用模型拆成技能目录、权限控制、日志回放、失败处理和版本管理，否则销售周期会被现场定制拖慢。</p>
+<h3 class="subsection">4.2 Cross-embodiment foundation model</h3>
+<p>Skild 的差异化在“cross-embodiment”。如果模型只适配某一台机器人，本质上是该硬件的控制软件；如果能适配多类机器人，它才是平台。跨本体模型需要统一表示不同机器人的动作空间和观测空间，并在训练中利用多源数据。Skild 创始团队的机器人学习背景正好服务这个方向。</p>
+<p>跨本体路线的商业价值是硬件厂商不用从零训练机器人智能，客户也不被单一硬件锁死。风险是不同硬件的机械能力差异太大，通用模型可能在每个本体上都不如专用模型稳定。</p>
+<h3 class="subsection">4.3 Learning from internet video, simulation and robot data</h3>
+<p>机器人数据稀缺，因此行业普遍尝试把互联网视频、human demonstration、simulation、teleoperation 和真实机器人日志结合。Skild 可能利用:</p>
+<ul><li>互联网视频学习物体、动作和常识；</li><li>人类遥操作数据学习任务流程；</li><li>仿真数据覆盖危险/稀缺场景；</li><li>真实机器人数据校准物理接触和失败模式；</li><li>强化学习提升成功率和恢复能力。</li></ul>
+<p>这与 Physical Intelligence、Google DeepMind、Figure、1X、Apptronik 等方向一致。竞争焦点不是谁先发布模型名，而是谁能持续获得可训练数据并让模型在真实环境中提高成功率。</p>
+<h3 class="subsection">4.4 Safety layer and deployment tooling</h3>
+<p>商业客户不会购买一个不可控的 robot brain。Skild 需要提供安全层、任务边界、速度/力限制、地理围栏、远程接管、日志、回放、版本管理和故障诊断。真实部署中，软件平台必须与机器人硬件、现场安全制度、保险和监管要求结合。</p>
+</section>
+<section class="section" id="sec-5">
+<h2 class="section-title"><span class="sec-num">5</span>商业化与运营指标</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>投资解读</th></tr></thead><tbody><tr><td>2024 Series A</td><td>$300M</td><td>机器人 foundation model 赛道早期大额融资，资本认可度高</td></tr><tr><td>2024 估值</td><td>约 $1.5B</td><td>已按平台型 AI 公司定价，而不是普通机器人软件</td></tr><tr><td>投资方</td><td>Lightspeed、Coatue、SoftBank、Jeff Bezos 等</td><td>顶级金融资本和战略资本背书</td></tr><tr><td>后续融资报道</td><td>市场有 2025–2026 更大额融资和更高估值线索</td><td>条款需要以后续官方/监管材料核验</td></tr><tr><td>客户/收入</td><td>公司没有给出标准价格表、客户数量、ARR 或毛利</td><td>商业化仍是最大验证点</td></tr><tr><td>产品部署</td><td>Skild Brain 处于从技术展示到企业落地的阶段</td><td>需跟踪真实客户、机器人数量和运行小时</td></tr></tbody></table></div>
+<p>Skild 的商业化证据目前弱于硬件公司公开部署。Figure 有 BMW，Agility 有 Digit 客户设施，Apptronik 有 Jabil/Mercedes/Google DeepMind，1X 有 NEO 预订叙事；Skild 作为软件层公司如果没有命名客户和机器人运行小时，投资人只能先按团队、技术和融资背书定价。下一阶段最重要的是客户案例。</p>
+<p>Skild 也可能先从“高价值但低公众可见度”的企业场景落地，例如数据中心巡检、能源设施、仓库夜间巡逻、制造工位辅助和危险环境检查。这类客户不一定公开披露供应商，但会对 uptime、任务成功率、事故率、远程接管比例和维护响应有严格要求。因此研究时不能只等消费级发布会，也要追踪招聘、合作伙伴、行业展会、客户采购和安全认证线索。</p>
+</section>
+<section class="section" id="sec-6">
+<h2 class="section-title"><span class="sec-num">6</span>融资历程完整时间线</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>日期</th><th>轮次/事件</th><th>金额</th><th>估值</th><th>投资方</th><th>说明</th></tr></thead><tbody><tr><td>2023 前后</td><td>公司成立</td><td></td><td></td><td>Deepak Pathak、Abhinav Gupta</td><td>从 CMU 机器人学习体系创业</td></tr><tr><td>2024-07</td><td>Series A</td><td>$300M</td><td>约 $1.5B</td><td>Lightspeed Venture Partners、Coatue、SoftBank Group、Jeff Bezos 等；另有 Felicis、Sequoia、Menlo、General Catalyst 等报道线索</td><td>用于构建 scalable AI foundation model for robotics</td></tr><tr><td>2025</td><td>市场融资线索</td><td>二级来源称公司继续接触/完成更大融资</td><td>更高估值线索</td><td>SoftBank、NVIDIA/Samsung/LG/Schneider/Salesforce 等市场线索</td><td>需以后续公司公告、监管文件或权威媒体确认最终条款</td></tr><tr><td>2026</td><td>后续融资与商业化跟踪</td><td>市场有超过十亿美元级融资传闻</td><td>十亿美元级以上估值线索</td><td>战略/成长资本线索</td><td>本稿不把未经正式文件确认的数字作为确定事实</td></tr></tbody></table></div>
+<p>融资解读:</p>
+<ul><li>2024 Series A 是 Skild 最可靠的公开融资锚点，金额和估值已经很高；</li><li>后续融资传闻若成立，说明资本市场把 robot foundation model 视为 frontier AI 延伸；</li><li>战略投资方越多，潜在客户入口越多，但也可能带来数据权益和排他性冲突；</li><li>Skild 若无法很快给出客户和收入，估值会高度依赖赛道情绪。</li></ul>
+</section>
+  <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="1x_technologies.html">1X Technologies</a><a class="sib-chip" href="agibot_智元机器人.html">AgiBot</a><a class="sib-chip" href="agility_robotics.html">Agility Robotics</a><a class="sib-chip" href="apptronik.html">Apptronik</a><a class="sib-chip" href="neura_robotics.html">Neura Robotics</a><a class="sib-chip" href="noetix_robotics_破壳机器人.html">Noetix Robotics</a><a class="sib-chip" href="robot_era_星动纪元.html">Robot Era</a><a class="sib-chip" href="x_square_robot_星海图.html">X Square Robot</a></div>
+</div>
+</body></html>

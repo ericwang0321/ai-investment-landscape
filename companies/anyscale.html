@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anyscale · 深度研究</title><style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1a1f36;--ink2:#475569;--ink3:#94a3b8;--line:#e5e8ee;--accent:#2563eb;--accent2:#1e40af;--accent-bg:#eff4ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:13px;font-family:"SF Mono",Menlo,monospace}
+
+/* 顶部栏(返回按钮) */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:11px 28px;display:flex;align-items:center;gap:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:7px 15px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:var(--accent2);text-decoration:none}
+.topbar .crumb{color:var(--ink3);font-size:13px}
+
+/* 共用 section/表格 */
+.section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 28px;margin-bottom:12px;scroll-margin-top:64px}
+.section-title{margin:0 0 15px;font-size:18px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:2px solid var(--accent-bg)}
+.sec-num{background:var(--accent);color:#fff;font-size:12px;font-weight:700;width:23px;height:23px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.subsection{margin:18px 0 8px;font-size:15px;font-weight:700;color:var(--accent2);padding-left:9px;border-left:3px solid var(--accent)}
+.sub4{margin:14px 0 6px;font-size:13.5px;font-weight:600;color:var(--ink2)}
+.section p{margin:9px 0;color:var(--ink)}
+.section ul,.section ol{margin:9px 0;padding-left:21px}.section li{margin:5px 0;color:var(--ink)}.section li::marker{color:var(--accent)}
+blockquote{margin:12px 0;padding:11px 15px;background:#fffbeb;border-left:4px solid #d97706;border-radius:0 8px 8px 0;color:#78350f;font-size:13.5px}
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:#f8fafc;font-weight:700;text-align:left;padding:9px 13px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
+.kv-table .kv-key{background:#f8fafc;font-weight:600;color:var(--ink2);width:155px;white-space:nowrap}
+
+.dc-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin:24px auto 16px;max-width:980px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.dc-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.dc-badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:14px}
+.dc-layer{font-size:11px;font-weight:600;color:var(--ink2);background:#eef2f7;padding:3px 10px;border-radius:14px}
+.dc-region{font-size:11px;color:var(--ink3)}
+.dc-title{font-size:26px;font-weight:800;letter-spacing:-.4px;color:var(--ink);margin-bottom:8px}
+.dc-oneliner{font-size:14.5px;line-height:1.7;color:var(--ink);background:var(--accent-bg);border-left:4px solid var(--accent);padding:14px 18px;border-radius:0 10px 10px 0}
+.content{max-width:980px;margin:0 auto;padding:0 0 60px}
+.siblings{max-width:980px;margin:24px auto 60px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.siblings .st{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.sib-chip{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 11px;font-size:12.5px;color:var(--ink2);margin:3px 4px 3px 0}
+.sib-chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+</style></head><body>
+<div class="topbar">
+  <a class="back-btn" href="../matrix.html">← 返回首页</a>
+  <span class="crumb">AI 一级市场投资 · 应用使能/Infra</span>
+</div>
+<div class="content">
+  <div class="dc-card">
+    <div class="dc-badges">
+      <span class="dc-badge" style="background:#f0fdf4;color:#15803d">应用使能/Infra</span>
+      <span class="dc-layer">应用</span>
+      <span class="dc-region">美国</span>
+    </div>
+    <h1 class="dc-title">Anyscale</h1>
+    <div class="dc-oneliner">Anyscale 是 Ray 开源分布式计算框架背后的商业公司：定位不是普通云主机或单一推理 API,而是帮助企业和 AI 团队在 GPU/CPU 集群上开发、扩展、部署和运维 AI workloads 的 managed platform。</div>
+  </div>
+  <section class="section" id="sec-1">
+<h2 class="section-title"><span class="sec-num">1</span>一句话结论</h2>
+<p><strong>Anyscale 是 Ray 开源分布式计算框架背后的商业公司：定位不是普通云主机或单一推理 API,而是帮助企业和 AI 团队在 GPU/CPU 集群上开发、扩展、部署和运维 AI workloads 的 managed platform。</strong></p>
+<p>它从 AI 模型/应用生态赚钱的方式是: 模型训练、fine-tuning、batch inference、online serving、RL、data processing、simulation 和 agent workloads 都需要跨机器调度、弹性扩缩、成本优化和生产运维：Anyscale 通过 managed Ray、workspaces、jobs、services、observability、autoscaling、BYOC 和 enterprise support 收取 usage / annual contract。</p>
+<p>投资判断上：Anyscale 的核心资产是 Ray 的开源渗透和大型企业/AI-native 生产使用场景。Ray 已被用于 OpenAI、Uber、Instacart、Spotify、Netflix、Shopify、LinkedIn、Ant Group、Amazon、Microsoft 等公开案例/生态叙事，并成为 RL、training、serving、batch inference、data processing 的通用分布式 Python 层。Anyscale 的商业挑战是: 开源 Ray 的使用不等于 Anyscale Cloud 付费；Databricks、Snowflake、Kubernetes、AWS/GCP/Azure、Modal、Baseten、Fireworks、Together 等都在争夺 AI workload orchestration 和 inference/deployment 预算。</p>
+<p>公司需要证明自己能把 Ray 社区转化为高 ACV enterprise infra 平台。</p>
+</section>
+<section class="section" id="sec-2">
+<h2 class="section-title"><span class="sec-num">2</span>公司概览</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">公司</td><td class="kv-val">Anyscale, Inc.</td></tr><tr><td class="kv-key">成立时间</td><td class="kv-val">2019 年</td></tr><tr><td class="kv-key">创始团队</td><td class="kv-val">Ion Stoica、Robert Nishihara、Philipp Moritz、Michael I. Jordan 等 UC Berkeley RISELab / Ray 相关团队</td></tr><tr><td class="kv-key">总部</td><td class="kv-val">San Francisco Bay Area</td></tr><tr><td class="kv-key">开源核心</td><td class="kv-val">Ray,用于分布式 Python、ML、AI workloads 的开源框架</td></tr><tr><td class="kv-key">商业产品</td><td class="kv-val">Anyscale Platform / Anyscale Cloud,包括 workspaces、jobs、services、clusters、observability、RayTurbo、Ray Serve、Ray Data 等</td></tr><tr><td class="kv-key">收入模式</td><td class="kv-val">Usage-based ACU / compute charges、cloud infrastructure pass-through or customer cloud resources、enterprise contracts、committed-use discounts、support/professional services</td></tr><tr><td class="kv-key">目标客户</td><td class="kv-val">AI labs、LLM app teams、enterprise ML platforms、data science teams、simulation/RL teams</td></tr><tr><td class="kv-key">融资</td><td class="kv-val">2020 Series A $20.6M; 2020 Series B $40M; 2021 Series C $100M; 2022 Series C extension $99M;估值报道约 $1B+</td></tr><tr><td class="kv-key">价值链位置</td><td class="kv-val">AI compute orchestration/runtime layer,位于 GPU/云资源与模型训练/推理/数据处理应用之间</td></tr></tbody></table></div>
+<p>Anyscale 和 Ray 的关系类似 Databricks 与 Apache Spark 的早期商业化路径: 开源框架解决技术标准和开发者采用,商业公司提供 managed cloud、enterprise controls、performance optimization、support 和生产运维。Ray 的吸引力在于 Python-first,能让 ML/AI 工程师从单机代码扩展到集群,而不必先成为 Kubernetes/Spark/HPC 专家。</p>
+<p>到 2026 年,Anyscale 的定位更清晰地围绕"AI applications on Ray"和"GPU workloads"。定价页显示其以 Anyscale Credits 计费,分别对 head node 和 worker nodes 收取 platform fee,并列出 CPU、GPU、Train、Serve 等 workload 价格区间;同时支持 AWS、GCP、Azure 和 KubeRay,适合企业在自有云账户或多云环境中部署。</p>
+</section>
+<section class="section" id="sec-3">
+<h2 class="section-title"><span class="sec-num">3</span>业务模式与收费方式</h2>
+<h3 class="subsection">3.1 Anyscale Credits / platform fee</h3>
+<p>官方 pricing 页面显示 Anyscale 使用 ACU: 1 ACU = $1。公司分别对 cluster head node 和 worker nodes 收取 platform charges:</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>计费项</th><th>官方示例价格</th><th>含义</th></tr></thead><tbody><tr><td>Head node</td><td>$0.30 per hour</td><td>平台控制面/调度节点费用</td></tr><tr><td>Worker nodes - CPU tasks and actors</td><td>$0.25 per hour</td><td>普通 CPU workload</td></tr><tr><td>Worker nodes - GPU tasks and actors</td><td>$0.35 per hour</td><td>GPU workload 平台费</td></tr><tr><td>Worker nodes - Train workloads</td><td>$0.35 per hour</td><td>distributed training</td></tr><tr><td>Worker nodes - Serve workloads</td><td>$0.45 per hour</td><td>online serving / inference</td></tr></tbody></table></div>
+<p>这类费用通常叠加底层云资源成本。Anyscale 的商业本质是对客户使用云/GPU 资源的调度、开发体验、运维、性能和支持收取平台层费用,而不是只转售 GPU。</p>
+<h3 class="subsection">3.2 实例小时价格信号</h3>
+<p>定价页列出部分实例级 all-in 或示例价格,例如:</p>
+<ul><li>CPU: m7i.large $0.18/hour,c3-standard-4 $0.21/hour,Standard_D2_v5 $0.17/hour;</li><li>GPU: g5.xlarge $1.46/hour,g4dn.xlarge $0.88/hour,a2-highgpu-1g $3.78/hour,NC4as_T4_v3 $0.93/hour;</li><li>8x H100: p5.48xlarge $105.75/hour,a3-highgpu-8g $96.05/hour,ND96isr_H100_v5 $123.82/hour;</li><li>8x A100: p4de.24xlarge $60.32/hour,a2-ultragpu-8g $43.85/hour。</li></ul>
+<p>这些价格会随 cloud、region、commit 和市场变化而变,但显示 Anyscale 的客户通常运行昂贵 GPU workloads。它的价值在于提高 GPU utilization、缩短开发部署时间、减少 infra team 负担。</p>
+<h3 class="subsection">3.3 Self-serve 到 Enterprise</h3>
+<p>定价页显示产品层包括:</p>
+<ul><li>free credits / signup;</li><li>usage-based pay as you go;</li><li>startups credits;</li><li>enterprise platform,custom commit,discounts,security controls,support,architectural guidance。</li></ul>
+<p>Anyscale 的真正收入可能主要来自 annual enterprise contracts 和 committed usage,因为大型 AI workloads 的自助刷卡规模有限。客户会要求:</p>
+<ul><li>BYOC / VPC isolation;</li><li>IAM、SSO、audit、private networking;</li><li>SLA and premium support;</li><li>cost controls and budgets;</li><li>Kubernetes / KubeRay compatibility;</li><li>observability and logs;</li><li>integration with data stores and model registries。</li></ul>
+<h3 class="subsection">3.4 与 AI 模型/应用生态的赚钱关系</h3>
+<p>Anyscale 从模型生态中捕捉的是"分布式执行复杂性":</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>AI workload</th><th>Ray/Anyscale 价值</th><th>收费驱动</th></tr></thead><tbody><tr><td>Training / fine-tuning</td><td>多 GPU/多节点调度、fault tolerance、job management</td><td>GPU worker hours、Train workload fee、enterprise support</td></tr><tr><td>Batch inference</td><td>海量离线推理、数据并行、autoscaling</td><td>CPU/GPU worker hours、jobs volume</td></tr><tr><td>Online serving</td><td>Ray Serve 部署模型 endpoints、autoscaling、rollouts</td><td>Serve workload fee、GPU hours、SLA</td></tr><tr><td>RL / simulation</td><td>多 actor 环境、rollout workers、policy training</td><td>CPU/GPU worker hours、cluster scale</td></tr><tr><td>Data processing</td><td>Ray Data 处理大规模非结构化/embedding/ETL</td><td>CPU/GPU worker hours</td></tr><tr><td>Agents</td><td>多工具、多任务、多模型 workloads</td><td>jobs/services usage、observability</td></tr></tbody></table></div>
+<p>因此 Anyscale 与 OpenAI/Anthropic API 不是同层竞争。客户使用 proprietary API 时可能不需要 Anyscale;但客户训练/部署开源模型、自有模型、RL agent、batch AI pipelines 时,Ray/Anyscale 的价值更强。</p>
+</section>
+<section class="section" id="sec-4">
+<h2 class="section-title"><span class="sec-num">4</span>产品与技术</h2>
+<h3 class="subsection">4.1 Ray open-source</h3>
+<p>Ray 是分布式 Python 框架,核心抽象包括 tasks、actors、objects、placement groups 和 distributed scheduling。它让开发者用 Python decorator 和 actor model 将单机函数扩展到集群。Ray 生态包括:</p>
+<ul><li>Ray Core: tasks、actors、distributed object store;</li><li>Ray Data: scalable data processing for AI;</li><li>Ray Train: distributed training;</li><li>Ray Tune: hyperparameter tuning;</li><li>Ray Serve: scalable model serving;</li><li>RLlib: reinforcement learning;</li><li>KubeRay: Kubernetes operator。</li></ul>
+<p>Ray 的优势是通用性。Spark 更偏数据批处理,Kubernetes 更偏容器编排,HPC frameworks 更偏专业计算。Ray 试图成为 AI/ML workload 的 Python-native distributed runtime。</p>
+<h3 class="subsection">4.2 Anyscale Platform</h3>
+<p>Anyscale Platform 包括:</p>
+<ul><li>Workspaces: 开发环境,让工程师在云端/集群上写、测、调 Ray 应用;</li><li>Jobs: submit and run batch tasks;</li><li>Services: deploy long-running Ray Serve applications;</li><li>Clusters: autoscaling compute clusters;</li><li>Observability: logs、metrics、traces、Ray dashboard、cost monitoring;</li><li>Images and dependencies: 管理 runtime environments;</li><li>Security/admin: users、teams、cloud credentials、private networking;</li><li>Integrations: AWS、GCP、Azure、Kubernetes/KubeRay。</li></ul>
+<p>Anyscale 的产品目标是隐藏分布式系统运维复杂度,使 AI engineer 能聚焦模型和应用。</p>
+<h3 class="subsection">4.3 Ray Serve / inference</h3>
+<p>Ray Serve 是构建 online inference services 的关键组件,支持 Python-native deployments、autoscaling、model composition、request batching、multi-model serving。Anyscale 在 AI infra 竞争中的一个核心问题是: Ray Serve 是否能成为企业自建模型 serving 的稳定选择,与 BentoML、KServe、Seldon、Nvidia Triton、vLLM、TGI、Baseten、Fireworks、Together 等竞争或互补。</p>
+<p>对于客户,Anyscale 的好处是 serving 与 training/batch/data/RL 都在同一 Ray runtime 内;缺点是如果只想快速调用 open model endpoint,Fireworks/Together/Baseten 这类推理云更简单。</p>
+<h3 class="subsection">4.4 Ray Data / batch inference</h3>
+<p>AI 应用常有大规模离线任务: 文档 embedding、视频/图像处理、synthetic data generation、evaluation runs、batch LLM inference、data cleaning。Ray Data 和 Anyscale jobs 适合这类任务。相比 Spark,Ray Data 在 Python UDF、GPU batch processing 和 ML pipeline 上更贴近 AI engineer;相比 Modal,Anyscale 更强调 Ray ecosystem 和 enterprise scale。</p>
+<h3 class="subsection">4.5 RayTurbo / performance optimization</h3>
+<p>Anyscale 官网和博客强调 RayTurbo 等性能增强,目标是让 Ray workloads 在 Anyscale 上跑得更快、更省钱。商业上,performance optimization 是 managed open-source 公司收费的关键理由: 如果客户自己用开源 Ray + Kubernetes 运行成本高、调试难,Anyscale 可以用更好 autoscaling、scheduler tuning、observability、support 和 optimized runtime 收费。</p>
+<h3 class="subsection">4.6 安全和治理</h3>
+<p>企业使用 Anyscale 通常会关心:</p>
+<ul><li>自有云账户/BYOC;</li><li>VPC/private networking;</li><li>IAM/SSO/RBAC;</li><li>secrets management;</li><li>audit logs;</li><li>image provenance and dependency control;</li><li>cost budgets;</li><li>data locality。</li></ul>
+<p>这些能力决定 Anyscale 是否能从 AI startup 工具变成 enterprise platform。</p>
+</section>
+<section class="section" id="sec-5">
+<h2 class="section-title"><span class="sec-num">5</span>商业化与运营指标</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>解读</th></tr></thead><tbody><tr><td>Ray adoption</td><td>GitHub stars、PyPI downloads、社区使用广泛;官网/文档列出多家企业案例</td><td>开源心智强,但需转化为 Anyscale revenue</td></tr><tr><td>Customers / users</td><td>Ray 案例包括 OpenAI、Uber、Instacart、Spotify、Netflix、Shopify、LinkedIn 等;Anyscale 官网客户页列 enterprise/AI use cases</td><td>logo 需区分 Ray 开源用户和 Anyscale 付费客户</td></tr><tr><td>Funding</td><td>Series A $20.6M,Series B $40M,Series C $100M,Series C extension $99M</td><td>已具备较大资本支持</td></tr><tr><td>Valuation</td><td>2021 Series C 媒体报道估值约 $1B+</td><td>独角兽状态需结合后续融资/二级交易核验</td></tr><tr><td>Pricing</td><td>platform charges $0.25-$0.45/node-hour;GPU instances from <$1/hr to H100 8x >$100/hr examples</td><td>收入与 GPU/CPU workload scale 绑定</td></tr><tr><td>Product scope</td><td>Ray Core/Data/Train/Tune/Serve/RLlib + Anyscale workspaces/jobs/services/observability</td><td>横跨 training、serving、batch、RL</td></tr></tbody></table></div>
+<p>公开资料中缺少 2025-2026 年 ARR、gross margin、付费客户数、net retention 和 GPU utilization 指标。本稿不写没有可回源的收入 run-rate。Anyscale 的商业化质量应通过付费 enterprise workloads 数量、ACV、usage growth 和开源到云的转化率判断。</p>
+</section>
+<section class="section" id="sec-6">
+<h2 class="section-title"><span class="sec-num">6</span>融资历程完整时间线</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>时间</th><th>轮次/事件</th><th>金额</th><th>估值口径</th><th>投资方</th><th>备注</th></tr></thead><tbody><tr><td>2017-2019</td><td>Ray 项目从 Berkeley RISELab 发展</td><td>资本事件较少</td><td>开源阶段</td><td>UC Berkeley RISELab</td><td>Ray 开源基础形成</td></tr><tr><td>2019</td><td>Anyscale 成立</td><td>创业初期</td><td>公司化阶段</td><td>Ray 创始/研究团队</td><td>商业化 Ray</td></tr><tr><td>2020-02</td><td>Series A</td><td>$20.6M</td><td>公司新闻没有给出估值数字</td><td>Andreessen Horowitz led,Intel Capital、NEA、Ant Financial 等参与</td><td>推动 Ray 商业化</td></tr><tr><td>2020-10</td><td>Series B</td><td>$40M</td><td>公司新闻没有给出估值数字</td><td>NEA led,a16z、Intel Capital、Foundation Capital 等参与</td><td>加速 managed Ray 平台</td></tr><tr><td>2021-12</td><td>Series C</td><td>$100M</td><td>媒体报道约 $1B valuation</td><td>Addition led,Intel Capital、Foundation Capital、a16z、NEA 等参与</td><td>进入独角兽口径</td></tr><tr><td>2022-08</td><td>Series C extension</td><td>$99M</td><td>媒体报道继续维持高估值口径</td><td>Existing/new investors,媒体报道含 Addition、Intel Capital、Foundation Capital 等</td><td>用于扩展 AI/ML platform</td></tr><tr><td>2023-2026</td><td>产品和 Ray 生态扩展</td><td>产品里程碑,不是融资轮</td><td>资本化事件没有新增公开确认</td><td>公司自身产品发布</td><td>LLM、Ray Serve、Ray Data、GPU workloads 成为重点</td></tr></tbody></table></div>
+<p>融资解读: Anyscale 在 2021-2022 年拿到大额资金,当时市场看好 Ray 成为分布式 AI/ML 标准。2023 年后生成式 AI 推动 GPU workloads 暴增,Anyscale 的机会扩大;但同一时间 inference cloud、serverless GPU、data cloud AI 平台也快速崛起,商业化竞争更激烈。</p>
+</section>
+  <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="browserbase.html">Browserbase</a><a class="sib-chip" href="fireworks_ai.html">Fireworks AI</a><a class="sib-chip" href="hugging_face.html">Hugging Face</a><a class="sib-chip" href="mercor.html">Mercor</a><a class="sib-chip" href="pinecone.html">Pinecone</a><a class="sib-chip" href="qdrant.html">Qdrant</a><a class="sib-chip" href="scale_ai.html">Scale AI</a><a class="sib-chip" href="weaviate.html">Weaviate</a></div>
+</div>
+</body></html>

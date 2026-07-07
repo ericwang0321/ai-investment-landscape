@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>01.AI / 零一万物 · 深度研究</title><style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1a1f36;--ink2:#475569;--ink3:#94a3b8;--line:#e5e8ee;--accent:#2563eb;--accent2:#1e40af;--accent-bg:#eff4ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:13px;font-family:"SF Mono",Menlo,monospace}
+
+/* 顶部栏(返回按钮) */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:11px 28px;display:flex;align-items:center;gap:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:7px 15px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:var(--accent2);text-decoration:none}
+.topbar .crumb{color:var(--ink3);font-size:13px}
+
+/* 共用 section/表格 */
+.section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 28px;margin-bottom:12px;scroll-margin-top:64px}
+.section-title{margin:0 0 15px;font-size:18px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:2px solid var(--accent-bg)}
+.sec-num{background:var(--accent);color:#fff;font-size:12px;font-weight:700;width:23px;height:23px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.subsection{margin:18px 0 8px;font-size:15px;font-weight:700;color:var(--accent2);padding-left:9px;border-left:3px solid var(--accent)}
+.sub4{margin:14px 0 6px;font-size:13.5px;font-weight:600;color:var(--ink2)}
+.section p{margin:9px 0;color:var(--ink)}
+.section ul,.section ol{margin:9px 0;padding-left:21px}.section li{margin:5px 0;color:var(--ink)}.section li::marker{color:var(--accent)}
+blockquote{margin:12px 0;padding:11px 15px;background:#fffbeb;border-left:4px solid #d97706;border-radius:0 8px 8px 0;color:#78350f;font-size:13.5px}
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:#f8fafc;font-weight:700;text-align:left;padding:9px 13px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
+.kv-table .kv-key{background:#f8fafc;font-weight:600;color:var(--ink2);width:155px;white-space:nowrap}
+
+.dc-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin:24px auto 16px;max-width:980px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.dc-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.dc-badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:14px}
+.dc-layer{font-size:11px;font-weight:600;color:var(--ink2);background:#eef2f7;padding:3px 10px;border-radius:14px}
+.dc-region{font-size:11px;color:var(--ink3)}
+.dc-title{font-size:26px;font-weight:800;letter-spacing:-.4px;color:var(--ink);margin-bottom:8px}
+.dc-oneliner{font-size:14.5px;line-height:1.7;color:var(--ink);background:var(--accent-bg);border-left:4px solid var(--accent);padding:14px 18px;border-radius:0 10px 10px 0}
+.content{max-width:980px;margin:0 auto;padding:0 0 60px}
+.siblings{max-width:980px;margin:24px auto 60px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.siblings .st{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.sib-chip{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 11px;font-size:12.5px;color:var(--ink2);margin:3px 4px 3px 0}
+.sib-chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+</style></head><body>
+<div class="topbar">
+  <a class="back-btn" href="../matrix.html">← 返回首页</a>
+  <span class="crumb">AI 一级市场投资 · 通用基础模型</span>
+</div>
+<div class="content">
+  <div class="dc-card">
+    <div class="dc-badges">
+      <span class="dc-badge" style="background:#eef2ff;color:#4338ca">通用基础模型</span>
+      <span class="dc-layer">模型</span>
+      <span class="dc-region">中国北京</span>
+    </div>
+    <h1 class="dc-title">01.AI / 零一万物</h1>
+    <div class="dc-oneliner">零一万物(01.</div>
+  </div>
+  <section class="section" id="sec-1">
+<h2 class="section-title"><span class="sec-num">1</span>一句话结论</h2>
+<p><strong>零一万物(01.</strong></p>
+<p>AI)是李开复 2023 年创办、以开源 Yi 系列大模型起家的"AI 六小虎"之一，在 8 个月内冲到独角兽(>$1B)估值，但 2025 年初经历重大战略转向——放弃万亿参数级预训练、与阿里云深度绑定成立联合实验室、全面转向 To B 企业应用商业化：成为中国大模型创业公司中第一家公开"大幅撤退"的标志性案例。核心判断，已从"通用基础模型挑战者"重新定位为"中型/行业模型 + 企业 AI 平台"服务商，投资逻辑从"技术领先"转向"商业化执行 + 阿里生态协同",核心跟踪点为 To B 收入兑现、阿里关系边界与人才留存。</p>
+</section>
+<section class="section" id="sec-2">
+<h2 class="section-title"><span class="sec-num">2</span>公司概览</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">公司</td><td class="kv-val">01.AI / 零一万物(北京零一万物科技有限公司)</td></tr><tr><td class="kv-key">成立时间</td><td class="kv-val">2023 年 3 月宣布创办,2023 年 6 月正式运营</td></tr><tr><td class="kv-key">总部/主体</td><td class="kv-val">中国北京;法定代表人马杰</td></tr><tr><td class="kv-key">创始人</td><td class="kv-val">李开复(Kai-Fu Lee),创新工场董事长</td></tr><tr><td class="kv-key">四层分类</td><td class="kv-val">模型层(并向应用层延伸)</td></tr><tr><td class="kv-key">子赛道</td><td class="kv-val">开源大模型 → 企业 AI 平台/行业解决方案</td></tr><tr><td class="kv-key">币种</td><td class="kv-val">USD(融资)/CNY(经营)</td></tr><tr><td class="kv-key">主要产品</td><td class="kv-val">Yi 系列模型(34B/1.5/Lightning/Coder)、万知 Wanzhi 助手、万智企业大模型一站式平台</td></tr><tr><td class="kv-key">目标客户</td><td class="kv-val">开发者(开源生态)、企业 To B/To G、办公与知识工作者</td></tr><tr><td class="kv-key">当前阶段</td><td class="kv-val">战略转型期(预训练收缩、To B 商业化加速)</td></tr><tr><td class="kv-key">官网</td><td class="kv-val"><a href="https://www.01.ai/" target="_blank" rel="noopener">https://www.01.ai/</a> ;<a href="https://www.lingyiwanwu.com/" target="_blank" rel="noopener">https://www.lingyiwanwu.com/</a></td></tr></tbody></table></div>
+<p>零一万物定位为"AI 2.0 大模型技术和应用的全球公司",早期以"基座大模型为突破"为旗号,2025 年起重新表述为聚焦"参数适中、更快更便宜"的模型与可盈利应用。(<a href="https://www.lingyiwanwu.com/" target="_blank" rel="noopener">零一万物官网</a> ;<a href="https://en.wikipedia.org/wiki/01.AI" target="_blank" rel="noopener">Wikipedia</a>)</p>
+</section>
+<section class="section" id="sec-3">
+<h2 class="section-title"><span class="sec-num">3</span>业务模式与收费方式</h2>
+<h3 class="subsection">3.1 三段式演进</h3>
+<ol><li><strong>开源建生态(2023–2024 上半年)</strong>:Yi 系列完全开源(Yi-34B/6B/9B、Yi-1.5、Yi-Coder),在 HuggingFace/ModelScope/GitHub 分发,可申请免费商用,以开发者心智换取品牌与融资。</li><li><strong>API + 应用试水(2024 下半年)</strong>:推出 C 端"万知 Wanzhi"AI 工作助手(文档解读、数据分析、PPT 生成,订阅制),Yi-Lightning 提供 API 推理服务(按 token 计费)。</li><li><strong>企业平台 + 项目交付(2025 起,主线)</strong>:"万智企业大模型一站式平台"2.0,走私有化部署、行业解决方案、license、项目制交付与战略合作。</li></ol>
+<h3 class="subsection">3.2 收费逻辑拆解</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>收入来源</th><th>模式</th><th>说明</th></tr></thead><tbody><tr><td>企业 AI 平台(万智)</td><td>平台订阅 + 私有化部署 license</td><td>主线,2025 年重点;面向 To B/To G</td></tr><tr><td>API 推理服务</td><td>按 token 调用计费</td><td>基于 Yi-Lightning 等中型模型</td></tr><tr><td>C 端订阅(万知)</td><td>高级功能订阅</td><td>体量有限,2025 年起让位于 To B</td></tr><tr><td>项目制/行业解决方案</td><td>一次性 + 运维</td><td>金融、零售、教育、医疗等头部企业</td></tr><tr><td>战略合作分成</td><td>与阿里云联合实验室</td><td>渠道触达、算力共建、收入分成</td></tr></tbody></table></div>
+<p>(<a href="https://m.mp.oeeee.com/a/BAAFRD0000202501031041481.html" target="_blank" rel="noopener">南方都市报:联合实验室</a> ;<a href="https://www.cls.cn/detail/1910433" target="_blank" rel="noopener">财联社:李开复辟谣</a> ;<a href="https://www.stdaily.com/web/gdxw/2025-07/23/content_374227.html" target="_blank" rel="noopener">中国科技网:万智2.0</a>)</p>
+<h3 class="subsection">3.3 上游依赖</h3>
+<p>强依赖 GPU/国产算力、推理优化引擎、企业数据。其"低 GPU 训练成本"叙事(Yi-34B 报道仅 ~$3M、~2000 GPU)既是差异化亮点,也折射出算力约束——这也是 2025 年放弃超大模型的现实动因。(<a href="https://www.bloomberg.com/news/articles/2023-11-05/kai-fu-lee-s-open-source-01-ai-bests-llama-2-according-to-hugging-face" target="_blank" rel="noopener">Bloomberg</a> ;<a href="https://siliconangle.com/2023/11/06/01-ai-led-ai-pioneer-kai-fu-lee-achieves-1b-valuation-eight-months/" target="_blank" rel="noopener">SiliconANGLE</a>)</p>
+</section>
+<section class="section" id="sec-4">
+<h2 class="section-title"><span class="sec-num">4</span>产品与技术</h2>
+<h3 class="subsection">4.1 Yi 系列模型发布时间线</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>时间</th><th>模型</th><th>关键参数/成绩</th></tr></thead><tbody><tr><td>2023-11</td><td>Yi-34B / Yi-6B / Yi-9B</td><td>Yi-34B 在 HuggingFace Open LLM Leaderboard 预训练榜 <strong>70.72 分全球第一</strong>(超 LLaMA2-70B、Falcon-180B);C-Eval 中文榜首;支持 200K 上下文(~40 万汉字)</td></tr><tr><td>2023-11</td><td>Yi-VL-6B / Yi-VL-34B</td><td>多模态(文本-图像多轮对话)</td></tr><tr><td>2024-05-13</td><td>Yi-1.5 系列</td><td>升级版,编码/数学/推理增强</td></tr><tr><td>2024-07-29</td><td>Yi Cookbook 1.0</td><td>中英文教程与示例</td></tr><tr><td>2024-09</td><td>Yi-Coder 1.5B / 9B</td><td>开源代码模型,<10B 参数,128K 长上下文,52 种编程语言,同尺寸 SOTA</td></tr><tr><td>2024-10</td><td>Yi-Lightning</td><td>快速推理模型,2024 年市场反馈强烈</td></tr><tr><td>2024-11</td><td>Yi-Coder 新增变体</td><td></td></tr></tbody></table></div>
+<p>(<a href="https://huggingface.co/01-ai/Yi-34B" target="_blank" rel="noopener">HuggingFace Yi-34B</a> ;<a href="https://github.com/01-ai/yi" target="_blank" rel="noopener">GitHub 01-ai/Yi</a> ;<a href="https://github.com/01-ai/Yi-Coder" target="_blank" rel="noopener">GitHub 01-ai/Yi-Coder</a> ;<a href="https://www.stcn.com/article/detail/1027516.html" target="_blank" rel="noopener">证券时报</a> ;<a href="https://arxiv.org/abs/2403.04652" target="_blank" rel="noopener">arXiv 2403.04652</a>)</p>
+<h3 class="subsection">4.2 技术差异化(早期)</h3>
+<ul><li><strong>开源 + 双语</strong>:中英双语基座,开源权重可申请商用,首批发力期一度登顶 HuggingFace。</li><li><strong>长上下文</strong>:200K 上下文窗口,远超同期 GPT-4。</li><li><strong>低成本训练叙事</strong>:$3M 训练成本、2000 GPU 的"高效工程"故事,被广泛传播。</li></ul>
+<h3 class="subsection">4.3 应用与企业平台</h3>
+<ul><li><strong>万知 Wanzhi</strong>:C 端/B 端 AI 工作助手(文档解读、数据分析、PPT 生成、智能问答与知识管理)。</li><li><strong>万智企业大模型一站式平台 2.0</strong>(2025-07-22 发布):由李开复、联合创始人马杰、黄蕙雯共同发布,主打"超级员工/数字员工",重塑企业工作流,接入 DeepSeek 等开源模型做 To B 部署定制。</li></ul>
+<p>(<a href="https://www.stdaily.com/web/gdxw/2025-07/23/content_374227.html" target="_blank" rel="noopener">中国科技网</a> ;<a href="https://en.wikipedia.org/wiki/01.AI" target="_blank" rel="noopener">Wikipedia</a>)</p>
+</section>
+<section class="section" id="sec-5">
+<h2 class="section-title"><span class="sec-num">5</span>商业化与运营指标</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>数据</th><th>来源</th><th>可信度</th></tr></thead><tbody><tr><td>2024 确认收入</td><td><strong>一个多亿元人民币</strong>(李开复自述,订单更多)</td><td><a href="https://www.cls.cn/detail/1910433" target="_blank" rel="noopener">财联社</a></td><td>中(创始人自述,未审计)</td></tr><tr><td>2025 收入预期</td><td>"数倍增长"(李开复自述)</td><td><a href="https://www.cls.cn/detail/1910433" target="_blank" rel="noopener">财联社</a></td><td>低(前瞻指引)</td></tr><tr><td>2024 ARR(第三方估算)</td><td>~$30.5M(2023 ~$20M)</td><td><a href="https://getlatka.com/companies/01.ai" target="_blank" rel="noopener">GetLatka</a></td><td>低(第三方估算,仅供参考)</td></tr><tr><td>Yi-34B 排名</td><td>HuggingFace Open LLM Leaderboard 预训练榜第一(70.72 分)</td><td><a href="https://huggingface.co/01-ai/Yi-34B" target="_blank" rel="noopener">HuggingFace</a></td><td>高</td></tr><tr><td>训练成本</td><td>~$3M、~2000 GPU</td><td><a href="https://www.bloomberg.com/news/articles/2023-11-05/kai-fu-lee-s-open-source-01-ai-bests-llama-2-according-to-hugging-face" target="_blank" rel="noopener">Bloomberg</a></td><td>中</td></tr><tr><td>商用授权</td><td>Yi 模型可申请免费商用</td><td><a href="https://huggingface.co/01-ai/Yi-34B" target="_blank" rel="noopener">HuggingFace</a></td><td>高</td></tr><tr><td>Yi-Lightning 市场反馈</td><td>2024 年"strong market feedback"</td><td><a href="https://kr-asia.com/kai-fu-lee-sets-the-record-straight-on-01-ais-pivot" target="_blank" rel="noopener">KrAsia</a></td><td>中</td></tr></tbody></table></div>
+<blockquote>⚠️ <strong>数据缺口</strong>:Wanzhi/万智付费客户数、付费企业数、私有化部署项目数、API 调用量、具体下载量数字均未公开披露。Yi-34B 具体下载次数可在 <a href="https://huggingface.co/01-ai/Yi-34B" target="_blank" rel="noopener">HuggingFace 模型页</a> 实时查看,本报告未能取到确切时点数字。</blockquote>
+</section>
+<section class="section" id="sec-6">
+<h2 class="section-title"><span class="sec-num">6</span>融资历程完整时间线</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>日期</th><th>轮次/事件</th><th>融资金额</th><th>估值</th><th>投资方</th><th>来源</th></tr></thead><tbody><tr><td>2023-03</td><td>创办/种子(创新工场"塔尖孵化")</td><td>注册资本 10 万元人民币起;传闻数千万美元种子轮</td><td>—</td><td>创新工场(李开复任董事长)</td><td><a href="https://www.chuangxin.com/news" target="_blank" rel="noopener">创新工场</a> ;证券时报</td></tr><tr><td>2023-11</td><td>A 轮(战略融资,8 个月成独角兽)</td><td><strong>$200M</strong>(约;报道 $1B+ 估值)</td><td><strong>>$1B(独角兽)</strong></td><td><strong>阿里云领投</strong>,创新工场跟投,传闻含小米等</td><td><a href="https://www.bloomberg.com/news/articles/2023-11-05/kai-fu-lee-s-open-source-01-ai-bests-llama-2-according-to-hugging-face" target="_blank" rel="noopener">Bloomberg</a> ;<a href="https://siliconangle.com/2023/11/06/01-ai-led-ai-pioneer-kai-fu-lee-achieves-1b-valuation-eight-months/" target="_blank" rel="noopener">SiliconANGLE</a></td></tr><tr><td>2024-08</td><td>新一轮(IT桔子数据)</td><td><strong>数亿美元</strong></td><td><strong>~104 亿元人民币</strong>(约 $1.4–1.5B)</td><td>某国际战投、东南亚财团等(具体未公开)</td><td><a href="https://www.guancha.cn/economy/2024_08_08_744188.shtml" target="_blank" rel="noopener">观察者网</a></td></tr><tr><td>2025-初</td><td>传闻估值上探</td><td>—</td><td>传闻 ~$2B(未经证实)</td><td>—</td><td><a href="https://businessmodelcanvastemplate.com/blogs/owners/01-ai-who-owns" target="_blank" rel="noopener">BusinessModelCanvas</a></td></tr><tr><td>2025-01-02</td><td>与阿里云战略合作</td><td>非股权(联合实验室)</td><td>—</td><td>阿里云</td><td><a href="https://m.mp.oeeee.com/a/BAAFRD0000202501031041481.html" target="_blank" rel="noopener">南方都市报</a></td></tr></tbody></table></div>
+<ul><li><strong>累计融资</strong>:<strong>~$300M</strong>(第三方估算,<a href="https://getlatka.com/companies/01.ai" target="_blank" rel="noopener">GetLatka</a>)。</li><li><strong>最新明确轮次</strong>:2024-08 数亿美元,估值 ~104 亿元 RMB。</li><li><strong>可公开确认的核心投资方</strong>:<strong>创新工场(种子)+ 阿里云(A 轮领投)+ 未公开国际战投/东南亚财团(2024-08)</strong>。</li><li>⚠️ <strong>关于"小米/高瓴/云锋"</strong>:任务包提及小米为投资方,与 2023 年多家中文报道一致(零一万物 A 轮"阿里领投、小米等跟投"被广泛转述);但<strong>高瓴、云锋目前无公开工商或权威报道证实参投零一万物</strong>(高瓴创投是 MiniMax 投资方,易混淆)。建议以工商数据库(IT 桔子/天眼查)最终核实。</li></ul>
+<p>(<a href="https://www.guancha.cn/economy/2024_08_08_744188.shtml" target="_blank" rel="noopener">IT桔子经观察者网</a> ;<a href="https://www.cls.cn/detail/1910433" target="_blank" rel="noopener">财联社</a>)</p>
+</section>
+  <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="ai21_labs.html">AI21 Labs</a><a class="sib-chip" href="liquid_ai.html">Liquid AI</a><a class="sib-chip" href="mistral_ai.html">Mistral AI</a><a class="sib-chip" href="modelbest_面壁智能.html">ModelBest</a><a class="sib-chip" href="reka_ai.html">Reka AI</a><a class="sib-chip" href="sakana_ai.html">Sakana AI</a><a class="sib-chip" href="stepfun_阶跃星辰.html">StepFun</a><a class="sib-chip" href="zyphra.html">Zyphra</a></div>
+</div>
+</body></html>

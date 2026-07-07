@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qdrant · 深度研究</title><style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1a1f36;--ink2:#475569;--ink3:#94a3b8;--line:#e5e8ee;--accent:#2563eb;--accent2:#1e40af;--accent-bg:#eff4ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:13px;font-family:"SF Mono",Menlo,monospace}
+
+/* 顶部栏(返回按钮) */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:11px 28px;display:flex;align-items:center;gap:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:7px 15px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:var(--accent2);text-decoration:none}
+.topbar .crumb{color:var(--ink3);font-size:13px}
+
+/* 共用 section/表格 */
+.section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 28px;margin-bottom:12px;scroll-margin-top:64px}
+.section-title{margin:0 0 15px;font-size:18px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:2px solid var(--accent-bg)}
+.sec-num{background:var(--accent);color:#fff;font-size:12px;font-weight:700;width:23px;height:23px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.subsection{margin:18px 0 8px;font-size:15px;font-weight:700;color:var(--accent2);padding-left:9px;border-left:3px solid var(--accent)}
+.sub4{margin:14px 0 6px;font-size:13.5px;font-weight:600;color:var(--ink2)}
+.section p{margin:9px 0;color:var(--ink)}
+.section ul,.section ol{margin:9px 0;padding-left:21px}.section li{margin:5px 0;color:var(--ink)}.section li::marker{color:var(--accent)}
+blockquote{margin:12px 0;padding:11px 15px;background:#fffbeb;border-left:4px solid #d97706;border-radius:0 8px 8px 0;color:#78350f;font-size:13.5px}
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:#f8fafc;font-weight:700;text-align:left;padding:9px 13px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
+.kv-table .kv-key{background:#f8fafc;font-weight:600;color:var(--ink2);width:155px;white-space:nowrap}
+
+.dc-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin:24px auto 16px;max-width:980px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.dc-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.dc-badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:14px}
+.dc-layer{font-size:11px;font-weight:600;color:var(--ink2);background:#eef2f7;padding:3px 10px;border-radius:14px}
+.dc-region{font-size:11px;color:var(--ink3)}
+.dc-title{font-size:26px;font-weight:800;letter-spacing:-.4px;color:var(--ink);margin-bottom:8px}
+.dc-oneliner{font-size:14.5px;line-height:1.7;color:var(--ink);background:var(--accent-bg);border-left:4px solid var(--accent);padding:14px 18px;border-radius:0 10px 10px 0}
+.content{max-width:980px;margin:0 auto;padding:0 0 60px}
+.siblings{max-width:980px;margin:24px auto 60px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.siblings .st{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.sib-chip{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 11px;font-size:12.5px;color:var(--ink2);margin:3px 4px 3px 0}
+.sib-chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+</style></head><body>
+<div class="topbar">
+  <a class="back-btn" href="../matrix.html">← 返回首页</a>
+  <span class="crumb">AI 一级市场投资 · 应用使能/Infra</span>
+</div>
+<div class="content">
+  <div class="dc-card">
+    <div class="dc-badges">
+      <span class="dc-badge" style="background:#f0fdf4;color:#15803d">应用使能/Infra</span>
+      <span class="dc-layer">应用</span>
+      <span class="dc-region">德国/全球</span>
+    </div>
+    <h1 class="dc-title">Qdrant</h1>
+    <div class="dc-oneliner">Qdrant 是以 Rust 实现、Apache-2.</div>
+  </div>
+  <section class="section" id="sec-1">
+<h2 class="section-title"><span class="sec-num">1</span>一句话结论</h2>
+<p><strong>Qdrant 是以 Rust 实现、Apache-2.</strong></p>
+<p>0 开源为核心卖点的向量搜索引擎/数据库公司，商业化路径是用开源 Qdrant 获取开发者信任：再通过 Qdrant Cloud、Standard/Premium、Hybrid Cloud、Private Cloud、Enterprise support、SSO/Private VPC Links、Multi-AZ、GPU indexing、audit logging、cloud inference 和 edge deployment 变现。** 截至 2026 年 7 月 6 日，公开融资清楚: 2023-04 TechCrunch 报道 Qdrant 获 $7.</p>
+<p>5M seed led by Unusual Ventures,另有此前 €2M pre-seed;2024-01 TechCrunch 报道 $28M Series A led by Spark Capital,Unusual Ventures 和 42cap 参与。官网客户页展示多行业生产案例: Deutsche Telekom multi-agent PaaS 2M+ conversations across 10 countries,Tripadvisor 1B+ multimodal reviews and images driving 2-3x revenue from engaged users,Dust 5,000+ data sources,OpenTable 60K+ restaurants, Lyzr latency -90% / throughput +150% 等。</p>
+<p>投资判断偏积极：因为 Qdrant 在开源、性能、部署灵活性和企业云能力上定位清晰；主要风险是向量检索被通用数据库/云平台商品化：以及开源用户转托管/enterprise 的付费转化仍需财务数据验证。</p>
+</section>
+<section class="section" id="sec-2">
+<h2 class="section-title"><span class="sec-num">2</span>公司概览</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">公司</td><td class="kv-val">Qdrant</td></tr><tr><td class="kv-key">成立</td><td class="kv-val">TechCrunch 报道 founded in 2021</td></tr><tr><td class="kv-key">总部/起源</td><td class="kv-val">Berlin-based startup</td></tr><tr><td class="kv-key">创始/管理层</td><td class="kv-val">Andre Zayarni, CEO/co-founder; Andrey Vasnetsov, CTO; Fabrizio Schmidt, VP of Cloud 等公开报道提及</td></tr><tr><td class="kv-key">核心定位</td><td class="kv-val">Open-source vector search engine and database for unstructured/dynamic data</td></tr><tr><td class="kv-key">核心产品</td><td class="kv-val">Qdrant OSS、Qdrant Cloud、Hybrid Cloud、Private Cloud、Qdrant Edge beta、Cloud Inference、Enterprise</td></tr><tr><td class="kv-key">收入模式</td><td class="kv-val">Free tier + usage-based Standard Cloud + Premium minimum spend + Hybrid/Private enterprise contracts + support/security/compliance</td></tr><tr><td class="kv-key">目标客户</td><td class="kv-val">AI application developers、RAG、semantic search、multimodal search、recommendations、agent memory、legal/healthcare/ecommerce/media/telecom/customer support</td></tr><tr><td class="kv-key">融资</td><td class="kv-val">€2M pre-seed; $7.5M seed; $28M Series A</td></tr><tr><td class="kv-key">代表客户</td><td class="kv-val">Deutsche Telekom、Tripadvisor、Dust、HubSpot、Bazaarvoice、OpenTable、Kakao、Sprinklr、Dailymotion、Lyzr、Tavus 等官网案例</td></tr><tr><td class="kv-key">价值链位置</td><td class="kv-val">Embeddings/LLM 与 AI applications 之间的 vector retrieval and memory layer</td></tr><tr><td class="kv-key">IPO 状态</td><td class="kv-val">私人公司,没有公开 IPO 文件</td></tr></tbody></table></div>
+<p>Qdrant 的核心差异是 open-source + performance + deploy anywhere。相比 proprietary Pinecone,Qdrant 强调开源可控和避免 vendor lock-in;相比 Weaviate,Qdrant 更突出 Rust、filtering、quantization、multi-vector search、hybrid/private/edge 部署;相比 Zilliz/Milvus,Qdrant 更轻量和开发者体验导向。它的目标不是成为通用数据库,而是在高性能向量检索、复杂 filtering、RAG/agent workloads 上成为专用引擎。</p>
+</section>
+<section class="section" id="sec-3">
+<h2 class="section-title"><span class="sec-num">3</span>业务模式与收费方式</h2>
+<h3 class="subsection">3.1 Qdrant Cloud pricing</h3>
+<p>官方 pricing 页面列出 Managed 与 On-Premise 方向,Managed 包括 Free、Standard、Premium:</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>Tier</th><th>价格/门槛</th><th>核心资源</th><th>安全/运维</th><th>目标客户</th></tr></thead><tbody><tr><td>Free Tier</td><td>Free forever</td><td>Single node cluster,0.5 vCPU/1GB RAM/4GB disk,selected free cloud inference models</td><td>testing/prototypes</td><td>开发者试用</td></tr><tr><td>Standard Tier</td><td>Usage-based pricing</td><td>Dedicated resources,vertical/horizontal scaling,HA setups,backup/disaster recovery,free tokens for paid inference models</td><td>99.5% uptime SLA, marketplace subscription</td><td>生产 workloads</td></tr><tr><td>Premium Tier</td><td>Minimum spend required</td><td>Standard 之上增加 enterprise capabilities</td><td>SSO,Private VPC Links,99.9% uptime SLA,extra support</td><td>安全/合规企业</td></tr></tbody></table></div>
+<p>Features table 还列出 AWS/Azure/GCP、API/Terraform/Pulumi/CLI automation、support response times、encryption、Private VPC Links、Enterprise SSO 等。Qdrant 的 pricing 更像 managed database infrastructure,公开页没有给出 read/write/storage 单价,而是让客户通过 pricing calculator 或 sales 选择资源配置。</p>
+<h3 class="subsection">3.2 Hybrid Cloud / Private Cloud</h3>
+<p>Hybrid Cloud 运行在客户自己的 compute/network/storage 上,由 Qdrant Cloud 管理控制面,适合 local data residency、regulated workloads、easy operations in your own cloud。Private Cloud 是 dedicated isolated deployment,适合 large enterprises、sensitive workloads、air-gapped setups、custom SLAs、full isolation。</p>
+<p>这是 Qdrant 商业化关键。开源数据库最难变现的是客户可以自部署;Hybrid/Private 把自部署客户转成受管企业合同: 数据仍留在客户网络,但 Qdrant 提供 upgrades、support、premium features、control plane 和 SLA。金融、医疗、法律、政府、企业内部 search/RAG 都可能偏好这种部署。</p>
+<h3 class="subsection">3.3 Cloud Inference and paid add-ons</h3>
+<p>Pricing 页提到 Cloud Inference,Free tier 包括 selected models,Standard 有 free tokens for paid inference models。Qdrant 也在产品/博客中持续上移到 embeddings、reranking、多向量检索和 agent skills。与 Weaviate 类似,它不只希望存向量,也希望进入 retrieval quality 和 agent enablement。</p>
+<h3 class="subsection">3.4 Marketplace and enterprise procurement</h3>
+<p>Standard tier 支持 subscribe on marketplace,云市场购买可以使用客户已有 AWS/Azure/GCP committed spend,降低采购摩擦。Premium/Hybrid/Private 则通过 sales contract 处理 SSO、Private VPC、SLA、support、安全和部署需求。对数据库基础设施公司而言,marketplace 是 self-serve 到 enterprise 的桥梁。</p>
+</section>
+<section class="section" id="sec-4">
+<h2 class="section-title"><span class="sec-num">4</span>产品与技术</h2>
+<h3 class="subsection">4.1 Vector search engine in Rust</h3>
+<p>Qdrant 是 Rust 实现,公开叙事强调性能、安全和系统可靠性。TechCrunch Series A 报道中,Qdrant 已有高知名客户,并用 "In Rust we trust" 与 xAI/Grok 的实时数据向量检索场景做市场传播。Rust 本身不是护城河,但在 database/search engine 场景中能形成性能和内存安全形象。</p>
+<h3 class="subsection">4.2 Filtering and payload</h3>
+<p>官网强调 efficient one-stage filtering: filters are applied during HNSW traversal, avoiding pre/post filtering,保持 high recall with low latency。对企业 RAG 很关键,因为用户常需要按 tenant、permission、time、product、region、document type、metadata filter 检索。若 filtering 只在向量召回后做,可能召回不到权限内正确结果;若先过滤再检索,可能性能差。Qdrant 把 filtering 作为核心技术卖点。</p>
+<h3 class="subsection">4.3 Quantization and compression</h3>
+<p>2024 TechCrunch Series A 报道提到 Qdrant 推出 binary quantization,声称可降低 memory consumption up to 32x,并提升 retrieval speed around 40x。Zayarni 解释为将 vectors 压缩为 zeros/ones,比较变成简单 CPU instruction,在准确率损失较小的前提下降低资源消耗。</p>
+<p>向量数据库的云成本很大部分来自内存和索引结构。若 quantization 在客户 workloads 中可保持质量,就能显著改善单位经济性和客户成本。但是否适用取决于 embedding model、维度、recall 要求、filtering 和数据分布,不能一概而论。</p>
+<h3 class="subsection">4.4 Full-spectrum reranking / multi-vector search</h3>
+<p>官网强调 score boosting、late interaction models like ColBERT、MMR diversification。博客在 2026 年推出 Master Multi-Vector Search with Qdrant,覆盖 ColBERT、ColPali、MaxSim、production-grade multi-vector pipelines。RAG 质量不再只是 top-k dense vector;多向量、late interaction、hybrid sparse+dense、reranking、business rules 都在变重要。Qdrant 正在把自己从 basic ANN engine 升级为 retrieval quality platform。</p>
+<h3 class="subsection">4.5 Deploy anywhere: Cloud / Hybrid / Private / Edge</h3>
+<p>官网列出 Qdrant Cloud、Hybrid Cloud、Private Cloud、Qdrant Edge beta。Edge 意味着低延迟 vector search closer to where data is generated,适合设备端、多媒体、实时应用或隐私敏感场景。Hybrid/Private 面向企业数据驻留和合规。这个 deploy-anywhere 组合是开源商业化的自然延伸,也与 Pinecone 的 fully-managed proprietary 定位形成对比。</p>
+<h3 class="subsection">4.6 Enterprise tooling</h3>
+<p>官网列出 SOC 2、GDPR-aligned options、Prometheus/Grafana/Datadog、SSO SAML/OIDC、multi-tenancy、granular RBAC、private networking、zero-downtime upgrades、backups、point-in-time restore、vector-scoped API keys。2026-04 博客宣布 Qdrant Cloud GPU Indexing、Multi-AZ、Audit Logging,说明公司正在补齐生产级企业数据库能力。</p>
+<p>这些企业能力决定 Qdrant 能否从开源开发者工具进入大客户 mission-critical workloads。AI 应用一旦面向外部用户,RAG/vector DB 宕机或错误召回会影响产品体验和合规。</p>
+</section>
+<section class="section" id="sec-5">
+<h2 class="section-title"><span class="sec-num">5</span>商业化与运营指标</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>解读</th></tr></thead><tbody><tr><td>Pre-seed</td><td>€2M,TechCrunch 2023 报道提及</td><td>公司早期资本</td></tr><tr><td>Seed</td><td>$7.5M,2023-04</td><td>Unusual Ventures led; 42cap, IBB Ventures, angels participated</td></tr><tr><td>Series A</td><td>$28M,2024-01</td><td>Spark Capital led; Unusual Ventures and 42cap participated</td></tr><tr><td>Deutsche Telekom</td><td>multi-agent PaaS,2M+ conversations,10 countries,dev time 15 days to 2</td><td>企业 agent platform 用例</td></tr><tr><td>Tripadvisor</td><td>1B+ multimodal reviews/images,2-3x revenue from engaged users</td><td>大规模推荐/旅行搜索</td></tr><tr><td>Dust</td><td>5,000+ data sources</td><td>AI agents platform retrieval</td></tr><tr><td>OpenTable</td><td>60K+ restaurants with sparse embeddings</td><td>高精度餐饮发现</td></tr><tr><td>Lyzr</td><td>latency reduced 90%,throughput increased 150%</td><td>agent performance/cost 案例</td></tr><tr><td>Free tier</td><td>0.5 vCPU/1GB RAM/4GB disk</td><td>低门槛试用</td></tr><tr><td>Standard</td><td>usage-based,99.5% SLA</td><td>生产自助</td></tr><tr><td>Premium</td><td>minimum spend,SSO,Private VPC,99.9% SLA</td><td>企业</td></tr><tr><td>Multi-AZ</td><td>Single AZ 99.9,Multi AZ 99.95 in features table</td><td>高可用能力</td></tr></tbody></table></div>
+<p>公开资料没有给出 ARR、Cloud revenue、enterprise paid customers、net retention、gross margin、latest valuation 或 headcount。TechCrunch 报道指出 Series A 时公司主要由工程师组成,计划用资金扩展 business team;这说明商业化仍处于从 developer adoption 到 GTM 扩张阶段。</p>
+</section>
+<section class="section" id="sec-6">
+<h2 class="section-title"><span class="sec-num">6</span>融资历程完整时间线</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>时间</th><th>轮次/事件</th><th>金额</th><th>估值口径</th><th>投资方</th><th>备注</th></tr></thead><tbody><tr><td>2021</td><td>公司成立</td><td>创业初期</td><td>资本化前</td><td>Andre Zayarni / Andrey Vasnetsov 等</td><td>Berlin-based Qdrant</td></tr><tr><td>2022</td><td>Pre-seed</td><td>€2M</td><td>报道未给估值</td><td>IBB Ventures 等线索</td><td>TechCrunch seed 报道提及此前融资</td></tr><tr><td>2023-02</td><td>Managed cloud offering launch</td><td>产品里程碑</td><td>资本事件前后</td><td>公司自身</td><td>一键部署、升级、备份等</td></tr><tr><td>2023-04</td><td>Seed</td><td>$7.5M</td><td>报道未给估值</td><td>Unusual Ventures led; 42cap、IBB Ventures、angels incl. Amr Awadallah</td><td>用于商业化和 enterprise product</td></tr><tr><td>2023-11</td><td>xAI/Grok public customer signal</td><td>客户/市场里程碑</td><td>资本事件需核验</td><td>公司自身</td><td>Qdrant 宣称 X AI feature powered by Qdrant</td></tr><tr><td>2024-01</td><td>Series A</td><td>$28M</td><td>报道未给估值</td><td>Spark Capital led; Unusual Ventures、42cap participated</td><td>用于扩展 business team;同时发布 managed on-premise edition</td></tr><tr><td>2024-2026</td><td>Cloud/Hybrid/Private/Edge expansion</td><td>产品里程碑</td><td>资本事件需核验</td><td>公司自身</td><td>Azure support、Hybrid/Private、GPU indexing、Multi-AZ、audit logging</td></tr></tbody></table></div>
+<p>融资解读: Qdrant 从 seed 到 Series A 间隔不到一年,说明 2023-2024 年向量数据库融资窗口极热。Series A 报道还提到公司拒绝了 major database market player 的潜在收购 offer,选择融资扩张。这反映 Qdrant 希望独立做开源 vector DB company,而非早期被整合进大数据库厂商。</p>
+</section>
+  <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="baseten.html">Baseten</a><a class="sib-chip" href="browserbase.html">Browserbase</a><a class="sib-chip" href="fireworks_ai.html">Fireworks AI</a><a class="sib-chip" href="hugging_face.html">Hugging Face</a><a class="sib-chip" href="mercor.html">Mercor</a><a class="sib-chip" href="pinecone.html">Pinecone</a><a class="sib-chip" href="scale_ai.html">Scale AI</a><a class="sib-chip" href="weaviate.html">Weaviate</a></div>
+</div>
+</body></html>
