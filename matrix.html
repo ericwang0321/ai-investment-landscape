@@ -37,6 +37,12 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 .head .stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 .stat-pill{background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12px;color:var(--ink2);font-weight:600}
 .stat-pill b{color:var(--accent)}
+.stat-role{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+.stat-role b{color:#1d4ed8}
+.stat-taxonomy{background:#fff7ed;border-color:#fed7aa;color:#c2410c}
+.stat-taxonomy b{color:#c2410c}
+.stat-region{background:#ecfdf5;border-color:#bbf7d0;color:#047857}
+.stat-region b{color:#047857}
 .toolbar{position:sticky;top:0;z-index:50;background:rgba(245,246,248,.93);backdrop-filter:blur(8px);padding:11px 0;margin:14px 0 20px;display:flex;gap:5px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line)}
 .fbtn{background:#fff;border:1px solid var(--line);color:var(--ink2);font-size:12px;font-weight:600;padding:5px 12px;border-radius:16px;cursor:pointer;white-space:nowrap}
 .fbtn:hover{border-color:var(--accent);color:var(--accent)}
@@ -91,11 +97,11 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
     <div class="currency-note">金额按来源披露主口径展示：<b>US$</b> 为美元，<b>RMB</b> 为人民币；EUR/GBP/CAD/JPY/HKD 等本地币种在公司详情页保留。</div>
     <div class="currency-note">地区口径：<b>境内</b> 按中国大陆总部/中国主体相关统计；标注新加坡或离岸主体的中国创始公司按 <b>境外</b> 处理。</div>
     <div class="stats">
-      <span class="stat-pill">模型 <b>38</b></span>
-      <span class="stat-pill">应用 <b>71</b></span>
-      <span class="stat-pill">行业 <b>10</b></span>
-      <span class="stat-pill">境内 <b>15</b></span>
-      <span class="stat-pill">境外 <b>76</b></span>
+      <span class="stat-pill stat-role">模型 <b>38</b></span>
+      <span class="stat-pill stat-role">应用 <b>71</b></span>
+      <span class="stat-pill stat-taxonomy">行业 <b>10</b></span>
+      <span class="stat-pill stat-region">境内 <b>15</b></span>
+      <span class="stat-pill stat-region">境外 <b>76</b></span>
     </div>
   </div>
   <div class="toolbar">
