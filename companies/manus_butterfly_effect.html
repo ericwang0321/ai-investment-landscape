@@ -105,6 +105,38 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>数值/口径</th><th>来源</th></tr></thead><tbody><tr><td>Launch</td><td>2025-03-06 invitation beta</td><td>多家媒体/百科</td></tr><tr><td>Demo 热度</td><td>20 小时内百万级观看</td><td>中国日报/媒体汇总</td></tr><tr><td>邀请码转卖</td><td>WSJ/BI 报道 $1,000+；中国平台报道人民币 50,000-100,000 挂牌</td><td>Business Insider/China Daily/百科</td></tr><tr><td>Series B</td><td>~$75M</td><td>Benchmark 领投报道</td></tr><tr><td>Series B valuation</td><td>~$500M</td><td>Axios/媒体/百科</td></tr><tr><td>2025-08 revenue run-rate</td><td>~$90M</td><td>The Information/媒体汇总</td></tr><tr><td>2025-12 revenue run-rate</td><td>~$125M</td><td>The Information/媒体汇总</td></tr><tr><td>员工</td><td>2025 年中中国团队约 120，约 40 核心技术人员迁新加坡；晚 2025 约 100 人</td><td>Tech in Asia/媒体汇总</td></tr><tr><td>Pricing</td><td>Starter $39、Pro $199、Team $39/seat 线索</td><td>产品/百科/第三方整理</td></tr><tr><td>Meta transaction</td><td>$2B-$3B 交易价值报道</td><td>BI/Reuters/AP/NYPost/FT/Guardian 等</td></tr></tbody></table></div>
 <p>需要注意，Manus 的收入 run-rate 公开口径多来自 The Information/媒体报道，不等于审计收入。由于产品价格较高、credits 消耗强，收入增长可能来自早期高热度和重度用户，也可能来自 Meta 交易前的加速商业化；但留存、付费 cohort、毛利、refund/credit、任务成功率仍需深入核验。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 成本结构</h3>
+<p>Manus 的成本比普通 chat app 更重:</p>
+<ul><li>多模型 token 调用，可能包括 OpenAI/Anthropic/Google/open-source 模型。</li><li>浏览器/云电脑运行成本。</li><li>文件、图片、幻灯片、音乐、网页/应用生成的生成成本。</li><li>外部 API/connector 调用成本。</li><li>托管网站、custom domain、app sharing/testing、storage。</li><li>任务失败、重试、长时间执行导致的浪费。</li></ul>
+<h3 class="subsection">7.2 Credits 为什么重要</h3>
+<p>Credits 机制本质上是把复杂成本抽象成用户可理解的预算。一个“写一段邮件”的成本和“做完整竞争分析、生成 deck、建站并托管”的成本差异巨大。Starter/Pro/Team 的 credits + concurrency limits 帮助公司:</p>
+<ul><li>限制 heavy users 对毛利的冲击。</li><li>让用户根据任务复杂度自我筛选。</li><li>为 Team/Business 提供 shared quota。</li><li>给 API/Enterprise 留出 custom pricing 空间。</li></ul>
+<h3 class="subsection">7.3 Revenue run-rate 与毛利问题</h3>
+<p>若 2025 年 12 月 $125M run-rate 口径成立，而 Series B 后估值 $500M，则交易前收入倍数很低；若 Meta $2B+ 交易成立，则约 16x run-rate，仍低于许多 AI 应用高估值倍数。这说明市场可能更看重产品速度、agent data 和战略价值，而不仅是当前收入。但由于 general agent COGS 和失败率高，gross margin 是最关键的数据缺口。一个能收费 $199/月但频繁跑长任务的用户，未必比 $20/月 coding assistant 更赚钱。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 General agent / workflow automation</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>定位</th><th>与 Manus 的关系</th></tr></thead><tbody><tr><td>OpenAI Operator / ChatGPT agents / Deep Research</td><td>通用 agent、浏览器行动、研究</td><td>模型与分发强，直接竞争 general tasks</td></tr><tr><td>Anthropic Computer Use / Claude</td><td>computer control、coding/reasoning</td><td>在安全和企业信任上威胁 Manus</td></tr><tr><td>Google Gemini / Astra / Mariner</td><td>multimodal assistant、浏览器/Android/Workspace</td><td>默认入口和 Workspace 整合强</td></tr><tr><td>Genspark</td><td>Super Agent / research / page generation</td><td>与 Manus 在通用 agent 和内容产出上高度重叠</td></tr><tr><td>Perplexity Comet/Computer</td><td>AI search + browser agent</td><td>更偏搜索/引用/浏览器入口，和 Manus 的 research/browser automation 交叉</td></tr><tr><td>Lindy / Zapier / n8n / Make</td><td>workflow automation</td><td>更结构化、更企业流程化，Manus 更自然语言驱动</td></tr><tr><td>Adept / Amazon remnants</td><td>action model / enterprise automation</td><td>大厂收编后独立竞争弱化</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 Coding/app builder 侧竞争</h3>
+<p>Manus 能生成网页和应用，但并非专业 coding IDE。它与 Cursor、Cognition、Replit、Lovable 的边界是:</p>
+<ul><li>Cursor: 专业开发者 IDE，面向已有 repo 和日常编码。</li><li>Cognition: autonomous software engineer，面向工程任务和企业 codebase。</li><li>Replit/Lovable: prompt-to-app、托管、非专业开发者建应用。</li><li>Manus: 更泛化，既可建站/应用，也可做研究、设计、幻灯片、CRM、营销、会议、浏览器动作。</li></ul>
+<h3 class="subsection">8.3 护城河</h3>
+<ul><li><strong>产品想象力和品牌热度</strong>: 2025 年 launch 形成“general agent”心智。</li><li><strong>workflow breadth</strong>: connectors 和垂直 templates 快速扩张。</li><li><strong>云端执行环境</strong>: browser/operator/cloud computer 让 agent 能交付 artifacts。</li><li><strong>全球化定位</strong>: 新加坡主体、英文产品、Meta 交易，使其摆脱纯中国本土应用标签。</li><li><strong>团队消费产品经验</strong>: Monica/Peak Labs 背景擅长 consumer AI 产品增长。</li></ul>
+<h3 class="subsection">8.4 脆弱点</h3>
+<ul><li>上游模型依赖强，基础能力容易被 OpenAI/Anthropic/Google 复制。</li><li>通用 agent 成功率天然不稳定，用户预期极高。</li><li>监管和地缘政治风险远高于普通美国 AI 应用公司。</li><li>工作流太宽会导致产品定位发散，难形成单一高留存场景。</li><li>Connector 生态需要持续维护，API 变化会导致 agent 失败。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>公开报道将 Manus 团队与 Monica、Butterfly Effect、Peak Labs 联系在一起。肖弘被报道为创始人之一；季逸超 Peak Ji 早年创立 Peak Labs，曾入选 Forbes China 30 Under 30；张涛被报道为 founding team/product director。团队特点是 consumer product、增长、AI 应用集成和跨境产品经验强，而非 foundation model research lab。</p>
+<p>这与 Manus 的产品选择一致: 不训练自有大模型，而是把多个模型、浏览器、文件、设计、应用、连接器和托管能力组装成通用任务执行平台。团队的优势是快、会做产品传播、懂用户场景；短板是底层模型和基础设施不完全自主，且跨境主体/中国历史业务带来监管复杂度。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>监管/地缘政治风险</strong>: 中美对 AI 技术、数据、投资和收购审查都可能影响 Manus。</li><li><strong>模型依赖风险</strong>: 若 OpenAI/Anthropic/Google 限制 API 或推出更强原生 agent，Manus 差异化受压。</li><li><strong>通用 agent 可靠性</strong>: 早期用户反馈 loop、错误、崩溃，生产级稳定性仍需证明。</li><li><strong>毛利压力</strong>: 长任务、浏览器、云电脑、多模态生成和 connector 调用成本高。</li><li><strong>定位发散</strong>: 研究、建站、slides、CRM、会议、营销、设计、浏览器动作都做，可能分散产品资源。</li><li><strong>隐私和权限</strong>: Gmail、Calendar、Slack、Drive、Ads、Instagram 等 connectors 涉及敏感数据和权限滥用。</li><li><strong>资本化不确定</strong>: Meta 交易若被要求撤回或长期悬置，员工/客户/投资人预期都会受影响。</li><li><strong>竞争复制</strong>: 大厂有模型、分发和生态，Manus 的 workflow breadth 未必形成深护城河。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="character_ai.html">Character.AI</a><a class="sib-chip" href="clay.html">Clay</a><a class="sib-chip" href="decagon_ai.html">Decagon AI</a><a class="sib-chip" href="genspark.html">Genspark</a><a class="sib-chip" href="harvey.html">Harvey</a><a class="sib-chip" href="legora.html">Legora</a><a class="sib-chip" href="sierra.html">Sierra</a><a class="sib-chip" href="writer.html">Writer</a></div>
 </div>
 </body></html>

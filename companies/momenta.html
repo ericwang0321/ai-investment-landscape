@@ -113,6 +113,35 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>商业化成熟度可以分三层:</p>
 <p><strong>第一层，已经相对明确的是车企合作。</strong> Momenta 多年来围绕 ADAS/NOA 与车企推进量产，这是公司区别于只做 demo 的自动驾驶 startup 的关键。 <strong>第二层，仍需量化的是收入质量。</strong> 车企合作可能从联合研发到量产 license 差异很大，研究中必须追踪每个车型的 SOP、搭载率、软件包价格和续费。 <strong>第三层，尚需验证的是 Robotaxi 现金化。</strong> Uber/Grab 合作能提高估值叙事，但是否形成商业运营收入，要看城市、车辆、监管许可和服务上线节奏。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Momenta 的单位经济性要分 ADAS 前装和 Robotaxi 两套看。</p>
+<p><strong>ADAS 前装软件。</strong> 收入驱动因素是车型数、单车型销量、Momenta 功能覆盖深度、单车 license、工程开发费和持续 OTA/维护费。成本主要包括研发人员、车型适配、道路测试、标注/训练、云计算、驻场工程、功能安全认证和售后支持。毛利高低取决于软件复用率:如果每个车企/车型都高度定制，毛利接近项目制；如果统一栈能跨车型复用，毛利会向软件授权靠近。</p>
+<p><strong>Robotaxi。</strong> 收入驱动因素是运营车辆数、每车每日运营小时、每英里/公里收入、平台抽成、城市覆盖和乘客使用率。成本包括车辆折旧、传感器和冗余硬件、安全员或远程协助、保险、调度、维修、清洁、监管合规和云端运维。Robotaxi 只有在高利用率、低接管率、低事故率和低远程协助成本同时成立时，单位经济性才可能优于网约车司机成本。</p>
+<p><strong>数据闭环价值。</strong> 对 Momenta 来说，真实车端数据既是成本也是资产。车企若愿意把触发事件和驾驶数据回传，Momenta 可以降低边际训练成本并提升模型；但若车企限制数据使用，Momenta 只能提供项目交付，平台价值下降。</p>
+<p>需要后续核验的具体问题:</p>
+<ul><li>量产车型中 Momenta 每车软件收入区间、收入确认方式和售后/OTA 合同年限；</li><li>车企项目中标准化软件授权与定制工程服务各占多少；</li><li>Robotaxi 合作是否已经产生现金收入，还是战略合作/测试阶段；</li><li>Momenta 是否拥有客户数据训练通用模型的权利；</li><li>训练算力、仿真和标注成本占收入比例；</li><li>IPO 文件若发布，收入、毛利、订单、客户集中度和研发费用率是第一优先级。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 ADAS / 自动驾驶软件供应商</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>定位</th><th>对 Momenta 的压力</th></tr></thead><tbody><tr><td>Tesla FSD</td><td>全栈自研、端到端、全球车队数据</td><td>用消费者心智和规模数据定义高阶智驾体验，压低第三方供应商叙事</td></tr><tr><td>Wayve</td><td>AV foundation model / embodied AI driving</td><td>强调不依赖 HD map、端到端泛化和全球车企授权，直接竞争“自动驾驶模型层”</td></tr><tr><td>地平线机器人</td><td>中国车规芯片 + 智驾方案</td><td>软硬件结合、量产客户广，能把芯片和算法绑定卖给车企</td></tr><tr><td>卓驭科技 / 大疆车载</td><td>中国量产智驾方案</td><td>成本控制和工程落地强，对中低价车型有压力</td></tr><tr><td>华为 ADS</td><td>中国高阶智驾最强品牌之一</td><td>软硬件、渠道、品牌和车企深度合作强，挤压第三方软件供应商</td></tr><tr><td>Mobileye</td><td>EyeQ 芯片 + SuperVision/Chauffeur</td><td>全球车企关系深，量产安全体系成熟</td></tr><tr><td>车企自研</td><td>Tesla、Xpeng、NIO、Li Auto、Mercedes、Toyota 等</td><td>客户同时也是潜在竞争者，核心算法和数据主权可能被上收</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 Robotaxi 竞争</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>定位</th><th>对 Momenta 的压力</th></tr></thead><tbody><tr><td>Waymo</td><td>美国 Robotaxi 商业化领先者</td><td>已有多城市运营和真实乘客收入，是 L4 标杆</td></tr><tr><td>Baidu Apollo Go</td><td>中国 Robotaxi 运营经验丰富</td><td>国内政策和运营经验强</td></tr><tr><td>Pony.ai / WeRide</td><td>已资本化或接近资本化的中美自动驾驶公司</td><td>与 Momenta 在 Robotaxi、车企合作和资本市场上可比</td></tr><tr><td>Cruise</td><td>曾大规模运营，事故后重整</td><td>提醒 Robotaxi 安全事故对估值和监管影响巨大</td></tr><tr><td>Uber / Grab 自身平台</td><td>平台入口与调度</td><td>合作方也掌握用户和运营数据，议价能力强</td></tr></tbody></table></div>
+<h3 class="subsection">8.3 Momenta 的相对优势与短板</h3>
+<p>Momenta 的优势是中国量产数据、车企战略关系、自动驾驶工程团队和 Robotaxi 合作期权。短板是公开财务数据少、客户/车型收入拆分不清、海外监管落地仍早、以及车企自研和华为/Tesla 等强竞争者会持续压缩第三方软件公司的议价权。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Momenta 创始团队以自动驾驶算法、计算机视觉和工程化背景为核心。曹旭东作为公司代表人物，长期围绕数据驱动自动驾驶、量产和 L4 技术路线对外发声。公司能够吸引 GM、Toyota、SAIC、Mercedes-Benz 等产业资本，本身说明团队在车企合作、软件交付和资本沟通上具备较强能力。</p>
+<p>团队能力的关键考验已经从“算法能否跑起来”转向“能否服务复杂车企供应链”。这需要:</p>
+<ul><li>车规软件工程和功能安全团队；</li><li>量产项目管理、质量体系、测试验证和售后支持；</li><li>数据合规、隐私、跨境数据和安全团队；</li><li>Robotaxi 运营、城市政府沟通和保险/事故处理能力；</li><li>IPO 前的财务、内控、审计和投资者关系能力。</li></ul>
+<p>自动驾驶公司里，技术团队强不必然等于商业化强。Momenta 的团队评价要看它能否把算法文化和车规交付文化结合起来。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>IPO 状态误读风险</strong>:媒体报道不等于挂牌，投资研究必须以后续港交所/公司正式文件为准。</li><li><strong>车企自研风险</strong>:头部车企会把智能驾驶视为核心能力，第三方供应商可能被压价或替换。</li><li><strong>Tesla FSD 和华为 ADS 心智压力</strong>:消费者可能把高阶智驾体验与少数强品牌绑定，削弱白牌软件供应商价值。</li><li><strong>Robotaxi 商业化周期</strong>:合作公告到收费运营之间可能相隔多年。</li><li><strong>监管和事故责任</strong>:L2/L2+ 宣传、驾驶员责任、数据跨境、城市 Robotaxi 许可都可能限制部署。</li><li><strong>数据权益风险</strong>:车企数据主权强化会降低 Momenta 的通用模型飞轮价值。</li><li><strong>毛利风险</strong>:车型定制、驻场工程和售后支持若占比过高，会让业务更像项目制服务。</li><li><strong>海外地缘与合规风险</strong>:中国自动驾驶软件进入欧美或东南亚市场，需要处理数据、安全和本地监管。</li><li><strong>资本市场可比公司波动</strong>:Pony.ai、WeRide、Mobileye、Horizon Robotics 等公开估值会影响 Momenta IPO 定价。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="waabi.html">Waabi</a><a class="sib-chip" href="wayve.html">Wayve</a></div>
 </div>
 </body></html>

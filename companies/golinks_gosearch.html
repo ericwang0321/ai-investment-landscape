@@ -111,6 +111,43 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>解读</th></tr></thead><tbody><tr><td>YC batch</td><td>Winter 2019</td><td>早期创业背书</td></tr><tr><td>成立年份</td><td>LinkedIn: 2017</td><td>与 YC W19 时间线一致</td></tr><tr><td>团队规模</td><td>YC: 70；LinkedIn: 51-200 employees / 52 employees visible</td><td>成长阶段 SaaS 团队</td></tr><tr><td>关注者</td><td>LinkedIn: 17,551 followers</td><td>品牌心智有限但有企业 SaaS 可见度</td></tr><tr><td>GoSearch Pro</td><td>$20/user/month</td><td>与 Perplexity Pro 类似价位，但场景是企业内部知识</td></tr><tr><td>GoSearch Free</td><td>3 searches/day、3 GoAI queries/day、1 file upload</td><td>PLG 入口</td></tr><tr><td>Enterprise</td><td>Custom，含 SSO/SAML/SCIM、audit log、BYO LLM/BYOC</td><td>真正 ACV 增长来源</td></tr><tr><td>Connectors</td><td>GoSearch 页面称 100+ connectors</td><td>与 Glean/GoSearch/Slack/Atlassian 竞争的基础</td></tr><tr><td>GoLinks reviews</td><td>官网显示 800+ reviews，G2 link 650+ user reviews</td><td>中小和中大型客户 adoption 证据</td></tr><tr><td>Customer usage</td><td>YC: 75% of all employees at customers use monthly</td><td>强 adoption 线索，但需用客户 cohort 验证</td></tr><tr><td>Model N case</td><td>47% productivity boost、$400K savings、80% DAU、49% ticket backlog reduction</td><td>证明 AI search 能落到运营效率</td></tr><tr><td>融资</td><td>YC 页面列出 2022 年 GoLinks raises $27M Series A 新闻</td><td>总融资和估值需要后续用公司/投资人材料核验</td></tr></tbody></table></div>
 <p>商业化质量判断: GoLinks 有明确 PLG + enterprise sales 路径，但公开收入/ARR、净留存、付费席位数和 ACV 还没有形成可靠公开口径。当前更适合按“产品 adoption 和 enterprise search budget capture”分析，而不是直接按 ARR 倍数估值。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>GoLinks/GoSearch 的单位经济性介于传统 SaaS 与 AI search 工具之间:</p>
+<ul><li><strong>Seat gross margin</strong>: GoLinks 核心短链接和知识管理是高毛利 SaaS；GoSearch 的 AI query、summarization、agent execution 会引入 LLM 和搜索/索引成本。</li><li><strong>Connector maintenance cost</strong>: 企业搜索连接器需要持续适配 Google Drive、Slack、Jira、Confluence、Notion、ServiceNow、Salesforce 等 API 变化，这会提高 R&D/support 成本。</li><li><strong>Security/compliance cost</strong>: SOC 2、HIPAA、BYOC、on-prem、audit、prompt injection protection 都是进入 enterprise 的必要投入。</li><li><strong>Expansion motion</strong>: GoLinks 可从 IT/Engineering 的少量 champion 传播到全员；GoSearch/GoProfiles 可增加 seat 和模块 ARPU。</li><li><strong>AI cost control</strong>: Pro $20/user/month 若使用强度很高，LLM 成本和 federated retrieval 成本会压缩毛利；Enterprise custom 可以通过 volume、rate limits、BYO LLM 转嫁成本。</li><li><strong>Adoption moat</strong>: 若 75% monthly employee usage 可复制，GoLinks 的 logo retention 和 seat expansion 会很强；如果 GoSearch 使用率不高，AI 模块容易成为附加功能而非核心预算。</li></ul>
+<p>财务上最需要看三类指标: GoLinks core seat gross retention、GoSearch Pro/Enterprise attach rate、GoSearch AI usage gross margin。对投资人而言，GoLinks 从 productivity tool 升级成 Work AI platform 的证据，是 GoSearch enterprise ACV 和 DAU，而不是评论数量。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 与 Glean</h3>
+<p>Glean 是最直接的战略对标。Glean 强在 enterprise search、permission-aware knowledge graph、AI assistant、agents、融资规模和大客户销售；GoLinks 强在短链接入口和员工习惯。Glean 更像“企业 Google + AI assistant”，GoLinks 更像“企业 go/ 命名系统 + AI search + people graph”。</p>
+<p>GoLinks 的机会是: 企业在上 Glean 之前，可能已经通过 GoLinks 建立了高频内部资源入口；GoSearch 可把这个入口扩展到 AI。风险是: 当企业 CIO 决定采购全公司 enterprise search 时，Glean 的品牌、融资、连接器和 enterprise sales 可能更强。</p>
+<h3 class="subsection">8.2 与 Microsoft / Google / Atlassian / Slack / Notion</h3>
+<p>大厂竞争是 GoLinks 最大结构性风险。Microsoft 365 Copilot、Google Workspace/Gemini、Slack AI、Atlassian Intelligence、Notion AI 都掌握默认办公入口和权限体系。它们可以把搜索/问答嵌入已有工具，减少客户购买独立 enterprise search 的理由。</p>
+<p>GoLinks 的反击点是跨工具中立性和 go/link 习惯。单一大厂很难覆盖所有 SaaS；GoLinks 可以成为异构工具栈的统一入口。</p>
+<h3 class="subsection">8.3 与 GoSearch / Exa / Tavily / Perplexity API 的边界</h3>
+<ul><li><strong>Exa/Tavily/Perplexity API</strong> 主要解决外部 web search / real-time web data。</li><li><strong>GoSearch</strong> 主要解决企业内部知识、权限、SaaS connectors 和员工工作流。</li><li>企业 agent 实际可能同时使用两类工具: 外部信息用 Exa/Tavily，内部知识用 GoSearch/Glean，数据仓库用 Databricks/Snowflake。</li></ul>
+<h3 class="subsection">8.4 与 Databricks / Snowflake</h3>
+<p>Databricks/Snowflake 掌握结构化/半结构化企业数据，GoSearch/Glean 掌握员工每天用的 SaaS 文件、任务、会议、工单、Wiki、CRM、people graph。两者互补大于竞争。若 Databricks Agent Bricks 或 Snowflake Cortex 要构建企业 agent，也需要连接 GoSearch/Glean 这种 workplace knowledge 层。</p>
+<h3 class="subsection">8.5 与 Dify / LangChain</h3>
+<p>Dify/LangChain 是 builder/orchestration layer，GoSearch 是知识源和 end-user app。开发者可以用 LangChain/Dify 调用 GoSearch API 或 MCP Server，把内部知识注入 agent。竞争只会在 GoSearch 自身 no-code agents/workflows 扩展到更通用 app builder 时出现。</p>
+<h3 class="subsection">8.6 护城河与脆弱点</h3>
+<p>护城河:</p>
+<ul><li>高频 go/link 习惯和组织命名系统；</li><li>客户内部资源图谱和 usage analytics；</li><li>100+ connectors、权限继承、federated/indexed hybrid；</li><li>GoLinks + GoSearch + GoProfiles suite；</li><li>YC 和早期企业客户背书；</li><li>MCP/API 把知识入口嵌入 AI workflow。</li></ul>
+<p>脆弱点:</p>
+<ul><li>Glean 的 enterprise AI search 品牌和资本更强；</li><li>Microsoft/Google/Slack/Atlassian 默认入口优势巨大；</li><li>若客户把 GoLinks 当短链接工具，ARPU 上限有限；</li><li>AI search 质量若不稳定，会损害信任；</li><li>Connector 维护和权限错误风险高。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>YC 页面和 LinkedIn 资料显示 Jorge Zamora 是 founder/CEO，GoLinks 为 YC W19 公司。团队规模公开口径约 70 或 51-200 employees，位于 San Jose / Bay Area。团队背景更偏 enterprise SaaS/productivity，而不是 foundation model research。</p>
+<p>这类公司的组织能力重点不在训练模型，而在:</p>
+<ol><li><strong>产品体验</strong>: go/link 必须足够简单，否则无法全员传播。</li><li><strong>Enterprise engineering</strong>: connectors、permissions、security、search latency、audit、BYOC。</li><li><strong>AI search quality</strong>: 内部知识问答必须可追溯、权限正确、不过度幻觉。</li><li><strong>GTM</strong>: 从 champion-led PLG 扩到 CIO/IT/security 采购。</li><li><strong>Community/product-led motion</strong>: reviews、customer stories、free tier、MCP/ChatGPT/Cursor/Claude integrations。</li></ol>
+<p>GoLinks 的团队优势是专注了多年企业知识入口这个细分问题；挑战是要和融资更大的 Glean、默认入口更强的 Microsoft/Google 竞争，需要产品效果和部署速度明显优于大厂 bundle。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>大厂内置风险</strong>: Microsoft 365 Copilot、Google Workspace/Gemini、Slack AI、Atlassian Intelligence 可直接在默认办公入口提供搜索和问答。</li><li><strong>Glean 正面竞争</strong>: Glean 在 enterprise search 心智、融资和大客户案例上更强。</li><li><strong>工具定位过轻</strong>: GoLinks 若被采购方归类为短链接/书签工具，预算上限明显低于 enterprise search / Work AI。</li><li><strong>权限错误风险</strong>: enterprise search 最大事故是把不该看的文件暴露给用户，尤其在 federated/indexed hybrid 下。</li><li><strong>AI hallucination 与 stale content</strong>: 过期文档、重复资源和不准确总结会损害员工信任。</li><li><strong>Connector 维护成本</strong>: SaaS API 变更、rate limits、权限模型差异会提高研发和支持负担。</li><li><strong>AI gross margin</strong>: Pro $20/user/month 可能遇到高强度 AI usage 成本压力。</li><li><strong>客户 IT 审批周期</strong>: BYOC、SSO、SCIM、SOC 2、HIPAA 能帮助 enterprise，但也拉长销售周期。</li><li><strong>组织 adoption 波动</strong>: go/link 习惯需要文化传播，客户内 champion 离职或工具重组会影响使用。</li><li><strong>融资透明度不足</strong>: 最新资本结构不清，难判断 runway 和估值安全边际。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="alphasense.html">AlphaSense</a><a class="sib-chip" href="exa.html">Exa</a><a class="sib-chip" href="glean_technologies.html">Glean Technologies</a><a class="sib-chip" href="hebbia.html">Hebbia</a><a class="sib-chip" href="perplexity_ai.html">Perplexity AI</a><a class="sib-chip" href="tavily.html">Tavily</a></div>
 </div>
 </body></html>

@@ -122,6 +122,51 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <ul><li><strong>Rocket Mortgage:</strong> 4x higher conversion rates 说明 agent 不只是 deflect support,还能提升商业转化。</li><li><strong>Airtable:</strong> 80% resolution rate 说明在 SaaS support 场景中有明确自动解决率。</li><li><strong>SoFi:</strong> NPS +33 points 说明 AI 不一定降低体验,如果设计好反而提升满意度。</li><li><strong>Singtel:</strong> <10 weeks time to live 说明 enterprise deployment 速度可控。</li><li><strong>Redfin:</strong> listings viewed 2x more 说明 agent 可影响 product engagement。</li></ul>
 <p>这些指标仍需核验定义、基准、样本期和是否由 Sierra 独立贡献。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 Revenue build</h3>
+<p>Sierra revenue 可拆为:</p>
+<p>ARR = 客户数 × 平均 agent/brand/business unit 数 × outcome volume × price per successful outcome + platform / implementation / data platform fees</p>
+<p>如果采用 outcome pricing,更具体的驱动包括:</p>
+<ul><li>resolved conversations;</li><li>avoided human contacts;</li><li>incremental conversions;</li><li>subscription retention / churn reduction;</li><li>upsell/cross-sell actions;</li><li>proactive engagement workflows;</li><li>channel expansion to voice/WhatsApp/SMS/email。</li></ul>
+<h3 class="subsection">7.2 Cost build</h3>
+<p>成本包括:</p>
+<ul><li>LLM inference,尤其 long conversation、多轮 reasoning、tool calls;</li><li>voice ASR/TTS 和 latency infra;</li><li>integrations with CRM、order management、billing、identity、warehouse、EHR/financial systems;</li><li>simulations、monitoring、observability infra;</li><li>human review / implementation / agent design;</li><li>compliance/security;</li><li>customer support and enterprise success。</li></ul>
+<p>Outcome pricing 下,如果 Sierra 按结果收费但每个结果背后需要大量模型调用或人工配置,毛利会受压。关键是能否用 Ghostwriter、Agent Studio、SDK、simulations 和 reusable skills 降低每个新客户/新 workflow 的部署成本。</p>
+<h3 class="subsection">7.3 毛利判断</h3>
+<p>积极因素:</p>
+<ul><li>客服 ROI 清晰,客户愿意按成果付费;</li><li>大客户对成功解决率和转化率价值高;</li><li>多渠道统一 agent 可扩大使用量;</li><li>Agent Data Platform 可进入 retention/LTV 预算;</li><li>outcome pricing 能从 cost saving 中分成。</li></ul>
+<p>压力因素:</p>
+<ul><li>voice/chat 量大,推理成本会随交互增长;</li><li>enterprise integration 初期服务重;</li><li>每个品牌语气、policy、guardrail 不同,难完全标准化;</li><li>高风险行业需要更多 compliance/human review;</li><li>Salesforce/Zendesk/ServiceNow/Intercom 可用现有 seat/平台合同 bundling AI。</li></ul>
+<h3 class="subsection">7.4 为什么客服 agent 比许多 agent 场景更可投资</h3>
+<p>客服 agent 的优势是闭环清楚。相比“通用 agent 帮员工工作”,客服有明确输入输出:</p>
+<ul><li>客户发起问题;</li><li>agent 查知识库/系统;</li><li>agent 执行动作或转人工;</li><li>outcome 可度量;</li><li>企业每月有大量重复样本可优化;</li><li>数据可用于 monitoring、experiment 和 routing。</li></ul>
+<p>这也是 Sierra 估值高的根本原因:它不是在寻找 agent use case,而是在一个已有巨大成本池的场景中替换/增强人工和传统软件。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 直接竞争者</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>定位</th><th>对 Sierra 的威胁</th></tr></thead><tbody><tr><td>Salesforce Agentforce / Service Cloud</td><td>CRM + service workflow + AI agents</td><td>最大平台型对手,拥有客户数据和客服入口</td></tr><tr><td>Zendesk AI</td><td>客服系统 + AI automation</td><td>既有中大型客服客户基础强</td></tr><tr><td>Intercom Fin</td><td>AI customer support agent</td><td>SMB/mid-market 强,产品成熟,公开 AI support ROI 多</td></tr><tr><td>Decagon</td><td>enterprise AI support agents</td><td>AI-native,与 Sierra 同赛道</td></tr><tr><td>Ada</td><td>automated customer service platform</td><td>老牌 chatbot/automation 客户基础</td></tr><tr><td>Cresta</td><td>contact center AI / agent assist</td><td>voice/contact center 深</td></tr><tr><td>Observe.AI</td><td>contact center conversation intelligence</td><td>voice QA、agent assist、automation</td></tr><tr><td>ServiceNow AI Agents</td><td>ITSM/CSM workflow</td><td>企业 workflow 和客服/IT 流程入口</td></tr><tr><td>Cognigy / Kore.ai / LivePerson</td><td>conversational AI/contact center automation</td><td>企业部署经验</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 Sierra 的差异化</h3>
+<ul><li>顶级 founder brand: Bret Taylor/Clay Bavor 带来客户信任和资本。</li><li>Outcome-based pricing: 与客户价值对齐,不同于 seat/chat volume。</li><li>Agent OS: 不只是 chatbot,而是 build/optimize/personalize/scale 全栈。</li><li>Multi-channel: chat、SMS、WhatsApp、email、voice、ChatGPT。</li><li>Agent Data Platform: 从 conversation automation 延伸到 relationship memory/next best action。</li><li>Developer + no-code 双模式: Agent Studio/Ghostwriter 给业务团队,Agent SDK 给工程团队。</li><li>大客户 logo 质量高,覆盖多行业。</li></ul>
+<h3 class="subsection">8.3 与 Salesforce 的关系</h3>
+<p>Sierra 与 Salesforce 的竞争最微妙。Bret Taylor 是前 Salesforce co-CEO,深知 CRM/service cloud 生态;Salesforce Agentforce 拥有 CRM 数据、客户服务记录和现有合同,是天然入口。Sierra 的挑战是证明:</p>
+<ul><li>专业 agent company 比 CRM vendor 更快、更灵活、更高性能;</li><li>outcome pricing 比 seat/platform add-on 更容易证明 ROI;</li><li>Sierra 能连接 Salesforce/ServiceNow/Zendesk 等系统,而不被它们封锁;</li><li>客户愿意在系统 of record 之外采购一个 customer agent layer。</li></ul>
+<p>如果 Salesforce Agentforce 足够好且 bundled 到现有合同,Sierra 的新预算会受压;如果客户需要跨多个系统、品牌化、高定制、多渠道且 outcome-based 的 agent,Sierra 更有空间。</p>
+<h3 class="subsection">8.4 与 BPO/人工客服</h3>
+<p>Sierra 不只竞争软件,也竞争 BPO/contact center outsourcing。BPO 的优势是人工灵活、可处理异常、成熟 SLA;Sierra 的优势是可无限并发、低延迟、可学习、可个性化、可跨渠道。现实中更可能是混合模式:</p>
+<ul><li>AI 处理高频/中低复杂度;</li><li>human agents 处理高风险/复杂/情绪化问题;</li><li>AI 做 handoff summary 和 agent assist;</li><li>AI insights 反哺产品/运营。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Bret Taylor 是 Sierra 最大的资本市场和客户信任资产之一。他曾任 Salesforce co-CEO,也是 OpenAI board chair,并参与 Google Maps 等产品。Clay Bavor 在 Google 有长期产品和平台经验。这个组合很适合做 customer experience agent:</p>
+<ul><li>懂 enterprise sales 和 CRM/service workflows;</li><li>懂 consumer-grade product experience;</li><li>有 OpenAI/AI ecosystem 资源;</li><li>能吸引顶级客户、人才和资本。</li></ul>
+<p>团队风险是 founder premium 已经反映在估值中。客户和投资人会给 Bret/Clay 信任,但公司仍要证明产品、部署、毛利和 retention。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>估值过高:</strong> $10B 对 >$100M ARR 口径接近 100x,容错率低。</li><li><strong>平台巨头 bundling:</strong> Salesforce、Zendesk、ServiceNow、Intercom 拥有客服系统入口。</li><li><strong>Outcome attribution:</strong> 成功结果定义和归因复杂,可能引发合同争议。</li><li><strong>毛利压力:</strong> voice、long conversations、tool calls、human review 和定制部署成本高。</li><li><strong>品牌风险:</strong> 客户面对消费者,agent 错误会直接伤害品牌。</li><li><strong>合规风险:</strong> 金融、医疗、支付、身份数据场景需要严格监管。</li><li><strong>客户集中:</strong> 大客户 ACV 高,但如果少数大客户贡献过多收入,续约风险大。</li><li><strong>产品可靠性:</strong> 多渠道、系统动作、个性化记忆、proactive engagement 任何环节出错都可能造成业务后果。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="character_ai.html">Character.AI</a><a class="sib-chip" href="clay.html">Clay</a><a class="sib-chip" href="decagon_ai.html">Decagon AI</a><a class="sib-chip" href="genspark.html">Genspark</a><a class="sib-chip" href="harvey.html">Harvey</a><a class="sib-chip" href="legora.html">Legora</a><a class="sib-chip" href="manus_butterfly_effect.html">Manus</a><a class="sib-chip" href="writer.html">Writer</a></div>
 </div>
 </body></html>

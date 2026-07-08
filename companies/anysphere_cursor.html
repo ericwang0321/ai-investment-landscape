@@ -104,6 +104,37 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>Cursor 的收入质量取决于三个层级:</p>
 <ol><li><strong>Individual developer enthusiasm</strong>: $20/月低摩擦、传播快，但 churn 可能更高，且重度用户成本高。</li><li><strong>Teams/Enterprise standardization</strong>: $40/user/mo + pooled usage + admin/security，收入更可预测。</li><li><strong>Cloud agents/automations usage</strong>: 高价值但成本也高，是未来 revenue expansion 的关键。</li></ol>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Cursor 的单位经济性比传统 IDE 复杂得多。</p>
+<h3 class="subsection">7.1 收入端</h3>
+<ul><li>Seat: $20/月 individual、$40/user/月 Teams、Enterprise custom。</li><li>Usage: included model usage 后，on-demand usage billed in arrears。</li><li>Enterprise: pooled usage、security controls、invoice/PO、priority support 可提升 ACV。</li><li>Cloud agents: 并行 agent session、VM runtime、testing/artifacts 可能创造 usage expansion。</li></ul>
+<h3 class="subsection">7.2 成本端</h3>
+<ul><li>Frontier model token: Claude/GPT/Gemini 高成本，长上下文 codebase 更贵。</li><li>Agent retry/testing: agent 运行命令、失败重试、跑测试、生成 artifacts，成本高于单次 chat。</li><li>Cloud VM/sandbox: cloud agents 需要隔离环境、存储、网络、日志和安全控制。</li><li>Support/security: 企业客户要求 privacy mode、audit、repo controls、SOC2、SSO/SCIM。</li></ul>
+<h3 class="subsection">7.3 粗略倍数</h3>
+<p>以 $29.3B 估值和 >$1B annualized revenue 报道看，EV/ARR 约 29x；以 2025-06 $500M ARR 和 $9.9B 看约 20x；若按 2025-04 $200M 和 $9B 看约 45x。倍数区间看似比部分模型公司低，但前提是收入真实、续约强、gross margin 能从模型成本中改善。若 frontier model 成本持续吞噬毛利，Cursor 可能需要自研模型/路由/缓存/批量采购来维持软件公司估值。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 直接竞品</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司/产品</th><th>类型</th><th>对 Cursor 的威胁</th></tr></thead><tbody><tr><td>GitHub Copilot</td><td>IDE插件 + GitHub/Microsoft enterprise distribution</td><td>默认企业采购、代码托管入口、价格和分发优势</td></tr><tr><td>Anthropic Claude Code</td><td>agentic coding CLI/workflow</td><td>Claude 模型强，开发者口碑强，威胁 Cursor heavy users</td></tr><tr><td>OpenAI Codex / ChatGPT coding</td><td>coding agent + ChatGPT distribution</td><td>OpenAI consumer/enterprise入口大，且早期投资 Cursor 后转为竞合</td></tr><tr><td>Cognition Devin / Devin Desktop / Windsurf</td><td>autonomous software engineer + IDE</td><td>更强调端到端 autonomous agent，收购 Windsurf 后有 IDE 和企业 ARR</td></tr><tr><td>Replit</td><td>browser IDE + agent/app building</td><td>面向全栈 app creation 和非专业开发者</td></tr><tr><td>JetBrains AI</td><td>专业 IDE 生态</td><td>既有 IDE 用户和企业席位</td></tr><tr><td>Google Gemini Code Assist</td><td>企业云和 Android/Google distribution</td><td>与 Google Cloud 绑定，企业采购便利</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 价值链位置</h3>
+<p>Cursor 位于“模型之上、开发者 workflow 之内”。它不是基础模型公司，因此不必训练通用 frontier model；但也因为上游模型供应商可以前向整合，必须通过 workflow depth 建立防御。Cursor 的核心价值链位置是:</p>
+<ul><li>模型层: OpenAI/Anthropic/Google/xAI/自有 Composer。</li><li>中间层: codebase index、agent runtime、model routing、MCP/tools。</li><li>应用层: IDE、CLI、Cloud、Review、Automations、Mobile。</li><li>企业层: admin/security/audit/usage analytics/repo controls。</li></ul>
+<h3 class="subsection">8.3 护城河</h3>
+<ul><li><strong>开发者习惯</strong>: IDE 是日常工作入口，迁移成本高于普通 chat app。</li><li><strong>codebase context</strong>: 用户项目、rules、MCP、team marketplace 会累积上下文。</li><li><strong>workflow breadth</strong>: autocomplete、chat、agent、review、cloud、automation、mobile 组合更完整。</li><li><strong>收入规模</strong>: 高 ARR 带来模型采购和算力议价权。</li><li><strong>品牌</strong>: “vibe coding”浪潮中 Cursor 是标志性产品。</li></ul>
+<h3 class="subsection">8.4 可被攻击点</h3>
+<ul><li>模型差异化来自上游，OpenAI/Anthropic 可绕过 Cursor 直达用户。</li><li>企业可能选择 GitHub Copilot 作为合规默认工具。</li><li>AI coding 质量事故会影响生产系统安全。</li><li>用户对 usage 计费高度敏感，价格调整容易引发舆论。</li><li>如果 IDE 产品太重，非专业开发者可能转向 Lovable/Replit/Manus 这类 prompt-to-app 工具。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>四位创始人均为 MIT 背景。Michael Truell 是 CEO；Sualeh Asif、Aman Sanger、Arvid Lunnemark 为联合创始人。团队早期从研究/竞赛/系统工程背景切入 AI IDE，特点是年轻、工程密度高、产品迭代快。公司招聘流程也被媒体报道为强调高强度技术判断: 首轮不允许使用 AI，后续有两天 onsite project，用来判断候选人的基础工程能力和与核心团队协作方式。</p>
+<p>人员/组织风险同样存在: 2025 年后公司从几十人扩张到数百人，产品从 IDE 扩张到 cloud/mobile/enterprise，管理复杂度显著上升。若 co-founder 流失或企业 sales/support 跟不上，可能影响扩张质量。2025-2026 年 media/维基还提到 Supermaven、Koala、Graphite 等收购/人才交易，说明 Cursor 正在用并购补齐 completion、enterprise readiness、code review 等能力。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>模型供应商前向整合</strong>: Claude Code、OpenAI Codex、GitHub Copilot 都可能吞噬 Cursor 的核心使用时长。</li><li><strong>毛利压力</strong>: $20/月用户若大量调用昂贵模型和 long-context agent，亏损风险高。</li><li><strong>价格透明度</strong>: usage pricing 改动已触发用户反弹，未来仍需更清晰成本/额度设计。</li><li><strong>企业安全</strong>: 代码库是高敏感资产，数据训练、repo access、network controls、audit log 必须可靠。</li><li><strong>代码质量和责任</strong>: Agent 生成代码进入生产系统后，bug/security liability 难归责。</li><li><strong>估值过高</strong>: $29.3B 甚至 $50B+ 讨论需要持续高增长，否则倍数收缩快。</li><li><strong>模型中立性</strong>: 若被某一模型/算力平台绑定，可能削弱“best model for each task”的产品优势。</li><li><strong>开发者习惯分裂</strong>: 部分用户转向 CLI agents、ChatGPT/Claude 原生工具、GitHub-native workflow。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="cognition_ai_devin.html">Cognition AI</a><a class="sib-chip" href="emergent.html">Emergent</a><a class="sib-chip" href="lovable.html">Lovable</a><a class="sib-chip" href="poolside_ai.html">Poolside AI</a><a class="sib-chip" href="replit.html">Replit</a><a class="sib-chip" href="stackblitz_bolt_new.html">StackBlitz</a></div>
 </div>
 </body></html>

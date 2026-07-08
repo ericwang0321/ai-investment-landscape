@@ -110,6 +110,39 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>Figure 的商业化成熟度应分三档看:</p>
 <ol><li><strong>已验证</strong>:机器人可以进入真实客户工厂做受控物流/搬运类任务；公司可以吸引顶级战略资本；BotQ 有明确制造计划。</li><li><strong>正在验证</strong>:客户是否愿意从试点扩到多站点、多机器人、多班次；Figure 03 是否按时量产；Helix 02 是否能把 demo 转成稳定 workflow。</li><li><strong>尚未验证</strong>:家庭消费者产品化、机器人 fleet 大规模安全运行、真实毛利、field service 成本、单位经济性、长期责任保险。</li></ol>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Figure 的单位经济性可以拆成六层。</p>
+<p><strong>第一，单机 BOM 与制造成本。</strong> 人形机器人高成本部件包括 actuators、motors、gearboxes、hands、tactile sensors、cameras、battery pack、compute、结构件和线束。Figure 03 通过 tooling process 降本，但模具、自动化设备、MES/ERP、测试设备和库存会在前期推高资本开支。</p>
+<p><strong>第二，装配良率与返修。</strong> 工业机器人客户关心 uptime。若机器人频繁返修、手部损坏、电池衰减、传感器漂移或跌倒损伤，Figure 需要承担 field service 成本，RaaS 毛利会被吞噬。</p>
+<p><strong>第三，机器人利用率。</strong> 若机器人只能每天运行几个小时或只做少数流程，客户 ROI 很难覆盖单机成本；若可通过快速充电/无线充电、多班次、任务切换和 fleet orchestration 提高 utilization，RaaS 模式才可能跑通。</p>
+<p><strong>第四，任务价值。</strong> 搬运、分拣、线边配送、仓储补货这类任务劳动成本高、招工难、环境相对标准化，是 Figure 初期更适合的场景。家庭洗碗、叠衣、开门、照护等任务价值高但碎片化强，事故责任和隐私成本高。</p>
+<p><strong>第五，AI 数据边际价值。</strong> 每台机器人如果能生成可复用数据，边际价值不只来自当期工作小时，还来自 Helix 训练改进。这个飞轮只有在数据权益、标注、模型迭代和跨站点迁移都成立时才有意义。</p>
+<p><strong>第六，融资摊薄与资本开支。</strong> $1B+ Series C 说明 Figure 有资金做大规模硬件投入，但也意味着公司需要在后续融资或 IPO 前证明资本效率。机器人制造不像纯软件，现金消耗可能由库存、设备、厂房、供应链预付款和售后网络驱动。</p>
+<p>需要后续核验的具体问题:</p>
+<ul><li>Figure 与 BMW 的合同是付费试点、采购订单、租赁还是战略合作？</li><li>单台 Figure 03 的目标制造成本、售价、毛利和保修期是多少？</li><li>BotQ 12,000 台年产能对应的实际 2026 出货目标是多少？</li><li>工业部署机器人平均 uptime、每小时任务量和安全 incident rate 如何？</li><li>Helix 数据回流是否得到客户授权，是否可跨客户训练？</li><li>Figure 是否购买责任险，单机保费和安全认证成本多少？</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 直接人形机器人竞争</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司</th><th>定位</th><th>对 Figure 的压力</th></tr></thead><tbody><tr><td>Tesla Optimus</td><td>大厂自有工厂、供应链、制造工程、AI 数据和资本</td><td>Tesla 能在自有工厂内部迭代，制造/电池/电机/自动驾驶团队强，长期可能用低成本压制创业公司</td></tr><tr><td>Agility Robotics</td><td>Digit 已商业部署，仓储/制造更务实，RaaS 口径更清晰</td><td>Agility 2026 SPAC 口径显示 >$300M multi-year orders、九个客户设施、65,000+ operating hours，对“真实商业化”更有证据</td></tr><tr><td>1X Technologies</td><td>NEO 家庭机器人，OpenAI/Tiger/EQT/Samsung 背书</td><td>1X 在家庭产品化、$20,000/499 月订阅和软体安全设计上更早面向消费者</td></tr><tr><td>Apptronik</td><td>Apollo 工业 humanoid，Google DeepMind/Mercedes/Jabil 合作</td><td>Apptronik 拿到 $935M+ Series A、Robot Park、Apollo 2/3 路线，在数据工厂和工业客户上追赶</td></tr><tr><td>Sanctuary AI</td><td>Phoenix humanoid + Carbon AI</td><td>更强调 general-purpose labor 和认知系统，但融资和量产声量低于 Figure</td></tr><tr><td>Unitree / AgiBot / EngineAI</td><td>中国供应链、低成本、快速迭代</td><td>在价格、硬件迭代速度、出货量和供应链上可能冲击全球市场</td></tr><tr><td>Boston Dynamics Atlas</td><td>动态控制和运动能力强，Hyundai 工业资源</td><td>更偏先进机器人能力与工业研发，商业路径较谨慎</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 Robot foundation model / Physical AI 竞争</h3>
+<p>Figure 的 Helix 与 Physical Intelligence、Skild AI、Covariant、Google DeepMind Gemini Robotics、NVIDIA GR00T/Cosmos、OpenAI robotics 的竞争更深。硬件最终可能趋同，真正差异在“谁的数据和模型能让机器人低成本学会更多任务”。</p>
+<ul><li><strong>Physical Intelligence</strong>:不主打自有 humanoid 本体，目标是控制任何机器人做任何任务；π0/π0.5/π0.7 和 Physical Intelligence Layer 更像模型平台。对 Figure 的威胁是未来硬件厂商可采购独立 robot brain。</li><li><strong>Skild AI</strong>:强调 general-purpose robot brain、跨机器人/环境适配和企业应用。若其软件能接入多家硬件，可能形成平台效应。</li><li><strong>Covariant</strong>:从仓储拣选和 RFM-1 出发，数据更集中在物流/仓储操作。对 Figure 的威胁是专用场景里更快达到 ROI。</li><li><strong>Google DeepMind Gemini Robotics</strong>:具备基础模型、仿真、研究和云生态优势，并与 Apptronik/Agility/Boston Dynamics 等合作。</li><li><strong>NVIDIA GR00T / Isaac / Cosmos / Halos</strong>:不是单一机器人公司，而是把 simulation、training、runtime、安全栈卖给整个行业。Figure 依赖 NVIDIA 生态，但 NVIDIA 也在赋能竞品。</li></ul>
+<h3 class="subsection">8.3 Figure 的相对优势</h3>
+<p>Figure 的优势是资金、品牌、AI 与硬件垂直整合、BotQ 量产叙事和 BMW 这样的标志性客户。Helix 02 如果真的能在 Figure 03 上稳定完成全身长时任务，Figure 将比只做硬件或只做模型的公司更接近闭环。</p>
+<p>Figure 的弱点是估值过高、公开客户少、价格/收入缺失、家庭场景尚早、安全争议敏感，以及 OpenAI 分手后需要独自承担 AI 研发压力。与 Tesla 相比，Figure 没有自有巨大制造场景；与 Agility 相比，Figure 商业运营小时数公开证据少；与 1X 相比，Figure 家庭消费者入口不清晰；与 Apptronik 相比，Figure 与 Google DeepMind 这类基础模型合作关系较弱。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Brett Adcock 是 Figure 的核心个人品牌。他此前创办 Vettery 并出售给 Adecco，也创办 Archer Aviation，具有融资、硬件叙事和资本市场经验。这个背景对 Figure 很重要，因为人形机器人需要极强的资本动员能力、制造工程管理和长期愿景传播。</p>
+<p>Figure 团队公开资料显示来自 robotics、AI、manufacturing、sensing、controls、Tesla、Boston Dynamics、Google DeepMind 等背景。随着 OpenAI 合作结束，公司更强调自有 AI team。Series C 资金用途中的 GPU infrastructure 和 data collection 表明 Figure 不只招聘机械/制造人才，也需要大规模 AI training、simulation、teleoperation、data engineering 和 safety evaluation 团队。</p>
+<p>团队风险也很明确:一家公司同时做硬件、模型、制造、客户部署和家庭产品，组织复杂度接近汽车/航空/AI lab 的叠加。早期创始人驱动可以快，但进入量产后需要质量体系、安全体系、财务纪律和客户服务体系。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>估值风险</strong>: $39B 估值要求 Figure 成为行业平台型赢家，普通硬件公司财务指标无法支撑。</li><li><strong>安全风险</strong>:人形机器人在工厂和家庭都可能造成撞击、夹伤、跌倒、电池和隐私风险；2025 年产品安全诉讼会放大客户审查。</li><li><strong>量产风险</strong>:BotQ 12,000 台/年是设计产能，不代表 2026 实际出货。Actuator、hand、battery、sensor 和总装良率都可能拖慢。</li><li><strong>客户 ROI 风险</strong>:如果机器人每小时成本、部署成本和维护成本高于人工/专用自动化，客户会把试点停在 PR 阶段。</li><li><strong>模型泛化风险</strong>:Helix 02 demo 不等于开放场景稳定运行。长尾物体、遮挡、反光、湿滑、人员干扰都会降低成功率。</li><li><strong>竞争风险</strong>:Tesla、Agility、Apptronik、1X、Physical Intelligence、Skild、Google DeepMind、NVIDIA、中国低成本厂商都在不同层面压缩 Figure 空间。</li><li><strong>供应链风险</strong>:人形机器人缺少成熟 tiered supply chain，Figure 自研大量核心部件会提高控制力，也会提高资本和管理压力。</li><li><strong>监管/责任风险</strong>:工业安全认证、家庭隐私、远程监控、数据回流、劳动替代争议和事故责任都可能影响部署速度。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="1x_technologies.html">1X Technologies</a><a class="sib-chip" href="agibot_智元机器人.html">AgiBot</a><a class="sib-chip" href="agility_robotics.html">Agility Robotics</a><a class="sib-chip" href="apptronik.html">Apptronik</a><a class="sib-chip" href="noetix_robotics_破壳机器人.html">Noetix Robotics</a><a class="sib-chip" href="robot_era_星动纪元.html">Robot Era</a><a class="sib-chip" href="unitree_robotics_宇树科技.html">Unitree Robotics</a><a class="sib-chip" href="x_square_robot_星海图.html">X Square Robot</a></div>
 </div>
 </body></html>

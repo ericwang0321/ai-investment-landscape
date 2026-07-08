@@ -111,6 +111,40 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <ul><li>患者可能误解 AI 的建议;</li><li>患者可能描述危险症状但表达不清;</li><li>语言、口音、听力、健康素养都会影响交互;</li><li>AI 需要识别情绪、紧急风险、家庭暴力、自杀意念等敏感信号;</li><li>转人工必须及时、可靠、可审计。</li></ul>
 <p>因此,它的安全系统是产品本体,不是附加功能。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 Revenue build</h3>
+<p>Hippocratic 的收入可近似拆成:</p>
+<p>收入 = 客户数 × use cases per customer × covered patients/members × interaction frequency × price per interaction / annual contract rate</p>
+<p>关键变量:</p>
+<ul><li><strong>客户数:</strong> health systems、payers、pharma logos。</li><li><strong>部署深度:</strong> 单一 use case pilot vs 多部门、多地区、多语言部署。</li><li><strong>触达量:</strong> 每月 outbound calls / inbound calls / completed calls。</li><li><strong>完成率:</strong> connected rate、completion rate、goal achieved rate。</li><li><strong>人工升级率:</strong> escalation rate 越高,安全更强但成本更高。</li><li><strong>毛利:</strong> telephony + inference + clinical supervision + implementation。</li><li><strong>合同期限:</strong> annual / multi-year MSA 是否存在。</li></ul>
+<h3 class="subsection">7.2 COGS 框架</h3>
+<p>Hippocratic 的 COGS 可能包括:</p>
+<ul><li>实时语音模型推理;</li><li>ASR/TTS/telephony;</li><li>LLM / constellation model inference;</li><li>human nurse escalation capacity;</li><li>licensed clinician testing and review;</li><li>implementation / integration support;</li><li>security and compliance overhead;</li><li>monitoring, QA, audit and incident response。</li></ul>
+<p>如果 AI agent 可以在大量低风险通话中低人工介入运行,毛利可高;如果每个客户都需要大量人工监督和定制脚本,毛利会更像 tech-enabled services。</p>
+<h3 class="subsection">7.3 ROI 计算</h3>
+<p>客户购买 Hippocratic 的 ROI 可能来自:</p>
+<ul><li>减少护士和 call center 人工时间;</li><li>提高 care gap closure,带来 payer quality bonus;</li><li>降低 readmission penalty;</li><li>提高 screening/vaccination 完成率;</li><li>增加 appointment throughput;</li><li>pharma 场景降低 call center 和 study coordinator 成本;</li><li>多语言触达改善 health equity 指标。</li></ul>
+<p>但 ROI 归因很难。比如 readmission 降低 30% 可能受 discharge planning、case mix、季节性、护理团队变化影响。尽调时应要求 case study 的 cohort、对照组、时间窗口和统计方法。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>类别</th><th>公司/产品</th><th>与 Hippocratic 的关系</th></tr></thead><tbody><tr><td>Ambient scribe</td><td>Abridge、Nabla、Suki、Ambience、Heidi</td><td>主要减轻医生文书负担;与 Hippocratic 的 patient outreach 互补,但可能向 patient workflow 延伸</td></tr><tr><td>Care navigation / admin AI</td><td>EliseAI Healthcare、Innovaccer Gravity AI、Commure、Fabric</td><td>都在用 AI 自动化医疗运营和患者沟通</td></tr><tr><td>Call center / engagement vendors</td><td>Healthwise、CipherHealth、GetWell、WellSky、Twilio-based healthcare workflows</td><td>传统患者触达基础设施,可能加 AI agent</td></tr><tr><td>Payer care management</td><td>Optum、Elevance/Carelon、Included Health、Maven、Transcarent</td><td>有会员关系和临床团队,可能内置 AI</td></tr><tr><td>Pharma patient support</td><td>IQVIA、EVERSANA、Syneos、Veeva ecosystem</td><td>深耕药企合规和患者服务,Hippocratic 可作为 AI layer</td></tr><tr><td>大厂</td><td>Microsoft/Nuance、Google Cloud Healthcare、AWS HealthScribe、Epic</td><td>有客户渠道和合规基础,可做平台级集成</td></tr></tbody></table></div>
+<h3 class="subsection">8.1 护城河</h3>
+<ul><li><strong>真实 patient interaction 数据:</strong> 200M+ interactions 若可用于安全和性能反馈,是核心资产。</li><li><strong>临床测试网络:</strong> 7,500+ licensed clinicians 和 725K+ test calls 形成验证壁垒。</li><li><strong>安全边界清晰:</strong> 不诊断、不处方、不碰高风险场景,降低早期事故概率。</li><li><strong>Agent library:</strong> 1,000+ use cases 让销售从单点功能变成平台扩张。</li><li><strong>Provider/payor/pharma 三市场:</strong> 同一语音 agent 基础能力可跨客户类型复用。</li><li><strong>Human escalation:</strong> 转人工能力是 patient-facing AI 的信任基础。</li></ul>
+<h3 class="subsection">8.2 最容易被攻击的地方</h3>
+<ul><li>医疗系统采购慢,pilot 多、全院部署少。</li><li>Abridge/Nabla/ambient scribe 可能顺着医生工作流进入患者 follow-up。</li><li>大型 call-center vendors 可把已有客户和电话基础设施 AI 化。</li><li>如果临床事故或媒体负面案例出现,客户会暂停部署。</li><li>毛利可能被 nurse escalation、customization 和 integration 吃掉。</li><li>监管可能要求 patient-facing AI 更强 disclosure、记录保存和安全评估。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Munjal Shah 是连续创业者,曾创立 Health IQ 等公司,长期在 consumer health、保险和行为改变领域工作。这对 Hippocratic 很重要:patient-facing healthcare agent 不只是模型问题,还涉及患者沟通、行为引导、保险/健康系统经济学和合规。</p>
+<p>公司官网显示其顾问、临床安全和投资方网络强调 healthcare operating experience。相比纯 AI lab,Hippocratic 更像“医疗运营公司 + 语音 AI 平台 + 临床安全组织”的组合。招聘和组织应重点看:</p>
+<ul><li>clinical safety;</li><li>nursing operations;</li><li>enterprise sales;</li><li>healthcare compliance;</li><li>telephony infrastructure;</li><li>LLM/voice model engineering;</li><li>deployment and customer success。</li></ul>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>患者安全事故:</strong> 语音 AI 漏识别危险症状或未及时升级人工,可能造成严重后果。</li><li><strong>监管边界:</strong> Patient-facing AI 可能受到 FDA clinical decision support、FTC、state medical board、HIPAA 等多重约束。</li><li><strong>医疗责任:</strong> 即使 AI 不诊断/不处方,患者可能依据其建议行动,责任划分复杂。</li><li><strong>部署周期:</strong> 医院采购、IT/security review、clinical governance 会拖慢收入确认。</li><li><strong>毛利不确定:</strong> 实时语音、人工升级、临床测试和定制集成成本可能很高。</li><li><strong>效果归因:</strong> ROI 和 readmission reduction 等结果需要严格统计证明。</li><li><strong>竞争压缩:</strong> call center、EHR、ambient scribe 和 payer vendors 都可加入 AI agent。</li><li><strong>数据隐私:</strong> 语音通话可能包含 PHI,需要录音、转写、训练使用和保留策略透明。</li><li><strong>品牌风险:</strong> 患者对 AI 打电话的接受度、披露方式和信任感影响完成率。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="abridge.html">Abridge</a><a class="sib-chip" href="ambience_healthcare.html">Ambience Healthcare</a><a class="sib-chip" href="bioptimus.html">Bioptimus</a><a class="sib-chip" href="evolutionaryscale.html">EvolutionaryScale</a><a class="sib-chip" href="insilico_medicine.html">Insilico Medicine</a><a class="sib-chip" href="nabla.html">Nabla</a><a class="sib-chip" href="openevidence.html">OpenEvidence</a><a class="sib-chip" href="suki.html">Suki</a></div>
 </div>
 </body></html>

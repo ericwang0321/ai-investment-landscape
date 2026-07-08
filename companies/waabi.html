@@ -111,6 +111,33 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>Waabi 的商业化成熟度比 Waymo Robotaxi 更早期，但比纯研究公司更接近客户场景。Uber Freight 和 Volvo 是很强的商业锚点，因为一个掌握货源平台，一个掌握卡车平台。关键问题是合作是否从技术验证转为付费无人运输。</p>
 <p>对 autonomous trucking 来说，研究中还要把“技术可行”与“网络可运营”分开。技术可行指车辆能在限定高速路线安全完成运输；网络可运营还要求两端 hub、拖挂车交接、装卸窗口、天气绕行、夜间运营、维修响应、远程协助和客户 SLA 同时成立。Waabi 的 AI-first 路线如果只降低驾驶系统开发成本，价值已经可观；如果还能与 Uber Freight 的货源密度结合，形成高利用率自动驾驶 freight lane，商业价值会明显更高。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Autonomous trucking 的经济性比 Robotaxi 更容易算，但更难安全落地。</p>
+<p><strong>收入端。</strong> 长途货运按英里收费，客户关心准时率、成本、可用性和安全。无人重卡理论上可以提高资产利用率、减少司机短缺约束、降低每英里人工成本，并通过更稳定驾驶降低燃油和事故成本。Waabi 如果按软件 license 收费，收入取决于无人卡车数量；如果参与运力运营，收入取决于付费里程和平台分成。</p>
+<p><strong>成本端。</strong> 主要成本包括卡车购置/改装、传感器、车端 compute、冗余系统、维护、轮胎、燃油/电力、保险、远程监控、depot、路救、合规和软件研发。无人卡车初期可能仍需远程操作中心和安全团队，远程协助比例会显著影响单位成本。</p>
+<p><strong>利用率。</strong> 卡车经济性的关键是每日行驶小时和空驶率。自动驾驶理论上可延长运行时间，但法规、维护、充电/加油、装卸和 hub 操作仍限制利用率。Uber Freight 的平台价值在于减少空驶、匹配货源。</p>
+<p><strong>安全验证成本。</strong> Waabi World 可降低道路测试成本，但仿真构建、场景库、传感器建模和验证团队仍需投入。监管和保险是否接受仿真证据，会影响成本节奏。</p>
+<p>需要后续核验:</p>
+<ul><li>每条 commercial lane 的付费英里、客户和收入；</li><li>driver-out 是否已实现，是否有安全员/远程协助；</li><li>每车改装成本、传感器成本和维护成本；</li><li>Waabi 与 Uber Freight/Volvo 的收入分配；</li><li>保险费率、事故责任和 minimal risk maneuver 成本；</li><li>Waabi World 是否能减少真实道路测试里程和验证周期。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司</th><th>定位</th><th>对 Waabi 的压力</th></tr></thead><tbody><tr><td>Aurora</td><td>自动驾驶卡车/乘用车技术，公开公司</td><td>资本市场可比，有商业路线和 OEM 合作；公开投资者会要求 Waabi 对标</td></tr><tr><td>Kodiak Robotics</td><td>autonomous trucking，模块化传感器 pods，商业路线</td><td>更强调实际 route、军用/商业应用和 driver-out 节奏</td></tr><tr><td>Torc Robotics</td><td>Daimler Truck 子公司</td><td>OEM 深度绑定，车规和客户资源强</td></tr><tr><td>Plus</td><td>autonomous trucking / assisted driving</td><td>更早切入量产辅助驾驶和车队合作</td></tr><tr><td>Gatik</td><td>middle-mile autonomous box trucks</td><td>ODD 更短、更固定，可能更早商业化</td></tr><tr><td>Waymo Via 遗产</td><td>Alphabet/Waymo 自动驾驶技术</td><td>Waymo 退出/调整卡车业务反映赛道难度，也留下技术标杆</td></tr><tr><td>Wayve</td><td>AV foundation model</td><td>若 Wayve 扩展到 trucking，会在模型层竞争</td></tr><tr><td>Tesla Semi / FSD</td><td>垂直整合电动卡车和自动驾驶</td><td>长期可能用自有硬件和数据形成闭环</td></tr></tbody></table></div>
+<p>Waabi 的相对优势是 AI-first 仿真路线、创始团队声誉、Uber Freight 与 Volvo 产业入口。短板是公开商业运营数据少、公司成立时间短、driver-out 安全验证仍需证明、以及重卡事故一旦发生将显著影响监管和客户信任。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Raquel Urtasun 是 Waabi 的核心资产。她是多伦多大学教授、机器学习和自动驾驶领域知名学者，曾担任 Uber ATG Chief Scientist。她的背景让 Waabi 从成立之初就拥有 AI credibility 和产业经验。公司团队来自自动驾驶、机器人、机器学习、仿真、车规工程和物流领域。</p>
+<p>团队优势:</p>
+<ul><li>学术 AI 和产业自动驾驶结合；</li><li>对 Uber ATG 经验有继承，知道传统 AV 路线成本和瓶颈；</li><li>多伦多 AI 人才生态强；</li><li>投资人/合作方能提供货源、卡车平台和算力。</li></ul>
+<p>团队风险:</p>
+<ul><li>学术和仿真能力需要转化为车规级安全运营；</li><li>无人卡车需要强现场运维、客户成功和事故响应；</li><li>公司要同时管理加拿大研发、美国道路测试、OEM 合作和物流平台关系。</li></ul>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>无人重卡安全风险</strong>:高速重卡事故后果严重，单次事故可能改变监管和客户意愿。</li><li><strong>仿真可信度风险</strong>:Waabi World 的 sim-to-real gap 如果过大，AI-first 路线会受质疑。</li><li><strong>商业化时间风险</strong>:合作公告到 driver-out 付费路线可能需要多年。</li><li><strong>OEM 依赖风险</strong>:若 Volvo 或其他平台进展慢，Waabi 的硬件落地受限。</li><li><strong>平台议价风险</strong>:Uber Freight 提供货源入口，也可能掌握客户和价格权。</li><li><strong>竞争风险</strong>:Aurora、Kodiak、Torc 等已在卡车赛道深耕多年。</li><li><strong>监管碎片化风险</strong>:美国各州对自动驾驶卡车态度不同，跨州长途运输更复杂。</li><li><strong>资本消耗风险</strong>:道路测试、仿真、车队和安全团队需要长期资金。</li><li><strong>供应链风险</strong>:传感器、车端 compute、冗余底盘和维护网络都会影响部署。</li><li><strong>路线密度风险</strong>:单条示范路线成功不等于网络规模化，货源密度、回程货、hub 选址和车队调度会决定实际利用率。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="momenta.html">Momenta</a><a class="sib-chip" href="wayve.html">Wayve</a></div>
 </div>
 </body></html>

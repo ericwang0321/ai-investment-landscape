@@ -112,6 +112,33 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>Skild 的商业化证据目前弱于硬件公司公开部署。Figure 有 BMW，Agility 有 Digit 客户设施，Apptronik 有 Jabil/Mercedes/Google DeepMind，1X 有 NEO 预订叙事；Skild 作为软件层公司如果没有命名客户和机器人运行小时，投资人只能先按团队、技术和融资背书定价。下一阶段最重要的是客户案例。</p>
 <p>Skild 也可能先从“高价值但低公众可见度”的企业场景落地，例如数据中心巡检、能源设施、仓库夜间巡逻、制造工位辅助和危险环境检查。这类客户不一定公开披露供应商，但会对 uptime、任务成功率、事故率、远程接管比例和维护响应有严格要求。因此研究时不能只等消费级发布会，也要追踪招聘、合作伙伴、行业展会、客户采购和安全认证线索。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Skild 的财务逻辑取决于它能否维持软件平台属性。</p>
+<p><strong>软件授权模式。</strong> 理想状态下，Skild 按每台机器人或每个 fleet 收费，成本主要是模型训练、推理、支持和客户成功。若模型可跨本体复用，新增客户边际毛利高。</p>
+<p><strong>定制部署模式。</strong> 如果每个客户都需要大量现场数据采集、任务编排、安全验证和硬件适配，收入会更像系统集成，毛利和规模化受限。</p>
+<p><strong>数据成本。</strong> 真实机器人数据比网页文本昂贵得多。Skild 需要付出硬件采购、遥操作、仿真、标注、失败回放和安全测试成本。客户数据回流权利决定数据成本是否能摊薄。</p>
+<p><strong>推理成本。</strong> 机器人控制需要低延迟和高可靠，很多推理必须在本地边缘设备完成。模型越大，车端/机端硬件成本越高；模型越小，泛化可能下降。</p>
+<p><strong>责任成本。</strong> 如果 Skild Brain 控制机器人造成事故，责任可能在模型供应商、硬件厂商、系统集成商和客户之间分摊。保险、赔偿、日志审计和安全认证都会影响毛利。</p>
+<p>需要后续核验:</p>
+<ul><li>Skild 是否已有付费客户、机器人数量、运行小时和续约；</li><li>收费是按机器人、站点、任务还是 enterprise license；</li><li>模型本地部署的硬件要求和推理成本；</li><li>客户数据是否能进入通用模型训练；</li><li>收入、gross margin、burn rate 和 runway；</li><li>后续融资条款是否含高额 liquidation preference 或结构化条款。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司/平台</th><th>定位</th><th>对 Skild 的压力</th></tr></thead><tbody><tr><td>Physical Intelligence</td><td>Robot foundation model / π 系列 VLA</td><td>最直接的软件层竞争者，研究发布节奏快、顶级团队和资本强</td></tr><tr><td>Figure Helix</td><td>自有 humanoid + Helix/Helix 02</td><td>垂直整合硬件和数据，若成功不需要外部 robot brain</td></tr><tr><td>Google DeepMind Gemini Robotics</td><td>大厂基础模型 + 机器人合作</td><td>算力、研究、云和合作伙伴资源强</td></tr><tr><td>NVIDIA GR00T / Cosmos / Isaac</td><td>行业基础设施和模型</td><td>可能成为默认机器人 AI stack，压缩创业公司平台空间</td></tr><tr><td>Tesla Optimus</td><td>自有硬件、工厂、AI 和数据</td><td>封闭生态强，拥有内部真实工厂数据</td></tr><tr><td>Apptronik</td><td>Apollo humanoid + Google DeepMind + Robot Park</td><td>硬件部署和数据工厂可能形成闭环</td></tr><tr><td>Agility Robotics</td><td>Digit 商业部署</td><td>用真实客户设施和运行小时证明 ROI</td></tr><tr><td>1X Technologies</td><td>NEO household humanoid + world model</td><td>家庭场景数据和消费者入口竞争</td></tr><tr><td>Unitree / AgiBot / 中国人形机器人</td><td>低成本硬件和快速迭代</td><td>如果硬件厂商自研模型，Skild 授权空间缩小</td></tr></tbody></table></div>
+<p>Skild 的相对优势是中立软件层、跨本体潜力、CMU 团队和资本背书。短板是没有自有大规模硬件 fleet，数据控制弱于垂直整合玩家；商业客户也可能倾向购买完整机器人解决方案，而不是单独购买模型。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Deepak Pathak 和 Abhinav Gupta 都来自 CMU，在机器人学习、计算机视觉、自监督学习、强化学习和 embodied AI 领域有长期积累。CMU 是全球机器人研究重镇，这让 Skild 在人才、研究声誉和技术路线可信度上有明显优势。</p>
+<p>团队需要补足的能力包括:</p>
+<ul><li>企业销售和客户成功；</li><li>机器人硬件适配和现场部署；</li><li>安全工程、保险和法律责任；</li><li>大规模数据平台和 MLOps；</li><li>跨行业解决方案设计；</li><li>从研究 demo 到产品 SLA 的工程管理。</li></ul>
+<p>Skild 的团队更像 AI lab + robotics lab 起步，下一阶段要变成 enterprise robotics software company。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>商业化风险</strong>:robot brain 叙事大，但客户可能需要完整机器人解决方案。</li><li><strong>数据风险</strong>:缺少自有硬件 fleet，真实机器人数据获取受合作方限制。</li><li><strong>跨本体泛化风险</strong>:不同机器人动力学差异大，通用模型可能难以稳定迁移。</li><li><strong>安全责任风险</strong>:模型控制真实机器，一旦事故发生责任复杂。</li><li><strong>大厂竞争风险</strong>:Google、NVIDIA、Tesla 都有更大算力和生态。</li><li><strong>硬件公司自研风险</strong>:Figure、1X、Apptronik、Agility 等可能把 robot brain 内化。</li><li><strong>估值风险</strong>:高估值需要快速收入和部署证据支撑。</li><li><strong>项目制毛利风险</strong>:若部署高度定制，软件平台毛利难兑现。</li><li><strong>监管和隐私风险</strong>:机器人现场数据可能涉及人员、工艺、家庭隐私或安全区域。</li><li><strong>渠道风险</strong>:如果硬件厂商掌握最终客户关系，Skild 可能被压缩为底层组件供应商，无法取得平台级收入分成。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="1x_technologies.html">1X Technologies</a><a class="sib-chip" href="agibot_智元机器人.html">AgiBot</a><a class="sib-chip" href="agility_robotics.html">Agility Robotics</a><a class="sib-chip" href="apptronik.html">Apptronik</a><a class="sib-chip" href="figure_ai.html">Figure AI</a><a class="sib-chip" href="noetix_robotics_破壳机器人.html">Noetix Robotics</a><a class="sib-chip" href="robot_era_星动纪元.html">Robot Era</a><a class="sib-chip" href="x_square_robot_星海图.html">X Square Robot</a></div>
 </div>
 </body></html>

@@ -110,6 +110,49 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>Zyphra 最重要的运营指标不是单一模型 benchmark,而是:</p>
 <ul><li>Zyphra Cloud 的可用 capacity、利用率和客户结构;</li><li>AMD inference 在真实 workloads 下相对 Nvidia 的成本/延迟优势;</li><li>MAIA 是否能从 demo 变成企业日常 agent workspace;</li><li>开源模型下载/调用是否能转化为 cloud usage;</li><li>企业是否愿意把 critical agent workload 放在 AMD-first open stack。</li></ul>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Zyphra 的单位经济性要分三块看。</p>
+<h3 class="subsection">7.1 Inference cloud</h3>
+<p>收入来自 token 推理、专用容量、企业 SLA。成本来自 AMD GPU 折旧/租赁、电力、网络、存储、kernel 工程和调度。若 Zyphra 能证明 AMD MI355X 在 long-context MoE 推理上成本显著低于 Nvidia B200/H100,它就能在开源模型推理价格战中获得毛利空间。</p>
+<p>关键变量:</p>
+<ul><li>MI355X 集群利用率;</li><li>prompt length 和 output length mix;</li><li>MoE 路由和 KV cache 优化;</li><li>speculative decoding 是否降低 cost/token;</li><li>dedicated capacity 是否提高可预测收入。</li></ul>
+<h3 class="subsection">7.2 Bare metal / dedicated compute</h3>
+<p>如果客户租用专用 AMD capacity,收入更像云基础设施合同,毛利取决于硬件采购价格、电价、数据中心 PUE、融资成本和合约期限。15MW capacity 是重要信号,但没有客户利用率和合同期限,不能推算收入。</p>
+<h3 class="subsection">7.3 Agent / MAIA</h3>
+<p>MAIA 若按 seat 或 workspace 收费,毛利会比裸推理更像 SaaS,但底层 agent 运行会消耗大量 tokens、工具调用和 simulation environments。关键是能否把 agent 的自动化价值定价到 workflow outcome,而不是陷入 token 成本竞争。</p>
+<h3 class="subsection">7.4 开源模型的变现悖论</h3>
+<p>Apache 2.0/open weights 带来传播,但也让模型本身更难收 license fee。Zyphra 必须通过“最优运行这些模型的云”和“企业可控部署”赚钱。换言之,开源是 customer acquisition,云和企业合同才是 monetization。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 模型层竞争</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司</th><th>竞争关系</th><th>Zyphra 差异</th></tr></thead><tbody><tr><td>Mistral / DeepSeek / Qwen</td><td>open-weight model 质量和开发者生态</td><td>Zyphra 更强调异构算力和 long-memory/agent</td></tr><tr><td>Reka / Liquid / Cohere</td><td>企业模型和高效模型</td><td>Zyphra 更开源、更 AMD-first</td></tr><tr><td>OpenAI / Anthropic / Google</td><td>frontier closed models</td><td>Zyphra 无法在通用能力上硬碰硬,但可做 sovereign/open stack</td></tr><tr><td>xAI / Meta</td><td>大规模模型与开源生态</td><td>Zyphra 资本规模较小,但架构/硬件优化更专注</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 AI cloud / inference 竞争</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司</th><th>竞争点</th><th>Zyphra 相对位置</th></tr></thead><tbody><tr><td>Together AI</td><td>open model inference/fine-tuning</td><td>Together 商业更成熟;Zyphra 用 AMD-first 和自研模型差异化</td></tr><tr><td>Fireworks AI</td><td>高性能 serverless inference</td><td>Fireworks 生态强;Zyphra 可用专用 AMD capacity 竞争成本</td></tr><tr><td>Baseten</td><td>model deployment platform</td><td>Baseten 偏部署平台;Zyphra 同时做模型和基础设施</td></tr><tr><td>CoreWeave / Lambda / Crusoe</td><td>GPU cloud</td><td>Zyphra 更像垂直 AI cloud,但规模小得多</td></tr><tr><td>Groq / Cerebras</td><td>非传统推理硬件</td><td>Zyphra 路线是通用 AMD GPU + kernel/model co-design</td></tr><tr><td>AWS Bedrock/SageMaker</td><td>云平台</td><td>Zyphra 可作为专业化开放模型层,但会被大云压价</td></tr></tbody></table></div>
+<h3 class="subsection">8.3 Agent 竞争</h3>
+<p>MAIA 对标的是 OpenAI agent、Anthropic Claude workflows、Google Gemini Workspace、Microsoft Copilot、Perplexity enterprise agent、以及大量 enterprise agent startups。Zyphra 的差异是“open foundation models + sovereign deployment + long memory”,但 agent 产品要靠用户体验、工具集成和可靠性取胜,不能只靠模型技术。</p>
+<h3 class="subsection">8.4 护城河</h3>
+<ul><li><strong>硬件适配能力</strong>:AMD/AWS Inferentia/NVIDIA 多硬件优化经验;</li><li><strong>模型架构研究</strong>:SSM、MoE、diffusion language models、long-context retrieval、BCI models 等多路线探索;</li><li><strong>开放生态</strong>:Apache 2.0 模型和数据集提升开发者信任;</li><li><strong>基础设施合作</strong>:IBM/AMD/TensorWave/AWS 等合作形成非 Nvidia 生态位;</li><li><strong>端到端 stack</strong>:从模型、数据、kernel、cloud、agent 到 enterprise deployment。</li></ul>
+<p>护城河风险是:每一层都有强敌,公司需要证明端到端整合真的比专注单点更有商业效率。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<h3 class="subsection">Krithik Puthalath</h3>
+<p>创始人/CEO,公开资料显示其背景包括 quantum computing、machine learning、compiler 和 hardware-aware systems。Zyphra 的“模型架构 + silicon performance”路线与这一背景一致。</p>
+<h3 class="subsection">Beren Millidge</h3>
+<p>President/联合创始人之一,曾与 AI alignment、Conjecture、Apollo Research 等生态相关。Zyphra 的 open superintelligence 和 safety/alignment 叙事与其背景有关。</p>
+<h3 class="subsection">Tomas Figliolia / Danny Martinelli 等</h3>
+<p>公开资料将其列为联合创始或核心早期成员。公司还包括 COO/CPO/CBO/VP 等运营和产品角色,显示 2025-2026 年已从纯研究团队向商业组织扩展。</p>
+<h3 class="subsection">团队结构</h3>
+<p>Zyphra 的团队需要同时覆盖四类能力:</p>
+<ul><li>模型研究:architectures、pretraining、post-training、multimodal;</li><li>系统工程:kernels、ROCm、Neuron、distributed inference、bare metal;</li><li>云产品:billing、capacity、SLA、enterprise support;</li><li>agent/product:MAIA、workflow、memory、tool orchestration。</li></ul>
+<p>这也是风险:对一家约数十人规模公司来说,战线很长。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>战线过长</strong>:模型、云、agent、硬件优化、BCI、音频、视觉同时推进,资源分散。</li><li><strong>云业务资本开支</strong>:15MW capacity 意味着硬件和电力投入重,需要高利用率才能支撑毛利。</li><li><strong>AMD 生态风险</strong>:若 AMD 软件栈、客户接受度或供应节奏不及预期,Zyphra 差异化会受损。</li><li><strong>开源变现难</strong>:Apache 2.0 模型带来传播,但客户可以自部署或转向其他云。</li><li><strong>模型能力风险</strong>:Zyphra 模型在特定 benchmark 上亮眼,但通用能力未证明能对抗 DeepSeek/Qwen/Mistral/Meta。</li><li><strong>客户数据缺口</strong>:付费客户、ARR、云利用率、毛利率都没有公开。</li><li><strong>agent 产品可靠性</strong>:MAIA 要在真实团队场景中稳定执行,难度高于 demo。</li><li><strong>安全与滥用</strong>:开放 TTS、voice cloning、agent 和 reasoning models 都有滥用风险。</li><li><strong>基础设施竞争</strong>:CoreWeave、AWS、Azure、Google、Together、Fireworks 等资金和客户优势更强。</li><li><strong>融资持续性</strong>:AI infra 估值对资本市场和 GPU/电力周期敏感。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="ai21_labs.html">AI21 Labs</a><a class="sib-chip" href="cohere.html">Cohere</a><a class="sib-chip" href="liquid_ai.html">Liquid AI</a><a class="sib-chip" href="modelbest_面壁智能.html">ModelBest</a><a class="sib-chip" href="reka_ai.html">Reka AI</a><a class="sib-chip" href="stepfun_阶跃星辰.html">StepFun</a><a class="sib-chip" href="thinking_machines_lab.html">Thinking Machines Lab</a><a class="sib-chip" href="零一万物_01_ai.html">零一万物</a></div>
 </div>
 </body></html>

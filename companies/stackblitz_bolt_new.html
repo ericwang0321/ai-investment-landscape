@@ -114,6 +114,41 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>数值/口径</th><th>来源与解读</th></tr></thead><tbody><tr><td>Bolt launch</td><td>2024-10-03 上线</td><td>BI 访谈</td></tr><tr><td>首周 ARR</td><td>约新增 $1M ARR；第二周、第三周继续各新增约 $1M ARR</td><td>BI 引用 Eric Simons</td></tr><tr><td>30 天 ARR</td><td>从约 $80K 到 >$4M ARR</td><td>BI 引用 investor update</td></tr><tr><td>活跃付费客户</td><td>上线初期从约 600 增至 14,000+</td><td>BI 引用 investor update</td></tr><tr><td>2024-12 ARR</td><td>约 $20M ARR</td><td>No Priors/BI 口径</td></tr><tr><td>2025-03 ARR</td><td>约 $40M ARR</td><td>BI 口径</td></tr><tr><td>2025-05 users</td><td>约 5M registered users / software composers</td><td>BI 口径</td></tr><tr><td>盈利状态</td><td>2025 年 BI 称 StackBlitz profitable, growing, healthy</td><td>需核验口径</td></tr><tr><td>估值线索</td><td>2025 年洽谈 $83.5M 融资 at ~$700M valuation</td><td>Bloomberg/BI</td></tr><tr><td>Free plan</td><td>300K daily token limit、1M monthly tokens、hosting、333K web requests</td><td>官方 pricing</td></tr><tr><td>Pro</td><td>$25/月、10M tokens/month 起、1M web requests、custom domains/SEO/database</td><td>官方 pricing</td></tr><tr><td>Teams</td><td>$30/member/月</td><td>官方 pricing</td></tr><tr><td>Enterprise</td><td>custom</td><td>官方 pricing</td></tr></tbody></table></div>
 <p>Bolt 的商业化曲线非常陡，但绝对收入规模截至 2025 年公开口径仍低于 Lovable/Replit。它的估值约 $700M 若按 $40M ARR 看约 17.5x ARR；如果已经接近或超过 $100M ARR，倍数会显著下降，但截至 2026 年 7 月 6 日 未找到公司正式披露的 $100M+ ARR 数字。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 收入端</h3>
+<p>Bolt 收入端主要由 tokens 和 workspace seats 组成:</p>
+<ul><li>Free 用户提供 viral funnel。</li><li>Pro $25/月提供 10M tokens 起的基本付费。</li><li>Higher usage tiers/历史 $50/$100/$200 tiers 说明 heavy users 愿意为 token allowance 付费。</li><li>Teams $30/member/月提高团队协作 ARPU。</li><li>Enterprise custom 提供安全、合规、SLAs、private registries、design system support。</li><li>Bolt Cloud hosting/requests/database/custom domains 可能带来续费和 usage-based expansion。</li></ul>
+<h3 class="subsection">7.2 成本端</h3>
+<p>成本端的关键不是“用户数”，而是每个付费用户平均消耗多少 tokens 和 runtime:</p>
+<ul><li>大项目每轮消息需同步更多 files/context；</li><li>复杂 app 需要更多 repair loops；</li><li>图片、design、AI editing 增加模型成本；</li><li>hosting/database/web requests 增加 cloud COGS；</li><li>非技术用户需要更多 support 和教育；</li><li>enterprise 需要 implementation/support/SLAs。</li></ul>
+<h3 class="subsection">7.3 WebContainers 对毛利的影响</h3>
+<p>WebContainers 有机会降低部分 runtime COGS，因为开发环境运行在浏览器中，而不是所有项目都在 StackBlitz 云端启动 remote VM。它也提高速度和用户体验，可能改善 conversion/retention。但它不能消除 LLM token 成本，尤其是项目上下文越来越大时，模型费用仍可能成为主要 COGS。</p>
+<h3 class="subsection">7.4 Churn 与 platform expansion</h3>
+<p>2025 年 BI 报道提到 AI coding services 面临 churn 20%-40% 的行业压力。Bolt 的应对是把产品从 “generate code” 扩成 “build + host + domain + database + auth + SEO + payments + analytics”。如果用户的业务 app 真的运行在 Bolt Cloud 上，churn 会下降；如果用户只是生成代码后导出或丢弃项目，Bolt 仍是高 churn inference business。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 直接竞品</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞品</th><th>定位</th><th>与 Bolt 的关系</th></tr></thead><tbody><tr><td>Lovable</td><td>AI app builder / build economy</td><td>增长和品牌更强，企业 governance 加速</td></tr><tr><td>Replit</td><td>browser IDE + Agent + deployment</td><td>run/deploy/database/enterprise 闭环强，用户基础大</td></tr><tr><td>Emergent</td><td>AI app builder + personal agent</td><td>更年轻、价格较低、增长快</td></tr><tr><td>Vercel v0</td><td>UI/app generation + Vercel deploy</td><td>前端/React/Vercel ecosystem 强</td></tr><tr><td>Figma Make</td><td>design-to-app / design workflow</td><td>设计入口强，威胁 product/design use cases</td></tr><tr><td>Base44/Wix</td><td>no-code/app builder distribution</td><td>Wix 收购后 SMB/website distribution 强</td></tr><tr><td>Cursor / Claude Code / Codex</td><td>developer coding agents</td><td>专业开发者更偏这些工具</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 价值链位置</h3>
+<p>Bolt 位于:</p>
+<ul><li>上游模型: Anthropic/OpenAI/其他 coding models；</li><li>中间 runtime: WebContainers；</li><li>app builder: prompt-to-code；</li><li>platform: Bolt Cloud/hosting/database/domain/payments；</li><li>enterprise developer workflow: StackBlitz Teams/Enterprise Server/private registries/design systems。</li></ul>
+<p>如果只看 app builder，Bolt 面临激烈竞争；如果看 WebContainers + enterprise developer platform，差异更明显。</p>
+<h3 class="subsection">8.3 护城河</h3>
+<ol><li><strong>WebContainers</strong>: 浏览器内运行 server-side environments，技术积累多年。</li><li><strong>Developer credibility</strong>: StackBlitz 在 web developer ecosystem 有历史。</li><li><strong>Speed of iteration</strong>: prompt 后立即运行、预览、修复。</li><li><strong>Token pricing discipline</strong>: 较早用 tiered tokens 捕捉 heavy usage。</li><li><strong>Enterprise Server</strong>: behind firewall / Kubernetes / SSO 场景区别于纯 consumer app builder。</li></ol>
+<h3 class="subsection">8.4 脆弱点</h3>
+<ul><li>ARR 规模低于 Lovable/Replit，融资弹药和品牌声量较小。</li><li>WebContainers 主要对 web/JS ecosystem 最强，复杂 backend/mobile/native 场景可能受限。</li><li>Token 计费用户感知不透明，项目越大越贵。</li><li>如果 Lovable/Replit/Vercel/Figma 提供更完整 hosting/design/enterprise workflow，Bolt 需要持续差异化。</li><li>Anthropic/OpenAI 模型层能力变化会影响所有 app builder，Bolt 不能只靠模型进步。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Eric Simons 是 StackBlitz 联合创始人和 CEO，早年因创业经历受到媒体关注。Albert Pai 为联合创始人。团队长期做 browser IDE、developer runtime、WebContainers，这让 Bolt 的技术来源更深。BI 报道显示，StackBlitz 在 2023 年底曾面临业务压力，直到 2024 年 Claude Sonnet 3.5 级 coding model 出现后，团队用约 10 人、三个月做出 Bolt.new，形成公司转折。</p>
+<p>这段经历对投资判断有正反两面。正面是团队能在压力下快速 pivot，把多年 infra 积累产品化；反面是公司此前商业化并不顺，Bolt 的增长需要证明不是单一模型窗口期和 AI hype 驱动。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>Churn 风险</strong>: 用户生成 app 后停止使用，AI app builder 普遍存在 20%-40% churn 压力。</li><li><strong>Token 成本风险</strong>: 大项目上下文同步导致每条消息成本升高。</li><li><strong>模型依赖风险</strong>: Bolt 初期增长高度受 Anthropic coding model 进步推动。</li><li><strong>竞争风险</strong>: Lovable/Replit/Emergent/Vercel/Figma/Wix 都在同一方向扩张。</li><li><strong>技术边界风险</strong>: WebContainers 对部分 backend/native/mobile/enterprise legacy 场景可能不够。</li><li><strong>安全风险</strong>: 非技术用户发布 app、接入数据库/支付/认证，会产生数据和权限风险。</li><li><strong>融资风险</strong>: 估值和资金规模低于头部竞品，后续需要在更强资本方前证明差异化。</li><li><strong>营销 claim 复验风险</strong>: 98% less errors、1,000x larger projects 等口径需要原始数据验证。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="anysphere_cursor.html">Anysphere</a><a class="sib-chip" href="cognition_ai_devin.html">Cognition AI</a><a class="sib-chip" href="emergent.html">Emergent</a><a class="sib-chip" href="lovable.html">Lovable</a><a class="sib-chip" href="poolside_ai.html">Poolside AI</a><a class="sib-chip" href="replit.html">Replit</a></div>
 </div>
 </body></html>

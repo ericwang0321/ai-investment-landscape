@@ -113,6 +113,45 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开线索</th><th>投资解读</th></tr></thead><tbody><tr><td>估值</td><td>官网新闻入口显示 2026-07-01 “连续四轮融资，估值超过 US$2.8B”</td><td>估值已进入全球具身智能第一梯队，需核验对应轮次、金额、投资方和条款</td></tr><tr><td>产品组合</td><td>官网列出 Quanta X1 Pro、Quanta X2、ArtiXon Hand、QUANXTA Zero</td><td>不依赖单一双足本体，有“本体 + 末端 + 数据 + 模型”组合</td></tr><tr><td>开源生态</td><td>GitHub 组织 2026 年仍活跃，wall-x 约 1.1k stars；Hugging Face 有模型和数据集</td><td>开源能扩大开发者触达，但商业转化要看企业版模型和硬件销量</td></tr><tr><td>数据平台</td><td>XRZero-G0 提到 2,000 小时数据集、3,000 操作任务、93.2 episodes/hour 峰值采集</td><td>若真实有效，数据采集效率是壁垒；仍需看 benchmark 与客户场景对应度</td></tr><tr><td>场景</td><td>官网列出家庭服务、科研教育、商业清洁、物流分拣、工业制造、公共服务等</td><td>场景广泛但早期容易分散，重点看哪一类能先形成可验收订单</td></tr><tr><td>客户</td><td>公开页面没有给出具体客户名单和合同金额</td><td>需要后续核验真实客户、验收周期、复购和收入确认</td></tr><tr><td>出货</td><td>公开页面没有给出累计出货量</td><td>需要后续通过采购公告、客户案例、招股书或融资材料核验</td></tr></tbody></table></div>
 <p>商业化判断:截至 2026 年 7 月 6 日，X Square 公开展示的“技术完成度”强于“财务透明度”。其估值和开源声量说明资本与技术社区关注度高，但还不能直接推导收入规模。最应该跟踪的不是 demo 数量，而是三类硬数据:整机交付台数、真实场景连续运行小时数、客户从试点转正式采购的比例。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>X Square 的单位经济性要拆成硬件、模型、数据、服务四层。</p>
+<p><strong>硬件层</strong>:轮式双臂机器人比双足人形更容易控制 BOM。X1 Pro 使用轮式底盘、Intel Core Ultra 7、16GB RAM、512GB 存储、多传感器和双臂结构，核心成本来自机械臂、传感器、底盘、计算模块、电池、加工装配和售后。X2 的 62 DOF、±0.03mm 重复定位精度、20 DOF 灵巧手和更复杂传感器意味着成本和调试难度更高。若产品按科研/工业平台销售，早期 ASP 可以较高，但客户数量有限；若进入规模化服务场景，价格必须下探。</p>
+<p><strong>模型层</strong>:WALL-A / WALL-OSS 的边际成本主要是训练算力、数据清洗、边缘推理适配和现场调参。若模型可跨本体迁移，软件毛利可能高于硬件；若每个客户场景都需要大量工程服务，毛利会被交付成本吃掉。</p>
+<p><strong>数据层</strong>:XRZero-G0 的价值在于降低 demonstration data 成本。若 2,000 小时 robot-free data 能替代大量真机采集，它可以改善模型训练效率；但训练数据的最终财务价值取决于任务成功率和客户愿意为数据闭环付费的程度。</p>
+<p><strong>服务层</strong>:机器人真实部署需要现场勘测、夹具/工具适配、安全区设置、员工培训、远程监控、备件和维修。对于早期公司，服务成本通常被低估。X Square 的财务质量要看它能否把场景交付产品化，而不是每个项目都变成重咨询。</p>
+<p>关键观察指标:</p>
+<ul><li>单机 BOM 与 ASP 的差距；</li><li>每台机器人部署所需工程师天数；</li><li>训练/调参所需数据小时数；</li><li>连续无故障运行小时；</li><li>客户验收后的复购率；</li><li>灵巧手、数据系统和模型授权是否能独立贡献收入；</li><li>是否形成可规模化渠道，而不是创始团队亲自卖项目。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 与宇树</h3>
+<p>宇树优势在低成本硬件量产、全球曝光、开发者生态和四足机器人历史出货。G1 官网标价从 13.5k 美元起，R1 从 4,900 美元起，价格锚非常激进。X Square 不太可能在低价人形本体上直接和宇树硬碰硬；更合理的打法是强调复杂操作、数据和模型，进入高价值任务。</p>
+<h3 class="subsection">8.2 与智元 AgiBot</h3>
+<p>智元的优势是全尺寸人形产品矩阵、A2/G1/G2/X1/X2/D1/C5、AIDEA / AgiBot World 数据生态和强资本市场关注。智元已经强调商业量产和千台级部署。X Square 与智元的交叉点是数据和模型，差异是 X Square 更像“机器人大脑 + 轮式双臂 + 灵巧手”的组合，智元更偏人形本体大规模铺开。</p>
+<h3 class="subsection">8.3 与星动纪元</h3>
+<p>星动纪元公开 SEO 口径显示其为清华持股、软硬件全栈自研、已完成近 5 亿元 A 轮融资、实现产品规模化交付，并称全球市值 TOP10 科技公司中 9 家为其客户。星动 L7/M7/Q5/XHAND 组合与 X Square 在“模型 + 本体 + 灵巧手”上高度重叠。星动更强调全尺寸双足和客户交付，X Square 更强调 WALL-A 具身基础模型、Quanta 轮式平台和开源生态。</p>
+<h3 class="subsection">8.4 与破壳 / 松延动力</h3>
+<p>破壳/松延动力选择“消费级人形 + 仿生人形 + 万元级小布米”的路线，2026-03 官网新闻称 B 轮累计近 10 亿元、累计 9 轮融资。它更早切家庭、教育、科技馆、社区、春晚舞台等大众场景。X Square 更偏科研、工业、数据与高精度操作，短期用户画像不同。</p>
+<h3 class="subsection">8.5 与傅利叶、优必选、Tesla Optimus、Figure、1X</h3>
+<p>傅利叶有康复机器人和 GR 系列人形的医疗/康复积累；优必选已经上市，工业人形 Walker S 系列有制造业客户线索；Tesla Optimus 的优势在自有工厂、执行器、电池、电控、AI 和潜在超大规模生产；Figure 的优势在资本、BMW 等工业客户和 Helix VLA；1X 更聚焦家庭人形。X Square 的差异化不是“谁更像人”，而是能否用模型和数据把复杂操作做稳。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>官网没有在可抓取文本中系统列出创始团队履历。可确认的信息是公司主体位于深圳南山，官网、GitHub、Hugging Face、arXiv 项目和公开代码显示其具备模型、数据、硬件、机器人控制和开源工程团队。Hugging Face 组织页面显示 8 个 team members，GitHub 组织有 wall-x、X-Tokenizer、XRZero-G0、sdk_robot、sdk_arm_6a、sdk_hand 等仓库。</p>
+<p>团队背景需要后续核验的问题包括:</p>
+<ul><li>创始人和核心科学家是否来自头部高校、机器人公司、自动驾驶或大模型团队；</li><li>机械、控制、感知、模型、数据平台、供应链、量产工程负责人分别是谁；</li><li>估值超过 28 亿美元后公司员工规模、研发人员占比和销售/交付团队规模；</li><li>是否有产业资本、机器人客户或云/算力伙伴进入股东名单；</li><li>团队是否有真实大规模硬件量产经验。</li></ul>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<p><strong>技术风险</strong>:演示任务和真实长尾任务差异很大。柔性物体、线束、液体、服装、复杂包装、拥挤桌面都容易让 VLA 失效。WALL-A 需要证明不是单点 demo，而是稳定跨任务泛化。</p>
+<p><strong>数据风险</strong>:robot-free 数据能降低成本，但如果动作空间、触觉反馈、动力学和真实机器人差异太大，最终仍需要大量真机数据补齐。数据集规模不能直接等于机器人能力。</p>
+<p><strong>硬件风险</strong>:轮式平台降低移动风险，但高自由度双臂和灵巧手仍有故障率、标定、磨损、线缆、散热和安全问题。精密操作越强，维护越复杂。</p>
+<p><strong>商业化风险</strong>:场景覆盖太广会消耗团队。家庭服务、商业清洁、物流、科研、工业制造的销售周期、产品形态和验收指标完全不同。早期公司需要聚焦。</p>
+<p><strong>竞争风险</strong>:智元、宇树、星动、傅利叶、优必选、Tesla、Figure、Physical Intelligence、Skild AI 都在抢真实数据、客户和人才。模型能力可能被大厂追平，硬件成本可能被宇树等低价玩家压低。</p>
+<p><strong>融资估值风险</strong>:估值超过 US$2.8B 对应很高预期。如果收入和部署数据不能快速跟上，后续融资或 IPO 时可能面临估值回调。</p>
+<p><strong>合规与安全风险</strong>:机器人进入家庭、公共服务或工业现场后，数据采集、隐私、误操作、人身安全、设备损坏和责任归属都需要制度化处理。</p>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="1x_technologies.html">1X Technologies</a><a class="sib-chip" href="agibot_智元机器人.html">AgiBot</a><a class="sib-chip" href="agility_robotics.html">Agility Robotics</a><a class="sib-chip" href="apptronik.html">Apptronik</a><a class="sib-chip" href="figure_ai.html">Figure AI</a><a class="sib-chip" href="noetix_robotics_破壳机器人.html">Noetix Robotics</a><a class="sib-chip" href="robot_era_星动纪元.html">Robot Era</a><a class="sib-chip" href="unitree_robotics_宇树科技.html">Unitree Robotics</a></div>
 </div>
 </body></html>

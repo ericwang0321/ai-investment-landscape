@@ -115,6 +115,42 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>值得注意的是,“agents created”不等于高频使用或付费价值。尽调时要看:</p>
 <ul><li>agent 的 weekly active rate;</li><li>每个 agent 平均执行次数;</li><li>哪些 agent 产生可量化 ROI;</li><li>IT 是否关闭低质量 agent;</li><li>部署范围是全员还是部分团队。</li></ul>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 Revenue build</h3>
+<p>Glean 的 revenue build 可拆成:</p>
+<p>ARR = 付费企业数 × 平均付费 employees/seats × 每 seat 年费 × 模块 attach rate</p>
+<p>关键变量:</p>
+<ul><li><strong>Seat penetration:</strong> 从 IT/engineering/search 试点扩到全员 knowledge worker。</li><li><strong>AI module attach:</strong> Assistant、Agents、Model Hub、MCP Gateway、API/governance 是否加价。</li><li><strong>NRR:</strong> 客户是否从 search 扩到 agent,从部分团队扩到全公司。</li><li><strong>Enterprise expansion:</strong> Fortune 500 和 regulated industries 是否愿意标准化在 Glean 上。</li></ul>
+<h3 class="subsection">7.2 Cost structure</h3>
+<p>Glean 的成本结构包括:</p>
+<ul><li>数据连接器开发与维护;</li><li>indexing / search infra / embedding / storage;</li><li>LLM inference cost;</li><li>enterprise security/compliance;</li><li>customer success 和 implementation;</li><li>sales motion。</li></ul>
+<p>与 Genspark/ElevenLabs 不同,Glean 的高成本不主要来自生成媒体,而是来自企业数据连接、权限同步、索引更新和 AI 调用。其“30% token usage reduction”卖点若成立,有助于维持毛利,并可向客户解释为什么不直接把数据塞进 ChatGPT Enterprise 或 Copilot。</p>
+<h3 class="subsection">7.3 Unit economics 判断</h3>
+<p>积极因素:</p>
+<ul><li>Enterprise search/AI seat subscription 通常有较高 gross margin;</li><li>大客户部署后 switching cost 高;</li><li>多连接器和图谱增加替换成本;</li><li>$100M ARR 说明 sales motion 已验证;</li><li>agent add-ons 有 ARPU 扩张空间。</li></ul>
+<p>压力因素:</p>
+<ul><li>AI inference cost 随使用量上升;</li><li>连接器维护和权限 bug 需要大量工程/CS;</li><li>Microsoft/Google 可能通过套件 bundle 压低可收价格;</li><li>客户自建 RAG/agent 平台会压缩高端客户预算。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 直接竞争者</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>定位</th><th>对 Glean 威胁</th></tr></thead><tbody><tr><td>Microsoft Copilot / Microsoft Search / Graph</td><td>Office、Teams、SharePoint、Outlook、Windows 默认入口</td><td>最大威胁:分发和数据默认性极强</td></tr><tr><td>Google Gemini for Workspace / Cloud Search</td><td>Gmail、Drive、Docs、Meet、Google Cloud</td><td>对 Google Workspace 客户威胁强</td></tr><tr><td>OpenAI ChatGPT Enterprise / Team</td><td>企业聊天、数据连接、agent/workflow</td><td>模型品牌强,但 enterprise context/permissions 需生态补齐</td></tr><tr><td>Atlassian Intelligence / Rovo</td><td>Jira/Confluence 内部知识与工程场景</td><td>对 engineering/product org 有强入口</td></tr><tr><td>Coveo / Sinequa / Elastic / Lucidworks</td><td>传统 enterprise search</td><td>客户基础深,但 AI-native 叙事弱于 Glean</td></tr><tr><td>Moveworks</td><td>企业员工支持 AI agent</td><td>与 IT/HR support 场景重叠</td></tr><tr><td>Dust / Hebbia / Sana / Guru / Notion AI</td><td>knowledge assistant / agent / docs</td><td>垂直场景竞争</td></tr><tr><td>客户自建 RAG</td><td>内部平台团队</td><td>大客户可能用 Snowflake/Databricks/Elastic/OpenSearch/Vector DB 自建</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 Glean 的护城河</h3>
+<ul><li><strong>Permission-aware context:</strong> 企业 AI 的基础门槛。</li><li><strong>Connectors breadth:</strong> 250+ connectors 越多,越难被轻量工具替代。</li><li><strong>Enterprise Graph:</strong> 数据关系图谱比普通 RAG 更难复制。</li><li><strong>Adoption data:</strong> 大客户 deployment patterns 可反哺产品与 benchmark。</li><li><strong>Agent governance:</strong> 企业不只是创建 agent,还要审批、审计、停用、权限控制。</li><li><strong>Cross-model flexibility:</strong> 支持 35+ LLMs,避免被单一模型绑定。</li></ul>
+<h3 class="subsection">8.3 战略位置</h3>
+<p>Glean 的最佳定位是“企业 AI 的 context operating system”。如果模型层继续 commoditize,企业会把差异化放在数据、权限、流程和治理上;这正是 Glean 的位置。但如果 Microsoft/Google 把 context layer 与办公套件打包,且效果足够好,Glean 的独立预算会受挑战。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Glean 团队的可信度是其融资和客户采用的重要支撑:</p>
+<ul><li><strong>Arvind Jain:</strong> CEO,曾联合创办 Rubrik,具备 enterprise infra 和 go-to-market 经验;此前在 Google 搜索相关团队工作,理解搜索质量和规模化系统。</li><li><strong>T.R. Vishwanath:</strong> co-founder/engineering leadership,Google/Search 背景。</li><li><strong>Tony Gentilcore:</strong> co-founder/engineering,浏览器/性能/搜索相关背景。</li><li><strong>Tamar Yehoshua:</strong> President,Product & Technology,曾在 Google Search Experience、Slack、IVP 等任职,补强产品和企业平台经验。</li></ul>
+<p>这类团队组合非常适合 enterprise search:既懂搜索/索引/权限,也懂 enterprise SaaS 销售和合规。与许多“LLM wrapper”公司相比,Glean 从创立第一天就围绕企业数据碎片化问题,不是在 ChatGPT 后临时转型。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>平台 bundle 风险:</strong> Microsoft 和 Google 可以把 AI search/assistant 作为办公套件默认功能提供,压缩独立预算。</li><li><strong>自建风险:</strong> 大企业可能用 Databricks/Snowflake/Elastic/OpenSearch/vector DB + internal platform 自建 RAG/agent。</li><li><strong>AI cost 风险:</strong> 使用量增长会增加 LLM inference cost;若价格按 seat 固定,heavy users 可能压低毛利。</li><li><strong>权限事故风险:</strong> Enterprise search 最大风险是越权暴露敏感文档;一次事故会严重影响信任。</li><li><strong>连接器维护风险:</strong> 250+ connectors 需要持续适配 API、权限模型和数据结构变化。</li><li><strong>Agent 质量风险:</strong> 创建 agent 容易,稳定执行和治理难;低质量 agent 会造成 adoption fatigue。</li><li><strong>高估值风险:</strong> $7.2B 对 $100M ARR 是高倍数,需要高速增长兑现。</li><li><strong>采购周期风险:</strong> Enterprise AI 平台采购涉及 CIO、CISO、legal、privacy、business owner,销售周期可能变长。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="alphasense.html">AlphaSense</a><a class="sib-chip" href="exa.html">Exa</a><a class="sib-chip" href="golinks_gosearch.html">GoLinks</a><a class="sib-chip" href="hebbia.html">Hebbia</a><a class="sib-chip" href="perplexity_ai.html">Perplexity AI</a><a class="sib-chip" href="tavily.html">Tavily</a></div>
 </div>
 </body></html>

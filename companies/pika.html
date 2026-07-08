@@ -117,6 +117,57 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <ul><li>Free-to-paid conversion。</li><li>每个付费用户月 credit 消耗。</li><li>生成失败率和重试率。</li><li>Social sharing rate。</li><li>Video effect repeat usage。</li><li>Paid churn。</li><li>Fal API 月调用量和收入分成。</li><li>新模型发布后的付费留存提升。</li></ul>
 <p>这些指标公开资料都没有给出，因此目前只能从产品价格、融资和 API 分发推断商业化方向，不能给出收入 run-rate。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Pika 的单位经济性比 Runway/Luma 更像消费订阅:</p>
+<ol><li><strong>月费先收，credits 后消耗</strong></li></ol>
+<p>Standard 年付 $8/月给 700 credits，Pro 年付 $28/月给 2,300 credits，Fancy 年付 $76/月给 6,000 credits。若用户轻度使用，毛利较好;若用户大量生成 1080p/长视频/Pikatwists，推理成本上升。</p>
+<ol><li><strong>短视频天然控制成本</strong></li></ol>
+<p>Pika 多数功能以 5s/10s 为主，Pikaframes 最高 20–25s。短 clip 限制有助于控制 GPU 成本，也符合社媒消费场景。</p>
+<ol><li><strong>娱乐特效提升转化但可能增加重试</strong></li></ol>
+<p>Pikaffects/Pikatwists 容易传播，但用户可能反复试错直到效果好。生成失败、重试和质量不稳定会侵蚀 credits 毛利或用户体验。</p>
+<ol><li><strong>API 分发毛利不透明</strong></li></ol>
+<p>Fal.ai 能带来开发者 volume，但 Pika 与 Fal 的分成、结算价格、最低保证和成本承担方式没有公开。API 收入质量需要核验。</p>
+<ol><li><strong>企业收入尚需证明</strong></li></ol>
+<p>Pika pricing 没有明确 enterprise plan。如果 Pika 只靠 creator subscription，估值上限取决于付费用户规模和留存;若能进入品牌/广告/UGC ads workflow，ACV 和稳定性会更高。</p>
+<p>需要核验的关键财务问题:</p>
+<ul><li>付费订阅用户数。</li><li>每月生成视频数和平均 credits per generation。</li><li>Credit breakage、overage purchase、rollover 使用。</li><li>推理成本 per 5s 720p/1080p video。</li><li>Fal API 月调用量和净收入。</li><li>团队扩张和训练成本 burn rate。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 Pika 的直接竞争</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>相对位置</th><th>对 Pika 的压力</th></tr></thead><tbody><tr><td>Runway</td><td>专业创意工具/API/enterprise 更强</td><td>抢广告、影视、品牌和高端创作者</td></tr><tr><td>Luma</td><td>Ray/creative agents/API/生产级视频</td><td>在 professional video 和 API 上更强</td></tr><tr><td>Kling / 可灵</td><td>高性价比、迭代快、中国短视频生态</td><td>对价格、视频质量和全球用户构成压力</td></tr><tr><td>ByteDance Seedance/Jimeng/CapCut</td><td>与 TikTok/CapCut 创作者工作流绑定</td><td>Pika 最危险的分发竞争者之一</td></tr><tr><td>OpenAI Sora</td><td>大模型品牌和 ChatGPT 分发</td><td>若开放低价视频功能，会冲击消费端</td></tr><tr><td>Google Veo</td><td>Gemini/YouTube/Vertex AI 分发</td><td>质量和企业渠道强</td></tr><tr><td>Midjourney Video</td><td>高审美图像社区转视频</td><td>抢创意用户和 image-to-video 入口</td></tr><tr><td>Adobe Firefly</td><td>专业设计软件入口</td><td>对付费创意团队和企业客户有强优势</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 与 BFL、HeyGen、生数科技的关系</h3>
+<ul><li><strong>BFL</strong>:主要是图像生成和编辑模型，Pika 如果从图片转视频，需要高质量 starting frame。BFL/FLUX 可能成为上游图片生成工具，也可能在 image-to-video pipeline 中与 Pika 争夺用户。</li><li><strong>HeyGen/Synthesia</strong>:更偏 avatar、口播、企业视频。Pika 的 Pikaformance 若进一步发展，可能和 talking avatar 重叠，但目前 Pika 更偏创意特效和短视频。</li><li><strong>生数科技 / Vidu</strong>:中国视频生成模型与应用，和 Kling、MiniMax、Jimeng 一样形成中国低成本高迭代竞争圈。Pika 需要在海外创作者心智上保持差异。</li></ul>
+<h3 class="subsection">8.3 Pika 的护城河</h3>
+<ol><li><strong>产品传播性</strong>:Pikaffects 这类功能天然适合社媒传播，比纯 prompt 工具更容易被普通用户理解。</li><li><strong>低门槛 UX</strong>:订阅、credits 和效果模板清晰，适合非专业创作者。</li><li><strong>年轻团队和速度</strong>:官方 2024 年博客强调一年内从 Discord stealth 到 1.0 web app、多项功能和团队扩张。</li><li><strong>API 分发</strong>:Fal.ai 让开发者能直接调用 Pika，降低集成摩擦。</li><li><strong>品牌个性</strong>:Pika 的命名、视觉和 tone 都更偏 creator-native，有助于消费用户记忆。</li></ol>
+<h3 class="subsection">8.4 最容易被攻击的点</h3>
+<ul><li>模型质量如果落后，娱乐化包装难以长期留住付费用户。</li><li>CapCut/TikTok/Instagram/YouTube Shorts 内置 AI effects 会挤压独立 App。</li><li>价格战会降低 credits 变现能力。</li><li>缺少企业/团队功能时，难以拿到高 ACV。</li><li>如果用户只为一个 viral effect 付费，留存可能弱。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Pika 的创始故事是典型的 GenAI 原生创业公司:Stanford 背景、年轻创始人、快速 dropout、先在 Discord 发布，再推出 web app 和模型更新。Demi Guo 和 Chenlin Meng 的 Stanford PhD 背景帮助公司在早期吸引资本和人才。官方博客称从 3 人增长到 13 人，说明 2024 年融资时团队仍非常小。</p>
+<p>团队小有两面性:</p>
+<ul><li><strong>优势</strong>:决策快、产品迭代快、品牌个性强、资本效率早期看起来高。</li><li><strong>挑战</strong>:视频模型训练、推理基础设施、内容安全、支付、企业销售、法务和全球运营都需要更完整组织。</li></ul>
+<p>Careers 页面强调 Pika 总部在 Palo Alto，并称公司正在 revolutionizing video creation to be seamless and accessible for everyone。这与其产品定位一致:让视频创作变得像图片滤镜和社媒特效一样简单。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>消费应用留存风险</strong></li></ol>
+<p>AI effects 容易爆红，也容易过气。用户可能为一次性 meme 付费后流失。</p>
+<ol><li><strong>模型质量风险</strong></li></ol>
+<p>视频生成用户最终会比较画质、物理、人物一致性、文字、镜头控制和失败率。Pika 若落后于 Runway/Luma/Kling/Veo/Sora，credits 体系也难以支撑高付费。</p>
+<ol><li><strong>平台复制风险</strong></li></ol>
+<p>TikTok/CapCut、Instagram、YouTube Shorts、Snap、Adobe Express 若内置类似特效，Pika 的独立获客成本会上升。</p>
+<ol><li><strong>毛利风险</strong></li></ol>
+<p>低价订阅 + 高 GPU 成本是危险组合。若重度用户集中消耗 1080p/长视频，毛利可能承压。</p>
+<ol><li><strong>API 渠道依赖</strong></li></ol>
+<p>API 主要通过 Fal.ai 分发，Pika 需要核验其客户关系和净收入控制力。</p>
+<ol><li><strong>版权和安全风险</strong></li></ol>
+<p>视频特效可用于名人、IP、品牌、政治内容和 deepfake，内容审核和版权政策会增加成本。</p>
+<ol><li><strong>融资续航风险</strong></li></ol>
+<p>2024 年后没有可回源大额融资更新，若 burn 高而收入不足，后续融资环境会影响战略节奏。</p>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="black_forest_labs.html">Black Forest Labs</a><a class="sib-chip" href="elevenlabs.html">ElevenLabs</a><a class="sib-chip" href="heygen.html">HeyGen</a><a class="sib-chip" href="kling_ai_可灵ai.html">Kling AI</a><a class="sib-chip" href="luma_ai.html">Luma AI</a><a class="sib-chip" href="midjourney.html">Midjourney</a><a class="sib-chip" href="suno.html">Suno</a><a class="sib-chip" href="synthesia.html">Synthesia</a></div>
 </div>
 </body></html>

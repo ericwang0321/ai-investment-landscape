@@ -108,6 +108,34 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开线索</th><th>投资解读</th></tr></thead><tbody><tr><td>开源社区热度</td><td>官网称 MiniCPM 系列下载量超过 100 万；MiniCPM-V 2.6 曾 GitHub 万星、Hugging Face Trending Top3；VoxCPM 曾 Hugging Face TOP1；MiniCPM-V 4.5 登 Hugging Face TOP2</td><td>开发者影响力强，但下载量不是收入</td></tr><tr><td>客户/合作</td><td>官网称与吉利、长安、大众、华为等深度合作；另有 Intel、MediaTek、百度智能云、长城汽车、加速进化机器人、大象机器人、追知工科等合作新闻</td><td>需区分 demo、适配、量产和付费合同</td></tr><tr><td>行业落地</td><td>法律行业：官网称全国首个接入法院办案流程的大模型；最高法“法信法律基座大模型”相关报道；汽车：端侧座舱、ASPICE L2 车规评估</td><td>行业场景明确，交付复杂度也高</td></tr><tr><td>团队</td><td>官网称小团队与清华/OpenBMB 深度绑定；公开资料列 CEO 李大海、科学家刘知远、CTO 曾国洋</td><td>技术品牌强，商业团队能力需观察</td></tr><tr><td>收入/ARR</td><td>公开材料没有给出收入、ARR、毛利、订单金额</td><td>后续核验重点</td></tr><tr><td>融资</td><td>官网新闻显示完成数亿元融资；媒体/公司新闻显示 2024、2025–2026 多轮融资线索</td><td>金额为“数亿元”级，估值区间需要核验</td></tr></tbody></table></div>
 <p>商业化判断：面壁最可能先从 B2B 项目和授权收入变现，而不是 C 端订阅。其客户预算来自汽车座舱、AIPC、手机厂商、机器人厂商、智能家居、司法/政企系统和工业场景。该模式的优点是客户付费意愿明确、端侧部署有差异化；缺点是销售周期长、适配成本高、收入确认慢且容易项目制。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>端侧模型的单位经济性不同于云端 API：</p>
+<ol><li><strong>推理成本转移到终端</strong>：若模型在用户设备上运行，云端 token 成本显著下降。对汽车/手机/PC 厂商而言，这意味着长期服务成本更可控；对面壁而言，收入更多来自授权和适配，而不是按 token 计费。</li></ol>
+<ol><li><strong>前期适配成本高</strong>：每个芯片平台、操作系统、车机系统、机器人传感器都需要工程适配。项目早期可能呈现“高收入但低毛利”或“高 PoC 人力成本”。</li></ol>
+<ol><li><strong>量产后边际利润改善</strong>：如果某个车型、手机系列、AIPC 平台或机器人产品量产，模型授权可以按设备摊薄研发成本，毛利改善明显。</li></ol>
+<ol><li><strong>开源降低获客成本但削弱议价</strong>：MiniCPM 开源有利于开发者扩散，但客户可能自行部署或要求低价服务。公司需要靠商用授权、持续更新、推理系统、车规/行业认证和端侧咨询保持议价。</li></ol>
+<ol><li><strong>硬件开发板不是主要利润池</strong>：Pinea Pi 等产品更像生态工具。真正财务价值在模型 license、行业解决方案和软硬联合量产。</li></ol>
+<p>需要后续核验的财务问题包括：每个汽车/硬件客户是 PoC 还是量产；单设备 license 是否存在；NRE 费用与软件年费比例；交付人员利用率；毛利率；客户续约和 OTA 收入；开源模型商用授权收入。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 直接竞争者</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>方向</th><th>对面壁的压力</th></tr></thead><tbody><tr><td>Qwen / 阿里</td><td>开源模型、多模态、端侧适配</td><td>模型能力强、生态资源大</td></tr><tr><td>DeepSeek</td><td>开源推理和代码模型</td><td>开发者心智和模型性价比竞争</td></tr><tr><td>MiniMax</td><td>多模态、端侧/应用、全球化</td><td>应用层变现能力更强</td></tr><tr><td>Zhipu AI</td><td>政企、GLM、端侧/智能体</td><td>政企客户与国产生态竞争</td></tr><tr><td>ByteDance Doubao</td><td>低价 API、应用分发、端侧合作</td><td>价格和渠道压力</td></tr><tr><td>Qualcomm / MediaTek / Intel 生态模型</td><td>芯片级端侧 AI</td><td>芯片厂可能自建或绑定其他模型</td></tr><tr><td>Apple / Google / Samsung on-device AI</td><td>手机端侧系统能力</td><td>操作系统级竞争</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 面壁的差异化</h3>
+<ul><li><strong>效率路线明确</strong>：MiniCPM、MiniCPM-V、MiniCPM-o 都强调小参数、高性能、低内存、低延迟。</li><li><strong>清华/OpenBMB 背书</strong>：学术论文、开源项目和评测框架带来技术可信度。</li><li><strong>端侧工程积累</strong>：CPM.cu、ArkInfer、量化、稀疏注意力、投机采样等体现工程壁垒。</li><li><strong>汽车/硬件落地线索多</strong>：车规 ASPICE L2、智能座舱、吉利/长安/大众/华为等合作线索增强商业可信度。</li><li><strong>开源社区热度</strong>：开发者会主动验证模型，降低销售教育成本。</li></ul>
+<h3 class="subsection">8.3 护城河与可被攻击点</h3>
+<p>护城河在“模型效率 + 端侧部署 + 行业适配 + 开源生态”。可被攻击点在“模型能力被更大开源模型压过、硬件厂自建、项目制交付拖累毛利、客户量产周期太长、缺少 C 端品牌和标准化 SaaS 收入”。端侧模型公司最终能否成为大公司，不取决于 demo 多少，而取决于进入多少量产设备和高频业务系统。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>面壁智能的团队标签是“清华 NLP + OpenBMB + 年轻工程团队”。刘知远为清华大学计算机系长聘副教授，公开活动中多次阐述大模型、知识密度和端侧智能；李大海为公司创始人兼 CEO，负责公司商业化和组织推进；曾国洋为 CTO，并入选 2024 胡润 U25 中国创业先锋、北京市科技新星计划创业新星项目等公开荣誉。</p>
+<p>团队优势在于技术叙事统一，能够把学术研究迅速变成开源模型、推理框架和行业 demo；潜在风险是 B2B 量产销售、车规交付、硬件生态商务和大客户回款能力需要长期验证。对一级市场而言，应重点访谈商业负责人、交付负责人和客户侧技术负责人，而不是只看论文/榜单。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>收入不可见风险</strong>：公开资料没有给出收入、ARR、订单金额和毛利，难以判断商业化阶段。</li><li><strong>项目制交付风险</strong>：汽车、机器人、司法、工业等行业项目交付重，容易占用研发和工程资源。</li><li><strong>客户量产不确定</strong>：公开合作可能只是联合 demo 或 PoC，真正量产和按设备收费需要合同验证。</li><li><strong>开源商业化风险</strong>：开源热度高，但企业可能自行部署或选择竞品，商业捕获率需要验证。</li><li><strong>技术追赶风险</strong>：Qwen、DeepSeek、MiniMax、Google、Apple、Qualcomm 等都在端侧和小模型投入。</li><li><strong>硬件碎片化风险</strong>：端侧适配要面对不同芯片、内存、功耗、操作系统和车规要求，维护成本高。</li><li><strong>高校/IP 边界风险</strong>：清华/OpenBMB/公司联合研发成果需要清晰界定知识产权和商业授权。</li><li><strong>政策与数据安全风险</strong>：法律、法院、汽车座舱、机器人等场景都涉及高敏感数据和安全责任。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="ai21_labs.html">AI21 Labs</a><a class="sib-chip" href="cohere.html">Cohere</a><a class="sib-chip" href="liquid_ai.html">Liquid AI</a><a class="sib-chip" href="reka_ai.html">Reka AI</a><a class="sib-chip" href="stepfun_阶跃星辰.html">StepFun</a><a class="sib-chip" href="thinking_machines_lab.html">Thinking Machines Lab</a><a class="sib-chip" href="zyphra.html">Zyphra</a><a class="sib-chip" href="零一万物_01_ai.html">零一万物</a></div>
 </div>
 </body></html>

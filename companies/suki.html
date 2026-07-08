@@ -105,6 +105,37 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开数据</th><th>来源/说明</th></tr></thead><tbody><tr><td>Healthcare systems and partners</td><td>400+</td><td>Suki 官网</td></tr><tr><td>Specialties</td><td>100+</td><td>Suki clinicians page</td></tr><tr><td>Languages</td><td>80</td><td>Suki solutions/clinicians pages</td></tr><tr><td>EHR integrations</td><td>Epic、Oracle Health、athenahealth、MEDITECH</td><td>Suki 官网</td></tr><tr><td>Note speed</td><td>41% faster on average</td><td>2025 CFO press release</td></tr><tr><td>Incremental revenue</td><td>$1,688 average monthly revenue per user</td><td>2025/2026 press releases</td></tr><tr><td>Practice satisfaction</td><td>81% increase</td><td>2026 HealthEdge press release</td></tr><tr><td>Documentation time reduction</td><td>up to 76% in early Sevocity deployments</td><td>2026 Sevocity press release</td></tr><tr><td>Partner distribution</td><td>athenahealth preferred partner,HealthEdge GuidingCare,Sevocity,WellSky</td><td>Press releases</td></tr><tr><td>ARR/revenue</td><td>公开资料没有给出可使用 ARR</td><td>需要后续核验</td></tr><tr><td>最新融资/估值</td><td>最新公开融资金额需逐源核验;官网列 Hedosophia 等投资方</td><td>不能把投资方 logo 当成融资金额</td></tr></tbody></table></div>
 <p>需要注意:Suki 官网首页若干数字在网页抽取时显示为 0%,0$,可能是动画数字未被文本抓取。更可靠的是 press release 中的 41%、$1,688、81%、76% 等明确文本。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 Revenue build</h3>
+<p>Suki 的收入公式:</p>
+<p>ARR = direct clinician seats × ARPU + enterprise platform fees + partner embedded users/usage × net revenue share + RCM/clinical reasoning add-on attach</p>
+<p>关键驱动:</p>
+<ul><li>direct vs partner channel mix;</li><li>per clinician ARPU;</li><li>API/SDK usage monetization;</li><li>RCM uplift 是否能变成模块收费;</li><li>EHR partner distribution 是否降低 CAC;</li><li>health system expansion 是否提升 NRR。</li></ul>
+<h3 class="subsection">7.2 Cost build</h3>
+<p>成本包括:</p>
+<ul><li>LLM/speech inference;</li><li>EHR integration engineering;</li><li>partner SDK/API support;</li><li>clinical QA and coding validation;</li><li>sales/customer success;</li><li>security/HIPAA/SOC2;</li><li>ongoing model evaluation and incident monitoring。</li></ul>
+<p>Partner 模式可能降低 direct sales CAC,但增加 partner success 和 integration support。若 Suki 的 API/SDK 可标准化,毛利会好;若每个 partner 都要深度定制,毛利会下降。</p>
+<h3 class="subsection">7.3 ROI 和价格支撑</h3>
+<p>Suki 的 $1,688 monthly incremental revenue/user 是最关键的财务指标之一。如果该 uplift 是 collections 而非 billed amount,且能被客户审计,则 annual value per user 超过 $20K,足以支持较高 subscription price。若只是模型估算或部分客户样本,则需要折扣。41% faster notes 和 81% practice satisfaction 支撑医生体验,但长期价格主要靠 revenue/coding 和 workflow embed。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">Abridge</td><td class="kv-val">Abridge health system scale 和资本更强;Suki partner/API 和 EHR broad integration 更突出。</td></tr><tr><td class="kv-key">Ambience</td><td class="kv-val">Ambience coding accuracy/ROI 和 complex specialty 叙事强;Suki revenue cycle + partner embedding 也在同方向竞争。</td></tr><tr><td class="kv-key">Nabla</td><td class="kv-val">Nabla clinician adoption 和轻量部署强;Suki 更强调 enterprise/partner/platform 和 RCM uplift。</td></tr><tr><td class="kv-key">Commure</td><td class="kv-val">Commure RCM/admin automation 更重;Suki 从 clinician assistant 和 partner SDK 切入。</td></tr><tr><td class="kv-key">Microsoft Nuance DAX</td><td class="kv-val">Nuance incumbency 强;Suki 需要以 EHR breadth、partner distribution 和 ROI 区分。</td></tr><tr><td class="kv-key">Epic/Oracle/athena/MEDITECH native features</td><td class="kv-val">平台既是渠道又是潜在竞争者;Suki 与 athena/Sevocity/HealthEdge 等合作降低但不消除风险。</td></tr></tbody></table></div>
+<p>Suki 的护城河不在单一 note quality,而在四件事:四大 EHR 的深集成、partner SDK/API、clinician workflow breadth、以及 revenue cycle ROI。若它能成为多家 healthtech 的 embedded AI layer,竞争形态会从“卖给医院的 scribe”变成“卖给医疗软件生态的 infrastructure”。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Punit Soni 是产品型 CEO,过往在 Google、Motorola、Flipkart 等公司有消费者/平台产品经历。Suki 的管理层在 2025-2026 补强明显:Bryan Morris 加入 CFO,Joe Chang CTO,Kevin Wang MD CMO,Abhi Pathak CPO,Vikram Khanna Chief Customer Officer 等。CFO 任命尤其值得注意,说明公司在增长阶段需要更强财务、资本化和运营纪律。</p>
+<p>优势:</p>
+<ul><li>早进入医疗 AI assistant,积累多年 workflow 和 EHR 经验;</li><li>投资方包括 Venrock、First Round、Flare、March、Hedosophia 等;</li><li>partner/embedded strategy 比纯直销更有平台潜力;</li><li>管理层补强有利于规模化。</li></ul>
+<p>风险:</p>
+<ul><li>老牌公司可能面临产品重新定位压力,需要证明生成式 AI 时代不被新玩家超越;</li><li>partner strategy 需要协调多方 roadmap;</li><li>最新融资/估值透明度低,外部难判断资本弹药。</li></ul>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>竞争密集:</strong> Abridge、Ambience、Nabla、Commure、Nuance、Epic native AI 同时挤压。</li><li><strong>平台依赖:</strong> EHR partners 是渠道,也可能自研或切换 preferred vendor。</li><li><strong>Partner revenue share:</strong> 嵌入式分发可能降低 CAC,但也可能压低 net revenue/user。</li><li><strong>ROI 口径:</strong> $1,688 monthly incremental revenue/user 需要核验是 collections、allowed amount、billed amount 还是模型估算。</li><li><strong>临床安全:</strong> Q&A、patient summaries、coding、orders 都比简单 note 更高风险。</li><li><strong>资金透明度:</strong> 最新融资和估值不清晰,难判断与 Abridge/Ambience 的资本竞争能力。</li><li><strong>老牌产品再定位:</strong> 早期 voice assistant 架构是否完全适配 agentic AI 平台,需要产品验证。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="abridge.html">Abridge</a><a class="sib-chip" href="ambience_healthcare.html">Ambience Healthcare</a><a class="sib-chip" href="bioptimus.html">Bioptimus</a><a class="sib-chip" href="enveda_biosciences.html">Enveda Biosciences</a><a class="sib-chip" href="evolutionaryscale.html">EvolutionaryScale</a><a class="sib-chip" href="insilico_medicine.html">Insilico Medicine</a><a class="sib-chip" href="nabla.html">Nabla</a><a class="sib-chip" href="openevidence.html">OpenEvidence</a></div>
 </div>
 </body></html>

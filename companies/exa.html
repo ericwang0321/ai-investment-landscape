@@ -110,6 +110,42 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>解读</th></tr></thead><tbody><tr><td>Free tier</td><td>20,000 requests/month</td><td>强开发者入口，降低试用成本</td></tr><tr><td>Search price</td><td>$7/1k requests</td><td>中高价 search API，靠质量/latency/verticals 支撑</td></tr><tr><td>Contents price</td><td>$1/1k pages per content type</td><td>把 crawl/extract/highlight 商品化</td></tr><tr><td>Deep Search</td><td>$12-15/1k requests</td><td>高价值 research workflow</td></tr><tr><td>Agent</td><td>$0.012-$1.00/run + ACU/tool usage</td><td>从单次 API 进入 agent run economics</td></tr><tr><td>Monitors</td><td>$15/1k requests</td><td>事件监控/新闻追踪预算</td></tr><tr><td>Customers</td><td>BI: thousands of customers；官网展示 Cursor、Cognition、HubSpot、OpenRouter 等</td><td>adoption 已跨 coding agents、sales enrichment、AI apps</td></tr><tr><td>Employees</td><td>BI: about 80 globally</td><td>团队仍小，资本效率和 infra scaling 是关键</td></tr><tr><td>Series B</td><td>BI: $85M led by Benchmark in Sept 2025</td><td>为 search infra 和 international expansion 提供资金</td></tr><tr><td>Valuation</td><td>BI: $700M in Sept 2025 round</td><td>估值反映 agent search infra 预期</td></tr><tr><td>Investors</td><td>Benchmark、Lightspeed、Y Combinator、NVentures</td><td>Nvidia 生态背书重要</td></tr><tr><td>APAC expansion</td><td>2026 年 Singapore office，计划招聘 up to 10 engineers</td><td>强调 data pipelines、crawling infrastructure 和国际化</td></tr></tbody></table></div>
 <p>商业化的核心不是“有多少开发者试用”，而是 API usage 是否进入高频生产链路。Cursor、Cognition、HubSpot、OpenRouter 这类客户若把 Exa 嵌入 agent loop，会带来持续 request volume；但 API 工具的 switching cost 通常低于数据平台，Exa 需要用质量、index、latency、verticals 和 enterprise support 提高留存。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Exa 的单位经济性由四个变量决定:</p>
+<ol><li><strong>Search infra cost per request</strong>: crawling、indexing、ranking、cache、storage、bandwidth 和 serving latency。低延迟 search API 若无足够 cache 和 index efficiency，毛利会被吞噬。</li><li><strong>Contents/highlights token savings</strong>: 如果 Exa 的 highlights 能显著降低客户 LLM token 成本，它可以用“为客户省推理成本”支撑较高 API 单价。</li><li><strong>Agent/Deep Search compute cost</strong>: 多步 research 和 structured extraction 需要更多 search/tool/model 调用，$0.012-$1.00/run 的 fixed effort 要避免高复杂任务亏损。</li><li><strong>Enterprise minimums</strong>: 大客户自定义 QPS、custom index、SLAs、security 能稳定收入，减少纯 PAYG 波动。</li></ol>
+<p>粗略看，Exa 比通用 SaaS 更重资产，因为要持续爬取和索引 web；但比模型公司轻，因为不需要训练 frontier LLM。长期毛利取决于自研 search index 的效率、cache 命中、数据供应商成本、LLM 用量和客户 willingness to pay。若 AI searches volume 真超过 human searches，规模优势会很强；如果模型厂商内置 search 成为默认，Exa 的流量入口会受压。</p>
+<p>估值方面，$700M post-money 若没有 ARR 披露，很难用 revenue multiple 判断。更合理的监控指标是 monthly API requests、paid customers、gross retention、top customer concentration、enterprise ACV、search quality retention 和 infra gross margin。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 与 Tavily</h3>
+<p>Tavily 是最直接竞品。两者都面向 AI agents 提供 real-time web access，且都在争取 LangChain、Databricks、IBM、Groq、MongoDB、Writer、Cursor 等生态。差异大致如下:</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>维度</th><th>Exa</th><th>Tavily</th></tr></thead><tbody><tr><td>核心叙事</td><td>AI-native search engine / search API for agents</td><td>secure API for real-time web access / web access layer for agents</td></tr><tr><td>定价</td><td>Search $7/1k，Contents $1/1k pages，Deep $12-15/1k，Agent $0.012-$1/run</td><td>Free 1,000 credits，PAYG $0.008/credit，Project，Enterprise custom</td></tr><tr><td>产品重点</td><td>Search、Contents highlights、Deep Search、Agent、Monitors、Exa Connect</td><td>Search、Extract、Crawl、Map、Research API、安全/PII/prompt injection、production scale</td></tr><tr><td>公开指标</td><td>thousands customers、$85M Series B、$700M valuation、80 employees</td><td>2M+ developers、300M+ monthly requests、99.99% uptime、180ms p50、$25M funding、2026 joined Nebius</td></tr><tr><td>战略资源</td><td>Benchmark、NVentures、Lightspeed、YC</td><td>Insight Partners、Nebius infrastructure</td></tr></tbody></table></div>
+<p>Exa 需要证明搜索质量和数据结构化明显优于 Tavily；Tavily 需要证明规模、Nebius infrastructure 和安全治理带来的 enterprise trust 更强。</p>
+<h3 class="subsection">8.2 与 Perplexity</h3>
+<p>Perplexity 既是 consumer answer engine，也通过 Search/Sonar/Agent API 进入开发者基础设施。Perplexity 的优势是品牌、consumer query data、publisher program 和 answer engine体验；Exa 的优势是更专注 developer API、token-efficient contents、vertical search 和 agent integration。若开发者只需要答案或 Sonar-style search model，Perplexity 更自然；若需要自定义搜索、contents、structured enrichment 和 agent run，Exa 更灵活。</p>
+<h3 class="subsection">8.3 与 Google / Bing / Brave / SerpAPI</h3>
+<p>传统 search API 的优势是索引规模、覆盖广、成熟度和稳定性。Exa 的差异是 AI-first output: 结构化、chunked、highlighted、citation-ready、agent-friendly。风险是 Google/Bing/Brave 一旦推出更适合 AI agents 的 API，Exa 的差异会被压缩。</p>
+<h3 class="subsection">8.4 与 Firecrawl / Linkup / Apify / Browserbase</h3>
+<p>Firecrawl 更偏 crawl/scrape/extract；Apify 是 web automation/scraping marketplace；Browserbase 是 browser automation infrastructure；Linkup 也是 AI search API。Exa 的边界是搜索+内容+research，而不是纯浏览器执行。很多 agent stack 可能同时使用 Browserbase 执行动作、Exa/Tavily 搜索、Firecrawl 抓取复杂页面。</p>
+<h3 class="subsection">8.5 与 Databricks / Snowflake / Glean / GoSearch</h3>
+<p>Databricks/Snowflake 是企业数据后端，Glean/GoSearch 是内部知识搜索，Exa 是外部 web data。企业研究 agent 通常需要三类数据: internal knowledge、structured enterprise data、external web。Exa 更可能与这些平台互补，而不是替代。</p>
+<h3 class="subsection">8.6 护城河与脆弱点</h3>
+<p>护城河:</p>
+<ul><li>AI-native search index 和 ranking；</li><li>token-efficient highlights 可能降低客户推理成本；</li><li>coding/company/people verticals；</li><li>data provider access via Exa Connect；</li><li>production customer integrations；</li><li>Benchmark/NVenture 等资本与 Nvidia 生态背书；</li><li>search quality evals 和 benchmarks。</li></ul>
+<p>脆弱点:</p>
+<ul><li>API switching cost 不高；</li><li>OpenAI/Anthropic/Google/Perplexity 可内置 web search；</li><li>web crawling 和内容授权政策变化；</li><li>数据供应商成本和 compliance；</li><li>若搜索质量领先无法持续，价格会被压低；</li><li>大客户自建或转向云厂商 search。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>BI 2026 年报道提到 CEO Will Bryk 和 cofounder Jeff Wang，Exa 约 80 名员工，正在 San Francisco、Zurich、Singapore 招聘。Will Bryk 强调 hiring “rebellious” engineers、重视 first-principles、large-scale systems passion，并称候选人会在 San Francisco 与团队工作一到两天以评估文化和技术。报道还提到公司许多代码由 AI 写成，反映其自身也在采用 AI-native engineering workflow。</p>
+<p>团队挑战主要是 infra scaling: search 公司不是纯 app，必须建设 crawler、index、ranking、serving、data pipeline、compliance 和 customer support。Singapore office 的重点被描述为 data pipelines 和 crawling infrastructure，这说明 Exa 正在从早期 API startup 进入全球化搜索基础设施建设阶段。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>模型厂商内置 search</strong>: OpenAI、Anthropic、Google、Perplexity 可以把 web search 做成默认 tool，降低开发者采购第三方 API 的必要性。</li><li><strong>Tavily 竞争</strong>: Tavily 已有 2M+ developers、300M+ monthly requests、Nebius 背书，直接争夺 agent web access layer。</li><li><strong>价格竞争</strong>: Search API 容易被按 request 比价，若质量差距不明显，价格会下行。</li><li><strong>内容授权和爬虫限制</strong>: Robots、paywalls、法律诉讼和出版商政策会限制可访问数据。</li><li><strong>数据供应商成本</strong>: Exa Connect 若依赖第三方数据，毛利受授权成本影响。</li><li><strong>API switching cost 低</strong>: 开发者可以抽象 search provider，尤其在 LangChain/LlamaIndex 等框架中切换。</li><li><strong>搜索质量难衡量</strong>: 公司 benchmark 需要独立验证；客户生产质量更重要。</li><li><strong>高估值前置</strong>: $700M 估值需要较快 ARR/API usage 增长支撑。</li><li><strong>安全与隐私</strong>: 客户 query 可能包含商业敏感研究方向，ZDR 和审计必须可信。</li><li><strong>基础设施扩张成本</strong>: 全球 crawling/indexing/serving 投入可能推高 burn。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="alphasense.html">AlphaSense</a><a class="sib-chip" href="glean_technologies.html">Glean Technologies</a><a class="sib-chip" href="golinks_gosearch.html">GoLinks</a><a class="sib-chip" href="hebbia.html">Hebbia</a><a class="sib-chip" href="perplexity_ai.html">Perplexity AI</a><a class="sib-chip" href="tavily.html">Tavily</a></div>
 </div>
 </body></html>

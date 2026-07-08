@@ -121,6 +121,35 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <ol><li><strong>usage-to-revenue conversion</strong>: 36.9M unique sessions 是否产生 browser-hour 收入,还是包含大量免费/测试/短 session。</li><li><strong>retention by workflow criticality</strong>: KYC、测试、数据抽取、内部 agent workflow 一旦上线,切换成本可能高;纯 search/fetch 任务切换成本低。</li><li><strong>cost per successful task</strong>: 如果 Browserbase 能把 session、proxy、model tokens 和重试次数降下来,客户会从 API scraping/自建 Playwright 迁移;反之会被成本压制。</li></ol>
 <p>公开资料中没有可直接回源的 ARR、收入 run-rate、gross margin、net retention、付费客户数、enterprise ACV 或估值。本稿不把第三方数据库中未能公开核验的数字写成事实。后续应向公司或投资人核验: 付费客户数、top 20 客户占比、browser-hour 毛利、proxy 成本、session success rate、Agent run 付费转化、Scale plan 合同规模。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Browserbase 的单位经济性可以拆成六层:</p>
+<ol><li><strong>浏览器计算成本</strong>: 每个 session 消耗 CPU、内存、存储、网络和录制成本。browser hour 定价必须覆盖云资源、调度、隔离、重试和支持。</li><li><strong>proxy/identity 成本</strong>: 代理网络、CAPTCHA、登录、反自动化对抗是成本和风险高点。proxy GB 单独计费说明公司不会把这部分成本完全吸收在订阅内。</li><li><strong>LLM token pass-through</strong>: Model Gateway 按 market price,降低模型成本波动对毛利的冲击。若未来对模型调用加价,需证明选择、路由、eval、观测价值。</li><li><strong>Search/Fetch substitution</strong>: 能用 lightweight API 完成的任务不应启动完整浏览器。Browserbase 若能把 task routing 做好,客户 cost per task 降低,平台毛利改善。</li><li><strong>Enterprise support load</strong>: 高价值客户往往有复杂登录、代理、合规、站点适配和成功率要求,需要 solution engineering。毛利不仅取决于 compute,还取决于人工支持。</li><li><strong>Success-rate pricing potential</strong>: Browserbase 当前公开价按资源/调用收费,未来若 Agent runs 能稳定交付业务结果,可能按 successful run、workflow package 或 vertical template 提价。</li></ol>
+<p>关键财务逻辑不是"浏览器小时越多越好",而是"每个 workflow 的成功率和留存能否支撑浏览器成本"。如果 agent 需要反复重试、长时间等待和人工介入,客户会觉得每个成功结果过贵;如果 Stagehand/Agents/Fetch 能把任务压缩成短链路,Browserbase 可以形成高使用频次。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>类别</th><th>代表公司/项目</th><th>与 Browserbase 的关系</th></tr></thead><tbody><tr><td>Browser automation infra</td><td>Browserless、browser-use、Apify、ScrapingBee、Bright Data、Oxylabs、Playwright cloud providers</td><td>争夺云浏览器、抓取、代理和自动化预算</td></tr><tr><td>Agent frameworks</td><td>LangChain/LangGraph、LlamaIndex、CrewAI、Mastra、OpenAI/Anthropic agent SDKs</td><td>Browserbase 是 execution tool/runtime,也可能上移到 agent API</td></tr><tr><td>Search/web data APIs</td><td>Exa、Tavily、Perplexity API、Brave Search API、SerpAPI</td><td>Search/Fetch 场景直接竞争,浏览器交互场景互补</td></tr><tr><td>RPA/enterprise automation</td><td>UiPath、Automation Anywhere、Microsoft Power Automate</td><td>传统企业工作流自动化,在 agentic automation 上会下压</td></tr><tr><td>Testing infra</td><td>BrowserStack、Sauce Labs、Playwright Testing、Cypress</td><td>automated testing use case 重叠</td></tr><tr><td>Internal build</td><td>企业自建 Playwright/Puppeteer + proxies + queue + observability</td><td>大客户可能为成本/控制自建,Browserbase 需用可靠性和治理证明外包价值</td></tr></tbody></table></div>
+<h3 class="subsection">8.1 与 Exa/Tavily</h3>
+<p>Exa/Tavily 更偏 agent web search/retrieval,主要让 agent 找到和读取网页。Browserbase 则处理 Search/Fetch 之外的"网页需要像人一样操作"任务。边界在于 Browserbase 已加入 Search/Fetch,Exa/Tavily 也可能加入 crawl/actions。若客户只是实时搜索和内容抽取,Exa/Tavily 的 index/quality/latency 可能更强;若客户要登录、点击、填表和下载,Browserbase 更有必要。</p>
+<h3 class="subsection">8.2 与 Playwright/Puppeteer 自建</h3>
+<p>开源 Playwright/Puppeteer 免费且成熟。Browserbase 的护城河不是控制浏览器本身,而是生产化:</p>
+<ul><li>并发和资源调度;</li><li>session replay/observability;</li><li>proxy/CAPTCHA/identity;</li><li>Stagehand AI primitives;</li><li>Model Gateway 和 eval;</li><li>enterprise security/retention/support;</li><li>agent templates 和 runtime。</li></ul>
+<p>只要客户规模不大,自建成本低;一旦浏览器任务进入生产并要求高并发和高成功率,托管平台的价值上升。</p>
+<h3 class="subsection">8.3 与 RPA</h3>
+<p>UiPath、Power Automate 等 RPA 更适合稳定企业内部系统和 desktop/process automation。Browserbase 更适合 web-native、动态、跨站、AI-driven 的工作流。长期两者会碰撞: RPA 厂商会把 LLM/agent 加进产品,Browserbase 也会进入企业流程自动化。Browserbase 的优势是 developer-first 和 web/agent 原生;RPA 优势是企业采购、合规、流程治理和集成生态。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>公开客户案例中 Paul Klein IV 以 Browserbase founder & CEO 身份出现。公司官网和博客展示多个工程、产品和社区作者,说明团队不只是做托管浏览器,也在持续输出 Stagehand、CAPTCHA/identity、browser agent benchmarks、conference/community、customer engineering 等内容。</p>
+<p>团队判断重点:</p>
+<ul><li>创始团队是否具备 browser infra、distributed systems、anti-bot/proxy、security、developer tools 背景;</li><li>是否能同时服务开源社区和企业客户;</li><li>是否能处理高风险网页自动化场景的合规边界;</li><li>是否能把客户 workflow 成功率工程化,而不仅是卖算力;</li><li>是否有足够 GTM 能力把 developer usage 转成 Scale 合同。</li></ul>
+<p>公开资料暂时不足以完整拆解管理层、员工数、组织架构和融资后团队扩张节奏。后续应核验 LinkedIn headcount、工程/销售比例、关键高管加入、客户成功团队规模。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>可靠性风险</strong>: 网页随时变化,弹窗、A/B test、cookie banner、MFA、CAPTCHA 和反 bot 都会打断 agent。成功率不足会直接影响客户 ROI。</li><li><strong>成本风险</strong>: 真实浏览器比 search/fetch/API 调用更贵。若每个任务 session 长、重试多、模型 token 多,客户可能回到 API 或人工。</li><li><strong>合规与 ToS 风险</strong>: 自动登录、抓取、表单提交和代理网络涉及网站条款、数据授权、隐私和滥用边界。</li><li><strong>安全风险</strong>: Browserbase 可能处理登录凭证、cookie、文件、客户数据和目标网站信息,必须防止泄露和越权访问。</li><li><strong>平台替代风险</strong>: OpenAI/Anthropic/Google 若内置 browsing/operator/runtime,或云厂商/RPA 厂商提供企业级 agent browsing,会压缩独立平台空间。</li><li><strong>开源替代风险</strong>: Playwright、Puppeteer、browser-use、Stagehand-like tools 让技术门槛降低,大客户可自建。</li><li><strong>融资信息透明度不足</strong>: 缺少公开融资/ARR/估值,投资判断难以量化价格。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="braintrust.html">Braintrust</a><a class="sib-chip" href="dify_langgenius.html">Dify</a><a class="sib-chip" href="langchain.html">LangChain</a><a class="sib-chip" href="llamaindex.html">LlamaIndex</a></div>
 </div>
 </body></html>

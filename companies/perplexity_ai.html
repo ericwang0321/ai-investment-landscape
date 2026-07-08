@@ -106,6 +106,37 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>数据/口径</th><th>来源与判断</th></tr></thead><tbody><tr><td>月查询量</td><td>2025 年 5 月 780M queries</td><td>CEO 在 Bloomberg Tech Summit 透露，TechCrunch/维基汇总引用</td></tr><tr><td>日查询量</td><td>约 30M daily queries</td><td>同上</td></tr><tr><td>查询增速</td><td>20%+ MoM growth</td><td>同上</td></tr><tr><td>Enterprise 组织数</td><td>50,000+ organizations trust Perplexity Enterprise</td><td>Perplexity Enterprise 官网页面</td></tr><tr><td>估值</td><td>2024 年初 $520M；2024 年底约 $9B；2025 年 5-6 月约 $14B；2025 年 7 月约 $18B；2025 年 9 月约 $20B</td><td>Reuters/TechCrunch/WSJ/Bloomberg/The Information 等报道口径</td></tr><tr><td>2026 ARR</td><td>第三方估算约 $200M；2024 年底估算约 $80M</td><td>Sacra/PM Insights 等二级市场和分析口径，需要与公司财务模型核对</td></tr><tr><td>API 单价</td><td>Search API $5/1K；Sonar $1/$1 token + request fee；Sonar Deep Research 另收 citation/search/reasoning</td><td>官方 docs</td></tr><tr><td>Comet Plus</td><td>$5/月，80%给出版商，20%用于计算成本，初始池约 $42.5M</td><td>Bloomberg/Windows Central/NY Post 等报道</td></tr><tr><td>Max 订阅</td><td>$200/月</td><td>多家媒体报道；Comet 初期由 Max 率先开放</td></tr></tbody></table></div>
 <p>商业化的核心 tension: 搜索是高频但低付费意愿，Deep Research/Comet/Computer 是高价值但高推理成本，Enterprise/API 是较稳但竞争更拥挤。Perplexity 若只依靠 $20 Pro，很难支持不断上升的模型和搜索成本；若过度靠广告，又会破坏“答案客观性”和用户信任。因此 2026 年更值得跟踪的是 API revenue mix、Enterprise contract size、Max/Computer 留存、Comet 活跃用户、publisher program 成本与留存。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 成本结构</h3>
+<p>Perplexity 的主要成本包括:</p>
+<ul><li><strong>Model inference</strong>: Pro/Max/Enterprise 用户调用 Claude、GPT、Gemini 等 frontier models，成本与 token 量、reasoning depth、上下文长度相关。</li><li><strong>Search/retrieval</strong>: web search、crawl、fetch、index、ranking、citation extraction。</li><li><strong>Agent runtime</strong>: Comet/Computer/Agent API 的 browser/sandbox session 成本，官方 Agent API sandbox $0.03/session 可作为外部价格线索。</li><li><strong>Content/publisher payments</strong>: Comet Plus 和 publisher program 引入内容成本，80% revenue share 意味着该产品自身毛利很低，但能换取内容供给和法律缓冲。</li><li><strong>Enterprise go-to-market</strong>: 销售、安全、合规、客户成功、数据连接器。</li></ul>
+<h3 class="subsection">7.2 Revenue per query 的挑战</h3>
+<p>传统搜索靠广告 monetization，用户点击广告的商业意图可覆盖索引和分发成本。AI answer engine 把用户答案直接留在界面，可能降低广告点击与出版商流量，同时每次查询还多了 LLM 推理成本。因此 Perplexity 的单位经济性不能只看 query growth，需要看:</p>
+<ol><li>每 1,000 queries 的平均收入。</li><li>Pro/Max 用户中高成本模型调用占比。</li><li>Search API/Sonar API 的毛利是否优于 consumer subscriptions。</li><li>Enterprise seat 使用强度是否可控。</li><li>Comet/Computer 的 action 成功率是否足以支持 $200/月 Max 或定制 enterprise 合同。</li></ol>
+<h3 class="subsection">7.3 初步倍数</h3>
+<p>若用 2026 年第三方估算 ARR ~$200M 和 $20B 左右估值，EV/ARR 约 100x；若用 2025 年底更高 ARR 或收入 run-rate，则倍数下降，但仍是高增长 AI application premium。这个倍数需要 query growth、Max/Enterprise/API 结构和毛利改善共同支撑。公开材料尚没有给出毛利率、净收入留存、enterprise ACV、Pro/Max 付费用户数、API 收入占比，因此目前只能建立“高增长、高不确定成本、入口资产估值”的框架。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 AI search / answer engine</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>位置</th><th>对 Perplexity 的威胁</th></tr></thead><tbody><tr><td>Google Search / AI Overviews / Gemini</td><td>默认搜索入口 + 浏览器 + Android + 广告系统</td><td>最大结构性威胁，拥有索引、广告、Chrome、分发</td></tr><tr><td>OpenAI ChatGPT Search / Deep Research</td><td>consumer AI habit + frontier model + plugins/tools</td><td>抢高价值 research 场景，与 Perplexity Pro/Max 正面竞争</td></tr><tr><td>Anthropic Claude Deep Research / Computer Use</td><td>企业信任、reasoning、agent safety</td><td>在高质量长研究和企业场景冲击 Perplexity</td></tr><tr><td>Microsoft Copilot / Bing</td><td>企业分发 + Office/Edge + Bing index</td><td>企业搜索和浏览器侧入口竞争</td></tr><tr><td>You.com / Phind / Kagi / Exa / Tavily</td><td>垂直 search/API/search infra</td><td>在开发者或专业搜索细分市场竞争</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 General agent / browser automation</h3>
+<p>Perplexity 的 Comet/Computer 与 Manus、Genspark、OpenAI Operator/Computer Use、Claude Computer Use、Google Project Mariner/Astra 都有重叠，但 Perplexity 的切入点是浏览器和搜索上下文。Manus 更强调“从一个 prompt 完成复杂任务/应用/报告/自动化”，Genspark 更强调超级 agent 和页面/研究生成，Cognition/Cursor 是 coding agent，Glean 是 enterprise knowledge。Perplexity 的 browser agent 若成功，价值链位置会从“问答”上移到“用户 web 操作入口”；若失败，就会退回到 AI search 工具。</p>
+<h3 class="subsection">8.3 护城河</h3>
+<ul><li><strong>品牌心智</strong>: “ask Perplexity”在 AI search 里已有领先认知。</li><li><strong>引用体验</strong>: 带来源答案仍是用户信任关键。</li><li><strong>query data</strong>: 高频问答数据可优化检索、答案质量、商业意图识别。</li><li><strong>多模型路由</strong>: 不被单一模型限制，可利用最新 frontier model。</li><li><strong>publisher program</strong>: 若内容合作规模扩大，可能形成内容供给护城河。</li><li><strong>browser context</strong>: Comet 若形成用户习惯，可获得传统搜索框拿不到的上下文和 action surface。</li></ul>
+<h3 class="subsection">8.4 脆弱点</h3>
+<ul><li>Google 可以在 Chrome/Android/Search 默认入口内直接复制体验。</li><li>OpenAI/Anthropic 能在更强模型和 assistant 入口中内置 search。</li><li>内容版权和爬虫争议可能提高内容成本或限制可索引范围。</li><li>浏览器 agent 安全事故会直接伤害信任。</li><li>API search 领域存在 Tavily、Exa、Brave Search API、Google、Bing 等替代方案，开发者 switching cost 不一定高。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Aravind Srinivas 是 CEO 和 co-founder，背景包括 OpenAI、Google DeepMind、UC Berkeley 等 AI research/ML 经历；Denis Yarats 有 Meta/AI research 背景；Johnny Ho 偏后端和系统；Andy Konwinski 来自 Berkeley 计算机系统生态并与 Databricks/Spark 生态有历史联系。创始团队组合的特点是“模型研究 + 系统工程 + 搜索/数据基础设施”，这与 Perplexity 的产品形态相符: 它不是纯模型公司，也不是传统 consumer app，而是把检索系统、LLM 和用户体验拼成一个高频入口。</p>
+<p>投资人名单也带有明显战略属性: Nvidia 代表算力生态，Databricks 代表数据/企业生态，Jeff Bezos、Nat Friedman、Tobi Lutke、Yann LeCun、Andrej Karpathy 等天使/战略投资人提供 AI 和互联网品牌背书，IVP/Accel 等后期机构支持其 growth 轮融资。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>版权和内容抓取风险</strong>: Forbes、Wired、News Corp、BBC、Dow Jones、NYT 等相关争议说明“AI answer engine 使用网页内容”仍未形成稳定行业规则。</li><li><strong>Google 入口反击</strong>: Google 同时拥有 Search、Chrome、Android、Gemini、广告系统和网页索引，Perplexity 很难在默认入口上正面抗衡。</li><li><strong>模型供应商竞合</strong>: OpenAI/Anthropic/Google 既可供给模型，又会在自己的产品中复制 AI search 和 deep research。</li><li><strong>单位经济性压力</strong>: Deep Research、Computer、Comet agent、Max 高用量用户都可能推高推理/搜索/沙箱成本。</li><li><strong>广告与信任冲突</strong>: AI answer engine 若引入广告，必须避免答案排序被商业化污染。</li><li><strong>Agent 安全</strong>: 浏览器行动涉及邮箱、支付、购物、内部工具，prompt injection 和 phishing 可能造成高严重度事故。</li><li><strong>Publisher economics 不确定</strong>: Comet Plus 80% revenue share 保护内容供给，但单品毛利有限，且未必能解决所有版权诉讼。</li><li><strong>估值兑现风险</strong>: 若 ARR 只有数亿美元而估值 $20B+，公开市场会要求极高增长和清晰毛利路径。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="alphasense.html">AlphaSense</a><a class="sib-chip" href="exa.html">Exa</a><a class="sib-chip" href="glean_technologies.html">Glean Technologies</a><a class="sib-chip" href="golinks_gosearch.html">GoLinks</a><a class="sib-chip" href="hebbia.html">Hebbia</a><a class="sib-chip" href="tavily.html">Tavily</a></div>
 </div>
 </body></html>

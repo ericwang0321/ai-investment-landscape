@@ -111,6 +111,46 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>Tinker 的商业化质量需要重点观察:</p>
 <ul><li>免费/研究 grants 用户转付费比例;</li><li>average training job size 和 repeat usage;</li><li>是否有 AI startup 把 Tinker 用作长期 post-training pipeline;</li><li>enterprise 是否愿意把私有数据传入 Tinker,还是要求 VPC/on-prem;</li><li>NVIDIA 合作是否降低 unit cost,并让价格相对 Together/Fireworks/Anyscale/Modal/Runpod 有竞争力。</li></ul>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Thinking Machines 的财务逻辑比 SSI 更可建模,因为 Tinker 已经收费。</p>
+<h3 class="subsection">7.1 Tinker 单位经济性</h3>
+<p>Tinker 收入大致来自:</p>
+<p>收入 = prefill tokens × 单价 + sample tokens × 单价 + train tokens × 单价 + storage GB-month × $0.10 + enterprise SLA / reserved capacity</p>
+<p>成本大致来自:</p>
+<p>成本 = GPU/加速器折旧或租赁 + 电力 + 网络 + 存储 + 调度/平台工程 + support + 安全审核</p>
+<p>关键变量:</p>
+<ul><li><strong>GPU utilization</strong>:训练 API 如果 job 碎片化,利用率低会伤毛利;</li><li><strong>模型 mix</strong>:Nemotron Ultra / Qwen large MoE / Kimi / DeepSeek 等大模型成本差异很大;</li><li><strong>上下文长度</strong>:256K context 价格显著更高,同时 KV cache 和 memory bandwidth 成本更高;</li><li><strong>LoRA adapter</strong>:比 full fine-tune 成本低,有助于服务长尾用户;</li><li><strong>NVIDIA partnership</strong>:若能锁定低成本或优先 capacity,毛利空间更好;</li><li><strong>enterprise reserved capacity</strong>:比纯按量 self-serve 更稳定,也可降低空置风险。</li></ul>
+<h3 class="subsection">7.2 与普通 inference API 的区别</h3>
+<p>普通 inference API 的成本主要是 serving tokens;Tinker 的成本包含训练、采样和保存 checkpoint,更接近 cloud compute。优点是付费意愿更高:客户微调模型是为了获得差异化能力,不是只买 commodity tokens。缺点是需求更窄:普通开发者会直接调用 OpenAI/Anthropic/DeepSeek API,只有需要定制模型和 RL 的团队才会用 Tinker。</p>
+<h3 class="subsection">7.3 估值逻辑</h3>
+<p>以 $12B 估值看,Thinking Machines 需要证明至少一种大路径:</p>
+<ul><li>成为 open-weight model post-training 的默认平台,类似“frontier AI training cloud”;</li><li>发布自有 frontier model,进入 OpenAI/Anthropic/xAI 级别竞争;</li><li>用 NVIDIA 合作获得显著成本/供给优势,成为企业训练和 agent workload 的基础设施;</li><li>通过 Tinker 建立开发者生态,再向企业平台和多模态协作产品扩展。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 训练/微调平台竞争</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>定位</th><th>Thinking Machines 差异</th></tr></thead><tbody><tr><td>Together AI</td><td>open model inference/fine-tuning cloud</td><td>Tinker 更偏 frontier research training loop 和 RL 控制</td></tr><tr><td>Fireworks AI</td><td>高性能 open model serving</td><td>Thinking Machines 团队品牌更强,但商业成熟度更早</td></tr><tr><td>Anyscale</td><td>Ray 生态和大规模训练/serving</td><td>Tinker 把复杂训练抽象得更少代码、更产品化</td></tr><tr><td>Modal / Runpod / Lambda</td><td>GPU cloud/dev infra</td><td>Tinker 卖训练 API,不是裸 GPU</td></tr><tr><td>Hugging Face AutoTrain/Inference Endpoints</td><td>模型生态入口</td><td>Thinking Machines 若能提供更强训练能力,可做高端层</td></tr><tr><td>OpenAI fine-tuning</td><td>闭源模型 fine-tune</td><td>Tinker 支持 open-weight 模型和 checkpoint 下载</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 Frontier lab 竞争</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司</th><th>竞争点</th><th>Thinking Machines 优势</th><th>Thinking Machines 劣势</th></tr></thead><tbody><tr><td>OpenAI</td><td>模型能力、人才、开发者平台</td><td>前 OpenAI 团队理解 post-training;更开放路线</td><td>OpenAI 有 ChatGPT/API/企业收入和 Microsoft 资源</td></tr><tr><td>Anthropic</td><td>安全、企业、Claude</td><td>Tinker 更 open-weight/customization</td><td>Anthropic 商业化更成熟</td></tr><tr><td>Google DeepMind</td><td>research + TPU + Gemini</td><td>小团队产品速度快</td><td>DeepMind 资金和模型能力强得多</td></tr><tr><td>SSI</td><td>OpenAI 离职顶级团队</td><td>Thinking Machines 已有产品和价格</td><td>SSI 的 Ilya 安全叙事更纯粹</td></tr><tr><td>Mistral / DeepSeek / Qwen</td><td>open-weight model ecosystem</td><td>Tinker 可利用这些模型成为训练层</td><td>模型提供方也可能自建训练平台</td></tr></tbody></table></div>
+<h3 class="subsection">8.3 护城河</h3>
+<p>Thinking Machines 的护城河可能来自四层:</p>
+<ol><li><strong>团队</strong>:Mira Murati、John Schulman 等前 OpenAI 核心人物带来招聘和融资优势。</li><li><strong>训练 API know-how</strong>:把 RL/post-training/distributed systems 封装成稳定 API,比裸 GPU 更难复制。</li><li><strong>算力供给</strong>:NVIDIA 1GW Vera Rubin 合作若落实,是非常强的基础设施壁垒。</li><li><strong>开发者生态</strong>:Tinker 若成为研究者微调 open models 的默认工具,会积累 cookbook、adapter、eval、社区项目和数据流。</li></ol>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<h3 class="subsection">Mira Murati</h3>
+<p>Mira Murati 曾任 OpenAI CTO,参与 DALL-E、ChatGPT、GPT-4 时代产品和研究工程管理,并在 2023 年 OpenAI 董事会危机期间短暂担任 interim CEO。她的优势是兼具技术、产品和组织经验,比纯研究型 founder 更适合把 frontier lab 能力产品化。</p>
+<h3 class="subsection">John Schulman</h3>
+<p>John Schulman 是 OpenAI 联合创始人,长期研究 reinforcement learning、policy optimization、RLHF,是 ChatGPT post-training 路线的重要人物。Tinker 把 RL/fine-tuning 开放成 API,与 Schulman 的技术背景高度一致。</p>
+<h3 class="subsection">其他核心成员</h3>
+<ul><li>Barret Zoph:前 OpenAI VP of Research/Post-Training,2026 年被报道离开回到 OpenAI;</li><li>Lilian Weng:前 OpenAI 安全/机器人/研究负责人之一;</li><li>Andrew Tulloch:前 OpenAI/Meta 背景,2025 年被 Meta 挖走;</li><li>Luke Metz:post-training specialist,2026 年被报道离开回到 OpenAI;</li><li>Alec Radford、Bob McGrew 等被报道为 adviser 或早期相关人物。</li></ul>
+<p>团队风险在于:Thinking Machines 的最大资产也是最容易被攻击的资产。Meta/OpenAI/Anthropic/Google 能用现金、股权、算力和研究资源直接挖人。2025-2026 年几次核心人员流动说明公司需要从“明星名单”转向“可持续组织能力”。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>估值先于收入</strong>:$12B 估值建立在团队、产品期权和算力合作上,而非公开 ARR。</li><li><strong>人才流失</strong>:Meta 和 OpenAI 已经挖走/吸回部分关键成员。</li><li><strong>产品需求深度</strong>:Tinker 面向高端研究者和开发者,市场规模可能小于通用 chat/API。</li><li><strong>安全与滥用</strong>:开放 fine-tuning 和 RL 能力可能被用于生成危险能力或绕过安全限制,需要强 vetting。</li><li><strong>数据信任</strong>:企业是否愿意把私有训练数据传到 Tinker,取决于安全、隔离和合规。</li><li><strong>算力资本开支</strong>:1GW 级合作意味着巨大的电力、数据中心和硬件周期风险。</li><li><strong>open-weight 依赖</strong>:Tinker 价值部分依赖 Qwen/DeepSeek/Kimi/Nemotron 等外部模型生态。</li><li><strong>大厂平台夹击</strong>:OpenAI、Google、Anthropic、AWS、Microsoft、NVIDIA 自己都可向 training platform 延伸。</li><li><strong>监管</strong>:训练 API 让用户生成自己的模型,责任边界和模型输出责任更复杂。</li><li><strong>治理集中</strong>:创始人控制权保护长期主义,也可能降低投资人对风险控制的影响。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="ai21_labs.html">AI21 Labs</a><a class="sib-chip" href="cohere.html">Cohere</a><a class="sib-chip" href="liquid_ai.html">Liquid AI</a><a class="sib-chip" href="modelbest_面壁智能.html">ModelBest</a><a class="sib-chip" href="reka_ai.html">Reka AI</a><a class="sib-chip" href="stepfun_阶跃星辰.html">StepFun</a><a class="sib-chip" href="zyphra.html">Zyphra</a><a class="sib-chip" href="零一万物_01_ai.html">零一万物</a></div>
 </div>
 </body></html>

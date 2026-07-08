@@ -104,6 +104,31 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>解读</th></tr></thead><tbody><tr><td>2026 Series C</td><td>$800M equity</td><td>资本规模进入后期大型 AI infra 阶段</td></tr><tr><td>Compute commitments</td><td>500MW+ compute capacity commitments</td><td>重资产 capacity 需求强,也带来利用率压力</td></tr><tr><td>2025 Series B</td><td>$305M,估值约 $3.3B</td><td>2025 年已是 AI infra 独角兽后期轮</td></tr><tr><td>2024 round</td><td>$106M,Reuters 报道估值约 $1.25B</td><td>Salesforce Ventures 等战略投资强化企业生态</td></tr><tr><td>2023 Series A</td><td>$102.5M,Kleiner Perkins 领投</td><td>早期确立 open model cloud 方向</td></tr><tr><td>客户</td><td>Cognition、Decagon、ElevenLabs、Cursor、Suno</td><td>AI-native 高增长客户,但客户集中需核验</td></tr><tr><td>成本改善案例</td><td>Decagon 迁移到 Together 后 inference 成本降低 6x,公司称开放模型客户常见 6x-20x cost reduction</td><td>强销售叙事,需看任务口径与模型质量</td></tr><tr><td>开发者生态</td><td>早期 RedPajama 1.2T tokens 开源数据集;平台支持 200+ 模型线索</td><td>开源社区心智是低 CAC 资产</td></tr></tbody></table></div>
 <p>Together 尚未公开 ARR、gross margin、GPU utilization、客户集中度和 NDR。由于 $800M Series C 与 500MW+ commitments 说明公司进入资本密集扩张,尽调时不能只看收入增长,必须看每 MW capacity 的收入、毛利、合同期限和空置风险。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Together 的单位经济性可以分为 API、dedicated 和 AI Factory 三类:</p>
+<ol><li><strong>Serverless API</strong>: 收入 = input/output token price × volume;成本 = GPU time + serving overhead + idle capacity + network/storage。优势是开发者自助,缺点是价格透明、竞争强。</li><li><strong>Dedicated Inference</strong>: 收入 = committed capacity 或 discounted token plan;成本 = reserved GPU 和运维。优势是可预测收入和稳定客户关系,风险是客户议价强。</li><li><strong>GPU Clusters / AI Factory</strong>: 收入 = large contract / capacity lease / managed infra;成本 = power、data center、GPU、network、financing。优势是合同大,风险是资本重、周期长。</li></ol>
+<p>Together 的 gross margin 取决于四个变量:</p>
+<ul><li>GPU procurement cost 与融资结构;</li><li>utilization,尤其是 prefill/decode 分离、batching 和多租户调度;</li><li>software efficiency,包括 FlashAttention、Megakernel、compiler;</li><li>customer pricing power,即客户是否愿意为开放模型控制权和成本节省支付平台溢价。</li></ul>
+<p>Series C 公告称开放模型客户常见 6x-20x 成本降低。若该节省来自模型选择而非 Together 独有软件,竞争会很快压价;若来自 Together kernel/serving/full-stack optimization,则平台可保留一部分价值。Decagon 6x cost reduction 是强案例,但需要核验迁移前后的模型、任务、质量、延迟和并发口径。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>类别</th><th>竞争者</th><th>竞争点</th></tr></thead><tbody><tr><td>Open model inference platforms</td><td>Fireworks AI、Baseten、Replicate、Modal、Anyscale</td><td>模型覆盖、延迟、价格、enterprise support</td></tr><tr><td>AI cloud / GPU capacity</td><td>CoreWeave、Lambda、Crusoe、Nebius、Oracle Cloud</td><td>GPU availability、价格、区域、电力</td></tr><tr><td>Hyperscalers</td><td>AWS、Azure、GCP</td><td>企业采购、合规、credits、model garden</td></tr><tr><td>Model API providers</td><td>OpenAI、Anthropic、Google、Mistral、xAI</td><td>闭源模型质量、品牌、tooling</td></tr><tr><td>开源自建</td><td>vLLM、TGI、TensorRT-LLM、SGLang、KServe</td><td>大客户可自建,压缩平台溢价</td></tr><tr><td>Nvidia ecosystem</td><td>NIM、Triton、Dynamo、DGX Cloud</td><td>芯片厂商可向上整合 serving stack</td></tr></tbody></table></div>
+<p>Together 的护城河:</p>
+<ul><li>开源社区和研究系统品牌;</li><li>模型覆盖广,能快速响应开放模型迭代;</li><li>full-stack 产品从 inference 到 GPU clusters;</li><li>2026 以后更强的 compute capacity;</li><li>企业/private/sovereign deployment 叙事。</li></ul>
+<p>脆弱点:</p>
+<ul><li>如果开放模型 API 变成 commodity,客户会按价格切换;</li><li>如果 compute commitments 太大,利用率下行会伤害毛利;</li><li>Hyperscaler 可通过 credits 和采购合同锁住企业;</li><li>AI-native 客户增长快但集中度和预算波动高。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>CEO Vipul Ved Prakash 是 Together 的核心创始人和叙事输出者。公司团队背景覆盖 Stanford、MIT、University of Chicago 等研究/工程网络,并围绕开放模型、系统优化和生产 AI infrastructure 建立组织。Together 的品牌不是单纯“便宜 API”,而是“开放 AI 应该 abundant, not expensive”。这类使命叙事对吸引开源社区、研究工程师和 AI-native 客户有帮助。</p>
+<p>2024–2025 年收购 CodeSandbox 和 Refuel.ai 也反映团队意图: CodeSandbox 增强 developer environment / code execution / European engineering presence;Refuel.ai 增强数据准备和企业 AI workflow。Together 正把自己从模型 serving 平台扩展为 AI development-to-production platform。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>重资产风险</strong>: 500MW+ commitments 带来规模优势,也带来利用率和融资成本压力。</li><li><strong>价格战风险</strong>: 开放模型 API 价格透明,Fireworks、Baseten、clouds 都会竞争。</li><li><strong>模型供应风险</strong>: Together 依赖开放模型持续接近闭源模型质量。</li><li><strong>客户自建风险</strong>: 大客户可能用 vLLM/TensorRT-LLM 自建 serving。</li><li><strong>客户集中风险</strong>: AI-native 客户用量大,但预算和产品生命周期波动高。</li><li><strong>云厂商挤压</strong>: AWS/Azure/GCP 用企业采购和 credits 绑定客户。</li><li><strong>资本化风险</strong>: 若后续估值过高而毛利不够,IPO/下一轮压力上升。</li><li><strong>合规和主权 AI 执行风险</strong>: 区域部署涉及数据、能源、政府关系和本地供应链。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="anyscale.html">Anyscale</a><a class="sib-chip" href="baseten.html">Baseten</a><a class="sib-chip" href="fireworks_ai.html">Fireworks AI</a><a class="sib-chip" href="hugging_face.html">Hugging Face</a><a class="sib-chip" href="mercor.html">Mercor</a><a class="sib-chip" href="pinecone.html">Pinecone</a><a class="sib-chip" href="scale_ai.html">Scale AI</a><a class="sib-chip" href="weaviate.html">Weaviate</a></div>
 </div>
 </body></html>

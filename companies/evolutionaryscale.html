@@ -118,6 +118,49 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>运营指标应重点跟踪:</p>
 <ul><li>Forge API 申请用户数和付费转化;</li><li>AWS/NVIDIA marketplace consumption;</li><li>工业客户 use cases;</li><li>wet-lab hit rate、optimization rounds、assay success rate;</li><li>药企合作的 upfront/milestone/royalty;</li><li>ESM3/ESM Cambrian 在 antibody/enzyme/protein binder 上的真实实验表现。</li></ul>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>EvolutionaryScale 的财务逻辑与传统 biotech 不同,也与通用 LLM API 不同。</p>
+<h3 class="subsection">7.1 API / platform economics</h3>
+<p>收入可能来自 protein generation、embedding、ranking、structure/function-conditioned design 和 workflow seats。成本主要是模型推理、数据库/存储、云分发、scientist support 和安全审核。若客户主要通过 AWS/NVIDIA 使用,还会有 marketplace revenue share。</p>
+<p>关键变量:</p>
+<ul><li>每个 protein design job 的 compute cost;</li><li>每个客户项目需要多少生成轮次和实验反馈;</li><li>大模型是否必须调用,还是小模型/ESM Cambrian embedding 就足够;</li><li>是否需要 EvolutionaryScale scientist-in-the-loop 支持;</li><li>免费 public beta 何时转付费。</li></ul>
+<h3 class="subsection">7.2 Drug discovery collaboration economics</h3>
+<p>若与药企做项目,收入通常不会只按 API token 计费,而是:</p>
+<p>upfront + annual platform fee + FTE/research support + preclinical/clinical milestones + royalties</p>
+<p>但这个逻辑只有在具体项目和 IP 权属公开后才能量化。AI biology 公司最重要的单位经济性是“每个 discovery program 产生可验证 hit/lead 的成本和时间”,不是传统 LLM 的 cost per 1M tokens。</p>
+<h3 class="subsection">7.3 Wet-lab validation economics</h3>
+<p>esmGFP 的验证说明模型能生成远离天然空间的功能蛋白,但药物发现的经济性还要看:</p>
+<ul><li>hit rate:生成多少候选能通过体外实验;</li><li>optimization rounds:需要几轮设计-合成-测试;</li><li>assay cost:每轮实验成本;</li><li>translational relevance:体外功能是否转化到细胞/动物/临床;</li><li>IP defensibility:生成蛋白是否可申请专利并绕开现有序列空间。</li></ul>
+<h3 class="subsection">7.4 为什么估值不能简单按 biotech pipeline 看</h3>
+<p>EvolutionaryScale 更像 platform company。它可以同时服务多个 therapeutic areas、industrial enzymes、research tools 和 cloud workflows。如果商业化成功,收入会来自平台 license 和多项目 milestones;如果失败,则可能停留在科研工具和论文影响力。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 AI biology / protein design 竞争</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司/项目</th><th>定位</th><th>EvolutionaryScale 差异</th></tr></thead><tbody><tr><td>Google DeepMind AlphaFold / AlphaFold 3</td><td>structure prediction / biomolecular interaction</td><td>AlphaFold 结构预测强;ESM3 更强调生成和 sequence/structure/function 联合推理</td></tr><tr><td>Isomorphic Labs</td><td>AI drug discovery,Alphabet 生态</td><td>Isomorphic 直接做药企合作和 pipeline;EvolutionaryScale 更像基础模型/API</td></tr><tr><td>Generate:Biomedicines</td><td>generative protein therapeutics</td><td>Generate 有 therapeutics platform 和 pharma partnerships;ESM3 有更强 open science/ESM legacy</td></tr><tr><td>Cradle</td><td>protein engineering SaaS + wet lab</td><td>Cradle 更产品化/客户导向;EvolutionaryScale 模型规模和 ESM 科研声量更强</td></tr><tr><td>Profluent</td><td>AI-designed gene editors</td><td>Profluent 聚焦 gene editing;EvolutionaryScale 更通用蛋白设计</td></tr><tr><td>Chai Discovery</td><td>biomolecular structure/generative models</td><td>Chai 更偏结构/药物设计开源模型;EvolutionaryScale 的 ESM3 侧重 evolutionary-scale protein language</td></tr><tr><td>Inceptive</td><td>RNA therapeutics AI</td><td>modality 不同,同属 AI-designed biology</td></tr><tr><td>Bioptimus / Owkin</td><td>biology foundation models / pathology / multimodal patient data</td><td>Bioptimus 从 patient/pathology data 切入;EvolutionaryScale 从 protein universe 切入</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 价值链位置</h3>
+<p>EvolutionaryScale 位于药物发现价值链上游:</p>
+<p>基础模型 → 候选蛋白设计 → 合成/表达 → in vitro assay → optimization → preclinical → clinical</p>
+<p>它的价值不是替代药企全部研发,而是提高 early discovery 的搜索效率。若模型能把有效候选从极低 hit rate 提升到可工程化水平,就能改变药物发现的前端经济性。</p>
+<h3 class="subsection">8.3 护城河</h3>
+<ul><li><strong>ESM legacy</strong>:ESM 系列在蛋白语言模型领域有长期学术积累;</li><li><strong>数据规模</strong>:2.78B proteins、771B tokens;</li><li><strong>模型规模</strong>:98B 最大模型;</li><li><strong>实验验证</strong>:esmGFP 不是纯 in silico 结果;</li><li><strong>云分发</strong>:AWS/NVIDIA 合作降低企业采用门槛;</li><li><strong>responsible development</strong>:蛋白设计需要安全治理,成熟框架本身是进入药企/政府客户的前提。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<h3 class="subsection">Alexander Rives</h3>
+<p>Alexander Rives 是 ESM 项目的核心人物之一,在公开采访和公司文章中担任 EvolutionaryScale co-founder/chief scientist 角色。他长期研究 protein language models,ESM3 文章也由其团队主导。</p>
+<h3 class="subsection">前 Meta ESM 团队</h3>
+<p>EvolutionaryScale 的关键优势来自原 Meta FAIR 的 ESM 研究积累。Meta 时代的 ESM-1b、ESM-2、ESMFold 等已经在蛋白结构、功能、变体效应和抗体工程研究中广泛引用。公司化后,这些经验转化为更大规模、更偏生成式的 ESM3。</p>
+<h3 class="subsection">科学与工程复合能力</h3>
+<p>AI biology 公司必须同时拥有:</p>
+<ul><li>ML scaling 和 transformer 训练能力;</li><li>protein biology 和实验设计理解;</li><li>cloud/API 产品能力;</li><li>biosecurity/responsible development 经验;</li><li>与药企研发流程对接的 BD 能力。</li></ul>
+<p>公开资料能证明其 ML/protein research 强,但商业 BD 和药企合作深度还需要更多外部证据。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>商业化证据不足</strong>:没有公开 ARR、API 收入或药企合同金额。</li><li><strong>融资口径不够透明</strong>:常见 $142M seed 口径需要通过数据库/投资方文件继续交叉核验。</li><li><strong>从 GFP 到药物的转化风险</strong>:esmGFP 是强验证,但 therapeutics 对 potency、specificity、immunogenicity、PK/PD 要求更高。</li><li><strong>实验闭环成本</strong>:模型生成只是第一步,合成、表达、assay 和优化仍昂贵。</li><li><strong>生物安全风险</strong>:蛋白设计模型可能被用于有害分子设计,访问控制和 license 至关重要。</li><li><strong>竞争风险</strong>:AlphaFold/Isomorphic/Generate/Cradle/Chai/Profluent 都在争夺药企预算。</li><li><strong>云平台依赖</strong>:AWS/NVIDIA 分发降低门槛,也可能压缩平台议价权。</li><li><strong>IP 风险</strong>:AI 生成蛋白的专利归属、训练数据来源和 freedom-to-operate 复杂。</li><li><strong>模型泛化风险</strong>:在 GFP 家族成功不代表在抗体、酶、膜蛋白或多蛋白复合体上同样成功。</li><li><strong>组织/平台变化风险</strong>:ESM API 与 Biohub/GitHub 生态的关系需要跟踪,避免误判公司资产边界。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="abridge.html">Abridge</a><a class="sib-chip" href="ambience_healthcare.html">Ambience Healthcare</a><a class="sib-chip" href="bioptimus.html">Bioptimus</a><a class="sib-chip" href="enveda_biosciences.html">Enveda Biosciences</a><a class="sib-chip" href="insilico_medicine.html">Insilico Medicine</a><a class="sib-chip" href="nabla.html">Nabla</a><a class="sib-chip" href="openevidence.html">OpenEvidence</a><a class="sib-chip" href="suki.html">Suki</a></div>
 </div>
 </body></html>

@@ -114,6 +114,40 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>投资解读</th></tr></thead><tbody><tr><td>2024 融资</td><td>$400M at about $2.4B valuation</td><td>罕见的大额早期融资，说明团队和赛道稀缺</td></tr><tr><td>2025 融资</td><td>Axios/Bloomberg 口径 $600M at $5.6B，CapitalG led</td><td>估值快速上行，CapitalG 加入强化 Google 生态相关性</td></tr><tr><td>2026 融资线索</td><td>Bloomberg/媒体称洽谈 $1B at ~$11B</td><td>若完成，将成为 physical AI 软件层超级独角兽</td></tr><tr><td>投资方</td><td>Bond、Jeff Bezos、Khosla、Lux、OpenAI、Redpoint、Sequoia、CapitalG、Thrive 等</td><td>顶级 AI/机器人/增长资本背书</td></tr><tr><td>产品节奏</td><td>2024-10 至 2026-04 连续发布 π0、FAST、π0.5、π*0.6、MEM、π0.7</td><td>研究迭代速度快</td></tr><tr><td>硬件出货</td><td>不以自有机器人出货为主</td><td>数据和客户控制力需关注</td></tr><tr><td>收入/ARR</td><td>公开材料没有给出收入、ARR、客户数、毛利</td><td>商业化仍早</td></tr></tbody></table></div>
 <p>Physical Intelligence 的商业化成熟度低于 Agility/Apptronik/Figure 的客户部署口径，但技术/资本信号很强。它更像“先做 GPT-3，再找 ChatGPT/enterprise/API 落地”的路径，而不是“先卖一台机器人”。关键问题是机器人世界的数据和部署比语言世界更难集中，模型公司要如何规模化拿数据、保障安全并收费。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>PI 的单位经济性取决于它最终是“软件模型供应商”还是“机器人解决方案集成商”。</p>
+<p><strong>软件授权模式。</strong> 如果 PI 按 robot/month 或 fleet license 收费，毛利理论上高，收入可随硬件伙伴出货增长。成本主要是训练、推理、支持、模型安全评估和客户定制。关键是模型能否在不同硬件上少量数据适配。</p>
+<p><strong>企业部署模式。</strong> 如果 PI 需要亲自集成硬件、部署现场、维护机器人，毛利会接近系统集成，复杂度提高。PI 可能会与硬件厂商合作，由硬件方负责本体和服务，PI 负责模型。</p>
+<p><strong>数据成本。</strong> 机器人数据稀缺且昂贵。PI 需要来自 partner robots、自建采集、open datasets、human video 和 simulation 的组合。每一小时高质量机器人数据的成本远高于网页文本。FAST、π0.5、human-to-robot transfer、RL from experience 都在降低数据成本。</p>
+<p><strong>推理成本与 latency。</strong> 机器人控制对实时性要求高。云端大模型延迟不可接受，PI 需要高效 action tokenization、real-time action chunking、本地部署或 hybrid inference。模型越大，硬件成本越高；模型越小，泛化可能下降。</p>
+<p><strong>安全和责任。</strong> 若 PI 模型控制第三方机器人造成事故，责任边界复杂。商业合同必须明确模型供应商、硬件厂商、部署商、客户之间的责任分配。</p>
+<p>需要后续核验:</p>
+<ul><li>PI 是否已有付费客户或只是研究/合作伙伴；</li><li>授权按机器人、API、任务还是企业合同收费；</li><li>模型是否本地运行，推理硬件要求和成本；</li><li>数据来自哪些机器人平台，客户数据是否可训练通用模型；</li><li>2025/2026 融资具体条款和 runway；</li><li>收入、burn rate、gross margin 和客户 retention。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 与硬件 humanoid 公司的关系</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>公司</th><th>关系</th><th>对 PI 的含义</th></tr></thead><tbody><tr><td>Figure AI</td><td>自研 Helix/Helix 02 + Figure 本体</td><td>Figure 若全栈成功，不需要 PI；但也证明 VLA 价值</td></tr><tr><td>Apptronik</td><td>Apollo + Google DeepMind</td><td>Apptronik 与 Google 绑定，可能不选择 PI；但是 PI 目标客户类型</td></tr><tr><td>Agility Robotics</td><td>Digit + Arc + NVIDIA/DeepMind partners</td><td>Agility 已有部署数据，可能自研/合作模型</td></tr><tr><td>1X Technologies</td><td>NEO + Redwood/World Model</td><td>1X 走自有 world model 路线，与 PI 技术竞争</td></tr><tr><td>Tesla Optimus</td><td>自有硬件、工厂、AI、数据</td><td>Tesla 可能成为最大封闭生态竞争者</td></tr></tbody></table></div>
+<p>PI 要赢，必须证明独立模型层优于硬件公司自研。类比自动驾驶，Mobileye 曾作为视觉/ADAS 平台供应商服务多家车企，但 Tesla 选择自研。机器人行业也可能分化:一部分公司自研，一部分采用 PI/Skild/Google/NVIDIA。</p>
+<h3 class="subsection">8.2 与 Skild AI</h3>
+<p>Skild 是 PI 最直接的软件层竞争者之一。Skild Brain 也强调跨机器人、跨任务、general-purpose robot intelligence，并在 2024–2026 年完成大额融资。Skild 更强调 in-context learning、跨机器人 embodiment adaptation 和企业场景。PI 更强调学术/研究团队、π 系列 VLA 技术路线和开放研究发布。二者竞争焦点是:</p>
+<ul><li>谁的数据更广；</li><li>谁能接入更多硬件伙伴；</li><li>谁的模型在真实任务上成功率更高；</li><li>谁能更快商业化收费；</li><li>谁更能获得大厂战略支持。</li></ul>
+<h3 class="subsection">8.3 与 Google DeepMind / NVIDIA</h3>
+<p>Google DeepMind Gemini Robotics 和 NVIDIA GR00T/Cosmos/Halos 是 PI 的大厂竞争。Google 有基础模型和研究资源，NVIDIA 有算力、仿真、安全和开发者生态。PI 的优势是专注、团队顶级和创业速度；劣势是算力、分发和硬件生态不如大厂。</p>
+<h3 class="subsection">8.4 与 Covariant</h3>
+<p>Covariant 从仓储拣选出发，RFM-1 强调 robot foundation model for warehouse robots。Covariant 的优势是仓储真实数据和商业客户，PI 的优势是更通用、更跨本体。若客户只需要仓储拣选，Covariant/专用系统可能更快 ROI；若客户需要多场景通用机器人，PI 叙事更大。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>PI 的团队质量是融资估值的核心。公开资料显示创始/核心成员来自 Google DeepMind、Stanford、UC Berkeley 等顶级 AI/机器人研究体系:</p>
+<ul><li>Sergey Levine: UC Berkeley 机器人学习领域重要学者；</li><li>Chelsea Finn: Stanford，meta-learning、robot learning、foundation models 方向重要研究者；</li><li>Karol Hausman、Brian Ichter 等有 Google/DeepMind robotics 背景；</li><li>Lachy Groom、Adnan Esmail 等带来 company building 和资本市场经验；</li><li>Quan Vuong 等参与多机器人学习和 VLA 研究。</li></ul>
+<p>PI 的团队像“学术机器人学习 + 大厂 AI robotics + startup company builder”的组合。优势是研究深度和资本号召力；风险是从研究到商业部署需要 field engineering、客户成功、安全认证和产品化能力。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>商业化早期风险</strong>:研究发布多，但收入、客户数、合同和毛利缺乏公开数据。</li><li><strong>数据控制风险</strong>:没有自有大规模机器人 fleet，数据依赖合作伙伴。</li><li><strong>硬件适配风险</strong>:“control any robot”很难，不同机器人动力学、传感器、执行器、安全约束差异大。</li><li><strong>大厂竞争风险</strong>:Google DeepMind、NVIDIA、OpenAI、Tesla 都可能在模型层发力。</li><li><strong>硬件公司自研风险</strong>:Figure Helix、1X Redwood、Tesla Optimus 可能选择闭环自研，不采用 PI。</li><li><strong>安全责任风险</strong>:模型控制机器人产生事故时，责任和监管复杂。</li><li><strong>估值风险</strong>:若 $5.6B/$11B 估值对应收入很低，后续融资依赖市场热度。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="1x_technologies.html">1X Technologies</a><a class="sib-chip" href="agibot_智元机器人.html">AgiBot</a><a class="sib-chip" href="agility_robotics.html">Agility Robotics</a><a class="sib-chip" href="apptronik.html">Apptronik</a><a class="sib-chip" href="figure_ai.html">Figure AI</a><a class="sib-chip" href="noetix_robotics_破壳机器人.html">Noetix Robotics</a><a class="sib-chip" href="robot_era_星动纪元.html">Robot Era</a><a class="sib-chip" href="x_square_robot_星海图.html">X Square Robot</a></div>
 </div>
 </body></html>

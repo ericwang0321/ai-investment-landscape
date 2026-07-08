@@ -111,6 +111,43 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <ul><li><strong>Creators/prosumers:</strong> YouTubers、podcasters、audiobook creators、marketers。</li><li><strong>Developers/startups:</strong> 用 API 构建语音应用、agents、education、accessibility。</li><li><strong>Enterprises/governments:</strong> Deutsche Telekom、Deliveroo、Square、Revolut、Ukraine government 等。</li></ul>
 <p>这个结构有利于 product-led growth,但也带来合规风险。免费层和低价层容易被滥用,企业层则要求严格 consent、data processing 和 misuse prevention。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 Revenue build</h3>
+<p>收入可拆为:</p>
+<p>ARR = self-serve subscribers × plan price + API usage credits + business/workspace seats + enterprise contracts + marketplace/licensing take-rate</p>
+<p>关键增长驱动:</p>
+<ul><li><strong>API embedding:</strong> 开发者把 ElevenLabs 嵌入产品后,用量随终端用户增长。</li><li><strong>Enterprise voice agents:</strong> 客服/销售/onboarding 可产生大规模语音分钟。</li><li><strong>Dubbing/localization:</strong> 高 credit/minute,对媒体和教育内容价值高。</li><li><strong>Business seats:</strong> 内容团队、营销团队、媒体团队多人协作。</li><li><strong>Voice marketplace:</strong> 授权声音可创造新的平台收入。</li></ul>
+<h3 class="subsection">7.2 Cost build</h3>
+<p>成本包括:</p>
+<ul><li>TTS/STT/music/audio 模型推理;</li><li>GPU/云计算;</li><li>音频存储、带宽、低延迟 serving;</li><li>safety/detection/watermarking;</li><li>content moderation 和 abuse response;</li><li>enterprise support、SLA 和 compliance;</li><li>voice rights/licensing 分成。</li></ul>
+<p>ElevenLabs 的 credit ratios 是毛利管理工具。TTS 1 credit/character,STT 330 credits/min,Dubbing Studio 10,000 credits/min,体现不同任务的成本和价值差异。</p>
+<h3 class="subsection">7.3 毛利敏感性</h3>
+<p>积极因素:</p>
+<ul><li>Self-serve pricing 清晰,用户可预付 credits;</li><li>高价值 enterprise voice agents 可用 volume contract 锁定收入;</li><li>Dubbing、voice cloning、music 等高阶产品提高 ARPU;</li><li>ARR base 大,固定研发成本可被摊薄。</li></ul>
+<p>压力因素:</p>
+<ul><li>TTS/STT 基础能力可能 commoditize,价格持续下行;</li><li>OpenAI、Google、Microsoft、Amazon 都可提供语音模型/API;</li><li>低延迟语音 agent 对 serving 成本和 reliability 要求高;</li><li>deepfake 滥用导致 moderation 成本和法律风险上升;</li><li>若 marketplace 需要向权利人分成,毛利低于纯软件。</li></ul>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 主要竞争者</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞争者</th><th>定位</th><th>对 ElevenLabs 的威胁</th></tr></thead><tbody><tr><td>OpenAI Realtime / TTS / Voice</td><td>通用模型平台 + ChatGPT voice</td><td>模型能力和开发者分发强</td></tr><tr><td>Google Cloud Text-to-Speech / Gemini voice</td><td>云语音 API + Android/Workspace</td><td>企业云渠道强</td></tr><tr><td>Microsoft Azure AI Speech</td><td>企业语音 API + Copilot/Teams</td><td>企业采购和合规优势</td></tr><tr><td>Amazon Polly / Transcribe / Lex</td><td>AWS 语音服务</td><td>开发者和云客户基础</td></tr><tr><td>Cartesia</td><td>low-latency voice AI</td><td>实时语音 agent 竞争</td></tr><tr><td>PlayHT</td><td>AI voice generation</td><td>创作者/API 竞争</td></tr><tr><td>Resemble AI</td><td>voice cloning / enterprise voice</td><td>安全和企业 voice cloning</td></tr><tr><td>Speechify</td><td>TTS consumer/productivity</td><td>消费者分发强</td></tr><tr><td>Deepgram</td><td>STT / voice AI infra</td><td>开发者 STT/agent stack</td></tr><tr><td>AssemblyAI</td><td>speech-to-text API</td><td>STT API 竞争</td></tr><tr><td>Murf / Descript / WellSaid</td><td>creator/business voice tools</td><td>内容生产工作流竞争</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 ElevenLabs 护城河</h3>
+<ul><li><strong>品牌和质量心智:</strong> 早期高自然度 TTS 建立了强认知。</li><li><strong>开发者 API:</strong> 易接入、清晰 credits、丰富产品线。</li><li><strong>多产品平台:</strong> TTS/STT/dubbing/music/sfx/agents/marketplace 形成 cross-sell。</li><li><strong>Enterprise customers:</strong> Deutsche Telekom、Deliveroo 等证明 voice agents 商业价值。</li><li><strong>Voice marketplace:</strong> 若权利人和名人声音授权形成规模,可产生内容护城河。</li><li><strong>Safety infrastructure:</strong> 在高风险 voice cloning 领域,合规和信任本身是护城河。</li></ul>
+<h3 class="subsection">8.3 价值链位置</h3>
+<p>ElevenLabs 位于模型层与应用层之间:</p>
+<p>基础音频模型 → API/平台 → 开发者/企业 voice workflows → 终端用户语音交互</p>
+<p>它既是模型/API provider,也是应用平台。与纯应用不同,ElevenLabs 直接暴露 API 和 usage pricing;与纯模型不同,它有 Studio、Dubbing、Agents、Marketplace 等应用层 workflow。这种 full-stack 位置带来更大 TAM,也带来更重的研发和安全责任。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<ul><li><strong>Mati Staniszewski:</strong> CEO,前 Palantir deployment strategist。Palantir 背景有助于 enterprise sales、部署和复杂客户需求理解。</li><li><strong>Piotr Dabkowski:</strong> CTO,前 Google machine learning engineer。负责核心 voice AI 技术。</li><li>两位创始人在波兰成长,创立灵感来自对糟糕影视配音的体验,这使公司从一开始就关注 dubbing、多语言和自然语音。</li><li>投资方包括 a16z、Sequoia、ICONIQ、Nat Friedman、Daniel Gross、NEA、战略投资者 Deutsche Telekom、LG、HubSpot、NTT DOCOMO、RingCentral 等,有助于企业和通信渠道。</li></ul>
+<p>团队优势是技术+enterprise deployment 组合。语音 AI 不只是模型 demo,需要低延迟、可靠 API、合规、安全和客户集成,这与两位创始人背景匹配。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>Deepfake / misuse 风险:</strong> voice cloning 可被用于诈骗、政治 robocall、名人冒充和骚扰。</li><li><strong>版权和人格权风险:</strong> 声音是否可授权、训练数据是否合法、名人和演员权益如何保护,都会影响平台责任。</li><li><strong>价格竞争风险:</strong> TTS/STT API 可能被 OpenAI/Google/Microsoft/Amazon 低价化。</li><li><strong>模型 commoditization:</strong> 语音自然度优势可能被追平,需要靠 workflow/API/enterprise trust 维持差异。</li><li><strong>低延迟成本风险:</strong> Voice agents 需要实时 STT+LLM+TTS,成本和 latency 都难。</li><li><strong>监管风险:</strong> 政治广告、电话营销、金融诈骗、未成年人保护等领域可能出台更严格规则。</li><li><strong>内容审核成本:</strong> 免费层和低价层越大,abuse monitoring 成本越高。</li><li><strong>平台依赖风险:</strong> 如果主要客户通过云厂商采购语音 API,云平台可能压缩独立供应商空间。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="black_forest_labs.html">Black Forest Labs</a><a class="sib-chip" href="heygen.html">HeyGen</a><a class="sib-chip" href="kling_ai_可灵ai.html">Kling AI</a><a class="sib-chip" href="luma_ai.html">Luma AI</a><a class="sib-chip" href="midjourney.html">Midjourney</a><a class="sib-chip" href="pika.html">Pika</a><a class="sib-chip" href="suno.html">Suno</a><a class="sib-chip" href="synthesia.html">Synthesia</a></div>
 </div>
 </body></html>

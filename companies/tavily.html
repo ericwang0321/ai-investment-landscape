@@ -107,6 +107,43 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>解读</th></tr></thead><tbody><tr><td>Developers</td><td>2M+</td><td>开发者心智强，但需看付费转化</td></tr><tr><td>Monthly requests</td><td>300M+</td><td>已有生产流量，优于纯早期 API</td></tr><tr><td>Uptime</td><td>99.99%</td><td>Enterprise readiness</td></tr><tr><td>Latency</td><td>180ms p50 on <code>/search</code></td><td>支持 agent loop 的关键指标</td></tr><tr><td>Pages crawled/extracted</td><td>Billions</td><td>crawler/extract 基础设施已规模化</td></tr><tr><td>Free credits</td><td>1,000 credits/month</td><td>免费入口较 Exa 20k requests 小，但 credit 口径不同</td></tr><tr><td>PAYG</td><td>$0.008/credit</td><td>透明用量计费</td></tr><tr><td>Enterprise</td><td>Custom calls/rate limits/support/security</td><td>ACV 和毛利关键</td></tr><tr><td>Funding</td><td>$20M Series A led by Insight；total $25M</td><td>2025 年 TechCrunch 口径</td></tr><tr><td>Product origin</td><td>GPT Researcher, nearly 20k GitHub stars</td><td>开源和研究社区 wedge</td></tr><tr><td>Nebius event</td><td>2026-02 joining Nebius</td><td>资本化/战略归属发生变化</td></tr></tbody></table></div>
 <p>Tavily 的商业化质量比很多开发者工具更可见，因为它披露了 monthly requests 和 uptime。不过还缺收入、付费客户数、gross margin、enterprise ACV、credit burn by endpoint 等关键财务指标。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<p>Tavily 的单位经济性围绕 credit 经济展开:</p>
+<ul><li><strong>Revenue per credit</strong>: PAYG $0.008/credit 是基础价格，但不同计划和 enterprise 折扣会改变实际 ARPU。</li><li><strong>Cost per web operation</strong>: Search、Extract、Crawl、Map、Research 的成本不同；Research 多步任务可能消耗更多 crawling、retrieval、LLM processing。</li><li><strong>Cache / indexing efficiency</strong>: 300M+ monthly requests 下，缓存和索引效率决定毛利。</li><li><strong>Security overhead</strong>: PII redaction、prompt injection detection、malicious source filtering 会增加计算成本，但也支撑 enterprise price。</li><li><strong>Nebius infra synergy</strong>: 加入 Nebius 后，算力、存储、网络和全球部署成本可能下降，或至少获得更稳定供应。</li><li><strong>Enterprise minimums</strong>: 自定义合同可以通过 minimum commitments 和 rate limits 管理高用量客户。</li></ul>
+<p>如果按纯 PAYG，小客户 churn 和价格竞争会限制估值；如果 Tavily 能把 search/extract/research 打包进企业 agent platform，并通过 Nebius 销售给大型客户，收入质量会显著提高。需要关注 Nebius 是否把 Tavily 作为 cloud AI infra 的附加服务，形成 cross-sell。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 与 Exa</h3>
+<p>Exa 是最直接竞品。Exa 定位为 Search API for AI agents，强调自研 AI search、Contents highlights、Deep Search、Agent、Monitors、Exa Connect；Tavily 定位为 secure API for real-time web access，强调 search/extract/crawl/research、安全、规模指标和 production readiness。</p>
+<p>Tavily 相对 Exa 的优势:</p>
+<ul><li>2M+ developers、300M+ monthly requests 等公开 usage 更强；</li><li>Nebius 提供基础设施和企业云资源；</li><li>安全/PII/prompt injection narrative 更清晰；</li><li>与 IBM、Databricks、LangChain、JetBrains 等生态集成。</li></ul>
+<p>Exa 相对 Tavily 的优势:</p>
+<ul><li>Benchmark/NVenture/Benchmark capital backing 和 $700M 估值；</li><li>Contents highlights/token efficiency 和 vertical search narrative；</li><li>Agent/Monitors/Exa Connect 进入数据 enrichment；</li><li>Cursor/Cognition/HubSpot/OpenRouter 等案例。</li></ul>
+<h3 class="subsection">8.2 与 Perplexity</h3>
+<p>Perplexity 是 consumer AI search 入口，同时 API 化为 Search/Sonar/Agent API。Tavily 更专注 agent web access，不直接争 consumer 用户。对开发者来说，Perplexity 适合答案模型和引用输出，Tavily 适合可控 search/extract/crawl/research 工具。长期风险是 Perplexity API 用强品牌和模型输出质量抢开发者。</p>
+<h3 class="subsection">8.3 与 Google / Bing / Brave / SerpAPI</h3>
+<p>Google/Bing 拥有最大索引和默认搜索基础设施，但 API 输出并非专门为 autonomous agents 设计。Brave Search API 提供独立 web index，SerpAPI 提供搜索结果抓取。Tavily 的差异是 agent-specific output、安全、research workflow 和 developer docs。若 Google/Bing 将 agent-optimized search API 商业化，Tavily 的替代风险上升。</p>
+<h3 class="subsection">8.4 与 Firecrawl / Browserbase / Apify</h3>
+<p>Firecrawl 专注 crawl/extract，Browserbase 专注 browser automation，Apify 是 scraping/automation marketplace。Tavily 在 search + extract + research 层，可能与 Firecrawl overlap；但复杂页面交互和登录后网页仍可能需要 Browserbase/Apify。</p>
+<h3 class="subsection">8.5 与 Databricks / Dify / LangChain / GoSearch</h3>
+<p>Databricks Agent Bricks、Dify workflows、LangChain agents、GoSearch enterprise search 都可能调用 Tavily 作为外部 web tool。Tavily 的最佳位置是成为这些 builder 的默认 web tool，而不是自己做完整 app builder。Databricks MCP Marketplace 和 LangChain integrations 对其 distribution 很重要。</p>
+<h3 class="subsection">8.6 护城河与脆弱点</h3>
+<p>护城河:</p>
+<ul><li>2M+ developer adoption；</li><li>300M+ monthly requests 的生产规模；</li><li>安全/PII/prompt injection controls；</li><li>Nebius infra 和潜在 cloud distribution；</li><li>search/extract/crawl/research 一体化；</li><li>生态集成和开源起源。</li></ul>
+<p>脆弱点:</p>
+<ul><li>Search API switching cost 低；</li><li>Exa、Perplexity、Google、Brave、Bing、Firecrawl、Linkup 竞争；</li><li>Nebius 加入后独立品牌与战略优先级变化；</li><li>内容授权和爬虫限制；</li><li>research endpoint 成本不可控；</li><li>免费开发者规模不等于付费规模。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Rotem Weiss 是创始人，TechCrunch 报道其数据科学背景，先做 GPT Researcher 开源项目，再转向企业级 Tavily。这个背景决定 Tavily 的产品基因: 不是传统搜索门户，而是研究/agent 工具。GPT Researcher 的 viral 带来早期开发者社区，随后 Tavily 将能力产品化为 API、SDK、docs、enterprise security。</p>
+<p>加入 Nebius 后，团队需要从创业公司节奏转向基础设施公司节奏: 保持开发者体验、快速产品迭代和 community 同时，满足更大企业部署、SLA、全球低延迟和合规要求。若处理得好，Nebius 是放大器；若处理不好，可能降低独立产品敏捷性。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>独立性变化</strong>: 加入 Nebius 后，产品路线可能服务 Nebius 云战略，而非所有开发者中立需求。</li><li><strong>Exa 竞争</strong>: Exa 获得 Benchmark/NVenture 支持，并有 $700M 估值和高质量客户案例。</li><li><strong>模型厂商内置 search</strong>: OpenAI/Anthropic/Google/Perplexity 可把 web search 做成默认 tool。</li><li><strong>价格压力</strong>: PAYG $0.008/credit 面临 search commoditization。</li><li><strong>内容访问风险</strong>: Robots/paywalls/copyright/anti-scraping 会限制网页覆盖。</li><li><strong>安全事故</strong>: prompt injection、PII leakage 或恶意网页导致 agent 错误，会严重影响企业信任。</li><li><strong>Usage gross margin</strong>: 300M+ monthly requests 规模下，crawl/extract/research 成本需要严格控制。</li><li><strong>免费用户转化</strong>: 2M+ developers 中付费转化率不明。</li><li><strong>Enterprise sales cycle</strong>: 自定义 API、security review、SLAs 会拉长采购周期。</li><li><strong>差异化可持续性</strong>: latency、uptime、安全和 citations 可能被竞品追平。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="alphasense.html">AlphaSense</a><a class="sib-chip" href="exa.html">Exa</a><a class="sib-chip" href="glean_technologies.html">Glean Technologies</a><a class="sib-chip" href="golinks_gosearch.html">GoLinks</a><a class="sib-chip" href="hebbia.html">Hebbia</a><a class="sib-chip" href="perplexity_ai.html">Perplexity AI</a></div>
 </div>
 </body></html>

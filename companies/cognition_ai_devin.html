@@ -107,6 +107,39 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>数值/口径</th><th>来源</th></tr></thead><tbody><tr><td>Devin Pro</td><td>$20/month</td><td>Devin 官方 pricing</td></tr><tr><td>Devin Max</td><td>$200/month</td><td>Devin 官方 pricing</td></tr><tr><td>Teams</td><td>$80/month team plan + $40/month per full dev seat</td><td>Devin 官方 pricing</td></tr><tr><td>Windsurf ARR</td><td>$82M</td><td>Cognition 收购 Windsurf 官方公告</td></tr><tr><td>Windsurf enterprise customers</td><td>350+</td><td>Cognition 官方公告</td></tr><tr><td>Windsurf DAU</td><td>hundreds of thousands daily active users</td><td>Cognition 官方公告</td></tr><tr><td>2024 early funding valuation</td><td>$350M</td><td>WSJ/Wikipedia</td></tr><tr><td>2024-04 valuation</td><td>$2B</td><td>Founders Fund-led $175M round</td></tr><tr><td>2025-03 valuation</td><td>$4B</td><td>Bloomberg/8VC-led round</td></tr><tr><td>2025-09 funding</td><td>nearly $500M</td><td>WSJ</td></tr><tr><td>2025-09 valuation</td><td>~$9.8B-$10B</td><td>WSJ/Bloomberg</td></tr><tr><td>Government customers</td><td>U.S. Army、U.S. Navy、Treasury、NASA-JPL 等</td><td>Cognition for Government 官方文章</td></tr><tr><td>Defense/enterprise partners</td><td>Anduril、Palantir、SNC、Goldman Sachs、Ramp、Nubank、Bilt 等线索</td><td>官方/WSJ/客户链接</td></tr></tbody></table></div>
 <p>Cognition 的公开运营数据比 Cursor 少，但 Windsurf 并入时披露的 $82M ARR 和 350+ enterprise customers 非常关键。它说明 Cognition 收购的不只是技术团队，而是带有付费企业客户和 GTM infrastructure 的业务。尽调时要拆分 Devin organic ARR 与 Windsurf ARR，避免把并购来的收入当成 Devin 本体的自然增长。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 收入端逻辑</h3>
+<p>Cognition 的收入比普通 coding assistant 更接近“工程产能预算”:</p>
+<ul><li>Individual Pro/Max 提供低门槛使用。</li><li>Teams 按团队基础费 + full dev seat 收费。</li><li>Enterprise 通过 dedicated deployment、VPC、GovCloud、support、account engineering 获取高 ACV。</li><li>Productivity Guarantee 把合同从 usage spend 转成 output/value spend。</li></ul>
+<h3 class="subsection">7.2 成本端逻辑</h3>
+<p>Devin 的成本项包括:</p>
+<ul><li>Frontier model tokens、reasoning、long context。</li><li>Cloud VM、desktop/browser、sandbox、storage、network。</li><li>Test execution、build time、失败重试、PR review loop。</li><li>Forward-deployed engineering / customer success。</li><li>安全合规、FedRAMP/GovCloud、VPC/on-prem 运维。</li></ul>
+<h3 class="subsection">7.3 为什么要做 Devin Fusion</h3>
+<p>如果每个复杂任务都用最贵模型，autonomous agent 的 gross margin 会很难看。Fusion 的 35% lower cost 叙事反映公司必须通过模型路由、sidekick model、mid-session switching 和任务难度识别来降低 COGS。AI coding agent 的长期赢家很可能不是“单次 benchmark 最强”，而是“在企业真实 backlog 上以可控成本交付可 merge 结果”。</p>
+<h3 class="subsection">7.4 收入质量待拆分</h3>
+<p>公开材料没有给出 Devin 独立 ARR、gross margin、NRR、task success rate、PR merge rate、refund/credit rate。Windsurf 的 $82M ARR 是已知锚点，但收购后如何转化为 Devin Desktop/Devin Cloud 收入，需要后续核验。若 Devin 能证明工程小时产出超过费用，企业预算空间很大；若 success rate 波动大或人工 review 成本高，收入会停留在试点预算。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<h3 class="subsection">8.1 直接竞品</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>竞品</th><th>类型</th><th>与 Cognition 的差异</th></tr></thead><tbody><tr><td>Cursor</td><td>AI IDE + cloud agents</td><td>更强 IDE 入口和个人开发者心智；Cognition 更强调 autonomous engineer</td></tr><tr><td>Anthropic Claude Code</td><td>CLI/coding agent</td><td>由强模型直接驱动，开发者口碑强；Cognition 强在 enterprise workflow 和 Devin runtime</td></tr><tr><td>OpenAI Codex</td><td>coding agent + ChatGPT ecosystem</td><td>模型和分发强；Cognition 更垂直工程自动化</td></tr><tr><td>GitHub Copilot</td><td>IDE plugin + GitHub enterprise</td><td>企业默认采购和代码托管入口强</td></tr><tr><td>Replit Agent</td><td>browser IDE + app builder</td><td>更偏 prompt-to-app 和全栈部署</td></tr><tr><td>Poolside</td><td>coding foundation model / enterprise</td><td>更偏模型与企业/国防定制</td></tr><tr><td>Devin Desktop/Windsurf internal overlap</td><td>agentic IDE</td><td>Cognition 自己也要整合 agent-first 与 IDE-first 两套逻辑</td></tr></tbody></table></div>
+<h3 class="subsection">8.2 与 Manus/Genspark/Perplexity 的边界</h3>
+<p>Cognition 不是通用 agent。Manus/Genspark 可以做研究、网页、幻灯片、应用原型、浏览器操作；Perplexity 是 AI search/browser；Cognition 的核心是软件工程任务，尤其是已有 codebase 的修改、迁移、测试、PR、review、legacy modernization。它的客户通常是工程组织，不是普通知识工作者。</p>
+<h3 class="subsection">8.3 护城河</h3>
+<ul><li><strong>工程任务闭环</strong>: plan-code-test-review-autofix，比代码补全更深。</li><li><strong>Windsurf 用户和企业客户</strong>: $82M ARR 和 350+ enterprise customers 提供 GTM base。</li><li><strong>Competitive programming talent</strong>: 创始团队/早期团队算法能力强，适合 coding agent。</li><li><strong>Productivity measurement</strong>: productive engineering hours + guarantee 可成为企业采购语言。</li><li><strong>Government/regulated deployments</strong>: GovCloud、FedRAMP High、DoD IL4/5/6、on-prem 形成进入壁垒。</li></ul>
+<h3 class="subsection">8.4 脆弱点</h3>
+<ul><li>Demo 和真实工程任务差距大，复杂 legacy codebase 成功率不稳定。</li><li>Cursor/GitHub/Claude/OpenAI 都能把 agent 功能内置到开发者已有入口。</li><li>Windsurf 整合后组织文化和产品路线需要磨合。</li><li>企业客户可能不接受 agent 直接改生产代码，需要大量人工 review。</li><li>自有 benchmark 需要外部复验，否则难支撑 ROI 保证。</li></ul>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Scott Wu、Steven Hao、Walden Yan 均为 competitive programming/IOI 背景。公开资料称 Cognition 早期 10 人团队累计有 10 枚 IOI 金牌，并吸引 Gennady Korotkevich、Andrew He 等顶级竞赛程序员。公司叙事是: 让最会解复杂算法问题的人来教 AI 做软件工程。Walden Yan 是 Thiel Fellow，Founders Fund 深度支持也与这种人才叙事匹配。</p>
+<p>团队优势是极强的算法和工程密度；潜在问题是组织文化高压、扩张后管理复杂、并购 Windsurf 后需要整合不同产品和团队。WSJ 报道提到收购后曾裁撤不匹配 Cognition 高绩效文化的 Windsurf 员工，说明整合过程可能并不温和。</p>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>Agent 成功率风险</strong>: 自主软件工程任务很复杂，失败、误改、不可 merge PR 会拉低 ROI。</li><li><strong>人工 review 成本</strong>: 若人类需要大量复核，节省的工程小时会缩水。</li><li><strong>模型成本风险</strong>: 复杂任务需要长上下文、多轮推理和执行，COGS 高。</li><li><strong>竞争风险</strong>: Cursor、Claude Code、Codex、Copilot 都在快速进入同一 workflow。</li><li><strong>并购整合风险</strong>: Windsurf 的产品、品牌、客户和文化需要融入 Devin。</li><li><strong>企业安全风险</strong>: 代码库权限、凭证、网络访问、数据留存、VPC/GovCloud 安全要求极高。</li><li><strong>估值兑现风险</strong>: $10B 左右估值需要持续收入增长和可验证 ROI。</li><li><strong>Benchmark 信任风险</strong>: FrontierCode/Fusion 等自有基准需要第三方确认。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="anysphere_cursor.html">Anysphere</a><a class="sib-chip" href="emergent.html">Emergent</a><a class="sib-chip" href="lovable.html">Lovable</a><a class="sib-chip" href="poolside_ai.html">Poolside AI</a><a class="sib-chip" href="replit.html">Replit</a><a class="sib-chip" href="stackblitz_bolt_new.html">StackBlitz</a></div>
 </div>
 </body></html>

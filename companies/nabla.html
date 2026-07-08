@@ -102,6 +102,39 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开数据</th><th>来源/说明</th></tr></thead><tbody><tr><td>Healthcare organizations</td><td>190+</td><td>官网/Case studies</td></tr><tr><td>Clinicians</td><td>100,000</td><td>官网</td></tr><tr><td>Epic health systems</td><td>30+</td><td>Epic integration page</td></tr><tr><td>Documentation time saved</td><td>55% clinicians saved at least 1 hour</td><td>官网/Epic page</td></tr><tr><td>More appointments</td><td>1.5x more appointments each month</td><td>官网</td></tr><tr><td>Burnout</td><td>27% reduction</td><td>官网</td></tr><tr><td>University of Iowa</td><td>470,000+ encounter notes generated;75% week-over-week engagement score</td><td>case studies</td></tr><tr><td>McFarland Clinic</td><td>80% retention after pilot</td><td>case studies</td></tr><tr><td>CHLA</td><td>89% same-day note completion vs 82% pre-pilot</td><td>case studies</td></tr><tr><td>Tia Health</td><td>50% reduction in clinical note submission time</td><td>case studies</td></tr><tr><td>Carle Health</td><td>55% clinicians saved at least 1 hour</td><td>case studies</td></tr><tr><td>Denver Health</td><td>82% clinicians felt less time pressure per visit</td><td>case studies</td></tr><tr><td>Neighborhood Healthcare</td><td>34,000+ notes over four months</td><td>case studies</td></tr><tr><td>Latest disclosed financing</td><td>$70M Series C reported in 2025</td><td>Sifted/Fierce/Crunchbase/STAT links on Nabla press page</td></tr><tr><td>ARR/revenue</td><td>公开资料没有给出可使用 ARR</td><td>需要后续核验</td></tr></tbody></table></div>
 <p>Nabla 的运营指标更偏 adoption 和 clinician experience,少量涉及 productivity / access。与 Ambience 相比,公开 RCM/coding uplift 较弱;与 Commure 相比,后端 RCM 自动化不突出。后续商业化要看它是否能把 “doctors love it” 转化为 enterprise-wide contract 和 platform attach。</p>
 </section>
+<section class="section" id="sec-7">
+<h2 class="section-title"><span class="sec-num">7</span>单位经济性 / 关键财务逻辑</h2>
+<h3 class="subsection">7.1 Revenue build</h3>
+<p>Nabla revenue build:</p>
+<p>ARR = paid clinicians × ARPU + enterprise health system platform fees + integration/API/agent workflow add-ons</p>
+<p>关键变量:</p>
+<ul><li>registered clinicians 转 paid clinicians;</li><li>enterprise customers 的 rollout 深度;</li><li>self-serve churn 和 usage intensity;</li><li>EHR integration attach;</li><li>agent/API 模块能否增收;</li><li>国际市场定价差异。</li></ul>
+<h3 class="subsection">7.2 Cost build</h3>
+<p>成本包括:</p>
+<ul><li>ASR / LLM inference / transcription;</li><li>cloud storage and PHI security;</li><li>EHR integration support;</li><li>clinician support and onboarding;</li><li>clinical QA and safety monitoring;</li><li>enterprise sales/customer success;</li><li>research/publication and validation costs。</li></ul>
+<p>若 Nabla 使用自研或 open-source model stack 控制推理成本,单位经济性可能优于依赖高价 frontier model 的工具。但 open-source model 也要承担训练、评估、部署和安全成本。</p>
+<h3 class="subsection">7.3 ROI 逻辑</h3>
+<p>Nabla 的 ROI 主要是:</p>
+<ul><li>documentation time saved;</li><li>burnout reduction;</li><li>additional appointments/capacity;</li><li>faster same-day note completion;</li><li>lower physician attrition risk;</li><li>possible coding accuracy/documentation quality improvement。</li></ul>
+<p>相较 Ambience/Suki,公开 revenue integrity 数据较少。若 Nabla 要支撑更高 enterprise ACV,需要补齐 coding/RCM/CDI 或 agent workflow 的硬 ROI。</p>
+</section>
+<section class="section" id="sec-8">
+<h2 class="section-title"><span class="sec-num">8</span>竞争格局</h2>
+<div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">Abridge</td><td class="kv-val">Abridge 更强 enterprise platform/RCM/CDS/资本,Nabla 更轻量、快速部署、clinician love。</td></tr><tr><td class="kv-key">Ambience</td><td class="kv-val">Ambience 更强调 coding/ROI 和复杂专科,Nabla 更强调 adoption、speed、EHR breadth。</td></tr><tr><td class="kv-key">Suki</td><td class="kv-val">Suki 与 Nabla 都有 partner/integration 路线;Suki 公开 RCM revenue uplift 更强,Nabla clinician scale 更突出。</td></tr><tr><td class="kv-key">Commure</td><td class="kv-val">Commure 从 RCM/admin automation 切入,Nabla 从医生前台体验切入。</td></tr><tr><td class="kv-key">Microsoft Nuance DAX</td><td class="kv-val">Nuance incumbency 和 Microsoft/Epic 生态强,Nabla 需要以速度、体验和价格竞争。</td></tr><tr><td class="kv-key">Heidi / DeepScribe / Sully / Tandem</td><td class="kv-val">更低价或区域性竞争;可能压低 self-serve 和 SMB 市场价格。</td></tr><tr><td class="kv-key">Epic native AI</td><td class="kv-val">平台风险;Nabla 已有 Epic customers,但 Epic 原生化会影响分发和定价。</td></tr></tbody></table></div>
+<p>Nabla 的护城河在医生采用、低摩擦集成、产品体验和临床验证。它最容易被攻击的点是收入深度:如果客户认为 ambient note 是 commodity,Nabla 需要用 agentic workflows、EHR writeback、quality validation 和 enterprise governance 提高 switching cost。</p>
+</section>
+<section class="section" id="sec-9">
+<h2 class="section-title"><span class="sec-num">9</span>团队与背景</h2>
+<p>Nabla 的团队有欧洲 AI 工程和产品背景,创始人 Alexandre Lebrun 曾在 AI/assistant 领域有经验。公司从早期 health assistant 转向 clinician copilot,说明团队能够根据市场反馈 pivot。Nabla 还引入临床/产品领导,例如 2026 年 press 页面提到 appointment of Dr. Matt Sakumoto as Chief Clinical Product Officer,增强 clinical product credibility。</p>
+<p>优势:</p>
+<ul><li>产品体验和医生口碑强;</li><li>法国/美国双市场和国际化潜力;</li><li>open-source/model independence 可能降低成本和隐私风险;</li><li>通过 NEJM AI、KLAS、case studies 补证据。</li></ul>
+<p>风险:</p>
+<ul><li>相比 Abridge/Ambience 资本较少,enterprise sales 和 product breadth 可能受限;</li><li>轻量自助入口可能导致 ARPU 低;</li><li>health system 采购最终更看集成、合规、ROI,不只看医生喜好。</li></ul>
+</section>
+<section class="section" id="sec-10">
+<h2 class="section-title"><span class="sec-num">10</span>主要风险</h2>
+<ol><li><strong>Commodity risk:</strong> 低价 AI scribe 工具越来越多,基础 note generation 容易被压价。</li><li><strong>Enterprise depth:</strong> 医生喜欢不等于 health system 大额采购,需要证明 EHR writeback、安全、治理和 ROI。</li><li><strong>ARR 透明度:</strong> 100,000 clinicians 不是 revenue;付费/活跃口径需核验。</li><li><strong>EHR 平台竞争:</strong> Epic、Microsoft/Nuance 和 EHR preferred partners 会影响分发。</li><li><strong>临床安全:</strong> hallucination、错误摘要、多语言错误和 automation bias。</li><li><strong>国际化合规:</strong> 美国 HIPAA、欧洲 GDPR、医疗数据跨境和各国医疗责任不同。</li><li><strong>模型成本:</strong> 若 usage 很高但价格偏低,毛利承压。</li></ol>
+</section>
   <div class="siblings"><div class="st">同行业公司</div><a class="sib-chip" href="abridge.html">Abridge</a><a class="sib-chip" href="ambience_healthcare.html">Ambience Healthcare</a><a class="sib-chip" href="bioptimus.html">Bioptimus</a><a class="sib-chip" href="enveda_biosciences.html">Enveda Biosciences</a><a class="sib-chip" href="evolutionaryscale.html">EvolutionaryScale</a><a class="sib-chip" href="insilico_medicine.html">Insilico Medicine</a><a class="sib-chip" href="openevidence.html">OpenEvidence</a><a class="sib-chip" href="suki.html">Suki</a></div>
 </div>
 </body></html>
