@@ -37,6 +37,10 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 .head .stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 .stat-pill{background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12px;color:var(--ink2);font-weight:600}
 .stat-pill b{color:var(--accent)}
+.stat-filter{font-family:inherit;cursor:pointer}
+.stat-filter:hover{box-shadow:0 0 0 2px rgba(37,99,235,.08)}
+.stat-filter.active{background:#047857;color:#fff;border-color:#047857}
+.stat-filter.active b{color:#fff}
 .stat-role{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
 .stat-role b{color:#1d4ed8}
 .stat-taxonomy{background:#fff7ed;border-color:#fed7aa;color:#c2410c}
@@ -100,8 +104,9 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
       <span class="stat-pill stat-role">模型 <b>38</b></span>
       <span class="stat-pill stat-role">应用 <b>73</b></span>
       <span class="stat-pill stat-taxonomy">行业 <b>10</b></span>
-      <span class="stat-pill stat-region">境内 <b>15</b></span>
-      <span class="stat-pill stat-region">境外 <b>78</b></span>
+      <button class="stat-pill stat-region stat-filter active" data-region-filter="all">全部地区 <b>93</b></button>
+      <button class="stat-pill stat-region stat-filter" data-region-filter="境内">境内 <b>15</b></button>
+      <button class="stat-pill stat-region stat-filter" data-region-filter="境外">境外 <b>78</b></button>
     </div>
   </div>
   <div class="toolbar">
@@ -218,21 +223,36 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 </div>
 <script>
 const fbtns=document.querySelectorAll('.fbtn');
+const regionBtns=document.querySelectorAll('.stat-filter');
 const rows=document.querySelectorAll('.matrix-row');
 const chips=document.querySelectorAll('.chip');
 const sInput=document.getElementById('search');
 const originalChipOrder=new Map([...document.querySelectorAll('.layer-cell,.hybrid-chips')].map(box=>[box,[...box.children]]));
+let activeRegion='all';
+let sortMode='default';
 const normalizeSearch=v=>String(v||'').toLowerCase().replace(/[\s._/\-]+/g,'');
+function activeIndustry(){
+  return document.querySelector('.fbtn.active')?.dataset.filter || 'all';
+}
 function apply(filter,query){
   query=normalizeSearch(query);
   rows.forEach(r=>{const ind=r.dataset.ind;const f=filter==='all'||ind===filter;let has=false;
-    r.querySelectorAll('.chip').forEach(c=>{const fc=filter==='all'||c.dataset.ind===filter;const haystack=normalizeSearch(`${c.dataset.search||''} ${c.textContent||''} ${c.title||''}`);const qc=!query||haystack.includes(query);c.style.display=(fc&&qc)?'':'none';if(fc&&qc)has=true;});
+    r.querySelectorAll('.chip').forEach(c=>{const fc=filter==='all'||c.dataset.ind===filter;const rc=activeRegion==='all'||c.dataset.region===activeRegion;const haystack=normalizeSearch(`${c.dataset.search||''} ${c.textContent||''} ${c.title||''}`);const qc=!query||haystack.includes(query);c.style.display=(fc&&rc&&qc)?'':'none';if(fc&&rc&&qc)has=true;});
     r.style.display=(f&&(!query||has))?'':'none';
   });
 }
-function sortChips(mode){
+function sortChips(mode='default'){
+  sortMode=mode;
   originalChipOrder.forEach((children,box)=>{
-    const sorted=mode==='valuation'?[...children].sort((a,b)=>(Number(b.dataset.val||0)-Number(a.dataset.val||0))):children;
+    const sorted=[...children].sort((a,b)=>{
+      if(activeRegion!=='all'){
+        const ar=a.dataset.region===activeRegion?0:1;
+        const br=b.dataset.region===activeRegion?0:1;
+        if(ar!==br) return ar-br;
+      }
+      if(mode==='valuation') return Number(b.dataset.val||0)-Number(a.dataset.val||0);
+      return children.indexOf(a)-children.indexOf(b);
+    });
     sorted.forEach(node=>box.appendChild(node));
   });
 }
@@ -242,6 +262,12 @@ fbtns.forEach(b=>b.addEventListener('click',()=>{
   b.classList.add('active');
   apply(b.dataset.filter,sInput.value);
 }));
-sInput.addEventListener('input',e=>apply(document.querySelector('.fbtn.active').dataset.filter,e.target.value));
+regionBtns.forEach(b=>b.addEventListener('click',()=>{
+  activeRegion=b.dataset.regionFilter;
+  regionBtns.forEach(x=>x.classList.toggle('active',x===b));
+  sortChips(sortMode);
+  apply(activeIndustry(),sInput.value);
+}));
+sInput.addEventListener('input',e=>apply(activeIndustry(),e.target.value));
 </script>
 </body></html>
