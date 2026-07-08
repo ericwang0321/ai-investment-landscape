@@ -62,58 +62,58 @@ tbody tr:hover{background:#f8fafc}td strong{color:var(--accent2)}
 <p>它从 AI 模型/应用生态赚钱的方式是: 模型应用需要把企业私有知识、文档、产品、用户行为、图片/音频/视频 embedding 和实时上下文检索出来喂给 LLM,而 Pinecone 按 storage、read units、write units、egress、assistant token、embedding/reranking inference、support plan、enterprise minimum 和 committed-use contract 收费。 投资判断上：Pinecone 仍是 RAG 基建中认知度最高的专有云服务之一，客户页列出 Gong、Adobe、Cisco、Workday、L'Oreal、Microsoft、Asana、Cohere、OpenAI、Zapier、Vanguard、The Washington Post 等。</p>
 <p>挑战在于向量能力已被数据库和数据云快速商品化: MongoDB Atlas Vector Search、Databricks Mosaic/Vector Search、Snowflake Cortex Search、Postgres pgvector、Elastic、OpenSearch、Milvus/Zilliz、Weaviate、Qdrant、Redis、Vespa 等都在争夺同一预算。Pinecone 的护城河必须从"第一代 vector DB"升级为"高性能 retrieval platform + managed RAG/assistant/inference + enterprise controls"。</p>
 </section>
-<section class="section" id="sec-6">
-<h2 class="section-title"><span class="sec-num">6</span>融资历程完整时间线</h2>
+<section class="section" id="sec-2">
+<h2 class="section-title"><span class="sec-num">2</span>融资历程完整时间线</h2>
 <div class="table-wrap"><table class="data-table"><thead><tr><th>时间</th><th>轮次/事件</th><th>金额</th><th>估值口径</th><th>投资方</th><th>备注</th><th>来源</th></tr></thead><tbody><tr><td>2019</td><td>公司成立</td><td>资本事件较少</td><td>创业初期</td><td>Edo Liberty 创立</td><td>从向量搜索和 ML infra 切入</td><td>非融资金额/估值事件;不提供融资来源链接</td></tr><tr><td>2021-01</td><td>Seed / stealth exit</td><td>$10M</td><td>公司新闻没有给出估值数字</td><td>Wing Venture Capital led</td><td>同期推出首个面向 ML 的 serverless vector database 叙事</td><td><a href="https://www.pinecone.io/blog/series-b/" target="_blank" rel="noopener">Pinecone</a></td></tr><tr><td>2022-03</td><td>Series A</td><td>$28M</td><td>公司新闻没有给出估值数字</td><td>Menlo Ventures led, Wing 等参与</td><td>用于扩展向量数据库商业化</td><td><a href="https://www.pinecone.io/blog/series-b/" target="_blank" rel="noopener">Pinecone</a></td></tr><tr><td>2023-04</td><td>Series B</td><td>$100M</td><td>媒体报道约 $750M</td><td>Andreessen Horowitz led, ICONIQ Growth、Menlo Ventures、Wing 等参与</td><td>生成式 AI/RAG 需求爆发期</td><td><a href="https://www.prnewswire.com/news-releases/pinecone-raises-10m-seed-funding-and-launches-first-vector-database-for-machine-learning-301216112.html" target="_blank" rel="noopener">PRNewswire</a></td></tr></tbody></table></div>
 <p>融资解读: Pinecone 的融资高峰发生在 RAG 成为生成式 AI 应用标准架构的早期。2023 年 $100M Series B 帮其扩展工程、GTM 和企业安全能力。但之后市场竞争迅速转向"向量能力内嵌进所有数据库",Pinecone 需要证明专有 managed service 的性能、可靠性和开发体验足以维持独立平台溢价。</p>
 </section>
-<section class="section" id="sec-2">
-<h2 class="section-title"><span class="sec-num">2</span>公司概览</h2>
+<section class="section" id="sec-3">
+<h2 class="section-title"><span class="sec-num">3</span>公司概览</h2>
 <div class="table-wrap"><table class="kv-table"><tbody><tr><td class="kv-key">公司</td><td class="kv-val">Pinecone Systems, Inc.</td></tr><tr><td class="kv-key">成立时间</td><td class="kv-val">2019 年</td></tr><tr><td class="kv-key">创始人</td><td class="kv-val">Edo Liberty,前 AWS/Yahoo 研究与向量搜索相关背景</td></tr><tr><td class="kv-key">总部</td><td class="kv-val">New York / San Francisco 相关公开资料均有出现,公司官网法务页显示 Pinecone Systems, Inc.</td></tr><tr><td class="kv-key">核心产品</td><td class="kv-val">Pinecone Vector Database、Pinecone Assistant、Pinecone Inference、Dedicated Read Nodes、BYOC</td></tr><tr><td class="kv-key">核心定位</td><td class="kv-val">Fully managed vector database and retrieval infrastructure for AI applications</td></tr><tr><td class="kv-key">收入模式</td><td class="kv-val">Self-serve plans、pay-as-you-go usage、enterprise minimum usage、committed-use contracts、BYOC、support/security add-ons</td></tr><tr><td class="kv-key">客户</td><td class="kv-val">Thousands of customers;官网列 Gong、Adobe、Cisco、Workday、L'Oreal、Microsoft、OpenAI、Zapier 等</td></tr><tr><td class="kv-key">融资</td><td class="kv-val">2021 seed $10M; 2022 Series A $28M; 2023 Series B $100M,估值约 $750M</td></tr><tr><td class="kv-key">价值链位置</td><td class="kv-val">LLM/RAG 应用的数据检索层,位于 embedding model、LLM、data warehouse/lakehouse、应用层之间</td></tr></tbody></table></div>
 <p>Pinecone 的历史窗口来自 2022-2023 年 RAG 爆发。LLM 训练参数中没有企业私有知识,也无法实时更新;RAG 通过向量检索把相关上下文取出,再交给模型生成答案。向量数据库因此成为 AI 应用栈的核心组件之一。Pinecone 早期用专有 managed service 抢占心智,避免企业自己维护 Milvus/Faiss/Elasticsearch plugin/pgvector 的复杂度。</p>
 <p>到 2026 年,市场已经变得更拥挤。Pinecone 定价页显示它不再只卖数据库,而是同时提供 dense/sparse/full-text indexes、Assistant、Inference embedding、reranking、BYOC、private networking、customer managed encryption keys、audit logs、HIPAA、SAML SSO 和 cloud marketplace 购买。它正在从"vector DB"向"AI retrieval platform"扩展。</p>
 </section>
-<section class="section" id="sec-3">
-<h2 class="section-title"><span class="sec-num">3</span>业务模式与收费方式</h2>
-<h3 class="subsection">3.1 Plan 层级</h3>
+<section class="section" id="sec-4">
+<h2 class="section-title"><span class="sec-num">4</span>业务模式与收费方式</h2>
+<h3 class="subsection">4.1 Plan 层级</h3>
 <p>官方 pricing 页面列出 Starter、Builder、Standard、Enterprise 四层:</p>
 <div class="table-wrap"><table class="data-table"><thead><tr><th>Plan</th><th>公开价格/门槛</th><th>核心内容</th><th>目标用户</th></tr></thead><tbody><tr><td>Starter</td><td>Free</td><td>Starter usage、dense/sparse/full-text indexes、console metrics、community support</td><td>试用和小应用</td></tr><tr><td>Builder</td><td>$20/month flat</td><td>increased usage limits、cloud/region 选择、multiple projects/users、Prometheus/Datadog monitoring</td><td>solo developers 和小团队</td></tr><tr><td>Standard</td><td>$50/month minimum usage,3 week trial includes $300 credits</td><td>pay-as-you-go Database On-Demand、Inference、Assistant;Dedicated Read Nodes、import、backup/restore、RBAC、SAML SSO、HIPAA add-on</td><td>production apps</td></tr><tr><td>Enterprise</td><td>$500/month minimum usage</td><td>99.95% uptime SLA、private networking、customer managed encryption keys、audit logs、service accounts、admin APIs、HIPAA compliance、Pro support</td><td>mission-critical enterprise apps</td></tr></tbody></table></div>
 <p>此外,Pinecone 支持 cloud marketplaces,包括 AWS、GCP、Microsoft marketplace,以及 committed-use contracts。这个结构说明 Pinecone 走的是典型 dev-first 到 enterprise 的云基础设施定价: 免费/低价获客,生产 workloads 用量增长后转 PAYG 或年度承诺,安全/合规/私有网络推动 Enterprise。</p>
-<h3 class="subsection">3.2 Database usage pricing</h3>
+<h3 class="subsection">4.2 Database usage pricing</h3>
 <p>定价页显示数据库维度包括:</p>
 <ul><li>storage: Standard/Enterprise usage over included quota $0.33/GB/month;</li><li>write units: Standard $4-$4.50 per million,Enterprise $6-$6.75 per million,视云和区域而定;</li><li>read units: Standard $16-$18 per million,Enterprise $24-$27 per million;</li><li>egress: $0.10/GB,100GB/month included;</li><li>import from object storage: $0.25/GB;</li><li>backups: $0.10/GB/month;</li><li>restore from backup: $0.15/GB。</li></ul>
 <p>这与传统数据库的 vCPU/实例计费不同,更接近 serverless usage metering。客户不需要提前选 pod 或节点规格,而是按查询、写入、存储和网络使用量付费。Pinecone 的商业优势在于使用量随 RAG 请求、agent memory access、推荐查询和文档更新增长。</p>
-<h3 class="subsection">3.3 Assistant 和 Inference 定价</h3>
+<h3 class="subsection">4.3 Assistant 和 Inference 定价</h3>
 <p>Pinecone 已经把价值链延伸到 RAG 应用层:</p>
 <ul><li>Pinecone Assistant storage: Standard/Enterprise $3/GB/month after included quota;</li><li>Assistant input tokens: $8 per million;</li><li>Assistant output tokens: $15 per million;</li><li>context processed tokens: $5 per million;</li><li>evaluation processed tokens: $8 per million;</li><li>evaluation output tokens: $15 per million;</li><li>ingestion units: $0.0005 per ingestion unit,$0.001 for multi-modal,400 tokens/~300 words per unit;</li><li>embedding inference: llama-text-embed-v2 $0.16/M tokens,multilingual-e5-large $0.08/M tokens,pinecone-sparse-english-v0 $0.08/M tokens;</li><li>reranking: bge-reranker-v2-m3 / pinecone-rerank-v0 / cohere-rerank-v3.5 $2/1k requests。</li></ul>
 <p>这说明 Pinecone 正在从"客户自己带 embedding 和 LLM"转向"检索、embedding、reranking、assistant/evaluation 一体化"。这有利于提高 ARPU,但也使其与 Cohere、OpenAI、Voyage AI、Contextual AI、Databricks、Snowflake 等提供 embedding/reranking/RAG 平台的公司竞争。</p>
-<h3 class="subsection">3.4 BYOC 和企业采购</h3>
+<h3 class="subsection">4.4 BYOC 和企业采购</h3>
 <p>Bring your own cloud 让 Pinecone 跑在客户 cloud account/VPC 中,强调 zero-access operations、no SSH/VPN/inbound access、outbound-only operations、audit trail,并支持 AWS PrivateLink、GCP Private Service Connect、Azure Private Link。对于大型金融、医疗、政府或数据主权要求强的客户,BYOC 是采购关键。</p>
 <p>Pinecone 的 enterprise contract 很可能包含:</p>
 <ul><li>monthly minimum 或 annual commit;</li><li>volume discount;</li><li>support SLA;</li><li>security add-ons;</li><li>cloud marketplace committed spend;</li><li>private networking/BYOC;</li><li>dedicated read nodes 或高并发配置;</li><li>compliance requirements。</li></ul>
-<h3 class="subsection">3.5 与 AI 模型/应用生态的赚钱关系</h3>
+<h3 class="subsection">4.5 与 AI 模型/应用生态的赚钱关系</h3>
 <p>Pinecone 的收入与 AI application usage 绑定。RAG 产品每次用户提问通常会发生 embedding、vector search、metadata filtering、reranking、context assembly、LLM generation。Pinecone 可以从 search/read units、storage、rerank、assistant token 和 ingestion 中多点收费。Agent 应用越多地使用 memory 和工具检索,read usage 越高;企业知识库更新越频繁,write/ingestion usage 越高。</p>
 </section>
-<section class="section" id="sec-4">
-<h2 class="section-title"><span class="sec-num">4</span>产品与技术</h2>
-<h3 class="subsection">4.1 Serverless vector database</h3>
+<section class="section" id="sec-5">
+<h2 class="section-title"><span class="sec-num">5</span>产品与技术</h2>
+<h3 class="subsection">5.1 Serverless vector database</h3>
 <p>Pinecone 产品页强调 distributed object storage-backed serverless architecture,可无缝扩缩以满足需求。它提供 dense、sparse 和 full-text index,并支持 hybrid search。产品页给出 10M records in one namespace 的查询延迟示例:dense index p50 16ms,p90 21ms,p99 33ms;sparse index p50 8ms,p90 20ms,p99 51ms。该类公开 benchmark 需要结合 workload 配置理解,但显示 Pinecone 希望用低延迟和生产可靠性证明专有服务价值。</p>
-<h3 class="subsection">4.2 Dense / sparse / full-text / hybrid retrieval</h3>
+<h3 class="subsection">5.2 Dense / sparse / full-text / hybrid retrieval</h3>
 <p>RAG 质量不只靠 dense vector similarity。企业文档检索常常需要:</p>
 <ul><li>dense semantic search: 同义词、语义近似、意图匹配;</li><li>sparse/keyword: 精确术语、产品代码、法规条款、可解释匹配;</li><li>full-text: tokenization、stemming、phrase matching;</li><li>hybrid: 把语义、关键词和全文信号组合,再 rerank。</li></ul>
 <p>Pinecone 把这些检索方式放在同一 API 和管理面下,意图避免客户额外维护 Elasticsearch/OpenSearch + vector DB 的双系统。</p>
-<h3 class="subsection">4.3 Dedicated Read Nodes</h3>
+<h3 class="subsection">5.3 Dedicated Read Nodes</h3>
 <p>Dedicated Read Nodes 适合高读吞吐和低延迟 workloads。对于面向消费者的 RAG、推荐、搜索和 agent apps,查询峰值可能远高于写入。DRN 可以把读扩展和存储/写入分离,提高性能可预测性,也增加企业客户付费维度。</p>
-<h3 class="subsection">4.4 Pinecone Assistant</h3>
+<h3 class="subsection">5.4 Pinecone Assistant</h3>
 <p>Pinecone Assistant 是更高层的 RAG 应用组件,将文档存储、检索、上下文处理、生成和 evaluation token 计费打包。其商业意义是把 Pinecone 从 infra component 推向应用开发者的 managed RAG service,降低客户用 LangChain/LlamaIndex/自研代码拼接检索管线的工作量。</p>
 <p>但 Assistant 也进入更竞争的领域: OpenAI Assistants/Responses、Anthropic tools、AWS Bedrock Knowledge Bases、Google Vertex AI Search、Azure AI Search、Databricks Mosaic AI、Snowflake Cortex Search、Glean、Contextual AI 等都可以为企业知识问答提供一体化方案。</p>
-<h3 class="subsection">4.5 Pinecone Inference</h3>
+<h3 class="subsection">5.5 Pinecone Inference</h3>
 <p>Embedding 和 reranking 是 RAG 质量核心。Pinecone 定价页列出 llama-text-embed-v2、multilingual-e5-large、pinecone-sparse-english-v0、bge-reranker-v2-m3、pinecone-rerank-v0、cohere-rerank-v3.5 等。通过内置 inference,Pinecone 可以减少客户外部调用 embedding/rerank provider 的复杂度,也能从 token/request 中赚取增量收入。</p>
-<h3 class="subsection">4.6 Security / governance</h3>
+<h3 class="subsection">5.6 Security / governance</h3>
 <p>产品页和 pricing 页强调 encryption at rest and in transit、SSO、RBAC、private endpoints、customer managed encryption keys、audit logs、service accounts、admin APIs、SOC 2、GDPR、ISO 27001、HIPAA。企业 RAG 通常处理 internal docs、customer support tickets、HR/finance/legal data,因此安全控制是标准化数据库能力之外的关键差异化。</p>
 </section>
-<section class="section" id="sec-5">
-<h2 class="section-title"><span class="sec-num">5</span>商业化与运营指标</h2>
+<section class="section" id="sec-6">
+<h2 class="section-title"><span class="sec-num">6</span>商业化与运营指标</h2>
 <div class="table-wrap"><table class="data-table"><thead><tr><th>指标</th><th>公开口径</th><th>解读</th></tr></thead><tbody><tr><td>Customers</td><td>官方客户页称 thousands of customers</td><td>表明使用广泛,但需拆分免费、self-serve、enterprise</td></tr><tr><td>代表客户</td><td>Gong、Adobe、Cisco、Workday、L'Oreal、Microsoft、Asana、Cohere、OpenAI、Zapier、Vanguard、Washington Post 等</td><td>AI-native 与传统企业都有覆盖</td></tr><tr><td>Series B</td><td>2023 官方宣布 $100M Series B</td><td>资本支持其做生产级 vector DB</td></tr><tr><td>Series B valuation</td><td>媒体报道约 $750M</td><td>反映 2023 RAG 热潮中的基础设施溢价</td></tr><tr><td>定价</td><td>Starter free,Builder $20/month,Standard $50 minimum,Enterprise $500 minimum</td><td>自助到企业分层清晰</td></tr><tr><td>SLA</td><td>Enterprise 99.95% uptime SLA</td><td>面向 mission-critical retrieval</td></tr><tr><td>Pricing dimensions</td><td>storage/read/write/egress/import/backup/assistant tokens/embedding/rerank</td><td>收入与 RAG 应用使用量高度相关</td></tr></tbody></table></div>
 <p>公开资料中缺少最新 ARR、付费客户数、enterprise customer count、net retention 和 gross margin。本稿不编造收入数据。后续应优先核验 2025-2026 年 Pinecone 在 RAG hype 降温和数据库大厂竞争加剧后的付费增长质量。</p>
 </section>
