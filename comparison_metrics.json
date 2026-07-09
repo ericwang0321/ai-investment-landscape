@@ -2432,6 +2432,84 @@
     ]
   },
   {
+    "company": "Meshy",
+    "short": "Meshy",
+    "slug": "meshy",
+    "sector": "多模态与内容生成",
+    "layers": [
+      "模型层",
+      "应用层"
+    ],
+    "latest_round": "公开融资核验",
+    "latest_round_date": "2026-07",
+    "cells": {
+      "valuation": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "latest_raise": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "total_funding": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "arr_revenue": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "user_scale": {
+        "value": "100M+ generated models; 10M+ users; 8M+ monthly visits; SimilarWeb 口径线索",
+        "sort": 0.1,
+        "source": null
+      },
+      "enterprise_customers": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "media": {
+        "value": "AI 3D、3D asset workflow",
+        "sort": "",
+        "source": null
+      },
+      "pricing": {
+        "value": "价格: Free $0; Pro $20/mo; Studio $60/mo; Enterprise custom pricing；Pricing: Free $0, Pro $20/mo, Studio $60/mo, Enterprise custom",
+        "sort": 60.0,
+        "source": {
+          "label": "自助付费清晰",
+          "url": ""
+        }
+      },
+      "output_scale": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "legal_risk": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "model_app": {
+        "value": "模型 / 应用",
+        "sort": "",
+        "source": null
+      }
+    },
+    "source_links": [
+      {
+        "label": "自助付费清晰",
+        "url": ""
+      }
+    ]
+  },
+  {
     "company": "Midjourney",
     "short": "Midjourney",
     "slug": "midjourney",
@@ -2600,6 +2678,91 @@
       },
       {
         "label": "self-serve monetization 清晰",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "company": "Tripo AI",
+    "short": "Tripo AI",
+    "slug": "tripo_ai",
+    "sector": "多模态与内容生成",
+    "layers": [
+      "模型层",
+      "应用层"
+    ],
+    "latest_round": "Series A3",
+    "latest_round_date": "2026-07",
+    "cells": {
+      "valuation": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "latest_raise": {
+        "value": "$150M",
+        "sort": 0.15,
+        "source": {
+          "label": "Axios",
+          "url": "https://www.axios.com/newsletters/axios-pro-rata-37088959-7287-4885-915a-f3d1798830ec"
+        }
+      },
+      "total_funding": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "arr_revenue": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "user_scale": {
+        "value": "6.5M+ creators; 40K+ active developers; 700+ industry clients; 100M+ 3D models created",
+        "sort": 0.0065,
+        "source": null
+      },
+      "enterprise_customers": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "media": {
+        "value": "AI 3D、3D foundation model、asset workflow",
+        "sort": "",
+        "source": null
+      },
+      "pricing": {
+        "value": "订阅价格: Free $0; Pro $13.93/mo 年付; Max $53.94/mo 年付; Team $54.93/mo/seat 年付；订阅价格: Free / Pro / Max / Team",
+        "sort": 54.93,
+        "source": {
+          "label": "付费层清晰，Team 层可承接企业协作",
+          "url": ""
+        }
+      },
+      "output_scale": {
+        "value": "6.5M+ creators; 40K+ active developers; 700+ industry clients; 100M+ 3D models created",
+        "sort": 0.0065,
+        "source": null
+      },
+      "legal_risk": {
+        "value": "",
+        "sort": "",
+        "source": null
+      },
+      "model_app": {
+        "value": "模型 / 应用",
+        "sort": "",
+        "source": null
+      }
+    },
+    "source_links": [
+      {
+        "label": "Axios",
+        "url": "https://www.axios.com/newsletters/axios-pro-rata-37088959-7287-4885-915a-f3d1798830ec"
+      },
+      {
+        "label": "付费层清晰，Team 层可承接企业协作",
         "url": ""
       }
     ]
