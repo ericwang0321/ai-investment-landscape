@@ -4824,7 +4824,7 @@
     "company": "AlphaSense",
     "short": "AlphaSense",
     "slug": "alphasense",
-    "sector": "数据与搜索",
+    "sector": "行业 AI",
     "layers": [
       "应用层"
     ],
@@ -4849,6 +4849,11 @@
         "sort": "",
         "source": null
       },
+      "vertical": {
+        "value": "金融/市场情报/专业研究",
+        "sort": "",
+        "source": null
+      },
       "arr_revenue": {
         "value": "ARR / revenue: 公司 2026-06 公告:Q1 2026 ARR 超过 $600M,2025-10 为 $500M",
         "sort": 2026.0,
@@ -4859,34 +4864,29 @@
         "sort": 7000.0,
         "source": null
       },
-      "data_scale": {
+      "usage_scale": {
         "value": "",
         "sort": "",
         "source": null
       },
-      "query_usage": {
+      "compliance": {
+        "value": "金融合规/数据权限",
+        "sort": "",
+        "source": null
+      },
+      "roi": {
         "value": "",
         "sort": "",
         "source": null
       },
-      "data_type": {
-        "value": "市场情报、企业研究搜索、金融数据",
-        "sort": "",
-        "source": null
-      },
-      "pricing": {
+      "sales_motion": {
         "value": "",
         "sort": "",
         "source": null
       },
-      "permissions": {
-        "value": "",
+      "commercial_maturity": {
+        "value": "目标客户: 投行、PE、hedge funds、asset management、corporate strategy、competitive intelligence、IR、corp dev、consulting、life sciences、law fir…",
         "sort": "",
-        "source": null
-      },
-      "proprietary_data": {
-        "value": "内容规模: 500M+ premium financial and business documents;10,000+ curated data sources;broker research from 1,000+ sell-side/independe…",
-        "sort": 0.5,
         "source": null
       }
     },
