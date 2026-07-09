@@ -161,7 +161,8 @@
         "label": "股权资本与算力采购绑定",
         "url": ""
       }
-    ]
+    ],
+    "mega_valuation": true
   },
   {
     "company": "Character.AI",
@@ -541,7 +542,8 @@
         "label": "全球最低价 frontier 级 API 之一",
         "url": ""
       }
-    ]
+    ],
+    "mega_valuation": true
   },
   {
     "company": "Genspark",
@@ -1097,7 +1099,8 @@
         "label": "仍需公司公告或上市文件统一口径",
         "url": ""
       }
-    ]
+    ],
+    "mega_valuation": true
   },
   {
     "company": "Reka AI",
@@ -1570,7 +1573,8 @@
         "label": "仍处开发者/研究者 adoption 阶段",
         "url": ""
       }
-    ]
+    ],
+    "mega_valuation": true
   },
   {
     "company": "Writer",
@@ -1727,7 +1731,8 @@
         "label": "企业分发开始成型",
         "url": ""
       }
-    ]
+    ],
+    "mega_valuation": true
   },
   {
     "company": "Zyphra",
@@ -3000,7 +3005,8 @@
         "label": "Fortune/Barron's/媒体口径，需要与公司客户定义核对",
         "url": ""
       }
-    ]
+    ],
+    "mega_valuation": true
   },
   {
     "company": "Braintrust",
@@ -4276,7 +4282,8 @@
         "label": "大客户扩张能力强，但也带来集中度和采购周期风险",
         "url": ""
       }
-    ]
+    ],
+    "mega_valuation": true
   },
   {
     "company": "Fireworks AI",
