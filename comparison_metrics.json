@@ -37,12 +37,7 @@
         "sort": "",
         "source": null
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "",
         "sort": "",
         "source": null
@@ -123,19 +118,11 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "Anthropic Economic Index 基于 Claude.ai/API conversations 显示 AI 自主委派比例上升",
-        "sort": "",
-        "source": {
-          "label": "说明使用从辅助转向自动化",
-          "url": ""
-        }
-      },
-      "enterprise_customers": {
-        "value": "Databricks landmark deal、Snowflake multi-year ~$200M partnership、Amazon Bedrock、Google Vertex",
+      "user_group": {
+        "value": "Anthropic Economic Index 基于 Claude.ai/API conversations 显示 AI 自主委派比例上升；Databricks landmark deal、Snowflake multi-year ~$200M partnership、Amazon Bedrock、Google Vertex",
         "sort": 0.2,
         "source": {
-          "label": "企业/API渠道强",
+          "label": "说明使用从辅助转向自动化",
           "url": ""
         }
       },
@@ -178,10 +165,6 @@
       },
       {
         "label": "说明使用从辅助转向自动化",
-        "url": ""
-      },
-      {
-        "label": "企业/API渠道强",
         "url": ""
       },
       {
@@ -231,18 +214,13 @@
           "url": ""
         }
       },
-      "user_scale": {
+      "user_group": {
         "value": "主要用户: Gen Z / Gen Alpha、角色扮演用户、同人创作者、互动故事用户;未成年人用户在 2025 后进入受限体验；月活: 20M MAU",
         "sort": 2025.0,
         "source": {
           "label": "2025 研究论文/FT 衡量社区规模",
           "url": ""
         }
-      },
-      "enterprise_customers": {
-        "value": "",
-        "sort": "",
-        "source": null
       },
       "model_cost": {
         "value": "",
@@ -314,12 +292,7 @@
         "sort": "",
         "source": null
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "",
         "sort": "",
         "source": null
@@ -393,12 +366,7 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "",
         "sort": "",
         "source": null
@@ -475,12 +443,7 @@
         "sort": "",
         "source": null
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "",
         "sort": "",
         "source": null
@@ -558,12 +521,7 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "V4-Flash output $0.28/M,V4-Pro output $0.87/M",
         "sort": 0.28,
         "source": {
@@ -644,18 +602,13 @@
           "url": ""
         }
       },
-      "user_scale": {
+      "user_group": {
         "value": "需要核验:公开网页没有给出稳定活跃用户",
         "sort": "",
         "source": {
           "label": "对 consumer/product-led growth 很关键",
           "url": ""
         }
-      },
-      "enterprise_customers": {
-        "value": "",
-        "sort": "",
-        "source": null
       },
       "model_cost": {
         "value": "",
@@ -733,18 +686,13 @@
           "url": ""
         }
       },
-      "user_scale": {
+      "user_group": {
         "value": "早期用户结构: 超过半数用户处于 leadership roles；周活增长: 自 2024-05 launch 后 weekly users 增长 6x",
         "sort": 2024.0,
         "source": {
           "label": "Granola 官方 Series A 公告",
           "url": ""
         }
-      },
-      "enterprise_customers": {
-        "value": "",
-        "sort": "",
-        "source": null
       },
       "model_cost": {
         "value": "",
@@ -822,12 +770,7 @@
           "url": "https://getlatka.com/companies/liquid.ai"
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "Mercedes-Benz、Shopify、G42、AMD、Qualcomm、Insilico Medicine、Unsloth、Ollama",
         "sort": 42.0,
         "source": null
@@ -904,12 +847,7 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "",
         "sort": "",
         "source": null
@@ -988,13 +926,8 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
-        "value": "主要合作线索: 吉利、长安、大众、华为、英特尔、MediaTek、百度智能云、长城汽车、加速进化机器人、大象机器人、追知工科、最高法/法信法律基座大模型等公开线索；客户/合作: 官网称与吉利、长安、大众、华为等深度合作；另有 Intel、MediaTek、百…",
+      "user_group": {
+        "value": "主要合作线索: 吉利、长安、大众、华为、英特尔、MediaTek、百度智能云、长城汽车、加速进化机器人、大象机器人、追知工科、最高法/法信法律基座大模型等公开线索；客户/合作: 官网称与吉…",
         "sort": "",
         "source": {
           "label": "需区分 demo、适配、量产和付费合同",
@@ -1075,19 +1008,11 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "官方 API 平台写有“Trusted by millions of professional developers”；Kimi App/Web 为主要 C 端入口",
+      "user_group": {
+        "value": "官方 API 平台写有“Trusted by millions of professional developers”；Kimi App/Web 为主要 C 端入口；Vercel、OpenRouter、Windsurf、Cursor、Huawei、Coze、CodeBuddy、Genspark、XtalPi、DP Techno…",
         "sort": "",
         "source": {
           "label": "“millions”是方向性线索，不等同于 MAU 或付费用户",
-          "url": ""
-        }
-      },
-      "enterprise_customers": {
-        "value": "Vercel、OpenRouter、Windsurf、Cursor、Huawei、Coze、CodeBuddy、Genspark、XtalPi、DP Technology、AlphaEngine 等官方展示线索",
-        "sort": "",
-        "source": {
-          "label": "需区分 logo 展示、技术集成、付费客户和大额合同",
           "url": ""
         }
       },
@@ -1126,10 +1051,6 @@
       },
       {
         "label": "“millions”是方向性线索，不等同于 MAU 或付费用户",
-        "url": ""
-      },
-      {
-        "label": "需区分 logo 展示、技术集成、付费客户和大额合同",
         "url": ""
       },
       {
@@ -1182,19 +1103,11 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "ChatGPT 周活: 2025 DevDay 相关报道 800M weekly users; 2026 媒体报道 900M+；付费订阅: 2026 媒体报道 50M+ paying subscribers",
-        "sort": 0.8,
-        "source": {
-          "label": "仍需公司公告或上市文件统一口径",
-          "url": ""
-        }
-      },
-      "enterprise_customers": {
-        "value": "Business users: 2025 报道 5M business users；企业大单: PwC 100,000+ licenses; Apple Intelligence integration; UK government/MoD/DoD 等合作报道",
+      "user_group": {
+        "value": "ChatGPT 周活: 2025 DevDay 相关报道 800M weekly users; 2026 媒体报道 900M+；付费订阅: 2026 媒体报道 50M+ paying su…；Business users: 2025 报道 5M business users；企业大单: PwC 100,000+ license…",
         "sort": 100000.0,
         "source": {
-          "label": "口径可能包含 Team/Enterprise/Business workspace",
+          "label": "仍需公司公告或上市文件统一口径",
           "url": ""
         }
       },
@@ -1234,10 +1147,6 @@
       },
       {
         "label": "仍需公司公告或上市文件统一口径",
-        "url": ""
-      },
-      {
-        "label": "口径可能包含 Team/Enterprise/Business workspace",
         "url": ""
       }
     ]
@@ -1282,12 +1191,7 @@
           "url": "https://getlatka.com/companies/reka.ai"
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "",
         "sort": "",
         "source": null
@@ -1361,12 +1265,7 @@
         "sort": "",
         "source": null
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "Google Cloud TPU;媒体称 Meta 曾尝试收购/挖角",
         "sort": "",
         "source": {
@@ -1457,12 +1356,7 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "hundreds of customers",
         "sort": "",
         "source": {
@@ -1551,19 +1445,11 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "5 倍",
-        "sort": 5.0,
-        "source": {
-          "label": "截至 2025 年底",
-          "url": ""
-        }
-      },
-      "enterprise_customers": {
-        "value": "多模态 API 调用量增长: 超 45 倍；开放平台 API 调用量增长: 近 20 倍",
+      "user_group": {
+        "value": "5 倍；多模态 API 调用量增长: 超 45 倍；开放平台 API 调用量增长: 近 20 倍",
         "sort": 45.0,
         "source": {
-          "label": "2024 下半年",
+          "label": "截至 2025 年底",
           "url": ""
         }
       },
@@ -1599,10 +1485,6 @@
       },
       {
         "label": "截至 2025 年底",
-        "url": ""
-      },
-      {
-        "label": "2024 下半年",
         "url": ""
       }
     ]
@@ -1650,12 +1532,7 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "",
         "sort": "",
         "source": null
@@ -1733,18 +1610,13 @@
         "sort": "",
         "source": null
       },
-      "user_scale": {
+      "user_group": {
         "value": "官网列出研究者 quote、community projects、grants,但没有付费客户数",
         "sort": "",
         "source": {
           "label": "仍处开发者/研究者 adoption 阶段",
           "url": ""
         }
-      },
-      "enterprise_customers": {
-        "value": "",
-        "sort": "",
-        "source": null
       },
       "model_cost": {
         "value": "",
@@ -1816,18 +1688,13 @@
         "sort": "",
         "source": null
       },
-      "user_scale": {
+      "user_group": {
         "value": "up to 5 users",
         "sort": 5.0,
         "source": {
           "label": "Writer pricing",
           "url": ""
         }
-      },
-      "enterprise_customers": {
-        "value": "",
-        "sort": "",
-        "source": null
       },
       "model_cost": {
         "value": "",
@@ -1902,12 +1769,7 @@
           "url": ""
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "Databricks、Interactive Brokers、云平台入口等官方新闻",
         "sort": "",
         "source": {
@@ -1992,13 +1854,8 @@
         "sort": "",
         "source": null
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
-        "value": "最新战略合作: AMD/TensorWave 支撑 Zyphra Cloud;IBM Cloud + AMD 支撑 ZAYA1 训练;AWS Inferentia2 research;NVIDIA NeMo Curator 用于 Zyda-2 数据集；合作:…",
+      "user_group": {
+        "value": "最新战略合作: AMD/TensorWave 支撑 Zyphra Cloud;IBM Cloud + AMD 支撑 ZAYA1 训练;AWS Inferentia2 research;NV…",
         "sort": 2.0,
         "source": {
           "label": "基础设施生态强,尤其 AMD 路线",
@@ -2078,12 +1935,7 @@
           "url": "https://www.cls.cn/detail/1910433"
         }
       },
-      "user_scale": {
-        "value": "",
-        "sort": "",
-        "source": null
-      },
-      "enterprise_customers": {
+      "user_group": {
         "value": "",
         "sort": "",
         "source": null
