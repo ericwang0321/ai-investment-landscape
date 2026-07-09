@@ -6744,7 +6744,7 @@
         "source": null
       },
       "vertical": {
-        "value": "金融",
+        "value": "金融/投研工作流",
         "sort": "",
         "source": null
       },
@@ -7111,7 +7111,7 @@
         "source": null
       },
       "vertical": {
-        "value": "行业",
+        "value": "医疗影像/医院 AI",
         "sort": "",
         "source": null
       },
@@ -7194,7 +7194,7 @@
         }
       },
       "vertical": {
-        "value": "行业",
+        "value": "AIoT/空间智能",
         "sort": "",
         "source": null
       },
@@ -7284,7 +7284,7 @@
         }
       },
       "vertical": {
-        "value": "行业",
+        "value": "脑机接口/神经科技",
         "sort": "",
         "source": null
       },
@@ -7374,7 +7374,7 @@
         }
       },
       "vertical": {
-        "value": "行业",
+        "value": "工业软件/半导体制造",
         "sort": "",
         "source": null
       },
